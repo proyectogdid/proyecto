@@ -10,4 +10,7 @@ public class Jugador {
     private Date fechaNac;
     private String dorsal;
     private String textoCamiseta;
+    private Equipo equipo;
+    private Posicion posicion;
+    private Estado estado;
 }
