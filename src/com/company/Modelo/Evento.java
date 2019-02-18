@@ -1,5 +1,9 @@
 package com.company.Modelo;
 
+/** Esta clase va a gestionar los diferentes eventos o noticias
+ *  referidas a los jugadores. En concreto, en que estado se
+ *  encuentran tanto previamente como posteriórmente.
+ */
 public class Evento {
     private int id;
     private Jugador jugador;

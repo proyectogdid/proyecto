@@ -1,5 +1,10 @@
 package com.company.Modelo;
 
+/** Esta clase va a gestionar los posibles estados
+ *  de los difernetes jugadores, teniendo como atributos
+ *  la id y el nombre del estado.
+ *
+ */
 public class Estado {
     private int id;
     private String nombre;
