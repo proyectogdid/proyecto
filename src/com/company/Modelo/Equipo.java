@@ -1,10 +1,16 @@
 package com.company.Modelo;
 
+import java.util.ArrayList;
+
+/**
+ * Clase para gestionar los equipos de nuestra liga ademas del nombre y el patrocinador vamos a añadir un atributo jugadores para gestionar la plantilla de cada equipo
+ */
 public class Equipo {
 
     private int id;
     private String nombre;
     private String patrocinador;
+    private ArrayList<Jugador> jugadores;
 
     public Equipo() {
     }
@@ -37,5 +43,13 @@ public class Equipo {
 
     public void setPatrocinador(String patrocinador) {
         this.patrocinador = patrocinador;
+    }
+
+    public ArrayList<Jugador> getJugadores() {
+        return jugadores;
+    }
+
+    public void setJugadores(ArrayList<Jugador> jugadores) {
+        this.jugadores = jugadores;
     }
 }

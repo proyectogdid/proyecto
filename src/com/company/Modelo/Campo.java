@@ -1,5 +1,9 @@
 package com.company.Modelo;
 
+/**
+ * Clase para gestionar los campos en los que se juegan los partidos
+ * guardando su nombre, dirección y aforo
+ */
 public class Campo {
     private int id;
     private String nombre;

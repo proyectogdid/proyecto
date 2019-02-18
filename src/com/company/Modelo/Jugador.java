@@ -2,6 +2,11 @@ package com.company.Modelo;
 
 import java.util.Date;
 
+/**
+ * Clase para gestionar los datos del jugador
+ * guardando su nombre completo, fecha de nacimiento,
+ * dorsal, texto de camiseta, equipo en el que juega,su posicion y su estado actual
+ */
 public class Jugador {
     private int id;
     private String nombre;
