@@ -6,10 +6,6 @@ package com.company.Modelo;
  */
 
 
-/**
- * Clase para gestionar las distintas posiciones de las que puede jugar un jugador
- */
-
 public class Posicion {
     private int id;
     private String nombre;

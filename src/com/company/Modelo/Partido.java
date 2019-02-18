@@ -2,6 +2,10 @@ package com.company.Modelo;
 
 import java.util.Date;
 
+/** Clase que va a gestionar los datos principales de
+ * un partido, tales como la id, fecha, ptsLocal,
+ * ptsVisitante, local, visitante, temporada y campo.
+ */
 public class Partido {
     private int id;
     private Date fecha;
