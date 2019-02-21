@@ -1,4 +1,4 @@
-package com.company.Modelo;
+package com.company.LN;
 
 /**
  * Clase para gestionar los campos en los que se juegan los partidos

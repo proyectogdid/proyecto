@@ -1,4 +1,4 @@
-package com.company.Modelo;
+package com.company.LN;
 /** Clase la cual se utilizará para determinar
  * las posiciones de los diferentes jugadores.
  * Tenuendo exclusivamente los atributos de id y nombre

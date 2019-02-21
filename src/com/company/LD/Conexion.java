@@ -1,6 +1,4 @@
-package com.company.ModeloBD;
-
-import java.sql.Connection;
+package com.company.LD;
 
 public class Conexion {
 

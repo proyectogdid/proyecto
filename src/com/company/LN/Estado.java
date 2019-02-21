@@ -1,4 +1,4 @@
-package com.company.Modelo;
+package com.company.LN;
 
 /** Esta clase va a gestionar los posibles estados
  *  de los difernetes jugadores, teniendo como atributos

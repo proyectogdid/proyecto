@@ -1,4 +1,4 @@
-package com.company.Modelo;
+package com.company.LN;
 
 public class Traspaso {
     private int id;

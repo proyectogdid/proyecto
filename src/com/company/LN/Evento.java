@@ -1,4 +1,4 @@
-package com.company.Modelo;
+package com.company.LN;
 
 /** Esta clase va a gestionar los diferentes eventos o noticias
  *  referidas a los jugadores. En concreto, en que estado se
