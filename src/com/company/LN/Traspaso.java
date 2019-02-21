@@ -1,10 +1,25 @@
 package com.company.LN;
 
 public class Traspaso {
+    /**
+     * atributo id del traspaso
+     */
     private int id;
+    /**
+     * atributo precio por el que se ha realizado el traspaso
+     */
     private int precio;
+    /**
+     * atributo que especifica el jugador objeto del traspaso
+     */
     private Jugador jugador;
+    /**
+     * equipo que traspasa al jugador
+     */
     private Equipo equipoPrevio;
+    /**
+     * equipo que ficha al jugador
+     */
     private Equipo equipoPosterior;
 
     public Traspaso() {

@@ -8,8 +8,17 @@ import java.util.Date;
  * ademas de esto añadiremos un atributo que almacene los partidos de la temporada
  */
 public class Temporada {
+    /**
+     * atributo id de la temporada
+     */
     private int id;
+    /**
+     * atributo año de la temporada
+     */
     private Date ano;
+    /**
+     * partidos que se jugaran en la temporada
+     */
     private ArrayList<Partido> partidos;
     public Temporada() {
     }
