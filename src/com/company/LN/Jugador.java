@@ -8,19 +8,63 @@ import java.util.Date;
  * dorsal, texto de camiseta, equipo en el que juega,su posicion y su estado actual
  */
 public class Jugador {
+    /**
+     * Atributo id del jugador
+     */
     private int id;
+    /**
+     * Atributo nombre del jugador
+     */
     private String nombre;
+    /**
+     * Atributo primer apellido del jugador
+     */
     private String apellido1;
+    /**
+     * Atributo degundo apellido del jugador
+     */
     private String apellido2;
+    /**
+     * Atributo fecha de nacimiento del jugador
+     */
     private Date fechaNac;
+    /**
+     * Atributo número del dorsal del jugador
+     */
     private String dorsal;
+    /**
+     * Atributo texto de la camiseta del jugador
+     */
     private String textoCamiseta;
+    /**
+     * Atributo equipo del jugaror
+     */
     private Equipo equipo;
+    /**
+     * Atributo posición del jugador
+     */
     private Posicion posicion;
+    /**
+     * Atributo estado del jugador
+     */
     private Estado estado;
 
     public Jugador() {
     }
+
+    /**
+     * Este método recogerá todos los valores necesarios para identificar cada jugador
+     * @param id
+     * @param nombre
+     * @param apellido1
+     * @param apellido2
+     * @param fechaNac
+     * @param dorsal
+     * @param textoCamiseta
+     * @param equipo
+     * @param posicion
+     * @param estado
+     */
 
     public Jugador(int id, String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta, Equipo equipo, Posicion posicion, Estado estado) {
         this.id = id;

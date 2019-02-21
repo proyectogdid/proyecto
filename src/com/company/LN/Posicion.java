@@ -7,12 +7,23 @@ package com.company.LN;
 
 
 public class Posicion {
+    /**
+     * Atributo id de la posición
+     */
     private int id;
+    /**
+     * Atributo nombre de la posición
+     */
     private String nombre;
 
     public Posicion() {
     }
 
+    /**
+     * Este método recogerá todos los datos necesarios para poder identificar la posición de cada jugador.
+     * @param id
+     * @param nombre
+     */
     public Posicion(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;

@@ -6,12 +6,23 @@ package com.company.LN;
  *
  */
 public class Estado {
+    /**
+     * Atributo id del estado
+     */
     private int id;
+    /**
+     * Atributo nombre del estado
+     */
     private String nombre;
 
     public Estado() {
     }
 
+    /**
+     * Este método, recogerá los datos necesarios para poder identificar cada estado.
+     * @param id
+     * @param nombre
+     */
     public Estado(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;

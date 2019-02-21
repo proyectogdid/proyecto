@@ -7,18 +7,53 @@ import java.util.Date;
  * ptsVisitante, local, visitante, temporada y campo.
  */
 public class Partido {
+    /**
+     * Atributo id del partido
+     */
     private int id;
+    /**
+     * Atributo fecha del partido
+     */
     private Date fecha;
+    /**
+     * Atributo resultado local del partido
+     */
     private int ptosLocal;
+    /**
+     * Atributo resultado visitante del partido
+     */
     private int ptosVisitante;
+    /**
+     * Atributo equipo local del partido
+     */
     private Equipo local;
+    /**
+     * Atributo equi`po visitante del partido
+     */
     private Equipo visitante;
+    /**
+     * Atributo temporada del partido
+     */
     private Temporada temporada;
+    /**
+     * Atributo campo del partido
+     */
     private Campo campo;
 
     public Partido() {
     }
 
+    /**
+     * Este método recogerá todos los datos necesarios para conocer al detalle dichos datos de cada partido
+     * @param id
+     * @param fecha
+     * @param ptosLocal
+     * @param ptosVisitante
+     * @param local
+     * @param visitante
+     * @param temporada
+     * @param campo
+     */
     public Partido(int id, Date fecha, int ptosLocal, int ptosVisitante, Equipo local, Equipo visitante, Temporada temporada, Campo campo) {
         this.id = id;
         this.fecha = fecha;
@@ -29,6 +64,19 @@ public class Partido {
         this.temporada = temporada;
         this.campo = campo;
     }
+
+    /**
+     * El siguiente constructor será necesario cuando se registren los partidos,
+     * ya que en un inicio no necesitaremos los ptsLocal y ptosVisitante.
+     * Una vez que comiencen los partidos ya utilizaremos el constructor de arriba,
+     * con todos los atributos
+     * @param id
+     * @param fecha
+     * @param local
+     * @param visitante
+     * @param temporada
+     * @param campo
+     */
 
     public Partido(int id, Date fecha, Equipo local, Equipo visitante, Temporada temporada, Campo campo) {
         this.id = id;

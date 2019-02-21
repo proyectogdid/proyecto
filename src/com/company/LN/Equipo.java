@@ -8,15 +8,32 @@ import java.util.ArrayList;
  * gestionar la plantilla de cada equipo.
  */
 public class Equipo {
-
+    /**
+     * Atributo id del equipo
+     */
     private int id;
+    /**
+     * Atributo nombre del equipo
+     */
     private String nombre;
+    /**
+     * Atributo patrocinador del equipo
+     */
     private String patrocinador;
+    /**
+     * Atributo jugagores del equipo
+     */
     private ArrayList<Jugador> jugadores;
 
     public Equipo() {
     }
 
+    /**
+     * Este método recogerá todos los datos necesarios para identificar los diferentes equipos.
+     * @param id
+     * @param nombre
+     * @param patrocinador
+     */
     public Equipo(int id, String nombre, String patrocinador) {
         this.id = id;
         this.nombre = nombre;

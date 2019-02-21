@@ -5,17 +5,49 @@ package com.company.LN;
  * guardando su nombre, dirección y aforo
  */
 public class Campo {
+    /**
+     * Atributo id del campo
+      */
     private int id;
+    /**
+     * Atributo nombre del campo
+     */
     private String nombre;
+    /**
+     * Atributo ciudad del campo
+     */
     private String ciudad;
+    /**
+     * Atributo calle del campo
+     */
     private String calle;
+    /**
+     * Atributo número del campo
+     */
     private String numero;
+    /**
+     * Atributo código postal del campo
+     */
     private String cp;
+    /**
+     * Atributo aforo del campo
+     */
     private int aforo;
+
 
     public Campo() {
     }
 
+    /**
+     * Este método, va a recoger todos los datos necesarios para identificar un campo.
+     * @param id
+     * @param nombre
+     * @param ciudad
+     * @param calle
+     * @param numero
+     * @param cp
+     * @param aforo
+     */
     public Campo(int id, String nombre, String ciudad, String calle, String numero, String cp, int aforo) {
         this.id = id;
         this.nombre = nombre;

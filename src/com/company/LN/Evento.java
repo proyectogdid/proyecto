@@ -5,14 +5,33 @@ package com.company.LN;
  *  encuentran tanto previamente como posteriórmente.
  */
 public class Evento {
+    /**
+     * Atributo id del evento
+     */
     private int id;
+    /**
+     * Atributo jugador dek evento
+     */
     private Jugador jugador;
+    /**
+     * Atributo estado previo del evento
+     */
     private Estado estadoPrevio;
+    /**
+     * Atributo estado posterior del evento
+     */
     private Estado estadoPosterior;
 
     public Evento() {
     }
 
+    /**
+     * Este método sirve para recoger todos los datos referentes a evento.
+     * @param id
+     * @param jugador
+     * @param estadoPrevio
+     * @param estadoPosterior
+     */
     public Evento(int id, Jugador jugador, Estado estadoPrevio, Estado estadoPosterior) {
         this.id = id;
         this.jugador = jugador;
