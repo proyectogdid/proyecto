@@ -2,6 +2,9 @@ package com.company.LN;
 
 import java.util.ArrayList;
 
+/**
+ * Clase que va a gestionar la comunicación entre el paquete LN y el paquete LP
+ */
 public class GestorLN {
 
     /**
