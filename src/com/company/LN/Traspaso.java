@@ -25,6 +25,14 @@ public class Traspaso {
     public Traspaso() {
     }
 
+    /**
+     * Este método va a recoger los datos de todos los traspasos que se vayan reslizando
+     * @param id
+     * @param precio
+     * @param jugador
+     * @param equipoPrevio
+     * @param equipoPosterior
+     */
     public Traspaso(int id, int precio, Jugador jugador, Equipo equipoPrevio, Equipo equipoPosterior) {
         this.id = id;
         this.precio = precio;

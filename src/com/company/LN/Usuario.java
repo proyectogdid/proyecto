@@ -25,7 +25,13 @@ public class Usuario {
     public Usuario() {
     }
 
-
+    /**
+     * Este método va a recoger los datos de los usuarios de la aplicación
+     * @param id
+     * @param usuario
+     * @param contrasena
+     * @param tipo
+     */
     public Usuario(int id, String usuario, String contrasena, String tipo) {
         this.id = id;
         this.username = usuario;

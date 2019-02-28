@@ -23,6 +23,11 @@ public class Temporada {
     public Temporada() {
     }
 
+    /**
+     * Este método va a recoger los datos de la temporada, tanto la id como el año en cuestión
+     * @param id
+     * @param ano
+     */
     public Temporada(int id, Date ano) {
         this.id = id;
         this.ano = ano;
