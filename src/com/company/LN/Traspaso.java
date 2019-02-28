@@ -1,5 +1,9 @@
 package com.company.LN;
 
+/**
+ * clase que gestionara los traspasos de los jugadores entre distintos equipos
+ * teniendo como atributos el equipo anterior y posterior para poder guardar un historico de la trayectoria
+ */
 public class Traspaso {
     /**
      * atributo id del traspaso
