@@ -1,26 +1,28 @@
 package com.company.LP;
 
+
 import com.company.LN.Campo;
 import com.company.LN.GestorLN;
 
 import java.util.ArrayList;
 
 public class Menu {
-    private static GestorLN gln = new GestorLN();
+
 
     public static void menu() {
+        GestorLN gln = new GestorLN();
         int op = 0;
         do {
             System.out.println("Eliga:");
             System.out.println("1.-Introducir campo");
             System.out.println("2.-Ver campo");
-
+            System.out.println("3.-Salir");
             op = LP.clsUtilidades.leerEntero();
 
             switch (op) {
 
                 case 1:
-                    altaCampo();
+                    altaCampo(gln);
                     break;
                 case 2:
                     visualizarCampo(gln.leerCampos());
@@ -36,7 +38,7 @@ public class Menu {
     }
 
 
-    public static void altaCampo() {
+    public static void altaCampo(GestorLN gln) {
         String nombre;
         String ciudad;
         int id;
@@ -45,8 +47,8 @@ public class Menu {
         String cp;
         int aforo;
 
-        GestorLN objGestor;
-        Campo objCampo;
+
+
 
 
         System.out.println("Identificador:");
@@ -81,12 +83,12 @@ public class Menu {
         for (Campo a : campos) {
 
             System.out.println("ID:" + a.getId());
-            System.out.println("Año:" + a.getNombre());
-            System.out.println("Titulo:" + a.getCiudad());
+            System.out.println("Nombre:" + a.getNombre());
+            System.out.println("Ciudad:" + a.getCiudad());
             System.out.println("Calle:" + a.getCalle());
             System.out.println("Numero:" + a.getNumero());
             System.out.println("CP:" + a.getCp());
-            System.out.println("Aforo" + a.getAforo());
+            System.out.println("Aforo:" + a.getAforo());
             System.out.println();
 
         }
