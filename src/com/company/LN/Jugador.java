@@ -54,6 +54,7 @@ public class Jugador {
 
     /**
      * Este método recogerá todos los valores necesarios para identificar cada jugador
+     *
      * @param id
      * @param nombre
      * @param apellido1

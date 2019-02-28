@@ -2,7 +2,8 @@ package com.company.LN;
 
 import java.util.Date;
 
-/** Clase que va a gestionar los datos principales de
+/**
+ * Clase que va a gestionar los datos principales de
  * un partido, tales como la id, fecha, ptsLocal,
  * ptsVisitante, local, visitante, temporada y campo.
  */
@@ -45,6 +46,7 @@ public class Partido {
 
     /**
      * Este método recogerá todos los datos necesarios para conocer al detalle dichos datos de cada partido
+     *
      * @param id
      * @param fecha
      * @param ptosLocal
@@ -70,6 +72,7 @@ public class Partido {
      * ya que en un inicio no necesitaremos los ptsLocal y ptosVisitante.
      * Una vez que comiencen los partidos ya utilizaremos el constructor de arriba,
      * con todos los atributos
+     *
      * @param id
      * @param fecha
      * @param local

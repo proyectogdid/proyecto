@@ -1,5 +1,7 @@
 package com.company.LN;
-/** Clase la cual se utilizará para determinar
+
+/**
+ * Clase la cual se utilizará para determinar
  * las posiciones de los diferentes jugadores.
  * Tenuendo exclusivamente los atributos de id y nombre
  * de la posición.
@@ -21,6 +23,7 @@ public class Posicion {
 
     /**
      * Este método recogerá todos los datos necesarios para poder identificar la posición de cada jugador.
+     *
      * @param id
      * @param nombre
      */

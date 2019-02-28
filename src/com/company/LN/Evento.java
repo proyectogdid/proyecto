@@ -1,8 +1,9 @@
 package com.company.LN;
 
-/** Esta clase va a gestionar los diferentes eventos o noticias
- *  referidas a los jugadores. En concreto, en que estado se
- *  encuentran tanto previamente como posteriórmente.
+/**
+ * Esta clase va a gestionar los diferentes eventos o noticias
+ * referidas a los jugadores. En concreto, en que estado se
+ * encuentran tanto previamente como posteriórmente.
  */
 public class Evento {
     /**
@@ -27,6 +28,7 @@ public class Evento {
 
     /**
      * Este método sirve para recoger todos los datos referentes a evento.
+     *
      * @param id
      * @param jugador
      * @param estadoPrevio

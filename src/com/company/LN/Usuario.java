@@ -26,7 +26,6 @@ public class Usuario {
     }
 
 
-
     public Usuario(int id, String usuario, String contrasena, String tipo) {
         this.id = id;
         this.username = usuario;
@@ -48,7 +47,6 @@ public class Usuario {
     public String getUsername() {
         return username;
     }
-
 
 
     public void setUsername(String username) {
