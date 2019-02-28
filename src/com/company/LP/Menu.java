@@ -6,9 +6,14 @@ import com.company.LN.GestorLN;
 
 import java.util.ArrayList;
 
+/**
+ * Clase que gestionara la interaccion con el usuario
+ */
 public class Menu {
 
-
+    /**
+     * punto de entrada de la aplicacion
+     */
     public static void menu() {
         GestorLN gln = new GestorLN();
         int op = 0;
@@ -37,7 +42,10 @@ public class Menu {
 
     }
 
-
+    /**
+     * metodo para recoger los datos de campo y añadirlos en gestorln
+     * @param gln
+     */
     public static void altaCampo(GestorLN gln) {
         String nombre;
         String ciudad;
@@ -77,6 +85,11 @@ public class Menu {
 
 
     }
+
+    /**
+     * metodo que lista los campos almacenados en memoria de gestorln
+     * @param campos
+     */
 
     public static void visualizarCampo(ArrayList<Campo> campos) {
 
