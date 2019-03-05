@@ -1,10 +1,12 @@
 package com.company.LN;
 
+import com.company.comun.itfProperty;
+
 /**
  * clase para gestionar los usuarios no administradores
  * es decir un usuario cualquiera que podra elegir su equipo favorito
  */
-public class Aficionado extends  Usuario{
+public class Aficionado extends  Usuario implements itfProperty {
     /**
      * atributo equipo favorito del usuario
      */
@@ -33,5 +35,18 @@ public class Aficionado extends  Usuario{
 
     public void setFavorito(Equipo favorito) {
         this.favorito = favorito;
+    }
+    /**
+     * metodo get property de la interfaz itfProperty
+     * @param prop
+     * @return
+     */
+
+    @Override
+    public Object getProperty(String prop) {
+        switch (prop){
+            case"favorito":return this.favorito;
+            default:return null;
+        }
     }
 }

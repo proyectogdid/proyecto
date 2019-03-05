@@ -1,5 +1,7 @@
 package com.company.LN;
 
+import com.company.comun.itfProperty;
+
 import java.util.Date;
 
 /**
@@ -7,7 +9,7 @@ import java.util.Date;
  * un partido, tales como la id, fecha, ptsLocal,
  * ptsVisitante, local, visitante, temporada y campo.
  */
-public class Partido {
+public class Partido implements itfProperty {
     /**
      * Atributo id del partido
      */
@@ -152,5 +154,25 @@ public class Partido {
 
     public void setCampo(Campo campo) {
         this.campo = campo;
+    }
+
+    /**
+     * metodo get property de la interfaz itfProperty
+     * @param prop
+     * @return
+     */
+    @Override
+    public Object getProperty(String prop) {
+        switch (prop){
+            case"id":return this.id;
+            case"fecha":return this.fecha;
+            case "ptosLocal":return this.ptosLocal;
+            case "ptosVisitante":return this.ptosVisitante;
+            case "local":return this.local;
+            case "visitante":return this.visitante;
+            case"temporada":return this.temporada;
+            case "campo":return this.campo;
+            default:return null;
+        }
     }
 }

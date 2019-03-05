@@ -1,5 +1,7 @@
 package com.company.LN;
 
+import com.company.comun.itfProperty;
+
 import java.util.Date;
 
 /**
@@ -7,7 +9,7 @@ import java.util.Date;
  * guardando su nombre completo, fecha de nacimiento,
  * dorsal, texto de camiseta, equipo en el que juega,su posicion y su estado actual
  */
-public class Jugador {
+public class Jugador implements itfProperty {
     /**
      * Atributo id del jugador
      */
@@ -158,5 +160,26 @@ public class Jugador {
 
     public void setEstado(Estado estado) {
         this.estado = estado;
+    }
+    /**
+     * metodo get property de la interfaz itfProperty
+     * @param prop
+     * @return
+     */
+    @Override
+    public Object getProperty(String prop) {
+        switch (prop){
+            case"id":return this.id;
+            case"nombre":return this.nombre;
+            case"apellido1":return this.apellido1;
+            case"apellido2":return this.apellido2;
+            case"fechaNac":return this.fechaNac;
+            case"dorsal":return this.dorsal;
+            case"textoCamiseta":return this.textoCamiseta;
+            case"equipo":return this.equipo;
+            case"posicion":return this.posicion;
+            case "estado":return this.estado;
+            default:return null;
+        }
     }
 }

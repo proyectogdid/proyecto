@@ -1,11 +1,13 @@
 package com.company.LN;
 
+import com.company.comun.itfProperty;
+
 /**
  * Esta clase va a gestionar los diferentes eventos o noticias
  * referidas a los jugadores. En concreto, en que estado se
  * encuentran tanto previamente como posteriórmente.
  */
-public class Evento {
+public class Evento implements itfProperty {
     /**
      * Atributo id del evento
      */
@@ -71,6 +73,22 @@ public class Evento {
 
     public void setEstadoPosterior(Estado estadoPosterior) {
         this.estadoPosterior = estadoPosterior;
+    }
+
+    /**
+     * metodo get property de la interfaz itfProperty
+     * @param prop
+     * @return
+     */
+    @Override
+    public Object getProperty(String prop) {
+        switch (prop){
+            case"id":return this.id;
+            case "estadoPrevio":return this.estadoPrevio;
+            case "estadoPosterior":return this.estadoPosterior;
+            case"jugador":return this.jugador;
+            default:return null;
+        }
     }
 }
 

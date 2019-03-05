@@ -1,5 +1,7 @@
 package com.company.LN;
 
+import com.company.comun.itfProperty;
+
 /**
  * Clase la cual se utilizará para determinar
  * las posiciones de los diferentes jugadores.
@@ -8,7 +10,7 @@ package com.company.LN;
  */
 
 
-public class Posicion {
+public class Posicion implements itfProperty {
     /**
      * Atributo id de la posición
      */
@@ -46,5 +48,19 @@ public class Posicion {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    /**
+     * metodo get property de la interfaz itfProperty
+     * @param prop
+     * @return
+     */
+    @Override
+    public Object getProperty(String prop) {
+        switch (prop){
+            case"id":return this.id;
+            case"nombre":return this.nombre;
+            default:return null;
+        }
     }
 }

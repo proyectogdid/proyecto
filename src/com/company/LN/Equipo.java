@@ -1,5 +1,7 @@
 package com.company.LN;
 
+import com.company.comun.itfProperty;
+
 import java.util.ArrayList;
 
 /**
@@ -7,7 +9,7 @@ import java.util.ArrayList;
  * y el patrocinador vamos a añadir un atributo jugadores para
  * gestionar la plantilla de cada equipo.
  */
-public class Equipo {
+public class Equipo implements itfProperty {
     /**
      * Atributo id del equipo
      */
@@ -70,5 +72,20 @@ public class Equipo {
 
     public void setJugadores(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
+    }
+    /**
+     * metodo get property de la interfaz itfProperty
+     * @param prop
+     * @return
+     */
+    @Override
+    public Object getProperty(String prop) {
+        switch (prop){
+            case "id":return this.id;
+            case "nombre":return  this.nombre;
+            case "patrocinador":return this.patrocinador;
+            case "jugadores":return this.jugadores;
+            default:return null;
+        }
     }
 }

@@ -1,9 +1,11 @@
 package com.company.LN;
 
+import com.company.comun.itfProperty;
+
 /**
  * clase para gestionar las cuentas de usuario
  */
-public class Usuario {
+public class Usuario implements itfProperty {
     /**
      * atributo id para el usuario
      */
@@ -77,6 +79,21 @@ public class Usuario {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+    /**
+     * metodo get property de la interfaz itfProperty
+     * @param prop
+     * @return
+     */
+    @Override
+    public Object getProperty(String prop) {
+        switch (prop){
+            case"id":return this.id;
+            case"username":return this.username;
+            case"contrasena":return this.contrasena;
+            case"tipo":return this.tipo;
+            default:return null;
+        }
     }
 
 }

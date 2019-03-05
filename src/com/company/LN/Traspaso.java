@@ -1,10 +1,12 @@
 package com.company.LN;
 
+import com.company.comun.itfProperty;
+
 /**
  * clase que gestionara los traspasos de los jugadores entre distintos equipos
  * teniendo como atributos el equipo anterior y posterior para poder guardar un historico de la trayectoria
  */
-public class Traspaso {
+public class Traspaso implements itfProperty {
     /**
      * atributo id del traspaso
      */
@@ -83,5 +85,22 @@ public class Traspaso {
 
     public void setEquipoPosterior(Equipo equipoPosterior) {
         this.equipoPosterior = equipoPosterior;
+    }
+    /**
+     * metodo get property de la interfaz itfProperty
+     * @param prop
+     * @return
+     */
+    @Override
+    public Object getProperty(String prop) {
+        switch (prop){
+            case"id":return this.id;
+            case"precio":return this.precio;
+            case "jugador":return this.jugador;
+            case "equipoPrevio":return this.equipoPrevio;
+            case "equipoPosterior":return this.equipoPosterior;
+
+            default:return null;
+        }
     }
 }

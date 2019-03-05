@@ -1,5 +1,7 @@
 package com.company.LN;
 
+import com.company.comun.itfProperty;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -7,7 +9,7 @@ import java.util.Date;
  * Esta clase gestiona las temporadas que almacenara nuestra applicacion
  * ademas de esto añadiremos un atributo que almacene los partidos de la temporada
  */
-public class Temporada {
+public class Temporada implements itfProperty {
     /**
      * atributo id de la temporada
      */
@@ -55,5 +57,19 @@ public class Temporada {
 
     public void setPartidos(ArrayList<Partido> partidos) {
         this.partidos = partidos;
+    }
+    /**
+     * metodo get property de la interfaz itfProperty
+     * @param prop
+     * @return
+     */
+    @Override
+    public Object getProperty(String prop) {
+        switch (prop){
+            case"id":return this.id;
+            case"ano":return this.ano;
+            case"partidos":return this.partidos;
+            default:return null;
+        }
     }
 }
