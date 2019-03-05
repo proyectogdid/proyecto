@@ -1,10 +1,12 @@
 package com.company.LN;
 
+import com.company.comun.itfProperty;
+
 /**
  * Clase para gestionar los campos en los que se juegan los partidos
  * guardando su nombre, dirección y aforo
  */
-public class Campo {
+public class Campo implements itfProperty {
     /**
      * Atributo id del campo
       */
@@ -112,5 +114,24 @@ public class Campo {
 
     public void setAforo(int aforo) {
         this.aforo = aforo;
+    }
+
+    /**
+     * metodo get property de la interfaz itfProperty
+     * @param prop
+     * @return
+     */
+    @Override
+    public Object getProperty(String prop) {
+        switch (prop){
+            case "id":return this.id;
+            case "nombre":return this.nombre;
+            case "ciudad":return this.ciudad;
+            case "calle":return this.calle;
+            case "numero":return this.numero;
+            case "cp":return this.cp;
+            case "aforo":return this.aforo;
+            default:return null;
+        }
     }
 }
