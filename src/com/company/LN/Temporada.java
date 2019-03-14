@@ -1,7 +1,9 @@
 package com.company.LN;
 
 import com.company.comun.itfProperty;
-
+import static com.company.comun.clsConstantes.TEMPORADA_ID;
+import static com.company.comun.clsConstantes.TEMPORADA_ANO;
+import static com.company.comun.clsConstantes.TEMPORADA_PARTIDOS;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -66,9 +68,9 @@ public class Temporada implements itfProperty {
     @Override
     public Object getProperty(String prop) {
         switch (prop){
-            case"id":return this.id;
-            case"ano":return this.ano;
-            case"partidos":return this.partidos;
+            case TEMPORADA_ID:return this.id;
+            case TEMPORADA_ANO:return this.ano;
+            case TEMPORADA_PARTIDOS:return this.partidos;
             default:return null;
         }
     }

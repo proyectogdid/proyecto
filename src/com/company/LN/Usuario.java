@@ -2,6 +2,11 @@ package com.company.LN;
 
 import com.company.comun.itfProperty;
 
+import static com.company.comun.clsConstantes.USUARIO_ID;
+import static com.company.comun.clsConstantes.USUARIO_USERNAME;
+import static com.company.comun.clsConstantes.USUARIO_CONTRASENA;
+import static com.company.comun.clsConstantes.USUARIO_TIPO;
+
 /**
  * clase para gestionar las cuentas de usuario
  */
@@ -88,10 +93,10 @@ public class Usuario implements itfProperty {
     @Override
     public Object getProperty(String prop) {
         switch (prop){
-            case"id":return this.id;
-            case"username":return this.username;
-            case"contrasena":return this.contrasena;
-            case"tipo":return this.tipo;
+            case USUARIO_ID:return this.id;
+            case USUARIO_USERNAME:return this.username;
+            case USUARIO_CONTRASENA:return this.contrasena;
+            case USUARIO_TIPO:return this.tipo;
             default:return null;
         }
     }

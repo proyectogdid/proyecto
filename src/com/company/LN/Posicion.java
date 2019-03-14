@@ -2,6 +2,9 @@ package com.company.LN;
 
 import com.company.comun.itfProperty;
 
+import static com.company.comun.clsConstantes.POSICION_ID;
+import static com.company.comun.clsConstantes.POSICION_NOMBRE;
+
 /**
  * Clase la cual se utilizará para determinar
  * las posiciones de los diferentes jugadores.
@@ -58,8 +61,8 @@ public class Posicion implements itfProperty {
     @Override
     public Object getProperty(String prop) {
         switch (prop){
-            case"id":return this.id;
-            case"nombre":return this.nombre;
+            case POSICION_ID:return this.id;
+            case POSICION_NOMBRE:return this.nombre;
             default:return null;
         }
     }

@@ -1,7 +1,11 @@
 package com.company.LN;
 
 import com.company.comun.itfProperty;
-
+import static com.company.comun.clsConstantes.TRASPASO_ID;
+import static com.company.comun.clsConstantes.TRASPASO_PRECIO;
+import static com.company.comun.clsConstantes.TRASPASO_JUGADOR;
+import static com.company.comun.clsConstantes.TRASPASO_EQUIPO_PREVIO;
+import static com.company.comun.clsConstantes.TRASPASO_EQUIPO_POSTERIOR;
 /**
  * clase que gestionara los traspasos de los jugadores entre distintos equipos
  * teniendo como atributos el equipo anterior y posterior para poder guardar un historico de la trayectoria
@@ -94,11 +98,11 @@ public class Traspaso implements itfProperty {
     @Override
     public Object getProperty(String prop) {
         switch (prop){
-            case"id":return this.id;
-            case"precio":return this.precio;
-            case "jugador":return this.jugador;
-            case "equipoPrevio":return this.equipoPrevio;
-            case "equipoPosterior":return this.equipoPosterior;
+            case TRASPASO_ID:return this.id;
+            case TRASPASO_PRECIO:return this.precio;
+            case TRASPASO_JUGADOR:return this.jugador;
+            case TRASPASO_EQUIPO_PREVIO:return this.equipoPrevio;
+            case TRASPASO_EQUIPO_POSTERIOR:return this.equipoPosterior;
 
             default:return null;
         }
