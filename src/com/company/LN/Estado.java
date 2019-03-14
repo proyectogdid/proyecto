@@ -1,6 +1,8 @@
 package com.company.LN;
 
 import com.company.comun.itfProperty;
+import static com.company.comun.clsConstantes.ESTADO_ID;
+import static com.company.comun.clsConstantes.ESTADO_NOMBRE;
 
 /** Esta clase va a gestionar los posibles estados
  *  de los difernetes jugadores, teniendo como atributos
@@ -54,8 +56,8 @@ public class Estado implements itfProperty {
     @Override
     public Object getProperty(String prop) {
         switch (prop){
-            case "id":return this.id;
-            case"nombre":return this.nombre;
+            case ESTADO_ID:return this.id;
+            case ESTADO_NOMBRE:return this.nombre;
             default:return null;
         }
     }

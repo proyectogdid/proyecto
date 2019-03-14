@@ -2,6 +2,12 @@ package com.company.LN;
 
 import com.company.comun.itfProperty;
 
+import static com.company.comun.clsConstantes.EVENTO_JUGADOR;
+import static com.company.comun.clsConstantes.EVENTO_ID;
+import static com.company.comun.clsConstantes.EVENTO_ESTADO_PREVIO;
+import static com.company.comun.clsConstantes.EVENTO_ESTADO_POSTERIOR;
+
+
 /**
  * Esta clase va a gestionar los diferentes eventos o noticias
  * referidas a los jugadores. En concreto, en que estado se
@@ -83,10 +89,10 @@ public class Evento implements itfProperty {
     @Override
     public Object getProperty(String prop) {
         switch (prop){
-            case"id":return this.id;
-            case "estadoPrevio":return this.estadoPrevio;
-            case "estadoPosterior":return this.estadoPosterior;
-            case"jugador":return this.jugador;
+            case EVENTO_ID:return this.id;
+            case EVENTO_ESTADO_PREVIO:return this.estadoPrevio;
+            case EVENTO_ESTADO_POSTERIOR:return this.estadoPosterior;
+            case EVENTO_JUGADOR:return this.jugador;
             default:return null;
         }
     }

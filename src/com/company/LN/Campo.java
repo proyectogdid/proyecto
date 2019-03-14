@@ -2,6 +2,14 @@ package com.company.LN;
 
 import com.company.comun.itfProperty;
 
+import static com.company.comun.clsConstantes.CAMPO_AFORO;
+import static com.company.comun.clsConstantes.CAMPO_CALLE;
+import static com.company.comun.clsConstantes.CAMPO_CIUDAD;
+import static com.company.comun.clsConstantes.CAMPO_CP;
+import static com.company.comun.clsConstantes.CAMPO_ID;
+import static com.company.comun.clsConstantes.CAMPO_NOMBRE;
+import static com.company.comun.clsConstantes.CAMPO_NUMERO;
+
 /**
  * Clase para gestionar los campos en los que se juegan los partidos
  * guardando su nombre, dirección y aforo
@@ -124,13 +132,13 @@ public class Campo implements itfProperty {
     @Override
     public Object getProperty(String prop) {
         switch (prop){
-            case "id":return this.id;
-            case "nombre":return this.nombre;
-            case "ciudad":return this.ciudad;
-            case "calle":return this.calle;
-            case "numero":return this.numero;
-            case "cp":return this.cp;
-            case "aforo":return this.aforo;
+            case CAMPO_ID:return this.id;
+            case CAMPO_NOMBRE:return this.nombre;
+            case CAMPO_CIUDAD:return this.ciudad;
+            case CAMPO_CALLE:return this.calle;
+            case CAMPO_NUMERO:return this.numero;
+            case CAMPO_CP:return this.cp;
+            case CAMPO_AFORO:return this.aforo;
             default:return null;
         }
     }

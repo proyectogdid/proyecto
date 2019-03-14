@@ -4,6 +4,12 @@ import com.company.comun.itfProperty;
 
 import java.util.ArrayList;
 
+import static com.company.comun.clsConstantes.EQUIPO_ID;
+import static com.company.comun.clsConstantes.EQUIPO_JUGADORES;
+import static com.company.comun.clsConstantes.EQUIPO_NOMBRE;
+import static com.company.comun.clsConstantes.EQUIPO_PATROCINADOR;
+
+
 /**
  * Clase para gestionar los equipos de nuestra liga ademas del
  * y el patrocinador vamos a añadir un atributo jugadores para
@@ -81,10 +87,10 @@ public class Equipo implements itfProperty {
     @Override
     public Object getProperty(String prop) {
         switch (prop){
-            case "id":return this.id;
-            case "nombre":return  this.nombre;
-            case "patrocinador":return this.patrocinador;
-            case "jugadores":return this.jugadores;
+            case EQUIPO_ID:return this.id;
+            case EQUIPO_NOMBRE:return  this.nombre;
+            case EQUIPO_PATROCINADOR:return this.patrocinador;
+            case EQUIPO_JUGADORES:return this.jugadores;
             default:return null;
         }
     }

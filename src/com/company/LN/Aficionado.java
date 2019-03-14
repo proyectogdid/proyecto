@@ -2,6 +2,8 @@ package com.company.LN;
 
 import com.company.comun.itfProperty;
 
+import static com.company.comun.clsConstantes.AFICIONADO_FAVORITO;
+
 /**
  * clase para gestionar los usuarios no administradores
  * es decir un usuario cualquiera que podra elegir su equipo favorito
@@ -45,7 +47,7 @@ public class Aficionado extends  Usuario implements itfProperty {
     @Override
     public Object getProperty(String prop) {
         switch (prop){
-            case"favorito":return this.favorito;
+            case AFICIONADO_FAVORITO:return this.favorito;
             default:return null;
         }
     }
