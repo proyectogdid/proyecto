@@ -1,4 +1,4 @@
-package LP;
+package com.company.LP;
 
 import java.io.*;
 

@@ -1,6 +1,6 @@
 package com.company.LP;
 
-
+import com.company.LP.clsUtilidades;
 import com.company.LN.Campo;
 import com.company.LN.GestorLN;
 
@@ -22,7 +22,7 @@ public class Menu {
             System.out.println("1.-Introducir campo");
             System.out.println("2.-Ver campo");
             System.out.println("3.-Salir");
-            op = LP.clsUtilidades.leerEntero();
+            op = clsUtilidades.leerEntero();
 
             switch (op) {
 
@@ -60,25 +60,25 @@ public class Menu {
 
 
         System.out.println("Identificador:");
-        id = LP.clsUtilidades.leerEntero();
+        id = clsUtilidades.leerEntero();
 
         System.out.println("Nombre:");
-        nombre = LP.clsUtilidades.leerCadena();
+        nombre = clsUtilidades.leerCadena();
 
         System.out.println("Ciudad:");
-        ciudad = LP.clsUtilidades.leerCadena();
+        ciudad = clsUtilidades.leerCadena();
 
         System.out.println("Calle:");
-        calle = LP.clsUtilidades.leerCadena();
+        calle = clsUtilidades.leerCadena();
 
         System.out.println("Numero:");
-        numero = LP.clsUtilidades.leerCadena();
+        numero = clsUtilidades.leerCadena();
 
         System.out.println("CP");
-        cp = LP.clsUtilidades.leerCadena();
+        cp = clsUtilidades.leerCadena();
 
         System.out.println("Aforo:");
-        aforo = LP.clsUtilidades.leerEntero();
+        aforo = clsUtilidades.leerEntero();
 
 
         gln.anadirCampo(id, nombre, ciudad, calle, numero, cp, aforo);
