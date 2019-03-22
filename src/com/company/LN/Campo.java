@@ -68,6 +68,15 @@ public class Campo implements itfProperty {
         this.aforo = aforo;
     }
 
+    public Campo(String nombre, String ciudad, String calle, String numero, String cp, int aforo) {
+        this.nombre = nombre;
+        this.ciudad = ciudad;
+        this.calle = calle;
+        this.numero = numero;
+        this.cp = cp;
+        this.aforo = aforo;
+    }
+
     public int getId() {
         return id;
     }

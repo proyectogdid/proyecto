@@ -81,7 +81,7 @@ public class Menu {
         aforo = clsUtilidades.leerEntero();
 
 
-        gln.anadirCampo(id, nombre, ciudad, calle, numero, cp, aforo);
+        gln.anadirCampo( nombre, ciudad, calle, numero, cp, aforo);
 
 
     }
