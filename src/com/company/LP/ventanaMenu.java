@@ -1,16 +1,12 @@
 package com.company.LP;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.FlowLayout;
-import javax.swing.JButton;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
+import java.awt.*;
 
+/**
+ * Esta clase se va a utilizar para sacar por pantalla la ventana del menu principal de la aplicación
+ */
 public class ventanaMenu extends JFrame {
 
 	private JPanel contentPane;

@@ -23,6 +23,12 @@ public class clsDatos {
     public int insertarCampo(String nombre,String ciudad,String calle,String numero,String cp, int aforo)throws Exception {
         return CampoBD.insertar(nombre, ciudad, calle, numero, cp, aforo);
     }
+
+    /**
+     * Metpdo para buscar campos
+     * @return
+     * @throws Exception
+     */
     public ArrayList<Campo>buscarCampos()throws Exception{
         return CampoBD.getAll();
     }
