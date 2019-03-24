@@ -1,8 +1,10 @@
 package com.company.LN;
 
 import com.company.LD.clsDatos;
+import com.company.comun.itfProperty;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 
 /**
@@ -47,14 +49,18 @@ public class GestorLN {
      *
      * @return
      */
-    public ArrayList<Campo> leerCampos() {
+    public ArrayList<itfProperty> leerCampos() {
+        ArrayList<itfProperty> retorno=new ArrayList<>();
         try {
             campos = objDatos.buscarCampos();
+            for (Campo c:campos) {
+                retorno.add(c);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return campos;
+        return retorno;
     }
 
 }

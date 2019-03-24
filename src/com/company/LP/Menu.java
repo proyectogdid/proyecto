@@ -2,8 +2,11 @@ package com.company.LP;
 
 import com.company.LN.Campo;
 import com.company.LN.GestorLN;
+import com.company.comun.itfProperty;
 
 import java.util.ArrayList;
+
+import static com.company.comun.clsConstantes.*;
 
 /**
  * Clase que gestionara la interaccion con el usuario
@@ -83,17 +86,17 @@ public class Menu {
      * @param campos
      */
 
-    public static void visualizarCampo(ArrayList<Campo> campos) {
+    public static void visualizarCampo(ArrayList<itfProperty> campos) {
 
-        for (Campo a : campos) {
+        for (itfProperty a : campos) {
 
-            System.out.println("ID:" + a.getId());
-            System.out.println("Nombre:" + a.getNombre());
-            System.out.println("Ciudad:" + a.getCiudad());
-            System.out.println("Calle:" + a.getCalle());
-            System.out.println("Numero:" + a.getNumero());
-            System.out.println("CP:" + a.getCp());
-            System.out.println("Aforo:" + a.getAforo());
+            System.out.println("ID:" + a.getProperty(CAMPO_ID));
+            System.out.println("Nombre:" + a.getProperty(CAMPO_NOMBRE));
+            System.out.println("Ciudad:" + a.getProperty(CAMPO_CIUDAD));
+            System.out.println("Calle:" + a.getProperty(CAMPO_CALLE));
+            System.out.println("Numero:" + a.getProperty(CAMPO_NUMERO));
+            System.out.println("CP:" + a.getProperty(CAMPO_CP));
+            System.out.println("Aforo:" + a.getProperty(CAMPO_AFORO));
             System.out.println();
 
         }
