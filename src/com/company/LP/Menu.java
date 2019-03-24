@@ -48,18 +48,11 @@ public class Menu {
     public static void altaCampo(GestorLN gln) {
         String nombre;
         String ciudad;
-        int id;
         String calle;
         String numero;
         String cp;
         int aforo;
 
-
-
-
-
-        System.out.println("Identificador:");
-        id = clsUtilidades.leerEntero();
 
         System.out.println("Nombre:");
         nombre = clsUtilidades.leerCadena();

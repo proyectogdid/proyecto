@@ -38,9 +38,6 @@ public class GestorLN {
             e.printStackTrace();
         }
         Collections.sort(campos);
-        for (Campo c : campos) {
-            System.out.println(c);
-        }
 
     }
 
