@@ -1,5 +1,8 @@
 package com.company.comun;
 
+/**
+ * Clase que se va a utilizar para asignar constantes a las diferentes clases del paquete LN
+ */
 public class clsConstantes {
 
     public static final String AFICIONADO_FAVORITO = "favorito";

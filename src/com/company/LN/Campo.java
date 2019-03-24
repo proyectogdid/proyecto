@@ -14,7 +14,7 @@ import static com.company.comun.clsConstantes.CAMPO_NUMERO;
  * Clase para gestionar los campos en los que se juegan los partidos
  * guardando su nombre, dirección y aforo
  */
-public class Campo implements itfProperty {
+public class Campo implements itfProperty, Comparable<Campo> {
     /**
      * Atributo id del campo
       */
@@ -151,4 +151,12 @@ public class Campo implements itfProperty {
             default:return null;
         }
     }
-}
+
+    @Override
+    public int compareTo(Campo o) {
+        return 0;
+    }
+
+    }
+
+

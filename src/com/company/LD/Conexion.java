@@ -15,7 +15,11 @@ import static com.company.LD.constantesBD.PASS;
  * Clase que va gestionar la comunicación entre la base de datos creada y necesaria con LD
  */
 public abstract class Conexion {
-
+    /**
+     * Metodo empleado para conectarnos con la BD
+     * @return
+     * @throws SQLException
+     */
     public static Connection conectarBD() throws SQLException {
         //Ruta de la base de datos (jdbc:mysql://localhost:3306/alumnoBD?useTimezone=true&serverTimezone=GMT&useSSL=false)
         String url="jdbc:mysql://" + DIRECCION + ":" + PUERTO + "/" + NAME + "?useTimezone=true&serverTimezone=GMT&useSSL=false";
@@ -24,6 +28,11 @@ public abstract class Conexion {
         return objConn;
     }
 
+    /**
+     * Metodo para desconectarnos de la BD
+     * @param conexion
+     * @throws SQLException
+     */
 	public static void desconectarBD(Connection conexion)throws SQLException {
         	conexion.close();
 	}

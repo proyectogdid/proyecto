@@ -1,6 +1,5 @@
 package com.company.LP;
 
-import com.company.LP.clsUtilidades;
 import com.company.LN.Campo;
 import com.company.LN.GestorLN;
 
