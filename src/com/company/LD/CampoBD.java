@@ -19,8 +19,9 @@ public class CampoBD extends Conexion{
         sentencia.setString(5,cp);
         sentencia.setInt(6,aforo);
         sentencia.execute();
+        int retorno=sentencia.getUpdateCount();
         desconectarBD(con);
-        return  sentencia.getUpdateCount();
+        return  retorno;
     }
     public static ArrayList<Campo> getAll()throws Exception{
         Connection con=conectarBD();

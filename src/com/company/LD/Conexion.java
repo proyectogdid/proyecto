@@ -22,7 +22,7 @@ public abstract class Conexion {
      */
     public static Connection conectarBD() throws SQLException {
         //Ruta de la base de datos (jdbc:mysql://localhost:3306/alumnoBD?useTimezone=true&serverTimezone=GMT&useSSL=false)
-        String url="jdbc:mysql://" + DIRECCION + ":" + PUERTO + "/" + NAME + "?useTimezone=true&serverTimezone=GMT&useSSL=false";
+        String url="jdbc:mysql://" + DIRECCION + ":" + PUERTO + "/" + NAME + "?useTimezone=true&serverTimezone=GMT&useSSL=false&AllowPublicKeyRetrieval=true";
         Connection objConn = null;
         objConn = DriverManager.getConnection (url, USUARIO, PASS);
         return objConn;
