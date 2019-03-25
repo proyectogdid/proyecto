@@ -3,9 +3,12 @@ package com.company.LN;
 import com.company.LD.clsDatos;
 import com.company.comun.itfProperty;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+
+import static com.company.comun.clsConstantes.*;
 
 /**
  * Clase que va a gestionar la comunicación entre el paquete LN y el paquete LP
@@ -50,9 +53,10 @@ public class GestorLN {
      * @return
      */
     public ArrayList<itfProperty> leerCampos() {
+        System.out.println("entro aqui");
         ArrayList<itfProperty> retorno=new ArrayList<>();
         try {
-            campos = objDatos.buscarCampos();
+
             for (Campo c:campos) {
                 retorno.add(c);
             }
@@ -61,6 +65,22 @@ public class GestorLN {
         }
 
         return retorno;
+    }
+
+    public void cargarDatos(){
+        try{
+            ResultSet rs =objDatos.buscarCampos();
+            while(rs.next()){
+
+                Campo c =new Campo();
+                c.resultSetToCampo(rs);
+                campos.add(c);
+            }
+        }catch (Exception e){
+            javax.swing.JOptionPane.showMessageDialog(null,"error al cargar los datos");
+            e.printStackTrace();
+        }
+
     }
 
 }

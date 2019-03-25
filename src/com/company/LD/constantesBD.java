@@ -10,4 +10,5 @@ public class constantesBD {
     public final static String PUERTO="3306";
     public final static String NAME="mydb";
     public final static String DIRECCION="localhost";
+
 }

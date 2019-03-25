@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 
 public class CampoBD extends Conexion{
+    private static final String template="cmp.id, cmp.nombre, cmp.ciudad, cmp.calle, cmp.numero, cmp.cp, cmp.cantidad";
     /**
      * Metodo para insertar información sobre los campos en la BD
      * @param nombre
@@ -44,28 +45,11 @@ public class CampoBD extends Conexion{
      * @return
      * @throws Exception
      */
-    public static ArrayList<Campo> getAll()throws Exception{
-        Connection con=conectarBD();
-        Statement stt=con.createStatement();
-        ResultSet rs=stt.executeQuery("SELECT * FROM campos");
-
-        ArrayList<Campo> retorno=new ArrayList<>();
-        while (rs.next()){
-      
-            Campo c =new Campo();
-
-            c.setId(rs.getInt("id"));
-            c.setNombre(rs.getString("nombre"));
-            c.setCiudad(rs.getString("ciudad"));
-            c.setCalle(rs.getString("calle"));
-            c.setNumero(rs.getString("numero"));
-            c.setCp(rs.getString("cp"));
-            c.setAforo(rs.getInt("cantidad"));
-
-            retorno.add(c);
-        }
-        desconectarBD(con);
-        return retorno;
+    public static ResultSet getAll()throws Exception{
+        String query="SELECT "+template+" FROM campos cmp";
+        System.out.println(query);
+        ResultSet rs =select(query);
+        return rs;
     }
 
 }

@@ -2,13 +2,9 @@ package com.company.LN;
 
 import com.company.comun.itfProperty;
 
-import static com.company.comun.clsConstantes.CAMPO_AFORO;
-import static com.company.comun.clsConstantes.CAMPO_CALLE;
-import static com.company.comun.clsConstantes.CAMPO_CIUDAD;
-import static com.company.comun.clsConstantes.CAMPO_CP;
-import static com.company.comun.clsConstantes.CAMPO_ID;
-import static com.company.comun.clsConstantes.CAMPO_NOMBRE;
-import static com.company.comun.clsConstantes.CAMPO_NUMERO;
+import java.sql.ResultSet;
+
+import static com.company.comun.clsConstantes.*;
 
 /**
  * Clase para gestionar los campos en los que se juegan los partidos
@@ -68,6 +64,16 @@ public class Campo implements itfProperty, Comparable<Campo> {
         this.aforo = aforo;
     }
 
+    /**
+     * constructor
+     * @param nombre
+     * @param ciudad
+     * @param calle
+     * @param numero
+     * @param cp
+     * @param aforo
+     */
+
     public Campo(String nombre, String ciudad, String calle, String numero, String cp, int aforo) {
         this.nombre = nombre;
         this.ciudad = ciudad;
@@ -75,6 +81,16 @@ public class Campo implements itfProperty, Comparable<Campo> {
         this.numero = numero;
         this.cp = cp;
         this.aforo = aforo;
+    }
+
+    public void resultSetToCampo(ResultSet rs)throws Exception{
+        id=rs.getInt(BD_CAMPO_ID);
+        aforo=rs.getInt(BD_CAMPO_AFORO);
+        nombre=rs.getString(BD_CAMPO_NOMBRE);
+        ciudad=rs.getString(BD_CAMPO_CIUDAD);
+        calle=rs.getString(BD_CAMPO_CALLE);
+        numero=rs.getString(BD_CAMPO_NUMERO);
+        cp=rs.getString(BD_CAMPO_CP);
     }
 
     public int getId() {

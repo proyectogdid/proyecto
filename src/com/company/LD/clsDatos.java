@@ -2,6 +2,7 @@ package com.company.LD;
 
 import com.company.LN.Campo;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 /**
@@ -29,7 +30,7 @@ public class clsDatos {
      * @return
      * @throws Exception
      */
-    public ArrayList<Campo>buscarCampos()throws Exception{
+    public ResultSet buscarCampos()throws Exception{
         return CampoBD.getAll();
     }
 }

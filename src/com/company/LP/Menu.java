@@ -18,6 +18,7 @@ public class Menu {
      */
     public static void menu() {
         GestorLN gln = new GestorLN();
+        gln.cargarDatos();
         int op = 0;
         do {
             System.out.println("Eliga:");

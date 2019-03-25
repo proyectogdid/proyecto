@@ -16,6 +16,15 @@ public class clsConstantes {
     public static final String CAMPO_CP = "cp";
     public static final String CAMPO_AFORO = "aforo";
 
+    public static final String BD_CAMPO_ID = "cmp.id";
+    public static final String BD_CAMPO_NOMBRE = "cmp.nombre";
+    public static final String BD_CAMPO_CIUDAD = "cmp.ciudad";
+    public static final String BD_CAMPO_CALLE = "cmp.calle";
+    public static final String BD_CAMPO_NUMERO = "cmp.numero";
+    public static final String BD_CAMPO_CP = "cmp.cp";
+    public static final String BD_CAMPO_AFORO = "cmp.cantidad";
+
+
     public static final String EQUIPO_ID ="id";
     public static final String EQUIPO_NOMBRE ="nombre";
     public static final String EQUIPO_PATROCINADOR ="patrocinador";
@@ -66,5 +75,7 @@ public class clsConstantes {
     public static final String USUARIO_USERNAME="username";
     public static final String USUARIO_CONTRASENA="contrasena";
     public static final String USUARIO_TIPO="tipo";
+
+
 
 }
