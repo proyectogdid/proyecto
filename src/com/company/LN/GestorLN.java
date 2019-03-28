@@ -36,9 +36,11 @@ public class GestorLN {
      */
     public void anadirCampo(String nombre, String ciudad, String calle, String numero, String cp, int aforo) {
         try {
+            objDatos.conectarBD();
             Campo campo = new Campo(nombre, ciudad, calle, numero, cp, aforo);
             campos.add(campo);
             campo.setId(objDatos.insertarCampo(nombre, ciudad, calle, numero, cp, aforo));
+            objDatos.desconectarBD();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -69,6 +71,7 @@ public class GestorLN {
 
     public void cargarDatos(){
         try{
+            objDatos.conectarBD();
             ResultSet rs =objDatos.buscarCampos();
             while(rs.next()){
 
@@ -76,6 +79,8 @@ public class GestorLN {
                 c.resultSetToCampo(rs);
                 campos.add(c);
             }
+
+            objDatos.desconectarBD();
         }catch (Exception e){
             javax.swing.JOptionPane.showMessageDialog(null,"error al cargar los datos");
             e.printStackTrace();

@@ -2,14 +2,45 @@ package com.company.LD;
 
 import com.company.LN.Campo;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+
+import static com.company.LD.constantesBD.*;
 
 /**
  * clase encargada de gestionar comunicacion entre LD y LN
  */
 public class clsDatos {
+    /**
+     * atributo de conexion con la BBDD
+     */
+    private Connection con;
 
+
+    /**
+     * Metodo empleado para conectarnos con la BD
+     * @return
+     * @throws SQLException
+     */
+    public void conectarBD() throws SQLException {
+        //Ruta de la base de datos (jdbc:mysql://localhost:3306/alumnoBD?useTimezone=true&serverTimezone=GMT&useSSL=false)
+        String url="jdbc:mysql://" + DIRECCION + ":" + PUERTO + "/" + NAME + "?useTimezone=true&serverTimezone=GMT&useSSL=false&allowPublicKeyRetrieval=true";
+        //Connection co = null;
+        con = DriverManager.getConnection (url, USUARIO, PASS);
+        //return objConn;
+    }
+
+    /**
+     * Metodo para desconectarnos de la BD
+     * @param
+     * @throws SQLException
+     */
+    public void desconectarBD()throws SQLException {
+        con.close();
+    }
     /**
      * metodo para insertar un nuevo campo
      * @param nombre
@@ -22,7 +53,7 @@ public class clsDatos {
      * @throws Exception
      */
     public int insertarCampo(String nombre,String ciudad,String calle,String numero,String cp, int aforo)throws Exception {
-        return CampoBD.insertar(nombre, ciudad, calle, numero, cp, aforo);
+        return CampoBD.insertar(con,nombre, ciudad, calle, numero, cp, aforo);
     }
 
     /**
@@ -31,6 +62,6 @@ public class clsDatos {
      * @throws Exception
      */
     public ResultSet buscarCampos()throws Exception{
-        return CampoBD.getAll();
+        return CampoBD.getAll(con);
     }
 }

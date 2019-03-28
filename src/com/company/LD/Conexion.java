@@ -13,37 +13,16 @@ import static com.company.LD.constantesBD.PASS;
  * Clase que va gestionar la comunicación entre la base de datos creada y necesaria con LD
  */
 public abstract class Conexion {
-    /**
-     * Metodo empleado para conectarnos con la BD
-     * @return
-     * @throws SQLException
-     */
-    public static Connection conectarBD() throws SQLException {
-        //Ruta de la base de datos (jdbc:mysql://localhost:3306/alumnoBD?useTimezone=true&serverTimezone=GMT&useSSL=false)
-        String url="jdbc:mysql://" + DIRECCION + ":" + PUERTO + "/" + NAME + "?useTimezone=true&serverTimezone=GMT&useSSL=false&AllowPublicKeyRetrieval=true";
-        Connection objConn = null;
-        objConn = DriverManager.getConnection (url, USUARIO, PASS);
-        return objConn;
-    }
 
-    /**
-     * Metodo para desconectarnos de la BD
-     * @param conexion
-     * @throws SQLException
-     */
-	public static void desconectarBD(Connection conexion)throws SQLException {
-        	conexion.close();
-	}
 
     /**
      * metodo generico para ejecutar queries evitando el codigo repetido
-     * @param query
+     * @param con, query
      * @return
      * @throws Exception
      */
 
-	public static ResultSet select(String query) throws Exception{
-        Connection con=conectarBD();
+	public static ResultSet select(Connection con, String query) throws Exception{
         Statement stt=con.createStatement();
         ResultSet rs=stt.executeQuery(query);
 
@@ -57,8 +36,7 @@ public abstract class Conexion {
      * @return
      * @throws Exception
      */
-    public static ResultSet query(String query, Object[] parametros)throws Exception{
-        Connection con=conectarBD();
+    public static ResultSet query(Connection con,String query, Object[] parametros)throws Exception{
         PreparedStatement stt=con.prepareStatement(query);
         cargarDatos(stt,parametros);
         ResultSet rs=stt.executeQuery(query);
@@ -67,7 +45,23 @@ public abstract class Conexion {
     }
 
     /**
+     * Metodo generico para llamar a inserts ahorrando el codigo repetido
+     * @param con
+     * @param query sentencia sql a ejecutar
+     * @param parametros
+     * @return id del objeto insertado
+     * @throws Exception
+     */
+    public static int insert(Connection con, String query, Object[] parametros)throws Exception{
+        PreparedStatement stt=con.prepareStatement(query);
+        cargarDatos(stt,parametros);
+        stt.execute();
+        return stt.getUpdateCount();
+    }
+
+    /**
      * metodo para cargar datos dentro de un prepared statement
+     * usando un array de clase object y un prepared statement para poder cargar los datos en el Prepared statement
      * @param stt
      * @param parametros
      * @throws Exception

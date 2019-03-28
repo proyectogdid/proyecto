@@ -25,9 +25,8 @@ public class CampoBD extends Conexion{
      * @return
      * @throws Exception
      */
-    public static int insertar(String nombre,String ciudad,String calle,String numero,String cp, int aforo ) throws Exception{
-        Connection con =conectarBD();
-        PreparedStatement sentencia=con.prepareStatement("INSERT INTO campos(nombre,ciudad,calle,numero,cp,cantidad)VALUES(?,?,?,?,?,?)");
+    public static int insertar(Connection con,String nombre,String ciudad,String calle,String numero,String cp, int aforo ) throws Exception{
+        /*PreparedStatement sentencia=con.prepareStatement("INSERT INTO campos(nombre,ciudad,calle,numero,cp,cantidad)VALUES(?,?,?,?,?,?)");
         sentencia.setString(1,nombre);
         sentencia.setString(2,ciudad);
         sentencia.setString(3,calle);
@@ -36,8 +35,9 @@ public class CampoBD extends Conexion{
         sentencia.setInt(6,aforo);
         sentencia.execute();
         int retorno=sentencia.getUpdateCount();
-        desconectarBD(con);
-        return  retorno;
+        return  retorno;*/
+        Object[] parametros={nombre,ciudad,calle,numero,cp,aforo};
+        return insert(con,"INSERT INTO campos(nombre,ciudad,calle,numero,cp,cantidad)VALUES(?,?,?,?,?,?)",parametros);
     }
 
     /**
@@ -45,10 +45,10 @@ public class CampoBD extends Conexion{
      * @return
      * @throws Exception
      */
-    public static ResultSet getAll()throws Exception{
+    public static ResultSet getAll(Connection con)throws Exception{
         String query="SELECT "+template+" FROM campos cmp";
         System.out.println(query);
-        ResultSet rs =select(query);
+        ResultSet rs =select(con,query);
         return rs;
     }
 
