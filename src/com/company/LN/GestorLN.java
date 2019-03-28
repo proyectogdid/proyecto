@@ -5,10 +5,7 @@ import com.company.comun.itfProperty;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-
-import static com.company.comun.clsConstantes.*;
 
 /**
  * Clase que va a gestionar la comunicación entre el paquete LN y el paquete LP
@@ -69,7 +66,7 @@ public class GestorLN {
         return retorno;
     }
 
-    public void cargarDatos(){
+    public void cargarDatosCampos(){
         try{
             objDatos.conectarBD();
             ResultSet rs =objDatos.buscarCampos();

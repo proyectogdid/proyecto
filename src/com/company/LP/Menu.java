@@ -1,6 +1,5 @@
 package com.company.LP;
 
-import com.company.LN.Campo;
 import com.company.LN.GestorLN;
 import com.company.comun.itfProperty;
 
@@ -18,7 +17,7 @@ public class Menu {
      */
     public static void menu() {
         GestorLN gln = new GestorLN();
-        gln.cargarDatos();
+        gln.cargarDatosCampos();
         int op = 0;
         do {
             System.out.println("Eliga:");

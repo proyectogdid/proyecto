@@ -4,10 +4,7 @@ import com.company.comun.itfProperty;
 
 import java.util.ArrayList;
 
-import static com.company.comun.clsConstantes.EQUIPO_ID;
-import static com.company.comun.clsConstantes.EQUIPO_JUGADORES;
-import static com.company.comun.clsConstantes.EQUIPO_NOMBRE;
-import static com.company.comun.clsConstantes.EQUIPO_PATROCINADOR;
+import static com.company.comun.clsConstantes.*;
 
 
 /**
@@ -33,7 +30,7 @@ public class Equipo implements itfProperty {
      */
     private ArrayList<Jugador> jugadores;
 
-    public Equipo() {
+    public Equipo(String nombre) {
     }
 
     /**
@@ -42,10 +39,12 @@ public class Equipo implements itfProperty {
      * @param nombre
      * @param patrocinador
      */
-    public Equipo(int id, String nombre, String patrocinador) {
+    public Equipo(int id, String nombre, String patrocinador, int partidosGanados) {
         this.id = id;
         this.nombre = nombre;
         this.patrocinador = patrocinador;
+
+
     }
 
     public int getId() {
