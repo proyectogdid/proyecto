@@ -1,18 +1,10 @@
 package com.company.LN;
 
 import com.company.comun.itfProperty;
-import static com.company.comun.clsConstantes.JUGADOR_ID;
-import static com.company.comun.clsConstantes.JUGADOR_NOMBRE;
-import static com.company.comun.clsConstantes.JUGADOR_APELLIDO1;
-import static com.company.comun.clsConstantes.JUGADOR_APELLIDO2;
-import static com.company.comun.clsConstantes.JUGADOR_FECHA_NACIMIENTO;
-import static com.company.comun.clsConstantes.JUGADOR_DORSAL;
-import static com.company.comun.clsConstantes.JUGADOR_TEXTO_CAMISETA;
-import static com.company.comun.clsConstantes.JUGADOR_EQUIPO;
-import static com.company.comun.clsConstantes.JUGADOR_POSICION;
-import static com.company.comun.clsConstantes.JUGADOR_ESTADO;
 
 import java.util.Date;
+
+import static com.company.comun.clsConstantes.*;
 
 /**
  * Clase para gestionar los datos del jugador
@@ -171,25 +163,38 @@ public class Jugador implements itfProperty {
     public void setEstado(Estado estado) {
         this.estado = estado;
     }
+
     /**
      * metodo get property de la interfaz itfProperty
+     *
      * @param prop
      * @return
      */
     @Override
     public Object getProperty(String prop) {
-        switch (prop){
-            case JUGADOR_ID:return this.id;
-            case JUGADOR_NOMBRE:return this.nombre;
-            case JUGADOR_APELLIDO1:return this.apellido1;
-            case JUGADOR_APELLIDO2:return this.apellido2;
-            case JUGADOR_FECHA_NACIMIENTO:return this.fechaNac;
-            case JUGADOR_DORSAL:return this.dorsal;
-            case JUGADOR_TEXTO_CAMISETA:return this.textoCamiseta;
-            case JUGADOR_EQUIPO:return this.equipo;
-            case JUGADOR_POSICION:return this.posicion;
-            case JUGADOR_ESTADO:return this.estado;
-            default:return null;
+        switch (prop) {
+            case JUGADOR_ID:
+                return this.id;
+            case JUGADOR_NOMBRE:
+                return this.nombre;
+            case JUGADOR_APELLIDO1:
+                return this.apellido1;
+            case JUGADOR_APELLIDO2:
+                return this.apellido2;
+            case JUGADOR_FECHA_NACIMIENTO:
+                return this.fechaNac;
+            case JUGADOR_DORSAL:
+                return this.dorsal;
+            case JUGADOR_TEXTO_CAMISETA:
+                return this.textoCamiseta;
+            case JUGADOR_EQUIPO:
+                return this.equipo;
+            case JUGADOR_POSICION:
+                return this.posicion;
+            case JUGADOR_ESTADO:
+                return this.estado;
+            default:
+                return null;
         }
     }
 }

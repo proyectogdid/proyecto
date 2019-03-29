@@ -34,6 +34,7 @@ public class Usuario implements itfProperty {
 
     /**
      * Este método va a recoger los datos de los usuarios de la aplicación
+     *
      * @param id
      * @param usuario
      * @param contrasena
@@ -85,19 +86,26 @@ public class Usuario implements itfProperty {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
     /**
      * metodo get property de la interfaz itfProperty
+     *
      * @param prop
      * @return
      */
     @Override
     public Object getProperty(String prop) {
-        switch (prop){
-            case USUARIO_ID:return this.id;
-            case USUARIO_USERNAME:return this.username;
-            case USUARIO_CONTRASENA:return this.contrasena;
-            case USUARIO_TIPO:return this.tipo;
-            default:return null;
+        switch (prop) {
+            case USUARIO_ID:
+                return this.id;
+            case USUARIO_USERNAME:
+                return this.username;
+            case USUARIO_CONTRASENA:
+                return this.contrasena;
+            case USUARIO_TIPO:
+                return this.tipo;
+            default:
+                return null;
         }
     }
 

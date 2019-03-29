@@ -46,6 +46,7 @@ public class Menu {
 
     /**
      * metodo para recoger los datos de campo y añadirlos en gestorln
+     *
      * @param gln
      */
     public static void altaCampo(GestorLN gln) {
@@ -76,13 +77,14 @@ public class Menu {
         aforo = clsUtilidades.leerEntero();
 
 
-        gln.anadirCampo( nombre, ciudad, calle, numero, cp, aforo);
+        gln.anadirCampo(nombre, ciudad, calle, numero, cp, aforo);
 
 
     }
 
     /**
      * metodo que lista los campos almacenados en memoria de gestorln
+     *
      * @param campos
      */
 

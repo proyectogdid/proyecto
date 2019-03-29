@@ -1,11 +1,13 @@
 package com.company.LN;
 
 import com.company.comun.itfProperty;
+
 import static com.company.comun.clsConstantes.TRASPASO_ID;
 import static com.company.comun.clsConstantes.TRASPASO_PRECIO;
 import static com.company.comun.clsConstantes.TRASPASO_JUGADOR;
 import static com.company.comun.clsConstantes.TRASPASO_EQUIPO_PREVIO;
 import static com.company.comun.clsConstantes.TRASPASO_EQUIPO_POSTERIOR;
+
 /**
  * clase que gestionara los traspasos de los jugadores entre distintos equipos
  * teniendo como atributos el equipo anterior y posterior para poder guardar un historico de la trayectoria
@@ -37,6 +39,7 @@ public class Traspaso implements itfProperty {
 
     /**
      * Este método va a recoger los datos de todos los traspasos que se vayan reslizando
+     *
      * @param id
      * @param precio
      * @param jugador
@@ -90,21 +93,29 @@ public class Traspaso implements itfProperty {
     public void setEquipoPosterior(Equipo equipoPosterior) {
         this.equipoPosterior = equipoPosterior;
     }
+
     /**
      * metodo get property de la interfaz itfProperty
+     *
      * @param prop
      * @return
      */
     @Override
     public Object getProperty(String prop) {
-        switch (prop){
-            case TRASPASO_ID:return this.id;
-            case TRASPASO_PRECIO:return this.precio;
-            case TRASPASO_JUGADOR:return this.jugador;
-            case TRASPASO_EQUIPO_PREVIO:return this.equipoPrevio;
-            case TRASPASO_EQUIPO_POSTERIOR:return this.equipoPosterior;
+        switch (prop) {
+            case TRASPASO_ID:
+                return this.id;
+            case TRASPASO_PRECIO:
+                return this.precio;
+            case TRASPASO_JUGADOR:
+                return this.jugador;
+            case TRASPASO_EQUIPO_PREVIO:
+                return this.equipoPrevio;
+            case TRASPASO_EQUIPO_POSTERIOR:
+                return this.equipoPosterior;
 
-            default:return null;
+            default:
+                return null;
         }
     }
 }

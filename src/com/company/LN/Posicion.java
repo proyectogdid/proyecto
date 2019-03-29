@@ -55,15 +55,19 @@ public class Posicion implements itfProperty {
 
     /**
      * metodo get property de la interfaz itfProperty
+     *
      * @param prop
      * @return
      */
     @Override
     public Object getProperty(String prop) {
-        switch (prop){
-            case POSICION_ID:return this.id;
-            case POSICION_NOMBRE:return this.nombre;
-            default:return null;
+        switch (prop) {
+            case POSICION_ID:
+                return this.id;
+            case POSICION_NOMBRE:
+                return this.nombre;
+            default:
+                return null;
         }
     }
 }

@@ -2,6 +2,7 @@ package com.company.LN;
 
 import com.company.comun.itfProperty;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import static com.company.comun.clsConstantes.*;
@@ -30,20 +31,23 @@ public class Equipo implements itfProperty {
      */
     private ArrayList<Jugador> jugadores;
 
-    public Equipo(String nombre) {
+    public Equipo(String nombre, String patrocinador) {
     }
 
     /**
      * Este método recogerá todos los datos necesarios para identificar los diferentes equipos.
-     * @param id
-     * @param nombre
-     * @param patrocinador
      */
-    public Equipo(int id, String nombre, String patrocinador, int partidosGanados) {
+    public Equipo() {
         this.id = id;
         this.nombre = nombre;
         this.patrocinador = patrocinador;
 
+
+    }
+
+    public void resultSetToEquipo(ResultSet rs) throws Exception {
+        nombre = rs.getString(BD_EQUIPO_NOMBRE);
+        patrocinador = rs.getString(BD_EQUIPO_PATROCINADOR);
 
     }
 
@@ -78,19 +82,26 @@ public class Equipo implements itfProperty {
     public void setJugadores(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
     }
+
     /**
      * metodo get property de la interfaz itfProperty
+     *
      * @param prop
      * @return
      */
     @Override
     public Object getProperty(String prop) {
-        switch (prop){
-            case EQUIPO_ID:return this.id;
-            case EQUIPO_NOMBRE:return  this.nombre;
-            case EQUIPO_PATROCINADOR:return this.patrocinador;
-            case EQUIPO_JUGADORES:return this.jugadores;
-            default:return null;
+        switch (prop) {
+            case EQUIPO_ID:
+                return this.id;
+            case EQUIPO_NOMBRE:
+                return this.nombre;
+            case EQUIPO_PATROCINADOR:
+                return this.patrocinador;
+            case EQUIPO_JUGADORES:
+                return this.jugadores;
+            default:
+                return null;
         }
     }
 }

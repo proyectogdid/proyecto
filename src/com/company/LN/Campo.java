@@ -13,7 +13,7 @@ import static com.company.comun.clsConstantes.*;
 public class Campo implements itfProperty, Comparable<Campo> {
     /**
      * Atributo id del campo
-      */
+     */
     private int id;
     /**
      * Atributo nombre del campo
@@ -46,6 +46,7 @@ public class Campo implements itfProperty, Comparable<Campo> {
 
     /**
      * Este método, va a recoger todos los datos necesarios para identificar un campo.
+     *
      * @param id
      * @param nombre
      * @param ciudad
@@ -66,6 +67,7 @@ public class Campo implements itfProperty, Comparable<Campo> {
 
     /**
      * constructor
+     *
      * @param nombre
      * @param ciudad
      * @param calle
@@ -83,14 +85,14 @@ public class Campo implements itfProperty, Comparable<Campo> {
         this.aforo = aforo;
     }
 
-    public void resultSetToCampo(ResultSet rs)throws Exception{
-        id=rs.getInt(BD_CAMPO_ID);
-        aforo=rs.getInt(BD_CAMPO_AFORO);
-        nombre=rs.getString(BD_CAMPO_NOMBRE);
-        ciudad=rs.getString(BD_CAMPO_CIUDAD);
-        calle=rs.getString(BD_CAMPO_CALLE);
-        numero=rs.getString(BD_CAMPO_NUMERO);
-        cp=rs.getString(BD_CAMPO_CP);
+    public void resultSetToCampo(ResultSet rs) throws Exception {
+        id = rs.getInt(BD_CAMPO_ID);
+        aforo = rs.getInt(BD_CAMPO_AFORO);
+        nombre = rs.getString(BD_CAMPO_NOMBRE);
+        ciudad = rs.getString(BD_CAMPO_CIUDAD);
+        calle = rs.getString(BD_CAMPO_CALLE);
+        numero = rs.getString(BD_CAMPO_NUMERO);
+        cp = rs.getString(BD_CAMPO_CP);
     }
 
     public int getId() {
@@ -151,20 +153,29 @@ public class Campo implements itfProperty, Comparable<Campo> {
 
     /**
      * metodo get property de la interfaz itfProperty
+     *
      * @param prop
      * @return
      */
     @Override
     public Object getProperty(String prop) {
-        switch (prop){
-            case CAMPO_ID:return this.id;
-            case CAMPO_NOMBRE:return this.nombre;
-            case CAMPO_CIUDAD:return this.ciudad;
-            case CAMPO_CALLE:return this.calle;
-            case CAMPO_NUMERO:return this.numero;
-            case CAMPO_CP:return this.cp;
-            case CAMPO_AFORO:return this.aforo;
-            default:return null;
+        switch (prop) {
+            case CAMPO_ID:
+                return this.id;
+            case CAMPO_NOMBRE:
+                return this.nombre;
+            case CAMPO_CIUDAD:
+                return this.ciudad;
+            case CAMPO_CALLE:
+                return this.calle;
+            case CAMPO_NUMERO:
+                return this.numero;
+            case CAMPO_CP:
+                return this.cp;
+            case CAMPO_AFORO:
+                return this.aforo;
+            default:
+                return null;
         }
     }
 
@@ -173,6 +184,6 @@ public class Campo implements itfProperty, Comparable<Campo> {
         return 0;
     }
 
-    }
+}
 
 

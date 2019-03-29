@@ -83,17 +83,23 @@ public class Evento implements itfProperty {
 
     /**
      * metodo get property de la interfaz itfProperty
+     *
      * @param prop
      * @return
      */
     @Override
     public Object getProperty(String prop) {
-        switch (prop){
-            case EVENTO_ID:return this.id;
-            case EVENTO_ESTADO_PREVIO:return this.estadoPrevio;
-            case EVENTO_ESTADO_POSTERIOR:return this.estadoPosterior;
-            case EVENTO_JUGADOR:return this.jugador;
-            default:return null;
+        switch (prop) {
+            case EVENTO_ID:
+                return this.id;
+            case EVENTO_ESTADO_PREVIO:
+                return this.estadoPrevio;
+            case EVENTO_ESTADO_POSTERIOR:
+                return this.estadoPosterior;
+            case EVENTO_JUGADOR:
+                return this.jugador;
+            default:
+                return null;
         }
     }
 }

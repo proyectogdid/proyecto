@@ -12,6 +12,7 @@ import static com.company.comun.clsConstantes.PARTIDO_LOCAL;
 import static com.company.comun.clsConstantes.PARTIDO_VISITANTE;
 import static com.company.comun.clsConstantes.PARTIDO_TEMPORADA;
 import static com.company.comun.clsConstantes.PARTIDO_CAMPO;
+
 /**
  * Clase que va a gestionar los datos principales de
  * un partido, tales como la id, fecha, ptsLocal,
@@ -166,21 +167,31 @@ public class Partido implements itfProperty {
 
     /**
      * metodo get property de la interfaz itfProperty
+     *
      * @param prop
      * @return
      */
     @Override
     public Object getProperty(String prop) {
-        switch (prop){
-            case PARTIDO_ID:return this.id;
-            case PARTIDO_FECHA:return this.fecha;
-            case PARTIDO_PTOS_LOCAL:return this.ptosLocal;
-            case PARTIDO_PTOS_VISITANTE:return this.ptosVisitante;
-            case PARTIDO_LOCAL:return this.local;
-            case PARTIDO_VISITANTE:return this.visitante;
-            case PARTIDO_TEMPORADA:return this.temporada;
-            case PARTIDO_CAMPO:return this.campo;
-            default:return null;
+        switch (prop) {
+            case PARTIDO_ID:
+                return this.id;
+            case PARTIDO_FECHA:
+                return this.fecha;
+            case PARTIDO_PTOS_LOCAL:
+                return this.ptosLocal;
+            case PARTIDO_PTOS_VISITANTE:
+                return this.ptosVisitante;
+            case PARTIDO_LOCAL:
+                return this.local;
+            case PARTIDO_VISITANTE:
+                return this.visitante;
+            case PARTIDO_TEMPORADA:
+                return this.temporada;
+            case PARTIDO_CAMPO:
+                return this.campo;
+            default:
+                return null;
         }
     }
 }

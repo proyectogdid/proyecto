@@ -1,11 +1,11 @@
 package com.company.LN;
 
 import com.company.comun.itfProperty;
-import static com.company.comun.clsConstantes.TEMPORADA_ID;
-import static com.company.comun.clsConstantes.TEMPORADA_ANO;
-import static com.company.comun.clsConstantes.TEMPORADA_PARTIDOS;
+
 import java.util.ArrayList;
 import java.util.Date;
+
+import static com.company.comun.clsConstantes.*;
 
 /**
  * Esta clase gestiona las temporadas que almacenara nuestra applicacion
@@ -24,11 +24,13 @@ public class Temporada implements itfProperty {
      * partidos que se jugaran en la temporada
      */
     private ArrayList<Partido> partidos;
+
     public Temporada() {
     }
 
     /**
      * Este método va a recoger los datos de la temporada, tanto la id como el año en cuestión
+     *
      * @param id
      * @param ano
      */
@@ -60,18 +62,24 @@ public class Temporada implements itfProperty {
     public void setPartidos(ArrayList<Partido> partidos) {
         this.partidos = partidos;
     }
+
     /**
      * metodo get property de la interfaz itfProperty
+     *
      * @param prop
      * @return
      */
     @Override
     public Object getProperty(String prop) {
-        switch (prop){
-            case TEMPORADA_ID:return this.id;
-            case TEMPORADA_ANO:return this.ano;
-            case TEMPORADA_PARTIDOS:return this.partidos;
-            default:return null;
+        switch (prop) {
+            case TEMPORADA_ID:
+                return this.id;
+            case TEMPORADA_ANO:
+                return this.ano;
+            case TEMPORADA_PARTIDOS:
+                return this.partidos;
+            default:
+                return null;
         }
     }
 }

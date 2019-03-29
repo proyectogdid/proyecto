@@ -8,7 +8,7 @@ import static com.company.comun.clsConstantes.AFICIONADO_FAVORITO;
  * clase para gestionar los usuarios no administradores
  * es decir un usuario cualquiera que podra elegir su equipo favorito
  */
-public class Aficionado extends  Usuario implements itfProperty {
+public class Aficionado extends Usuario implements itfProperty {
     /**
      * atributo equipo favorito del usuario
      */
@@ -20,6 +20,7 @@ public class Aficionado extends  Usuario implements itfProperty {
 
     /**
      * Este método va a recoger los datos referidos a un tipo de usuario que va a ser el aficionado
+     *
      * @param id
      * @param usuario
      * @param contrasena
@@ -38,17 +39,21 @@ public class Aficionado extends  Usuario implements itfProperty {
     public void setFavorito(Equipo favorito) {
         this.favorito = favorito;
     }
+
     /**
      * metodo get property de la interfaz itfProperty
+     *
      * @param prop
      * @return
      */
 
     @Override
     public Object getProperty(String prop) {
-        switch (prop){
-            case AFICIONADO_FAVORITO:return this.favorito;
-            default:return null;
+        switch (prop) {
+            case AFICIONADO_FAVORITO:
+                return this.favorito;
+            default:
+                return null;
         }
     }
 }

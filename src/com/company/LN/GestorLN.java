@@ -13,9 +13,13 @@ import java.util.Collections;
 public class GestorLN {
 
     /**
-     * Este va aser el ArrayList que va a contener los campos de los diferentes equipos
+     * Este va a ser el ArrayList que va a contener los campos de los diferentes equipos
      */
     ArrayList<Campo> campos = new ArrayList<>();
+    /**
+     * Este va a ser el ArrayList que va a contener los participantes de la liga
+     */
+    ArrayList<Equipo> equipos = new ArrayList<>();
     /**
      * comunicacion con capa de datos en LN
      */
@@ -53,10 +57,10 @@ public class GestorLN {
      */
     public ArrayList<itfProperty> leerCampos() {
         System.out.println("entro aqui");
-        ArrayList<itfProperty> retorno=new ArrayList<>();
+        ArrayList<itfProperty> retorno = new ArrayList<>();
         try {
 
-            for (Campo c:campos) {
+            for (Campo c : campos) {
                 retorno.add(c);
             }
         } catch (Exception e) {
@@ -66,23 +70,76 @@ public class GestorLN {
         return retorno;
     }
 
-    public void cargarDatosCampos(){
-        try{
+    public void cargarDatosCampos() {
+        try {
             objDatos.conectarBD();
-            ResultSet rs =objDatos.buscarCampos();
-            while(rs.next()){
+            ResultSet rs = objDatos.buscarCampos();
+            while (rs.next()) {
 
-                Campo c =new Campo();
+                Campo c = new Campo();
                 c.resultSetToCampo(rs);
                 campos.add(c);
             }
 
             objDatos.desconectarBD();
-        }catch (Exception e){
-            javax.swing.JOptionPane.showMessageDialog(null,"error al cargar los datos");
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(null, "error al cargar los datos");
             e.printStackTrace();
         }
 
     }
 
+    public void anadirEquipo(String nombre, String patrocinador) {
+        try {
+            objDatos.conectarBD();
+            Equipo equipo = new Equipo(nombre, patrocinador);
+            equipos.add(equipo);
+            equipo.setId(objDatos.insertarEquipo(nombre, patrocinador));
+            objDatos.desconectarBD();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    /**
+     * Este método lo vamos a emplear para leer los equipos
+     *
+     * @return
+     */
+    public ArrayList<itfProperty> leerEquipos() {
+        System.out.println("entro aqui");
+        ArrayList<itfProperty> retorno = new ArrayList<>();
+        try {
+
+            for (Equipo e : equipos) {
+                retorno.add(e);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return retorno;
+    }
+
+    public void cargarDatosEquipos() {
+        try {
+            objDatos.conectarBD();
+            ResultSet rs = objDatos.buscarEquipo();
+            while (rs.next()) {
+
+                Equipo e = new Equipo();
+                e.resultSetToEquipo(rs);
+                equipos.add(e);
+            }
+
+            objDatos.desconectarBD();
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(null, "error al cargar los datos");
+            e.printStackTrace();
+        }
+
+
+    }
 }
