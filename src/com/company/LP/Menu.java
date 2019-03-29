@@ -18,12 +18,15 @@ public class Menu {
     public static void menu() {
         GestorLN gln = new GestorLN();
         gln.cargarDatosCampos();
+        gln.cargarDatosEquipos();
         int op = 0;
         do {
             System.out.println("Eliga:");
             System.out.println("1.-Introducir campo");
             System.out.println("2.-Ver campo");
-            System.out.println("3.-Salir");
+            System.out.println("3.-Introducir equipo");
+            System.out.println("4.-Ver Equipo");
+            System.out.println("5.-Salir");
             op = clsUtilidades.leerEntero();
 
             switch (op) {
@@ -34,13 +37,22 @@ public class Menu {
                 case 2:
                     visualizarCampo(gln.leerCampos());
                     break;
+                case 3:
+                    altaEquipo(gln);
+                    break;
+                case 4:
+                    visualizarEquipo(gln.leerEquipos());
+                    break;
                 default:
+                    System.out.println("Introduzca una opción válida");
                     break;
 
 
             }
 
-        } while (op != 3);
+        } while (op != 5);
+
+
 
     }
 
@@ -99,6 +111,41 @@ public class Menu {
             System.out.println("Numero:" + a.getProperty(CAMPO_NUMERO));
             System.out.println("CP:" + a.getProperty(CAMPO_CP));
             System.out.println("Aforo:" + a.getProperty(CAMPO_AFORO));
+            System.out.println();
+
+        }
+    }
+
+    public static void altaEquipo(GestorLN gln) {
+        String nombre;
+        String patrocinador;
+
+
+        System.out.println("Nombre:");
+        nombre = clsUtilidades.leerCadena();
+
+        System.out.println("Patrocinador:");
+        patrocinador=clsUtilidades.leerCadena();
+
+
+        gln.anadirEquipo(nombre, patrocinador);
+
+
+    }
+
+    /**
+     * metodo que lista los equipos almacenados en memoria de gestorln
+     *
+     * @param equipos
+     */
+
+    public static void visualizarEquipo(ArrayList<itfProperty> equipos) {
+
+        for (itfProperty a : equipos) {
+
+            System.out.println("Nombre:" + a.getProperty(EQUIPO_NOMBRE));
+            System.out.println("Patrocinador:" + a.getProperty(EQUIPO_PATROCINADOR));
+
             System.out.println();
 
         }
