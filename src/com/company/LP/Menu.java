@@ -21,7 +21,7 @@ public class Menu {
         gln.cargarDatosEquipos();
         int op = 0;
         do {
-            System.out.println("Eliga:");
+            System.out.println("Elija:");
             System.out.println("1.-Introducir campo");
             System.out.println("2.-Ver campo");
             System.out.println("3.-Introducir equipo");
