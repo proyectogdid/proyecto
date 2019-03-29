@@ -8,7 +8,7 @@ import java.sql.ResultSet;
  */
 
 public class EquipoBD extends Conexion {
-    private static final String template = "cmp.id, cmp.nombre, cmp.patrocinador";
+    private static final String template = "eqp.id, eqp.nombre, eqp.patrocinador";
 
     /**
      * Método para insertar los equipos en nuestra BD
@@ -37,7 +37,7 @@ public class EquipoBD extends Conexion {
      * @throws Exception
      */
     public static ResultSet getAll(Connection con) throws Exception {
-        String query = "SELECT " + template + " FROM equipos cmp";
+        String query = "SELECT " + template + " FROM equipos eqp";
         System.out.println(query);
         ResultSet rs = select(con, query);
         return rs;
