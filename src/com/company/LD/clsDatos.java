@@ -58,7 +58,7 @@ public class clsDatos {
     }
 
     /**
-     * Metpdo para buscar campos
+     * Metedo para buscar campos
      *
      * @return
      * @throws Exception

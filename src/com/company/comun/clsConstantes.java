@@ -36,8 +36,8 @@ public class clsConstantes {
     public static final String EQUIPO_PATROCINADOR = "patrocinador";
     public static final String EQUIPO_JUGADORES = "jugadores";
 
-    public static final String BD_EQUIPO_NOMBRE = "cmp.nombre";
-    public static final String BD_EQUIPO_PATROCINADOR = "cmp.patrocinador";
+    public static final String BD_EQUIPO_NOMBRE = "eqp.nombre";
+    public static final String BD_EQUIPO_PATROCINADOR = "eqp.patrocinador";
 
     public static final String ESTADO_ID = "id";
     public static final String ESTADO_NOMBRE = "nombre";
