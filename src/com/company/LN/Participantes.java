@@ -1,6 +1,5 @@
-package com.company.LN.Comparator;
+package com.company.LN;
 
-import com.company.LN.Equipo;
 import com.company.comun.itfProperty;
 
 import static com.company.comun.clsConstantes.*;
@@ -15,8 +14,8 @@ public class Participantes extends Equipo implements itfProperty {
     private int puntosEnContra;
 
 
-    public Participantes(String nombre, int partidosGanados, int partidosJugados, int partidosPerdidos, int puntosAFavor, int puntosEnContra) {
-        super();
+    public Participantes(String nombre, String patrocinador, int partidosGanados, int partidosJugados, int partidosPerdidos, int puntosAFavor, int puntosEnContra) {
+        super(nombre, patrocinador);
         this.partidosGanados = partidosGanados;
         this.partidosJugados = partidosJugados;
         this.partidosPerdidos = partidosPerdidos;
@@ -80,6 +79,11 @@ public class Participantes extends Equipo implements itfProperty {
             default:
                 return null;
         }
+    }
+
+    @Override
+    public String toString() {
+        return getNombre() + "" + partidosJugados + "" + partidosGanados + "" + partidosPerdidos + "" + puntosAFavor + "" + puntosEnContra + "\n";
     }
 
 

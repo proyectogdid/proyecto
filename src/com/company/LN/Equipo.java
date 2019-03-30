@@ -31,23 +31,22 @@ public class Equipo implements itfProperty {
      */
     private ArrayList<Jugador> jugadores;
 
-    public Equipo(String nombre, String patrocinador) {
-    }
-
     /**
      * Este método recogerá todos los datos necesarios para identificar los diferentes equipos.
-     *  */
-    public Equipo() {
-        this.id = id;
+     */
+    public Equipo(String nombre, String patrocinador) {
         this.nombre = nombre;
         this.patrocinador = patrocinador;
 
+    }
+
+    public Equipo() {
 
     }
 
-    public void resultSetToEquipo(ResultSet rs)throws Exception{
-        nombre=rs.getString(BD_EQUIPO_NOMBRE);
-        patrocinador=rs.getString(BD_EQUIPO_PATROCINADOR);
+    public void resultSetToEquipo(ResultSet rs) throws Exception {
+        nombre = rs.getString(BD_EQUIPO_NOMBRE);
+        patrocinador = rs.getString(BD_EQUIPO_PATROCINADOR);
 
     }
 
