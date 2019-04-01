@@ -29,6 +29,7 @@ public abstract class Conexion {
 
     /**
      * metodo generico para actualizar registrors en BD
+     *
      * @param con
      * @param query
      * @param parametros
@@ -36,10 +37,10 @@ public abstract class Conexion {
      * @throws Exception
      */
 
-    public static int update(Connection con, String query,Object[] parametros) throws Exception{
-	    PreparedStatement stt =con.prepareStatement(query);
-	    cargarDatos(stt,parametros);
-	    return stt.executeUpdate();
+    public static int update(Connection con, String query, Object[] parametros) throws Exception {
+        PreparedStatement stt = con.prepareStatement(query);
+        cargarDatos(stt, parametros);
+        return stt.executeUpdate();
     }
 
     /**
