@@ -23,16 +23,6 @@ public class CampoBD extends Conexion {
      * @throws Exception
      */
     public static int insertar(Connection con, String nombre, String ciudad, String calle, String numero, String cp, int aforo) throws Exception {
-        /*PreparedStatement sentencia=con.prepareStatement("INSERT INTO campos(nombre,ciudad,calle,numero,cp,cantidad)VALUES(?,?,?,?,?,?)");
-        sentencia.setString(1,nombre);
-        sentencia.setString(2,ciudad);
-        sentencia.setString(3,calle);
-        sentencia.setString(4,numero);
-        sentencia.setString(5,cp);
-        sentencia.setInt(6,aforo);
-        sentencia.execute();
-        int retorno=sentencia.getUpdateCount();
-        return  retorno;*/
         Object[] parametros = {nombre, ciudad, calle, numero, cp, aforo};
         return insert(con, "INSERT INTO campos(nombre,ciudad,calle,numero,cp,cantidad)VALUES(?,?,?,?,?,?)", parametros);
     }
