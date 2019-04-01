@@ -21,15 +21,15 @@ public class Evento implements itfProperty {
     /**
      * Atributo jugador dek evento
      */
-    private Jugador jugador;
+    private int jugador;
     /**
      * Atributo estado previo del evento
      */
-    private Estado estadoPrevio;
+    private int estadoPrevio;
     /**
      * Atributo estado posterior del evento
      */
-    private Estado estadoPosterior;
+    private int estadoPosterior;
 
     public Evento() {
     }
@@ -42,7 +42,7 @@ public class Evento implements itfProperty {
      * @param estadoPrevio
      * @param estadoPosterior
      */
-    public Evento(int id, Jugador jugador, Estado estadoPrevio, Estado estadoPosterior) {
+    public Evento(int id, int jugador, int estadoPrevio, int estadoPosterior) {
         this.id = id;
         this.jugador = jugador;
         this.estadoPrevio = estadoPrevio;
@@ -57,27 +57,27 @@ public class Evento implements itfProperty {
         this.id = id;
     }
 
-    public Jugador getJugador() {
+    public int getJugador() {
         return jugador;
     }
 
-    public void setJugador(Jugador jugador) {
+    public void setJugador(int jugador) {
         this.jugador = jugador;
     }
 
-    public Estado getEstadoPrevio() {
+    public int getEstadoPrevio() {
         return estadoPrevio;
     }
 
-    public void setEstadoPrevio(Estado estadoPrevio) {
+    public void setEstadoPrevio(int estadoPrevio) {
         this.estadoPrevio = estadoPrevio;
     }
 
-    public Estado getEstadoPosterior() {
+    public int getEstadoPosterior() {
         return estadoPosterior;
     }
 
-    public void setEstadoPosterior(Estado estadoPosterior) {
+    public void setEstadoPosterior(int estadoPosterior) {
         this.estadoPosterior = estadoPosterior;
     }
 

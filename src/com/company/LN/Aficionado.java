@@ -12,7 +12,7 @@ public class Aficionado extends Usuario implements itfProperty {
     /**
      * atributo equipo favorito del usuario
      */
-    private Equipo favorito;
+    private int favorito;
 
     public Aficionado() {
 
@@ -27,16 +27,16 @@ public class Aficionado extends Usuario implements itfProperty {
      * @param tipo
      * @param favorito
      */
-    public Aficionado(int id, String usuario, String contrasena, String tipo, Equipo favorito) {
+    public Aficionado(int id, String usuario, String contrasena, String tipo, int favorito) {
         super(id, usuario, contrasena, tipo);
         this.favorito = favorito;
     }
 
-    public Equipo getFavorito() {
+    public int getFavorito() {
         return favorito;
     }
 
-    public void setFavorito(Equipo favorito) {
+    public void setFavorito(int favorito) {
         this.favorito = favorito;
     }
 

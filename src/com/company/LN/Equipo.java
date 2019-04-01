@@ -29,7 +29,7 @@ public class Equipo implements itfProperty {
     /**
      * Atributo jugagores del equipo
      */
-    private ArrayList<Jugador> jugadores;
+    private ArrayList<Integer> jugadores;
 
     /**
      * Este método recogerá todos los datos necesarios para identificar los diferentes equipos.
@@ -74,11 +74,11 @@ public class Equipo implements itfProperty {
         this.patrocinador = patrocinador;
     }
 
-    public ArrayList<Jugador> getJugadores() {
+    public ArrayList<Integer> getJugadores() {
         return jugadores;
     }
 
-    public void setJugadores(ArrayList<Jugador> jugadores) {
+    public void setJugadores(ArrayList<Integer> jugadores) {
         this.jugadores = jugadores;
     }
 

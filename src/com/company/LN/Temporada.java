@@ -23,7 +23,7 @@ public class Temporada implements itfProperty {
     /**
      * partidos que se jugaran en la temporada
      */
-    private ArrayList<Partido> partidos;
+    private ArrayList<Integer> partidos;
 
     public Temporada() {
     }
@@ -55,11 +55,11 @@ public class Temporada implements itfProperty {
         this.ano = ano;
     }
 
-    public ArrayList<Partido> getPartidos() {
+    public ArrayList<Integer> getPartidos() {
         return partidos;
     }
 
-    public void setPartidos(ArrayList<Partido> partidos) {
+    public void setPartidos(ArrayList<Integer> partidos) {
         this.partidos = partidos;
     }
 

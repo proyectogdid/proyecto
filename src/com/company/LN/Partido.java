@@ -38,19 +38,19 @@ public class Partido implements itfProperty {
     /**
      * Atributo equipo local del partido
      */
-    private Equipo local;
+    private int local;
     /**
      * Atributo equi`po visitante del partido
      */
-    private Equipo visitante;
+    private int visitante;
     /**
      * Atributo temporada del partido
      */
-    private Temporada temporada;
+    private int temporada;
     /**
      * Atributo campo del partido
      */
-    private Campo campo;
+    private int campo;
 
     public Partido() {
     }
@@ -67,7 +67,7 @@ public class Partido implements itfProperty {
      * @param temporada
      * @param campo
      */
-    public Partido(int id, Date fecha, int ptosLocal, int ptosVisitante, Equipo local, Equipo visitante, Temporada temporada, Campo campo) {
+    public Partido(int id, Date fecha, int ptosLocal, int ptosVisitante, int local, int visitante, int temporada, int campo) {
         this.id = id;
         this.fecha = fecha;
         this.ptosLocal = ptosLocal;
@@ -92,7 +92,7 @@ public class Partido implements itfProperty {
      * @param campo
      */
 
-    public Partido(int id, Date fecha, Equipo local, Equipo visitante, Temporada temporada, Campo campo) {
+    public Partido(int id, Date fecha, int local, int visitante, int temporada, int campo) {
         this.id = id;
         this.fecha = fecha;
         this.local = local;
@@ -133,35 +133,35 @@ public class Partido implements itfProperty {
         this.ptosVisitante = ptosVisitante;
     }
 
-    public Equipo getLocal() {
+    public int getLocal() {
         return local;
     }
 
-    public void setLocal(Equipo local) {
+    public void setLocal(int local) {
         this.local = local;
     }
 
-    public Equipo getVisitante() {
+    public int getVisitante() {
         return visitante;
     }
 
-    public void setVisitante(Equipo visitante) {
+    public void setVisitante(int visitante) {
         this.visitante = visitante;
     }
 
-    public Temporada getTemporada() {
+    public int getTemporada() {
         return temporada;
     }
 
-    public void setTemporada(Temporada temporada) {
+    public void setTemporada(int temporada) {
         this.temporada = temporada;
     }
 
-    public Campo getCampo() {
+    public int getCampo() {
         return campo;
     }
 
-    public void setCampo(Campo campo) {
+    public void setCampo(int campo) {
         this.campo = campo;
     }
 

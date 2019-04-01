@@ -24,15 +24,15 @@ public class Traspaso implements itfProperty {
     /**
      * atributo que especifica el jugador objeto del traspaso
      */
-    private Jugador jugador;
+    private int jugador;
     /**
      * equipo que traspasa al jugador
      */
-    private Equipo equipoPrevio;
+    private int equipoPrevio;
     /**
      * equipo que ficha al jugador
      */
-    private Equipo equipoPosterior;
+    private int equipoPosterior;
 
     public Traspaso() {
     }
@@ -46,7 +46,7 @@ public class Traspaso implements itfProperty {
      * @param equipoPrevio
      * @param equipoPosterior
      */
-    public Traspaso(int id, int precio, Jugador jugador, Equipo equipoPrevio, Equipo equipoPosterior) {
+    public Traspaso(int id, int precio, int jugador, int equipoPrevio, int equipoPosterior) {
         this.id = id;
         this.precio = precio;
         this.jugador = jugador;
@@ -70,27 +70,27 @@ public class Traspaso implements itfProperty {
         this.precio = precio;
     }
 
-    public Jugador getJugador() {
+    public int getJugador() {
         return jugador;
     }
 
-    public void setJugador(Jugador jugador) {
+    public void setJugador(int jugador) {
         this.jugador = jugador;
     }
 
-    public Equipo getEquipoPrevio() {
+    public int getEquipoPrevio() {
         return equipoPrevio;
     }
 
-    public void setEquipoPrevio(Equipo equipoPrevio) {
+    public void setEquipoPrevio(int equipoPrevio) {
         this.equipoPrevio = equipoPrevio;
     }
 
-    public Equipo getEquipoPosterior() {
+    public int getEquipoPosterior() {
         return equipoPosterior;
     }
 
-    public void setEquipoPosterior(Equipo equipoPosterior) {
+    public void setEquipoPosterior(int equipoPosterior) {
         this.equipoPosterior = equipoPosterior;
     }
 

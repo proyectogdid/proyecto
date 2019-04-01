@@ -8,7 +8,7 @@ import java.sql.ResultSet;
  */
 
 public class EquipoBD extends Conexion {
-    private static final String template = "eqp.id, eqp.nombre, eqp.patrocinador";
+    private static final String template = "eqp.id, eqp.nombre, eqp.patrocinador, eqp.campo";
 
     /**
      * Método para insertar los equipos en nuestra BD

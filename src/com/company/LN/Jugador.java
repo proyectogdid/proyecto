@@ -43,15 +43,15 @@ public class Jugador implements itfProperty {
     /**
      * Atributo equipo del jugaror
      */
-    private Equipo equipo;
+    private int equipo;
     /**
      * Atributo posición del jugador
      */
-    private Posicion posicion;
+    private int posicion;
     /**
      * Atributo estado del jugador
      */
-    private Estado estado;
+    private int estado;
 
     public Jugador() {
     }
@@ -71,7 +71,7 @@ public class Jugador implements itfProperty {
      * @param estado
      */
 
-    public Jugador(int id, String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta, Equipo equipo, Posicion posicion, Estado estado) {
+    public Jugador(int id, String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta, int equipo, int posicion, int estado) {
         this.id = id;
         this.nombre = nombre;
         this.apellido1 = apellido1;
@@ -140,27 +140,27 @@ public class Jugador implements itfProperty {
         this.textoCamiseta = textoCamiseta;
     }
 
-    public Equipo getEquipo() {
+    public int getEquipo() {
         return equipo;
     }
 
-    public void setEquipo(Equipo equipo) {
+    public void setEquipo(int equipo) {
         this.equipo = equipo;
     }
 
-    public Posicion getPosicion() {
+    public int getPosicion() {
         return posicion;
     }
 
-    public void setPosicion(Posicion posicion) {
+    public void setPosicion(int posicion) {
         this.posicion = posicion;
     }
 
-    public Estado getEstado() {
+    public int getEstado() {
         return estado;
     }
 
-    public void setEstado(Estado estado) {
+    public void setEstado(int estado) {
         this.estado = estado;
     }
 
