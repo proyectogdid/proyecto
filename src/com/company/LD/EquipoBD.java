@@ -19,15 +19,10 @@ public class EquipoBD extends Conexion {
      * @return
      * @throws Exception
      */
-    public static int insertar(Connection con, String nombre, String patrocinador) throws Exception {
-        /*PreparedStatement sentencia=con.prepareStatement("INSERT INTO equipos (nombre,patrocinador)VALUES(?,?)");
-        sentencia.setString(1,nombre);
-        sentencia.setString(2,patrocinador);
-        sentencia.execute();
-        int retorno=sentencia.getUpdateCount();
-        return  retorno;*/
-        Object[] parametros = {nombre, patrocinador};
-        return insert(con, "INSERT INTO equipos(nombre,patrocinador)VALUES(?,?)", parametros);
+    public static int insertar(Connection con, String nombre, String patrocinador, int campo) throws Exception {
+
+        Object[] parametros = {nombre, patrocinador, campo};
+        return insert(con, "INSERT INTO equipos(nombre,patrocinador,campo)VALUES(?,?,?)", parametros);
     }
 
     /**

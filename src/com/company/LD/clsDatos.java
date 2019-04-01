@@ -76,8 +76,8 @@ public class clsDatos {
      * @return
      * @throws Exception
      */
-    public int insertarEquipo(String nombre, String patrocinador) throws Exception {
-        return EquipoBD.insertar(con, nombre, patrocinador);
+    public int insertarEquipo(String nombre, String patrocinador,int campo) throws Exception {
+        return EquipoBD.insertar(con, nombre, patrocinador, campo);
     }
 
     /**

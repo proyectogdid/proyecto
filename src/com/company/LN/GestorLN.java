@@ -89,12 +89,12 @@ public class GestorLN {
 
     }
 
-    public void anadirEquipo(String nombre, String patrocinador) {
+    public void anadirEquipo(String nombre, String patrocinador,int campo) {
         try {
             objDatos.conectarBD();
             Equipo equipo = new Equipo(nombre, patrocinador);
             equipos.add(equipo);
-            equipo.setId(objDatos.insertarEquipo(nombre, patrocinador));
+            equipo.setId(objDatos.insertarEquipo(nombre, patrocinador,campo));
             objDatos.desconectarBD();
         } catch (Exception e) {
             e.printStackTrace();

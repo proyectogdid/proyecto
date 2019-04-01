@@ -119,7 +119,7 @@ public class Menu {
     public static void altaEquipo(GestorLN gln) {
         String nombre;
         String patrocinador;
-
+        int idcampo;
 
         System.out.println("Nombre:");
         nombre = clsUtilidades.leerCadena();
@@ -127,8 +127,10 @@ public class Menu {
         System.out.println("Patrocinador:");
         patrocinador=clsUtilidades.leerCadena();
 
+        System.out.println("campo:");
+        idcampo=clsUtilidades.leerEntero();
 
-        gln.anadirEquipo(nombre, patrocinador);
+        gln.anadirEquipo(nombre, patrocinador,idcampo);
 
 
     }
