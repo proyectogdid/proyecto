@@ -116,6 +116,10 @@ public class Menu {
         }
     }
 
+    /**
+     * Método para dar de alta los diferentes equipos de la liga
+     * @param gln
+     */
     public static void altaEquipo(GestorLN gln) {
         String nombre;
         String patrocinador;

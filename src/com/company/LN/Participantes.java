@@ -4,6 +4,9 @@ import com.company.comun.itfProperty;
 
 import static com.company.comun.clsConstantes.*;
 
+/**
+ * Clase para asignar participantes a la liga. Estos tienen el nombre de los equipos, además de nuevos atributos creados.
+ */
 
 public class Participantes extends Equipo implements itfProperty {
 
@@ -13,6 +16,16 @@ public class Participantes extends Equipo implements itfProperty {
     private int puntosAFavor;
     private int puntosEnContra;
 
+    /**
+     * Este método recogerá todos los datos necesarios para identificar los diferentes participantes.
+     * @param nombre
+     * @param patrocinador
+     * @param partidosGanados
+     * @param partidosJugados
+     * @param partidosPerdidos
+     * @param puntosAFavor
+     * @param puntosEnContra
+     */
 
     public Participantes(String nombre, String patrocinador, int partidosGanados, int partidosJugados, int partidosPerdidos, int puntosAFavor, int puntosEnContra) {
         super(nombre, patrocinador);
@@ -63,6 +76,12 @@ public class Participantes extends Equipo implements itfProperty {
         this.puntosEnContra = puntosEnContra;
     }
 
+    /**
+     * Método getproperty de la interfaz itfProperty
+     * @param prop
+     * @return
+     */
+
     @Override
     public Object getProperty(String prop) {
         switch (prop) {
@@ -81,6 +100,10 @@ public class Participantes extends Equipo implements itfProperty {
         }
     }
 
+    /**
+     * Método para mostrar los datos de los participantes.
+     * @return
+     */
     @Override
     public String toString() {
         return getNombre() + "" + partidosJugados + "" + partidosGanados + "" + partidosPerdidos + "" + puntosAFavor + "" + puntosEnContra + "\n";

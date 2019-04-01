@@ -70,6 +70,9 @@ public class GestorLN {
         return retorno;
     }
 
+    /**
+     * Método para cargar los datos de los campos de la BD
+     */
     public void cargarDatosCampos() {
         try {
             objDatos.conectarBD();
@@ -89,12 +92,19 @@ public class GestorLN {
 
     }
 
-    public void anadirEquipo(String nombre, String patrocinador,int campo) {
+    /**
+     * Método para añadir equipos a la BD
+     *
+     * @param nombre
+     * @param patrocinador
+     * @param campo
+     */
+    public void anadirEquipo(String nombre, String patrocinador, int campo) {
         try {
             objDatos.conectarBD();
             Equipo equipo = new Equipo(nombre, patrocinador);
             equipos.add(equipo);
-            equipo.setId(objDatos.insertarEquipo(nombre, patrocinador,campo));
+            equipo.setId(objDatos.insertarEquipo(nombre, patrocinador, campo));
             objDatos.desconectarBD();
         } catch (Exception e) {
             e.printStackTrace();
@@ -123,6 +133,9 @@ public class GestorLN {
         return retorno;
     }
 
+    /**
+     * Método para cargar los datos de los quipos previamente introducidos a la BD
+     */
     public void cargarDatosEquipos() {
         try {
             objDatos.conectarBD();
