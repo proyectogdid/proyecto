@@ -89,4 +89,13 @@ public class clsDatos {
     public ResultSet buscarEquipo() throws Exception {
         return EquipoBD.getAll(con);
     }
+
+    /**
+     * gestionar select de estados
+     * @return
+     * @throws Exception
+     */
+    public ResultSet buscarEstados() throws Exception{
+        return EstadoBD.getAll(con);
+    }
 }

@@ -42,6 +42,9 @@ public class clsConstantes {
     public static final String ESTADO_ID = "id";
     public static final String ESTADO_NOMBRE = "nombre";
 
+    public static final String BD_ESTADO_ID = "estd.id";
+    public static final String BD_ESTADO_NOMBRE = "estd.nombre";
+
     public static final String EVENTO_ID = "id";
     public static final String EVENTO_ESTADO_PREVIO = "estadoPrevio";
     public static final String EVENTO_ESTADO_POSTERIOR = "estadoPosterior";

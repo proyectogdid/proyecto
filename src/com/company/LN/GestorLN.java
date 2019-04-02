@@ -20,6 +20,12 @@ public class GestorLN {
      * Este va a ser el ArrayList que va a contener los participantes de la liga
      */
     ArrayList<Equipo> equipos = new ArrayList<>();
+
+    /**
+     * Este va a ser el ArrayList que va a contener los estados en los que pueda estar un jugador
+     */
+    ArrayList<Estado> estados = new ArrayList<>();
+
     /**
      * comunicacion con capa de datos en LN
      */
@@ -77,7 +83,7 @@ public class GestorLN {
             ResultSet rs = objDatos.buscarCampos();
             while (rs.next()) {
                 Campo c = new Campo();
-                c.resultSetToCampo(rs);
+                c.resultsetLoad(rs);
                 campos.add(c);
             }
 
@@ -137,10 +143,20 @@ public class GestorLN {
                 equipos.add(e);
             }
     }
+    public void cargarDatosEstados() throws Exception{
+        ResultSet rs=objDatos.buscarEstados();
+        while (rs.next()){
+            Estado e=new Estado();
+            e.resultsetLoad(rs);
+            estados.add(e);
+        }
+    }
+
     public void cargarDatos() throws Exception{
         objDatos.conectarBD();
         cargarDatosCampos();
         cargarDatosEquipos();
+        cargarDatosEstados();
         objDatos.desconectarBD();
     }
 }

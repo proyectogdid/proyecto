@@ -1,16 +1,18 @@
 package com.company.LN;
 
+import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
-import static com.company.comun.clsConstantes.ESTADO_ID;
-import static com.company.comun.clsConstantes.ESTADO_NOMBRE;
+import java.sql.ResultSet;
+
+import static com.company.comun.clsConstantes.*;
 
 /**
  * Esta clase va a gestionar los posibles estados
  * de los difernetes jugadores, teniendo como atributos
  * la id y el nombre del estado.
  */
-public class Estado implements itfProperty {
+public class Estado implements itfProperty, itfPersistable {
     /**
      * Atributo id del estado
      */
@@ -66,5 +68,11 @@ public class Estado implements itfProperty {
             default:
                 return null;
         }
+    }
+
+    @Override
+    public void resultsetLoad(ResultSet rs) throws Exception {
+        id=rs.getInt(BD_ESTADO_ID);
+        nombre=rs.getString(BD_ESTADO_NOMBRE);
     }
 }
