@@ -73,22 +73,13 @@ public class GestorLN {
     /**
      * Método para cargar los datos de los campos de la BD
      */
-    public void cargarDatosCampos() {
-        try {
-            objDatos.conectarBD();
+    public void cargarDatosCampos() throws Exception {
             ResultSet rs = objDatos.buscarCampos();
             while (rs.next()) {
-
                 Campo c = new Campo();
                 c.resultSetToCampo(rs);
                 campos.add(c);
             }
-
-            objDatos.desconectarBD();
-        } catch (Exception e) {
-            javax.swing.JOptionPane.showMessageDialog(null, "error al cargar los datos");
-            e.printStackTrace();
-        }
 
     }
 
@@ -136,9 +127,8 @@ public class GestorLN {
     /**
      * Método para cargar los datos de los quipos previamente introducidos a la BD
      */
-    public void cargarDatosEquipos() {
-        try {
-            objDatos.conectarBD();
+    public void cargarDatosEquipos() throws Exception {
+
             ResultSet rs = objDatos.buscarEquipo();
             while (rs.next()) {
 
@@ -146,13 +136,11 @@ public class GestorLN {
                 e.resultSetToEquipo(rs);
                 equipos.add(e);
             }
-
-            objDatos.desconectarBD();
-        } catch (Exception e) {
-            javax.swing.JOptionPane.showMessageDialog(null, "error al cargar los datos");
-            e.printStackTrace();
-        }
-
-
+    }
+    public void cargarDatos() throws Exception{
+        objDatos.conectarBD();
+        cargarDatosCampos();
+        cargarDatosEquipos();
+        objDatos.desconectarBD();
     }
 }

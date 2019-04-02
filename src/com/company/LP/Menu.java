@@ -17,8 +17,14 @@ public class Menu {
      */
     public static void menu() {
         GestorLN gln = new GestorLN();
-        gln.cargarDatosCampos();
-        gln.cargarDatosEquipos();
+        try{
+            gln.cargarDatos();
+        }catch (Exception e){
+            javax.swing.JOptionPane.showMessageDialog(null,"error al cargar datos");
+            e.printStackTrace();
+        }
+
+
         int op = 0;
         do {
             System.out.println("Elija:");
