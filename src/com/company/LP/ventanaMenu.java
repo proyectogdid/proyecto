@@ -37,7 +37,7 @@ public class ventanaMenu extends JFrame {
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
-        JMenuItem mntmNewMenuItem = new JMenuItem("New menu item");
+        JMenuItem mntmNewMenuItem = new JMenuItem("Bienvenido a 'Nombre de la aplicación'!!");
         menuBar.add(mntmNewMenuItem);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
