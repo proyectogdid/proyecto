@@ -5,7 +5,7 @@ import com.company.comun.itfProperty;
 import static com.company.comun.clsConstantes.*;
 
 /**
- * Clase para asignar participantes a la liga. Estos tienen el nombre de los equipos, además de nuevos atributos creados.
+ * Clase para asignar participantes a la liga. Estos tienen el nombre de los equipos, ademas de nuevos atributos creados.
  */
 
 public class Participantes extends Equipo implements itfProperty {
@@ -17,14 +17,14 @@ public class Participantes extends Equipo implements itfProperty {
     private int puntosEnContra;
 
     /**
-     * Este método recogerá todos los datos necesarios para identificar los diferentes participantes.
-     * @param nombre
-     * @param patrocinador
-     * @param partidosGanados
-     * @param partidosJugados
-     * @param partidosPerdidos
-     * @param puntosAFavor
-     * @param puntosEnContra
+     * Este metodo recogerá todos los datos necesarios para identificar los diferentes participantes.
+     * @param nombre nombre
+     * @param patrocinador patrocinador
+     * @param partidosGanados partidosGanados
+     * @param partidosJugados partidosJugados
+     * @param partidosPerdidos partidosPerdidos
+     * @param puntosAFavor puntosAFavor
+     * @param puntosEnContra puntosEnContra
      */
 
     public Participantes(String nombre, String patrocinador, int partidosGanados, int partidosJugados, int partidosPerdidos, int puntosAFavor, int puntosEnContra) {
@@ -77,9 +77,9 @@ public class Participantes extends Equipo implements itfProperty {
     }
 
     /**
-     * Método getproperty de la interfaz itfProperty
-     * @param prop
-     * @return
+     * Metodo getproperty de la interfaz itfProperty
+     * @param prop prop
+     * @return return
      */
 
     @Override
@@ -101,8 +101,8 @@ public class Participantes extends Equipo implements itfProperty {
     }
 
     /**
-     * Método para mostrar los datos de los participantes.
-     * @return
+     * Metodo para mostrar los datos de los participantes.
+     * @return return
      */
     @Override
     public String toString() {

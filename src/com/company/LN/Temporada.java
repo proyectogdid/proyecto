@@ -29,10 +29,10 @@ public class Temporada implements itfProperty {
     }
 
     /**
-     * Este método va a recoger los datos de la temporada, tanto la id como el año en cuestión
+     * Este metodo va a recoger los datos de la temporada, tanto la id como el ano en cuestion
      *
-     * @param id
-     * @param ano
+     * @param id id
+     * @param ano ano
      */
     public Temporada(int id, Date ano) {
         this.id = id;
@@ -66,8 +66,8 @@ public class Temporada implements itfProperty {
     /**
      * metodo get property de la interfaz itfProperty
      *
-     * @param prop
-     * @return
+     * @param prop prop
+     * @return return
      */
     @Override
     public Object getProperty(String prop) {

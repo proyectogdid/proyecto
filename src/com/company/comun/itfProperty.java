@@ -6,7 +6,7 @@ package com.company.comun;
 public interface itfProperty {
     /**
      * metodo get property por el que accederemos a los atributos de las clases que implementen esta itf
-     * @param prop
+     * @param prop prop
      * @return object
      */
     Object getProperty(String prop);

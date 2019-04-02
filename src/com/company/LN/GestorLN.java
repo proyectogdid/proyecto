@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Clase que va a gestionar la comunicación entre el paquete LN y el paquete LP
+ * Clase que va a gestionar la comunicacion entre el paquete LN y el paquete LP
  */
 public class GestorLN {
 
@@ -32,14 +32,14 @@ public class GestorLN {
     private clsDatos objDatos = new clsDatos();
 
     /**
-     * Este método se va a utilizar para añadir los campos en el Array de los campos
+     * Este metodo se va a utilizar para añadir los campos en el Array de los campos
      *
-     * @param nombre
-     * @param ciudad
-     * @param calle
-     * @param numero
-     * @param cp
-     * @param aforo
+     * @param nombre nombre
+     * @param ciudad ciudad
+     * @param calle calle
+     * @param numero numero
+     * @param cp cp
+     * @param aforo aforo
      */
     public void anadirCampo(String nombre, String ciudad, String calle, String numero, String cp, int aforo) {
         try {
@@ -57,9 +57,9 @@ public class GestorLN {
 
 
     /**
-     * Este método lo vamos a emplear para leer los campos de los equipos
+     * Este metodo lo vamos a emplear para leer los campos de los equipos
      *
-     * @return
+     * @return return
      */
     public ArrayList<itfProperty> leerCampos() {
         System.out.println("entro aqui");
@@ -77,7 +77,7 @@ public class GestorLN {
     }
 
     /**
-     * Método para cargar los datos de los campos de la BD
+     * Metodo para cargar los datos de los campos de la BD
      */
     public void cargarDatosCampos() throws Exception {
             ResultSet rs = objDatos.buscarCampos();
@@ -90,11 +90,11 @@ public class GestorLN {
     }
 
     /**
-     * Método para añadir equipos a la BD
+     * Metodo para añadir equipos a la BD
      *
-     * @param nombre
-     * @param patrocinador
-     * @param campo
+     * @param nombre nombre
+     * @param patrocinador patrocinador
+     * @param campo campo
      */
     public void anadirEquipo(String nombre, String patrocinador, int campo) {
         try {
@@ -111,9 +111,9 @@ public class GestorLN {
 
 
     /**
-     * Este método lo vamos a emplear para leer los equipos
+     * Este metodo lo vamos a emplear para leer los equipos
      *
-     * @return
+     * @return return
      */
     public ArrayList<itfProperty> leerEquipos() {
         System.out.println("entro aqui");
@@ -131,7 +131,7 @@ public class GestorLN {
     }
 
     /**
-     * Método para cargar los datos de los quipos previamente introducidos a la BD
+     * Metodo para cargar los datos de los quipos previamente introducidos a la BD
      */
     public void cargarDatosEquipos() throws Exception {
 

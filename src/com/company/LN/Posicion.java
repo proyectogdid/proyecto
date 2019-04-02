@@ -27,10 +27,10 @@ public class Posicion implements itfProperty {
     }
 
     /**
-     * Este método recogerá todos los datos necesarios para poder identificar la posición de cada jugador.
+     * Este metodo recogera todos los datos necesarios para poder identificar la posición de cada jugador.
      *
-     * @param id
-     * @param nombre
+     * @param id id
+     * @param nombre nombre
      */
     public Posicion(int id, String nombre) {
         this.id = id;
@@ -56,8 +56,8 @@ public class Posicion implements itfProperty {
     /**
      * metodo get property de la interfaz itfProperty
      *
-     * @param prop
-     * @return
+     * @param prop prop
+     * @return return
      */
     @Override
     public Object getProperty(String prop) {

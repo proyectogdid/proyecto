@@ -11,9 +11,9 @@ public class EstadoBD extends  Conexion{
 
     /**
      * seleccionar estados de bd
-     * @param con
-     * @return
-     * @throws Exception
+     * @param con con
+     * @return return
+     * @throws Exception throws exception
      */
     public static ResultSet getAll(Connection con) throws Exception{
         return select(con, "SELECT "+TEMPLATE+" FROM estados estd");

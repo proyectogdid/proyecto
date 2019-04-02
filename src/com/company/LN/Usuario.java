@@ -33,12 +33,12 @@ public class Usuario implements itfProperty {
     }
 
     /**
-     * Este método va a recoger los datos de los usuarios de la aplicación
+     * Este metodo va a recoger los datos de los usuarios de la aplicacion
      *
-     * @param id
-     * @param usuario
-     * @param contrasena
-     * @param tipo
+     * @param id id
+     * @param usuario usuario
+     * @param contrasena contrasena
+     * @param tipo tipo
      */
     public Usuario(int id, String usuario, String contrasena, String tipo) {
         this.id = id;
@@ -90,8 +90,8 @@ public class Usuario implements itfProperty {
     /**
      * metodo get property de la interfaz itfProperty
      *
-     * @param prop
-     * @return
+     * @param prop prop
+     * @return return
      */
     @Override
     public Object getProperty(String prop) {

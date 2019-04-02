@@ -38,13 +38,13 @@ public class Traspaso implements itfProperty {
     }
 
     /**
-     * Este método va a recoger los datos de todos los traspasos que se vayan reslizando
+     * Este metodo va a recoger los datos de todos los traspasos que se vayan reslizando
      *
-     * @param id
-     * @param precio
-     * @param jugador
-     * @param equipoPrevio
-     * @param equipoPosterior
+     * @param id id
+     * @param precio precio
+     * @param jugador jugador
+     * @param equipoPrevio equipoPRevio
+     * @param equipoPosterior equipoPosterior
      */
     public Traspaso(int id, int precio, int jugador, int equipoPrevio, int equipoPosterior) {
         this.id = id;
@@ -97,8 +97,8 @@ public class Traspaso implements itfProperty {
     /**
      * metodo get property de la interfaz itfProperty
      *
-     * @param prop
-     * @return
+     * @param prop prop
+     * @return return
      */
     @Override
     public Object getProperty(String prop) {

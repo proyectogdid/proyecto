@@ -5,7 +5,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 /**
- * Esta clase se va a utilizar para sacar por pantalla la ventana del menu principal de la aplicación
+ * Esta clase se va a utilizar para sacar por pantalla la ventana del menu principal de la aplicacion
  */
 public class ventanaMenu extends JFrame {
 

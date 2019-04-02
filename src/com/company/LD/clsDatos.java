@@ -20,8 +20,8 @@ public class clsDatos {
     /**
      * Metodo empleado para conectarnos con la BD
      *
-     * @return
-     * @throws SQLException
+     * @return return
+     * @throws SQLException throws Exception
      */
     public void conectarBD() throws SQLException {
         //Ruta de la base de datos (jdbc:mysql://localhost:3306/alumnoBD?useTimezone=true&serverTimezone=GMT&useSSL=false)
@@ -35,7 +35,7 @@ public class clsDatos {
      * Metodo para desconectarnos de la BD
      *
      * @param
-     * @throws SQLException
+     * @throws SQLException throws SQLException
      */
     public void desconectarBD() throws SQLException {
         con.close();
@@ -44,14 +44,14 @@ public class clsDatos {
     /**
      * metodo para insertar un nuevo campo
      *
-     * @param nombre
-     * @param ciudad
-     * @param calle
-     * @param numero
-     * @param cp
-     * @param aforo
+     * @param nombre nombre
+     * @param ciudad ciudad
+     * @param calle calle
+     * @param numero numero
+     * @param cp cp
+     * @param aforo aforo
      * @return devuelve el id que tenga en BD
-     * @throws Exception
+     * @throws Exception throws Exception
      */
     public int insertarCampo(String nombre, String ciudad, String calle, String numero, String cp, int aforo) throws Exception {
         return CampoBD.insertar(con, nombre, ciudad, calle, numero, cp, aforo);
@@ -60,8 +60,8 @@ public class clsDatos {
     /**
      * Metedo para buscar campos
      *
-     * @return
-     * @throws Exception
+     * @return return
+     * @throws Exception throws Exception
      */
     public ResultSet buscarCampos() throws Exception {
         return CampoBD.getAll(con);
@@ -69,22 +69,22 @@ public class clsDatos {
     }
 
     /**
-     * Método para insertar un nuevo Equipo
+     * Metodo para insertar un nuevo Equipo
      *
-     * @param nombre
-     * @param patrocinador
-     * @return
-     * @throws Exception
+     * @param nombre nombre
+     * @param patrocinador patrocinador
+     * @return return
+     * @throws Exception throws Exception
      */
     public int insertarEquipo(String nombre, String patrocinador, int campo) throws Exception {
         return EquipoBD.insertar(con, nombre, patrocinador, campo);
     }
 
     /**
-     * Método para buscar equipos
+     * Metodo para buscar equipos
      *
-     * @return
-     * @throws Exception
+     * @return return
+     * @throws Exception throws Exception
      */
     public ResultSet buscarEquipo() throws Exception {
         return EquipoBD.getAll(con);
@@ -92,8 +92,8 @@ public class clsDatos {
 
     /**
      * gestionar select de estados
-     * @return
-     * @throws Exception
+     * @return return
+     * @throws Exception throws Exception
      */
     public ResultSet buscarEstados() throws Exception{
         return EstadoBD.getAll(con);

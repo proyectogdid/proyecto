@@ -4,20 +4,20 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 
 /**
- * Esta clase la utilizaremos para insertar y obtener información sobre los equipos de la BD
+ * Esta clase la utilizaremos para insertar y obtener informacion sobre los equipos de la BD
  */
 
 public class EquipoBD extends Conexion {
     private static final String TEMPLATE = "eqp.id, eqp.nombre, eqp.patrocinador, eqp.campo";
 
     /**
-     * Método para insertar los equipos en nuestra BD
+     * Metodo para insertar los equipos en nuestra BD
      *
-     * @param con
-     * @param nombre
-     * @param patrocinador
-     * @return
-     * @throws Exception
+     * @param con con
+     * @param nombre nombre
+     * @param patrocinador patrocinador
+     * @return return
+     * @throws Exception throws Exception
      */
     public static int insertar(Connection con, String nombre, String patrocinador, int campo) throws Exception {
 
@@ -26,10 +26,10 @@ public class EquipoBD extends Conexion {
     }
 
     /**
-     * Metodo para obtener información de los equipos de la BD
+     * Metodo para obtener informacion de los equipos de la BD
      *
-     * @return
-     * @throws Exception
+     * @return return
+     * @throws Exception throws Exception
      */
     public static ResultSet getAll(Connection con) throws Exception {
         String query = "SELECT " + TEMPLATE + " FROM equipos eqp";

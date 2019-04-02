@@ -26,10 +26,10 @@ public class Estado implements itfProperty, itfPersistable {
     }
 
     /**
-     * Este método, recogerá los datos necesarios para poder identificar cada estado.
+     * Este método, recogera los datos necesarios para poder identificar cada estado.
      *
-     * @param id
-     * @param nombre
+     * @param id id
+     * @param nombre nombre
      */
     public Estado(int id, String nombre) {
         this.id = id;
@@ -55,7 +55,7 @@ public class Estado implements itfProperty, itfPersistable {
     /**
      * metodo get property de la interfaz itfProperty
      *
-     * @param prop
+     * @param prop prop
      * @return
      */
     @Override

@@ -19,13 +19,13 @@ public class Aficionado extends Usuario implements itfProperty {
     }
 
     /**
-     * Este método va a recoger los datos referidos a un tipo de usuario que va a ser el aficionado
+     * Este metodo va a recoger los datos referidos a un tipo de usuario que va a ser el aficionado
      *
-     * @param id
-     * @param usuario
-     * @param contrasena
-     * @param tipo
-     * @param favorito
+     * @param id id
+     * @param usuario usuario
+     * @param contrasena contrasena
+     * @param tipo tipo
+     * @param favorito favorito
      */
     public Aficionado(int id, String usuario, String contrasena, String tipo, int favorito) {
         super(id, usuario, contrasena, tipo);
@@ -43,8 +43,8 @@ public class Aficionado extends Usuario implements itfProperty {
     /**
      * metodo get property de la interfaz itfProperty
      *
-     * @param prop
-     * @return
+     * @param prop prop
+     * @return return
      */
 
     @Override

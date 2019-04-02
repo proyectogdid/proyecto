@@ -32,7 +32,7 @@ public class Equipo implements itfProperty {
     private ArrayList<Integer> jugadores;
 
     /**
-     * Este método recogerá todos los datos necesarios para identificar los diferentes equipos.
+     * Este método recogera todos los datos necesarios para identificar los diferentes equipos.
      */
     public Equipo(String nombre, String patrocinador) {
         this.nombre = nombre;
@@ -85,8 +85,8 @@ public class Equipo implements itfProperty {
     /**
      * metodo get property de la interfaz itfProperty
      *
-     * @param prop
-     * @return
+     * @param prop prop
+     * @return return
      */
     @Override
     public Object getProperty(String prop) {

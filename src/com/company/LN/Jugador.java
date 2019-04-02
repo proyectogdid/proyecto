@@ -57,18 +57,18 @@ public class Jugador implements itfProperty {
     }
 
     /**
-     * Este método recogerá todos los valores necesarios para identificar cada jugador
+     * Este metodo recogerá todos los valores necesarios para identificar cada jugador
      *
-     * @param id
-     * @param nombre
-     * @param apellido1
-     * @param apellido2
-     * @param fechaNac
-     * @param dorsal
-     * @param textoCamiseta
-     * @param equipo
-     * @param posicion
-     * @param estado
+     * @param id id
+     * @param nombre nombre
+     * @param apellido1 apellido1
+     * @param apellido2 apellido2
+     * @param fechaNac fechaNAc
+     * @param dorsal dorsal
+     * @param textoCamiseta textoCamiseta
+     * @param equipo equipo
+     * @param posicion posicion
+     * @param estado estado
      */
 
     public Jugador(int id, String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta, int equipo, int posicion, int estado) {
@@ -167,8 +167,8 @@ public class Jugador implements itfProperty {
     /**
      * metodo get property de la interfaz itfProperty
      *
-     * @param prop
-     * @return
+     * @param prop prop
+     * @return return
      */
     @Override
     public Object getProperty(String prop) {

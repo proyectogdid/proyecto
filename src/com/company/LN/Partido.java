@@ -56,16 +56,16 @@ public class Partido implements itfProperty {
     }
 
     /**
-     * Este método recogerá todos los datos necesarios para conocer al detalle dichos datos de cada partido
+     * Este metodo recogera todos los datos necesarios para conocer al detalle dichos datos de cada partido
      *
-     * @param id
-     * @param fecha
-     * @param ptosLocal
-     * @param ptosVisitante
-     * @param local
-     * @param visitante
-     * @param temporada
-     * @param campo
+     * @param id id
+     * @param fecha fecha
+     * @param ptosLocal ptosLocal
+     * @param ptosVisitante ptosVisitante
+     * @param local local
+     * @param visitante visitantes
+     * @param temporada temporada
+     * @param campo campo
      */
     public Partido(int id, Date fecha, int ptosLocal, int ptosVisitante, int local, int visitante, int temporada, int campo) {
         this.id = id;
@@ -79,17 +79,17 @@ public class Partido implements itfProperty {
     }
 
     /**
-     * El siguiente constructor será necesario cuando se registren los partidos,
+     * El siguiente constructor sera necesario cuando se registren los partidos,
      * ya que en un inicio no necesitaremos los ptsLocal y ptosVisitante.
      * Una vez que comiencen los partidos ya utilizaremos el constructor de arriba,
      * con todos los atributos
      *
-     * @param id
-     * @param fecha
-     * @param local
-     * @param visitante
-     * @param temporada
-     * @param campo
+     * @param id id
+     * @param fecha fecha
+     * @param local local
+     * @param visitante visitante
+     * @param temporada temporada
+     * @param campo campo
      */
 
     public Partido(int id, Date fecha, int local, int visitante, int temporada, int campo) {
@@ -168,8 +168,8 @@ public class Partido implements itfProperty {
     /**
      * metodo get property de la interfaz itfProperty
      *
-     * @param prop
-     * @return
+     * @param prop prop
+     * @return return
      */
     @Override
     public Object getProperty(String prop) {

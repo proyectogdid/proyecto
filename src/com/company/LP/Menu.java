@@ -65,7 +65,7 @@ public class Menu {
     /**
      * metodo para recoger los datos de campo y añadirlos en gestorln
      *
-     * @param gln
+     * @param gln gln
      */
     public static void altaCampo(GestorLN gln) {
         String nombre;
@@ -103,7 +103,7 @@ public class Menu {
     /**
      * metodo que lista los campos almacenados en memoria de gestorln
      *
-     * @param campos
+     * @param campos campos
      */
 
     public static void visualizarCampo(ArrayList<itfProperty> campos) {
@@ -123,8 +123,8 @@ public class Menu {
     }
 
     /**
-     * Método para dar de alta los diferentes equipos de la liga
-     * @param gln
+     * Metodo para dar de alta los diferentes equipos de la liga
+     * @param gln gln
      */
     public static void altaEquipo(GestorLN gln) {
         String nombre;
@@ -148,7 +148,7 @@ public class Menu {
     /**
      * metodo que lista los equipos almacenados en memoria de gestorln
      *
-     * @param equipos
+     * @param equipos equipos
      */
 
     public static void visualizarEquipo(ArrayList<itfProperty> equipos) {
