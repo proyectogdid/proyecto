@@ -1,5 +1,6 @@
 package com.company.LN;
 
+import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
 import java.sql.ResultSet;
@@ -10,7 +11,7 @@ import static com.company.comun.clsConstantes.*;
  * Clase para gestionar los campos en los que se juegan los partidos
  * guardando su nombre, dirección y aforo
  */
-public class Campo implements itfProperty, Comparable<Campo> {
+public class Campo implements itfProperty, Comparable<Campo>, itfPersistable {
     /**
      * Atributo id del campo
      */
@@ -85,7 +86,7 @@ public class Campo implements itfProperty, Comparable<Campo> {
         this.aforo = aforo;
     }
 
-    public void resultSetToCampo(ResultSet rs) throws Exception {
+    public void resultsetLoad(ResultSet rs) throws Exception {
         id = rs.getInt(BD_CAMPO_ID);
         aforo = rs.getInt(BD_CAMPO_AFORO);
         nombre = rs.getString(BD_CAMPO_NOMBRE);
