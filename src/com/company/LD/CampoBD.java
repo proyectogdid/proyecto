@@ -8,7 +8,7 @@ import java.sql.ResultSet;
  */
 
 public class CampoBD extends Conexion {
-    private static final String template = "cmp.id, cmp.nombre, cmp.ciudad, cmp.calle, cmp.numero, cmp.cp, cmp.cantidad";
+    private static final String TEMPLATE = "cmp.id, cmp.nombre, cmp.ciudad, cmp.calle, cmp.numero, cmp.cp, cmp.cantidad";
 
     /**
      * Metodo para insertar información sobre los campos en la BD
@@ -34,7 +34,7 @@ public class CampoBD extends Conexion {
      * @throws Exception
      */
     public static ResultSet getAll(Connection con) throws Exception {
-        String query = "SELECT " + template + " FROM campos cmp";
+        String query = "SELECT " + TEMPLATE + " FROM campos cmp";
         System.out.println(query);
         ResultSet rs = select(con, query);
         return rs;
