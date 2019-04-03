@@ -1,7 +1,7 @@
 package com.company.LD;
 
 import java.sql.*;
-
+import java.util.Date;
 import static com.company.LD.constantesBD.*;
 
 /**
@@ -101,7 +101,7 @@ public class clsDatos {
      * @throws Exception throws Exception
      */
 
-    public int insertarJugador(String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta,int equipo,int posicion,int estado) throws Exception {
+    public int insertarJugador(String nombre, String apellido1, String apellido2, java.util.Date fechaNac, String dorsal, String textoCamiseta,int equipo,int posicion,int estado) throws Exception {
         return JugadoresBD.insertar(con,nombre,apellido1,apellido2,fechaNac,dorsal,textoCamiseta, equipo,estado,posicion);
     }
 

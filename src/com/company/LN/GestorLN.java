@@ -3,7 +3,7 @@ package com.company.LN;
 import com.company.LD.clsDatos;
 import com.company.comun.itfProperty;
 
-import java.sql.Date;
+import java.util.Date;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collections;

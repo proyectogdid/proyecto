@@ -179,7 +179,9 @@ public class Menu {
      * Metodo para dar de alta los partidos de la liga
      * @param gln gln
      */
-    public static void altaJugador(GestorLN gln) throws ParseException {
+    public static void altaJugador(GestorLN gln)  {
+        try {
+
 
 
         String nombre;
@@ -187,6 +189,7 @@ public class Menu {
         String apellido2;
         String dorsal;
         String textoCamiseta;
+        String fechaNac;
         int idequipo;
         int idposicion;
         int idestado;
@@ -202,7 +205,8 @@ public class Menu {
         apellido2=clsUtilidades.leerCadena();
 
         System.out.println("Fecha de nacimiento:");
-
+        fechaNac=clsUtilidades.leerCadena();
+        Date fecha=new SimpleDateFormat("dd/MM/yyyy").parse(fechaNac);
         System.out.println("Dorsal:");
         dorsal=clsUtilidades.leerCadena();
 
@@ -218,7 +222,10 @@ public class Menu {
         System.out.println("Estado:");
         idestado=clsUtilidades.leerEntero();
 
-        gln.anadirJugador(nombre,apellido1,apellido2,dorsal,textoCamiseta,idequipo,idposicion,idestado);
+        gln.anadirJugador(nombre,apellido1,apellido2,fecha,dorsal,textoCamiseta,idequipo,idposicion,idestado);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     /**

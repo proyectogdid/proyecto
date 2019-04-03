@@ -1,4 +1,4 @@
-package com.company.com.company.comun;
+package com.company;
 
 import com.company.LP.*;
 

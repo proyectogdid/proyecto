@@ -92,6 +92,8 @@ public abstract class Conexion {
                 stt.setInt(j, (Integer) parametros[i]);
             } else if (parametros[i] instanceof Double) {
                 stt.setDouble(j, (Double) parametros[i]);
+            }else if(parametros[i] instanceof java.util.Date){
+                stt.setDate(j,(java.sql.Date) parametros[i]);
             }
         }
     }
