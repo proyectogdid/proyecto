@@ -37,7 +37,9 @@ public class Menu {
             System.out.println("2.-Ver campo");
             System.out.println("3.-Introducir equipo");
             System.out.println("4.-Ver Equipo");
-            System.out.println("5.-Salir");
+            System.out.println("5.-ALta jugador");
+            System.out.println("6.-Ver jugaodes");
+            System.out.println("7.-Salir");
             op = clsUtilidades.leerEntero();
 
             switch (op) {
@@ -67,7 +69,7 @@ public class Menu {
 
             }
 
-        } while (op != 5);
+        } while (op != 7);
 
 
 
@@ -204,7 +206,7 @@ public class Menu {
         System.out.println("Segundo apellido:");
         apellido2=clsUtilidades.leerCadena();
 
-        System.out.println("Fecha de nacimiento:");
+        System.out.println("Fecha de nacimiento:(dd/MM/yyyy)");
         fechaNac=clsUtilidades.leerCadena();
         Date fecha=new SimpleDateFormat("dd/MM/yyyy").parse(fechaNac);
         System.out.println("Dorsal:");

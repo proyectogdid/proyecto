@@ -28,8 +28,8 @@ public class JugadoresBD extends Conexion{
      */
     public static int insertar(Connection con, String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta, int equipo, int estado, int posicion) throws Exception {
 
-        Object[] parametros = {nombre,apellido1,apellido2,fechaNac,dorsal,textoCamiseta};
-        return insert(con, "INSERT INTO partidos(nombre,apellido1,apellido2,fechaNac,dorsal,textoCamiseta)VALUES(?,?,?,?,?,?)", parametros);
+        Object[] parametros = {nombre,apellido1,apellido2,fechaNac,dorsal,textoCamiseta,equipo,estado,posicion};
+        return insert(con, "INSERT INTO jugadores (nombre,apellido1,apellido2,fechaNac,dorsal,textoCamiseta,equipo,estado,posicion)VALUES(?,?,?,?,?,?,?,?,?)", parametros);
     }
 
     /**
