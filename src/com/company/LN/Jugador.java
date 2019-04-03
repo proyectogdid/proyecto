@@ -54,6 +54,9 @@ public class Jugador implements itfProperty {
      */
     private int estado;
 
+    public Jugador(String dorsal) {
+    }
+
     public Jugador() {
     }
 
@@ -103,6 +106,7 @@ public class Jugador implements itfProperty {
         this.dorsal = dorsal;
         this.textoCamiseta = textoCamiseta;
     }
+
 
     public void resultSetToJugador(ResultSet rs) throws Exception {
         id = rs.getInt(BD_JUGADOR_ID);

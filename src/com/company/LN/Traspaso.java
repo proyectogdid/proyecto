@@ -1,18 +1,17 @@
 package com.company.LN;
 
+import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
-import static com.company.comun.clsConstantes.TRASPASO_ID;
-import static com.company.comun.clsConstantes.TRASPASO_PRECIO;
-import static com.company.comun.clsConstantes.TRASPASO_JUGADOR;
-import static com.company.comun.clsConstantes.TRASPASO_EQUIPO_PREVIO;
-import static com.company.comun.clsConstantes.TRASPASO_EQUIPO_POSTERIOR;
+import java.sql.ResultSet;
+
+import static com.company.comun.clsConstantes.*;
 
 /**
  * clase que gestionara los traspasos de los jugadores entre distintos equipos
  * teniendo como atributos el equipo anterior y posterior para poder guardar un historico de la trayectoria
  */
-public class Traspaso implements itfProperty {
+public class Traspaso implements itfProperty, itfPersistable {
     /**
      * atributo id del traspaso
      */
@@ -53,6 +52,7 @@ public class Traspaso implements itfProperty {
         this.equipoPrevio = equipoPrevio;
         this.equipoPosterior = equipoPosterior;
     }
+
 
     public int getId() {
         return id;
@@ -117,5 +117,15 @@ public class Traspaso implements itfProperty {
             default:
                 return null;
         }
+    }
+
+    @Override
+    public void resultsetLoad(ResultSet rs) throws Exception {
+        id=rs.getInt(BD_TRASPASO_ID);
+        jugador=rs.getInt(BD_TRASPASO_JUGADOR);
+        precio=rs.getInt(BD_TRASPASO_PRECIO);
+        equipoPrevio=rs.getInt(BD_TRASPASO_EQUIPO_PREVIO);
+        equipoPosterior=rs.getInt(BD_TRASPASO_EQUIPO_POSTERIOR);
+
     }
 }

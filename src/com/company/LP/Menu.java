@@ -3,12 +3,9 @@ package com.company.LP;
 import com.company.LN.GestorLN;
 import com.company.comun.itfProperty;
 
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Scanner;
 
 import static com.company.comun.clsConstantes.*;
 
@@ -22,10 +19,10 @@ public class Menu {
      */
     public static void menu() {
         GestorLN gln = new GestorLN();
-        try{
+        try {
             gln.cargarDatos();
-        }catch (Exception e){
-            javax.swing.JOptionPane.showMessageDialog(null,"error al cargar datos");
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(null, "error al cargar datos");
             e.printStackTrace();
         }
 
@@ -71,12 +68,7 @@ public class Menu {
 
             }
 
-<<<<<<< Updated upstream
         } while (op != 7);
-=======
-        } while (op !=7 );
->>>>>>> Stashed changes
-
 
 
     }
@@ -143,6 +135,7 @@ public class Menu {
 
     /**
      * Metodo para dar de alta los diferentes equipos de la liga
+     *
      * @param gln gln
      */
     public static void altaEquipo(GestorLN gln) {
@@ -154,12 +147,12 @@ public class Menu {
         nombre = clsUtilidades.leerCadena();
 
         System.out.println("Patrocinador:");
-        patrocinador=clsUtilidades.leerCadena();
+        patrocinador = clsUtilidades.leerCadena();
 
         System.out.println("campo:");
-        idcampo=clsUtilidades.leerEntero();
+        idcampo = clsUtilidades.leerEntero();
 
-        gln.anadirEquipo(nombre, patrocinador,idcampo);
+        gln.anadirEquipo(nombre, patrocinador, idcampo);
 
 
     }
@@ -174,7 +167,7 @@ public class Menu {
 
         for (itfProperty a : equipos) {
 
-            System.out.println("ID:"+a.getProperty(EQUIPO_ID));
+            System.out.println("ID:" + a.getProperty(EQUIPO_ID));
             System.out.println("Nombre:" + a.getProperty(EQUIPO_NOMBRE));
             System.out.println("Patrocinador:" + a.getProperty(EQUIPO_PATROCINADOR));
 
@@ -185,72 +178,73 @@ public class Menu {
 
     /**
      * Metodo para dar de alta los partidos de la liga
+     *
      * @param gln gln
      */
-    public static void altaJugador(GestorLN gln)  {
+    public static void altaJugador(GestorLN gln) {
         try {
 
 
+            String nombre;
+            String apellido1;
+            String apellido2;
+            String dorsal;
+            String textoCamiseta;
+            String fechaNac;
+            int idequipo;
+            int idposicion;
+            int idestado;
 
-        String nombre;
-        String apellido1;
-        String apellido2;
-        String dorsal;
-        String textoCamiseta;
-        String fechaNac;
-        int idequipo;
-        int idposicion;
-        int idestado;
 
+            System.out.println("Nombre:");
+            nombre = clsUtilidades.leerCadena();
 
-        System.out.println("Nombre:");
-        nombre=clsUtilidades.leerCadena();
+            System.out.println("Primer apellido:");
+            apellido1 = clsUtilidades.leerCadena();
 
-        System.out.println("Primer apellido:");
-        apellido1=clsUtilidades.leerCadena();
+            System.out.println("Segundo apellido:");
+            apellido2 = clsUtilidades.leerCadena();
 
-        System.out.println("Segundo apellido:");
-        apellido2=clsUtilidades.leerCadena();
+            System.out.println("Fecha de nacimiento:(dd/MM/yyyy)");
+            fechaNac = clsUtilidades.leerCadena();
+            Date fecha = new SimpleDateFormat("dd/MM/yyyy").parse(fechaNac);
+            System.out.println("Dorsal:");
+            dorsal = clsUtilidades.leerCadena();
 
-        System.out.println("Fecha de nacimiento:(dd/MM/yyyy)");
-        fechaNac=clsUtilidades.leerCadena();
-        Date fecha=new SimpleDateFormat("dd/MM/yyyy").parse(fechaNac);
-        System.out.println("Dorsal:");
-        dorsal=clsUtilidades.leerCadena();
+            System.out.println("Texto de la camiseta:");
+            textoCamiseta = clsUtilidades.leerCadena();
 
-        System.out.println("Texto de la camiseta:");
-        textoCamiseta=clsUtilidades.leerCadena();
+            System.out.println("Equipo:");
+            idequipo = clsUtilidades.leerEntero();
 
-        System.out.println("Equipo:");
-        idequipo=clsUtilidades.leerEntero();
+            System.out.println("Posicion:");
+            idposicion = clsUtilidades.leerEntero();
 
-        System.out.println("Posicion:");
-        idposicion=clsUtilidades.leerEntero();
+            System.out.println("Estado:");
+            idestado = clsUtilidades.leerEntero();
 
-        System.out.println("Estado:");
-        idestado=clsUtilidades.leerEntero();
-
-        gln.anadirJugador(nombre,apellido1,apellido2,fecha,dorsal,textoCamiseta,idequipo,idposicion,idestado);
-        }catch (Exception e){
+            gln.anadirJugador(nombre, apellido1, apellido2, fecha, dorsal, textoCamiseta, idequipo, idposicion, idestado);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     /**
      * Metodo que lista los jugadores en memoria de gestorln
+     *
      * @param jugadores jugadores
      */
     public static void visualizarJugador(ArrayList<itfProperty> jugadores) {
 
         for (itfProperty a : jugadores) {
 
-            System.out.println("ID:"+a.getProperty(JUGADOR_ID));
+            System.out.println("ID:" + a.getProperty(JUGADOR_ID));
             System.out.println("Nombre:" + a.getProperty(JUGADOR_NOMBRE));
             System.out.println("Primer apellido:" + a.getProperty(JUGADOR_APELLIDO1));
-            System.out.println("Segundo apellido:"+a.getProperty(JUGADOR_APELLIDO2));
-            System.out.println("Fecha de nacimiento:"+a.getProperty(JUGADOR_FECHA_NACIMIENTO));
-            System.out.println("Dorsal:"+a.getProperty(JUGADOR_DORSAL));
-            System.out.println("Texto de la camiseta:"+a.getProperty(JUGADOR_TEXTO_CAMISETA));
+            System.out.println("Segundo apellido:" + a.getProperty(JUGADOR_APELLIDO2));
+            System.out.println("Fecha de nacimiento:" + a.getProperty(JUGADOR_FECHA_NACIMIENTO));
+            System.out.println("Dorsal:" + a.getProperty(JUGADOR_DORSAL));
+            System.out.println("Texto de la camiseta:" + a.getProperty(JUGADOR_TEXTO_CAMISETA));
 
             System.out.println();
 

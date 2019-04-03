@@ -108,20 +108,10 @@ public class Partido implements itfProperty {
         this.visitante = visitante;
         this.temporada = temporada;
         this.campo = campo;
-    }
 
-<<<<<<< Updated upstream
-    public void resultSetToPartido(ResultSet rs) throws Exception {
-       /* id=rs.getInt(BD_PARTIDO_ID);
-        fecha = rs.getDate(BD_PARTIDO_FECHA);
-        local = rs.getInt(BD_PARTIDO_LOCAL);
-        visitante=rs.getInt(BD_PARTIDO_VISITANTE);
-        temporada=rs.getInt(BD_PARTIDO_TEMPORADA);
-*/
 
     }
-=======
->>>>>>> Stashed changes
+
 
     public int getId() {
         return id;

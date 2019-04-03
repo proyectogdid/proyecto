@@ -1,12 +1,13 @@
 package com.company.LN;
 
+import com.company.Excepciones.DorsalRepetidoException;
 import com.company.LD.clsDatos;
 import com.company.comun.itfProperty;
 
-import java.util.Date;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 
 /**
  * Clase que va a gestionar la comunicacion entre el paquete LN y el paquete LP
@@ -34,7 +35,7 @@ public class GestorLN {
     /**
      * array que guardara posiciones en memoria
      */
-    ArrayList<Posicion> posiciones=new ArrayList<>();
+    ArrayList<Posicion> posiciones = new ArrayList<>();
     /**
      * comunicacion con capa de datos en LN
      */
@@ -169,14 +170,17 @@ public class GestorLN {
      * @param posicion      posicion
      * @param estado        estado
      */
-    public void anadirJugador(String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta, int equipo, int posicion, int estado) {
+    public void anadirJugador(String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta, int equipo, int posicion, int estado) throws DorsalRepetidoException {
+
         try {
             objDatos.conectarBD();
             Jugador jugador = new Jugador(nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta);
 
             jugador.setId(objDatos.insertarJugador(nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta, equipo, posicion, estado));
             jugadores.add(jugador);
+
             objDatos.desconectarBD();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -231,7 +235,19 @@ public class GestorLN {
             p.resultsetLoad(rs);
             posiciones.add(p);
         }
+
+
     }
+    public void cargarDatosTraspasos() throws Exception{
+        ResultSet rs = objDatos.buscarTraspasos();
+        while (rs.next()) {
+            Posicion p = new Posicion();
+            p.resultsetLoad(rs);
+            posiciones.add(p);
+        }
+
+}
+
 
     public void cargarDatos() throws Exception {
         objDatos.conectarBD();
@@ -240,6 +256,7 @@ public class GestorLN {
         cargarDatosEstados();
         cargarDatosJugadores();
         cargarDatosPosiciones();
+        cargarDatosTraspasos();
         objDatos.desconectarBD();
     }
 }

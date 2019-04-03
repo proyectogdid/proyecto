@@ -1,7 +1,10 @@
 package com.company.LD;
 
-import java.sql.*;
-import java.util.Date;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import static com.company.LD.constantesBD.*;
 
 /**
@@ -130,5 +133,14 @@ public class clsDatos {
      */
     public ResultSet buscarPosiciones() throws Exception {
         return PosicionBD.getAll(con);
+    }
+
+    /**
+     * Metodo para gestionar la carga de traspasos
+     * @return resultset traspasos
+     * @throws Exception fallos de la query
+     */
+    public ResultSet buscarTraspasos() throws Exception{
+        return TraspasoBD.getAll(con);
     }
 }

@@ -79,15 +79,6 @@ public class clsConstantes {
     public static final String PARTIDO_TEMPORADA = "temporada";
     public static final String PARTIDO_CAMPO = "campo";
 
-  /*
-    public static final String BD_PARTIDO_ID="prtd.id";
-    public static final String BD_PARTIDO_FECHA="prtd.fe"
-    public static final String BD_PARTIDO_LOCAL
-    public static final String BD_PARTIDO_VISITANTE
-    public static final String BD_PARTIDO_TEMPORADA
-    public static final String BD_PARTIDO_CAMPO
-*/
-
     public static final String POSICION_ID = "id";
     public static final String POSICION_NOMBRE = "nombre";
 
@@ -103,6 +94,12 @@ public class clsConstantes {
     public static final String TRASPASO_JUGADOR = "jugador";
     public static final String TRASPASO_EQUIPO_PREVIO = "equipoPrevio";
     public static final String TRASPASO_EQUIPO_POSTERIOR = "equipoPosterior";
+
+    public static final String BD_TRASPASO_ID = "tra.id";
+    public static final String BD_TRASPASO_PRECIO = "tra.precio";
+    public static final String BD_TRASPASO_JUGADOR = "tra.jugador";
+    public static final String BD_TRASPASO_EQUIPO_PREVIO = "tra.equipoPrevio";
+    public static final String BD_TRASPASO_EQUIPO_POSTERIOR = "tra.equipoPosterior";
 
     public static final String USUARIO_ID = "id";
     public static final String USUARIO_USERNAME = "username";
