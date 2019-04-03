@@ -2,16 +2,10 @@ package com.company.LN;
 
 import com.company.comun.itfProperty;
 
+import java.sql.ResultSet;
 import java.util.Date;
 
-import static com.company.comun.clsConstantes.PARTIDO_ID;
-import static com.company.comun.clsConstantes.PARTIDO_FECHA;
-import static com.company.comun.clsConstantes.PARTIDO_PTOS_LOCAL;
-import static com.company.comun.clsConstantes.PARTIDO_PTOS_VISITANTE;
-import static com.company.comun.clsConstantes.PARTIDO_LOCAL;
-import static com.company.comun.clsConstantes.PARTIDO_VISITANTE;
-import static com.company.comun.clsConstantes.PARTIDO_TEMPORADA;
-import static com.company.comun.clsConstantes.PARTIDO_CAMPO;
+import static com.company.comun.clsConstantes.*;
 
 /**
  * Clase que va a gestionar los datos principales de
@@ -40,7 +34,7 @@ public class Partido implements itfProperty {
      */
     private int local;
     /**
-     * Atributo equi`po visitante del partido
+     * Atributo equipo visitante del partido
      */
     private int visitante;
     /**
@@ -53,6 +47,22 @@ public class Partido implements itfProperty {
     private int campo;
 
     public Partido() {
+    }
+
+    /**
+     * Metodo que utilizaremos para añadir partidos en la BD
+     * @param fecha fecha
+     * @param local local
+     * @param visitante visitante
+     * @param temporada temporada
+     * @param campo campo
+     */
+    public Partido( Date fecha, int local, int visitante, int temporada, int campo){
+        this.fecha = fecha;
+        this.local = local;
+        this.visitante = visitante;
+        this.temporada = temporada;
+        this.campo = campo;
     }
 
     /**
@@ -99,6 +109,16 @@ public class Partido implements itfProperty {
         this.visitante = visitante;
         this.temporada = temporada;
         this.campo = campo;
+    }
+
+    public void resultSetToPartido(ResultSet rs) throws Exception {
+        id=rs.getInt(BD_PARTIDO_ID);
+        fecha = rs.getDate(BD_PARTIDO_FECHA);
+        local = rs.getInt(BD_PARTIDO_LOCAL);
+        visitante=rs.getInt(BD_PARTIDO_VISITANTE);
+        temporada=rs.getInt(BD_PARTIDO_TEMPORADA);
+
+
     }
 
     public int getId() {

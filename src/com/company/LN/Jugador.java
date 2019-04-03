@@ -2,6 +2,7 @@ package com.company.LN;
 
 import com.company.comun.itfProperty;
 
+import java.sql.ResultSet;
 import java.util.Date;
 
 import static com.company.comun.clsConstantes.*;
@@ -59,16 +60,16 @@ public class Jugador implements itfProperty {
     /**
      * Este metodo recogerá todos los valores necesarios para identificar cada jugador
      *
-     * @param id id
-     * @param nombre nombre
-     * @param apellido1 apellido1
-     * @param apellido2 apellido2
-     * @param fechaNac fechaNAc
-     * @param dorsal dorsal
+     * @param id            id
+     * @param nombre        nombre
+     * @param apellido1     apellido1
+     * @param apellido2     apellido2
+     * @param fechaNac      fechaNAc
+     * @param dorsal        dorsal
      * @param textoCamiseta textoCamiseta
-     * @param equipo equipo
-     * @param posicion posicion
-     * @param estado estado
+     * @param equipo        equipo
+     * @param posicion      posicion
+     * @param estado        estado
      */
 
     public Jugador(int id, String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta, int equipo, int posicion, int estado) {
@@ -83,6 +84,36 @@ public class Jugador implements itfProperty {
         this.posicion = posicion;
         this.estado = estado;
     }
+
+    /**
+     * Metodo que emplearemos para añadir jugadores a la BD
+     *
+     * @param nombre        nombre
+     * @param apellido1     apellido1
+     * @param apellido2     apellido2
+     * @param fechaNac      fechaNac
+     * @param dorsal        dorsal
+     * @param textoCamiseta textoCamiseta
+     */
+    public Jugador(String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta) {
+        this.nombre = nombre;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+        this.fechaNac = fechaNac;
+        this.dorsal = dorsal;
+        this.textoCamiseta = textoCamiseta;
+    }
+
+    public void resultSetToJugador(ResultSet rs) throws Exception {
+        id = rs.getInt(BD_JUGADOR_ID);
+        nombre = rs.getString(BD_JUGADOR_NOMBRE);
+        apellido1 = rs.getString(BD_JUGADOR_APELLIDO1);
+        apellido2 = rs.getString(BD_JUGADOR_APELLIDO2);
+        fechaNac = rs.getDate(BD_JUGADOR_FECHA_NACIMIENTO);
+        dorsal = rs.getString(BD_JUGADOR_DORSAL);
+        textoCamiseta = rs.getString(BD_JUGADOR_TEXTO_CAMISETA);
+    }
+
 
     public int getId() {
         return id;

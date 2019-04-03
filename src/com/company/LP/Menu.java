@@ -3,7 +3,12 @@ package com.company.LP;
 import com.company.LN.GestorLN;
 import com.company.comun.itfProperty;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Scanner;
 
 import static com.company.comun.clsConstantes.*;
 
@@ -48,6 +53,12 @@ public class Menu {
                     break;
                 case 4:
                     visualizarEquipo(gln.leerEquipos());
+                    break;
+                case 5:
+                    altaJugador(gln);
+                    break;
+                case 6:
+                    visualizarJugador(gln.leerJugadores());
                     break;
                 default:
                     System.out.println("Introduzca una opción válida");
@@ -155,6 +166,7 @@ public class Menu {
 
         for (itfProperty a : equipos) {
 
+            System.out.println("ID:"+a.getProperty(EQUIPO_ID));
             System.out.println("Nombre:" + a.getProperty(EQUIPO_NOMBRE));
             System.out.println("Patrocinador:" + a.getProperty(EQUIPO_PATROCINADOR));
 
@@ -162,5 +174,74 @@ public class Menu {
 
         }
     }
+
+    /**
+     * Metodo para dar de alta los partidos de la liga
+     * @param gln gln
+     */
+    public static void altaJugador(GestorLN gln) throws ParseException {
+
+
+        String nombre;
+        String apellido1;
+        String apellido2;
+        String dorsal;
+        String textoCamiseta;
+        int idequipo;
+        int idposicion;
+        int idestado;
+
+
+        System.out.println("Nombre:");
+        nombre=clsUtilidades.leerCadena();
+
+        System.out.println("Primer apellido:");
+        apellido1=clsUtilidades.leerCadena();
+
+        System.out.println("Segundo apellido:");
+        apellido2=clsUtilidades.leerCadena();
+
+        System.out.println("Fecha de nacimiento:");
+
+        System.out.println("Dorsal:");
+        dorsal=clsUtilidades.leerCadena();
+
+        System.out.println("Texto de la camiseta:");
+        textoCamiseta=clsUtilidades.leerCadena();
+
+        System.out.println("Equipo:");
+        idequipo=clsUtilidades.leerEntero();
+
+        System.out.println("Posicion:");
+        idposicion=clsUtilidades.leerEntero();
+
+        System.out.println("Estado:");
+        idestado=clsUtilidades.leerEntero();
+
+        gln.anadirJugador(nombre,apellido1,apellido2,dorsal,textoCamiseta,idequipo,idposicion,idestado);
+    }
+
+    /**
+     * Metodo que lista los jugadores en memoria de gestorln
+     * @param jugadores jugadores
+     */
+    public static void visualizarJugador(ArrayList<itfProperty> jugadores) {
+
+        for (itfProperty a : jugadores) {
+
+            System.out.println("ID:"+a.getProperty(JUGADOR_ID));
+            System.out.println("Nombre:" + a.getProperty(JUGADOR_NOMBRE));
+            System.out.println("Primer apellido:" + a.getProperty(JUGADOR_APELLIDO1));
+            System.out.println("Segundo apellido:"+a.getProperty(JUGADOR_APELLIDO2));
+            System.out.println("Fecha de nacimiento:"+a.getProperty(JUGADOR_FECHA_NACIMIENTO));
+            System.out.println("Dorsal:"+a.getProperty(JUGADOR_DORSAL));
+            System.out.println("Texto de la camiseta:"+a.getProperty(JUGADOR_TEXTO_CAMISETA));
+
+            System.out.println();
+
+        }
+    }
+
+
 }
 

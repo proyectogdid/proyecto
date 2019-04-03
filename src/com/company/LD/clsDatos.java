@@ -1,9 +1,6 @@
 package com.company.LD;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 import static com.company.LD.constantesBD.*;
 
@@ -67,12 +64,11 @@ public class clsDatos {
         return CampoBD.getAll(con);
 
     }
-
     /**
      * Metodo para insertar un nuevo Equipo
-     *
      * @param nombre nombre
      * @param patrocinador patrocinador
+     * @param campo campo
      * @return return
      * @throws Exception throws Exception
      */
@@ -88,6 +84,34 @@ public class clsDatos {
      */
     public ResultSet buscarEquipo() throws Exception {
         return EquipoBD.getAll(con);
+    }
+
+    /**
+     * MEtodo para insertar jugadores a la BD
+     * @param nombre nombre
+     * @param apellido1 apellido1
+     * @param apellido2 apellido2
+     * @param fechaNac fechaNac
+     * @param dorsal dorsal
+     * @param textoCamiseta textoCamiseta
+     * @param equipo equipo
+     * @param posicion posicion
+     * @param estado estado
+     * @return return
+     * @throws Exception throws Exception
+     */
+
+    public int insertarJugador(String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta,int equipo,int posicion,int estado) throws Exception {
+        return JugadoresBD.insertar(con,nombre,apellido1,apellido2,fechaNac,dorsal,textoCamiseta, equipo,estado,posicion);
+    }
+
+    /**
+     * gestionar select de jugadores
+     * @return return
+     * @throws Exception thorws Exception
+     */
+    public ResultSet buscarJugador()throws Exception{
+        return JugadoresBD.getAll(con);
     }
 
     /**

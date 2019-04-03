@@ -62,12 +62,13 @@ public class clsConstantes {
     public static final String JUGADOR_POSICION = "posicion";
     public static final String JUGADOR_ESTADO = "estado";
 
-    public static final String BD_PARTIDO_ID = "par.id";
-    public static final String BD_PARTIDO_FECHA = "par.fecha";
-    public static final String BD_PARTIDO_LOCAL = "par.local";
-    public static final String BD_PARTIDO_VISITANTE = "par.visitante";
-    public static final String BD_PARTIDO_TEMPORADA = "par.temporada";
-    public static final String BD_PARTIDO_CAMPO = "par.campo";
+    public static final String BD_JUGADOR_ID = "jug.id";
+    public static final String BD_JUGADOR_NOMBRE = "jug.nombre";
+    public static final String BD_JUGADOR_APELLIDO1 = "jug.apellido1";
+    public static final String BD_JUGADOR_APELLIDO2 = "jug.apellido2";
+    public static final String BD_JUGADOR_FECHA_NACIMIENTO = "jug.fechaNac";
+    public static final String BD_JUGADOR_DORSAL = "jug.dorsal";
+    public static final String BD_JUGADOR_TEXTO_CAMISETA = "jug.textoCamiseta";
 
     public static final String PARTIDO_ID = "id";
     public static final String PARTIDO_FECHA = "fecha";
