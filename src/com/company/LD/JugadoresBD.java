@@ -1,7 +1,7 @@
 package com.company.LD;
-
+import java.util.Date;
 import java.sql.Connection;
-import java.sql.Date;
+
 import java.sql.ResultSet;
 
 /**
@@ -39,8 +39,7 @@ public class JugadoresBD extends Conexion{
      * @throws Exception throws Exception
      */
     public static ResultSet getAll(Connection con) throws Exception {
-        String query = "SELECT" + TEMPLATE +"FROM jugadores jug";
-        System.out.println(query);
+        String query = "SELECT " + TEMPLATE +" FROM jugadores jug";
         ResultSet rs= select(con,query);
         return rs;
     }

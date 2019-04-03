@@ -35,7 +35,7 @@ public class CampoBD extends Conexion {
      */
     public static ResultSet getAll(Connection con) throws Exception {
         String query = "SELECT " + TEMPLATE + " FROM campos cmp";
-        System.out.println(query);
+
         ResultSet rs = select(con, query);
         return rs;
     }

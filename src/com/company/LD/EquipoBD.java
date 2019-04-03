@@ -33,7 +33,7 @@ public class EquipoBD extends Conexion {
      */
     public static ResultSet getAll(Connection con) throws Exception {
         String query = "SELECT " + TEMPLATE + " FROM equipos eqp";
-        System.out.println(query);
+
         ResultSet rs = select(con, query);
         return rs;
     }
