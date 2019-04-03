@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 
 /**
@@ -93,7 +96,13 @@ public abstract class Conexion {
             } else if (parametros[i] instanceof Double) {
                 stt.setDouble(j, (Double) parametros[i]);
             }else if(parametros[i] instanceof java.util.Date){
-                stt.setDate(j,(java.sql.Date) parametros[i]);
+                java.util.Date date=(java.util.Date)parametros[i];
+                LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                int month = localDate.getMonthValue();
+                int day = localDate.getDayOfMonth();
+                int year = localDate.getYear();
+                java.sql.Date fechabd=new java.sql.Date(year,month,day);
+                stt.setDate(j,fechabd);
             }
         }
     }
