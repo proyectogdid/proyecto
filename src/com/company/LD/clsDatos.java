@@ -122,4 +122,13 @@ public class clsDatos {
     public ResultSet buscarEstados() throws Exception{
         return EstadoBD.getAll(con);
     }
+
+    /**
+     * metodo para gestionar la carga de posiciones
+     * @return resultset posiciones
+     * @throws Exception fallos de la query
+     */
+    public ResultSet buscarPosiciones() throws Exception {
+        return PosicionBD.getAll(con);
+    }
 }

@@ -32,6 +32,10 @@ public class GestorLN {
     ArrayList<Jugador> jugadores = new ArrayList<>();
 
     /**
+     * array que guardara posiciones en memoria
+     */
+    ArrayList<Posicion> posiciones=new ArrayList<>();
+    /**
      * comunicacion con capa de datos en LN
      */
     private clsDatos objDatos = new clsDatos();
@@ -50,8 +54,9 @@ public class GestorLN {
         try {
             objDatos.conectarBD();
             Campo campo = new Campo(nombre, ciudad, calle, numero, cp, aforo);
-            campos.add(campo);
+
             campo.setId(objDatos.insertarCampo(nombre, ciudad, calle, numero, cp, aforo));
+            campos.add(campo);
             objDatos.desconectarBD();
         } catch (Exception e) {
             e.printStackTrace();
@@ -105,8 +110,9 @@ public class GestorLN {
         try {
             objDatos.conectarBD();
             Equipo equipo = new Equipo(nombre, patrocinador);
-            equipos.add(equipo);
+
             equipo.setId(objDatos.insertarEquipo(nombre, patrocinador, campo));
+            equipos.add(equipo);
             objDatos.desconectarBD();
         } catch (Exception e) {
             e.printStackTrace();
@@ -167,8 +173,9 @@ public class GestorLN {
         try {
             objDatos.conectarBD();
             Jugador jugador = new Jugador(nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta);
-            jugadores.add(jugador);
+
             jugador.setId(objDatos.insertarJugador(nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta, equipo, posicion, estado));
+            jugadores.add(jugador);
             objDatos.desconectarBD();
         } catch (Exception e) {
             e.printStackTrace();
@@ -217,12 +224,22 @@ public class GestorLN {
         }
     }
 
+    public void cargarDatosPosiciones() throws Exception {
+        ResultSet rs = objDatos.buscarPosiciones();
+        while (rs.next()) {
+            Posicion p = new Posicion();
+            p.resultsetLoad(rs);
+            posiciones.add(p);
+        }
+    }
+
     public void cargarDatos() throws Exception {
         objDatos.conectarBD();
         cargarDatosCampos();
         cargarDatosEquipos();
         cargarDatosEstados();
         cargarDatosJugadores();
+        cargarDatosPosiciones();
         objDatos.desconectarBD();
     }
 }

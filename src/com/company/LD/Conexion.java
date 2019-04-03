@@ -25,6 +25,7 @@ public abstract class Conexion {
 
     public static ResultSet select(Connection con, String query) throws Exception {
         Statement stt = con.createStatement();
+        System.out.println(query);
         ResultSet rs = stt.executeQuery(query);
 
         return rs;

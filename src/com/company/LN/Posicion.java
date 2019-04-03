@@ -1,9 +1,11 @@
 package com.company.LN;
 
+import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
-import static com.company.comun.clsConstantes.POSICION_ID;
-import static com.company.comun.clsConstantes.POSICION_NOMBRE;
+import java.sql.ResultSet;
+
+import static com.company.comun.clsConstantes.*;
 
 /**
  * Clase la cual se utilizará para determinar
@@ -13,7 +15,7 @@ import static com.company.comun.clsConstantes.POSICION_NOMBRE;
  */
 
 
-public class Posicion implements itfProperty {
+public class Posicion implements itfProperty, itfPersistable {
     /**
      * Atributo id de la posición
      */
@@ -69,5 +71,11 @@ public class Posicion implements itfProperty {
             default:
                 return null;
         }
+    }
+
+    @Override
+    public void resultsetLoad(ResultSet rs) throws Exception {
+        id=rs.getInt(BD_POSICION_ID);
+        nombre=rs.getString(BD_POSICION_NOMBRE);
     }
 }

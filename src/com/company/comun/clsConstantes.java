@@ -91,6 +91,9 @@ public class clsConstantes {
     public static final String POSICION_ID = "id";
     public static final String POSICION_NOMBRE = "nombre";
 
+    public static final String BD_POSICION_ID = "pscn.id";
+    public static final String BD_POSICION_NOMBRE = "pscn.nombre";
+
     public static final String TEMPORADA_ID = "id";
     public static final String TEMPORADA_ANO = "ano";
     public static final String TEMPORADA_PARTIDOS = "partidos";
