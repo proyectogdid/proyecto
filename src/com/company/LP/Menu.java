@@ -62,6 +62,8 @@ public class Menu {
                 case 6:
                     visualizarJugador(gln.leerJugadores());
                     break;
+                case 7:
+                    break;
                 default:
                     System.out.println("Introduzca una opción válida");
                     break;
@@ -69,7 +71,11 @@ public class Menu {
 
             }
 
+<<<<<<< Updated upstream
         } while (op != 7);
+=======
+        } while (op !=7 );
+>>>>>>> Stashed changes
 
 
 

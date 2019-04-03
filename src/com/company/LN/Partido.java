@@ -2,7 +2,6 @@ package com.company.LN;
 
 import com.company.comun.itfProperty;
 
-import java.sql.ResultSet;
 import java.util.Date;
 
 import static com.company.comun.clsConstantes.*;
@@ -111,6 +110,7 @@ public class Partido implements itfProperty {
         this.campo = campo;
     }
 
+<<<<<<< Updated upstream
     public void resultSetToPartido(ResultSet rs) throws Exception {
        /* id=rs.getInt(BD_PARTIDO_ID);
         fecha = rs.getDate(BD_PARTIDO_FECHA);
@@ -120,6 +120,8 @@ public class Partido implements itfProperty {
 */
 
     }
+=======
+>>>>>>> Stashed changes
 
     public int getId() {
         return id;
