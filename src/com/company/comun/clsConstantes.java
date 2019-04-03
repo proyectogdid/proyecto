@@ -36,6 +36,7 @@ public class clsConstantes {
     public static final String EQUIPO_PATROCINADOR = "patrocinador";
     public static final String EQUIPO_JUGADORES = "jugadores";
 
+    public static final String BD_EQUIPO_ID="eqp.id";
     public static final String BD_EQUIPO_NOMBRE = "eqp.nombre";
     public static final String BD_EQUIPO_PATROCINADOR = "eqp.patrocinador";
 
@@ -60,6 +61,13 @@ public class clsConstantes {
     public static final String JUGADOR_EQUIPO = "equipo";
     public static final String JUGADOR_POSICION = "posicion";
     public static final String JUGADOR_ESTADO = "estado";
+
+    public static final String BD_PARTIDO_ID = "par.id";
+    public static final String BD_PARTIDO_FECHA = "par.fecha";
+    public static final String BD_PARTIDO_LOCAL = "par.local";
+    public static final String BD_PARTIDO_VISITANTE = "par.visitante";
+    public static final String BD_PARTIDO_TEMPORADA = "par.temporada";
+    public static final String BD_PARTIDO_CAMPO = "par.campo";
 
     public static final String PARTIDO_ID = "id";
     public static final String PARTIDO_FECHA = "fecha";

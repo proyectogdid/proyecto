@@ -34,7 +34,8 @@ public class Equipo implements itfProperty {
     /**
      * Este método recogera todos los datos necesarios para identificar los diferentes equipos.
      */
-    public Equipo(String nombre, String patrocinador) {
+    public Equipo(int id,String nombre, String patrocinador) {
+        this.id=id;
         this.nombre = nombre;
         this.patrocinador = patrocinador;
 
@@ -45,6 +46,7 @@ public class Equipo implements itfProperty {
     }
 
     public void resultSetToEquipo(ResultSet rs) throws Exception {
+        id=rs.getInt(BD_EQUIPO_ID);
         nombre = rs.getString(BD_EQUIPO_NOMBRE);
         patrocinador = rs.getString(BD_EQUIPO_PATROCINADOR);
 
