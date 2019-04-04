@@ -1,11 +1,11 @@
 package com.company.LN;
 
+import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
-import static com.company.comun.clsConstantes.EVENTO_JUGADOR;
-import static com.company.comun.clsConstantes.EVENTO_ID;
-import static com.company.comun.clsConstantes.EVENTO_ESTADO_PREVIO;
-import static com.company.comun.clsConstantes.EVENTO_ESTADO_POSTERIOR;
+import java.sql.ResultSet;
+
+import static com.company.comun.clsConstantes.*;
 
 
 /**
@@ -13,7 +13,7 @@ import static com.company.comun.clsConstantes.EVENTO_ESTADO_POSTERIOR;
  * referidas a los jugadores. En concreto, en que estado se
  * encuentran tanto previamente como posteriormente.
  */
-public class Evento implements itfProperty {
+public class Evento implements itfProperty, itfPersistable {
     /**
      * Atributo id del evento
      */
@@ -37,9 +37,9 @@ public class Evento implements itfProperty {
     /**
      * Este metodo sirve para recoger todos los datos referentes a evento.
      *
-     * @param id id
-     * @param jugador jugador
-     * @param estadoPrevio estadoPRevio
+     * @param id              id
+     * @param jugador         jugador
+     * @param estadoPrevio    estadoPRevio
      * @param estadoPosterior estadoPosterior
      */
     public Evento(int id, int jugador, int estadoPrevio, int estadoPosterior) {
@@ -101,6 +101,16 @@ public class Evento implements itfProperty {
             default:
                 return null;
         }
+    }
+
+    @Override
+    public void resultsetLoad(ResultSet rs) throws Exception {
+        id = rs.getInt(BD_EVENTO_ID);
+        estadoPrevio = rs.getInt(BD_EVENTO_ESTADO_PREVIO);
+        estadoPosterior = rs.getInt(BD_EVENTO_ESTADO_POSTERIOR);
+        jugador = rs.getInt(BD_EVENTO_JUGADOR);
+
+
     }
 }
 

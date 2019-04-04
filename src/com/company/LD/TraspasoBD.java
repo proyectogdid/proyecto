@@ -9,7 +9,7 @@ public class TraspasoBD extends Conexion{
     /**
      * metodo para recuperar los ditintas traspasos de la temporada
      * @param con conexion de BD
-     * @return result set de datos
+     * @return resultset traspasos
      * @throws Exception cualquier fallo que pueda tener la select
      */
     public static ResultSet getAll(Connection con)throws Exception{

@@ -51,7 +51,7 @@ public class clsDatos {
      * @param cp     cp
      * @param aforo  aforo
      * @return devuelve el id que tenga en BD
-     * @throws Exception throws Exception
+     * @throws Exception fallos en la query
      */
     public int insertarCampo(String nombre, String ciudad, String calle, String numero, String cp, int aforo) throws Exception {
         return CampoBD.insertar(con, nombre, ciudad, calle, numero, cp, aforo);
@@ -60,8 +60,8 @@ public class clsDatos {
     /**
      * Metedo para buscar campos
      *
-     * @return return
-     * @throws Exception throws Exception
+     * @return resultset campos
+     * @throws Exception fallos en la query
      */
     public ResultSet buscarCampos() throws Exception {
         return CampoBD.getAll(con);
@@ -75,7 +75,7 @@ public class clsDatos {
      * @param patrocinador patrocinador
      * @param campo        campo
      * @return return
-     * @throws Exception throws Exception
+     * @throws Exception fallos en la query
      */
     public int insertarEquipo(String nombre, String patrocinador, int campo) throws Exception {
         return EquipoBD.insertar(con, nombre, patrocinador, campo);
@@ -84,8 +84,8 @@ public class clsDatos {
     /**
      * Metodo para buscar equipos
      *
-     * @return return
-     * @throws Exception throws Exception
+     * @return resultset equipos
+     * @throws Exception fallos en la query
      */
     public ResultSet buscarEquipo() throws Exception {
         return EquipoBD.getAll(con);
@@ -104,7 +104,7 @@ public class clsDatos {
      * @param posicion      posicion
      * @param estado        estado
      * @return return
-     * @throws Exception throws Exception
+     * @throws Exception fallos en la query
      */
 
     public int insertarJugador(String nombre, String apellido1, String apellido2, java.util.Date fechaNac, String dorsal, String textoCamiseta, int equipo, int posicion, int estado) throws Exception {
@@ -114,8 +114,8 @@ public class clsDatos {
     /**
      * gestionar select de jugadores
      *
-     * @return return
-     * @throws Exception thorws Exception
+     * @return resultset jugadores
+     * @throws Exception fallos en la query
      */
     public ResultSet buscarJugador() throws Exception {
         return JugadoresBD.getAll(con);
@@ -124,8 +124,8 @@ public class clsDatos {
     /**
      * gestionar select de estados
      *
-     * @return return
-     * @throws Exception throws Exception
+     * @return resultset estados
+     * @throws Exception fallos en la query
      */
     public ResultSet buscarEstados() throws Exception {
         return EstadoBD.getAll(con);
@@ -159,5 +159,14 @@ public class clsDatos {
      */
     public ResultSet buscarTemporadas() throws Exception {
         return TemporadaBD.getAll(con);
+    }
+
+    /**
+     * Metodo para gestionar la carga de los eventos
+     * @return resultset eventos
+     * @throws Exception fallos en la query
+     */
+    public ResultSet buscarEventos() throws Exception {
+        return EventoBD.getAll(con);
     }
 }

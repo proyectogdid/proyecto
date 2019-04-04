@@ -20,7 +20,7 @@ public abstract class Conexion {
      *
      * @param con, query
      * @return return
-     * @throws Exception throws Exception
+     * @throws Exception fallos en la query
      */
 
     public static ResultSet select(Connection con, String query) throws Exception {
@@ -38,7 +38,7 @@ public abstract class Conexion {
      * @param query query
      * @param parametros parametros
      * @return numero lineas afectadas
-     * @throws Exception trhows Exception
+     * @throws Exception fallos en la query
      */
 
     public static int update(Connection con, String query, Object[] parametros) throws Exception {
@@ -53,7 +53,7 @@ public abstract class Conexion {
      * @param query query
      * @param parametros parametros
      * @return return
-     * @throws Exception throws Exception
+     * @throws Exception fallos en la query
      */
     public static ResultSet query(Connection con, String query, Object[] parametros) throws Exception {
         PreparedStatement stt = con.prepareStatement(query);

@@ -17,7 +17,7 @@ public class EquipoBD extends Conexion {
      * @param nombre nombre
      * @param patrocinador patrocinador
      * @return return
-     * @throws Exception throws Exception
+     * @throws Exception dallos en el insert
      */
     public static int insertar(Connection con, String nombre, String patrocinador, int campo) throws Exception {
 
@@ -28,8 +28,8 @@ public class EquipoBD extends Conexion {
     /**
      * Metodo para obtener informacion de los equipos de la BD
      *
-     * @return return
-     * @throws Exception throws Exception
+     * @return resultset equipos
+     * @throws Exception fallos en la select
      */
     public static ResultSet getAll(Connection con) throws Exception {
         String query = "SELECT " + TEMPLATE + " FROM equipos eqp";

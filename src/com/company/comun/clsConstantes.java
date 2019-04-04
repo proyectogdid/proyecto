@@ -51,6 +51,12 @@ public class clsConstantes {
     public static final String EVENTO_ESTADO_POSTERIOR = "estadoPosterior";
     public static final String EVENTO_JUGADOR = "jugador";
 
+    public static final String BD_EVENTO_ID = "eve.id";
+    public static final String BD_EVENTO_ESTADO_PREVIO = "eve.estadoPrevio";
+    public static final String BD_EVENTO_ESTADO_POSTERIOR = "eve.estadoPosterior";
+    public static final String BD_EVENTO_JUGADOR = "eve.jugador";
+
+
     public static final String JUGADOR_ID = "id";
     public static final String JUGADOR_NOMBRE = "nombre";
     public static final String JUGADOR_APELLIDO1 = "apellido1";

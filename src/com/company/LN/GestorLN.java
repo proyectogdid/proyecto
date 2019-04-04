@@ -42,6 +42,10 @@ public class GestorLN {
      */
     ArrayList<Temporada> temporadas=new ArrayList<>();
     /**
+     * array que guardara los eventos en memoria
+     */
+    ArrayList<Evento> eventos=new ArrayList<>();
+    /**
      * comunicacion con capa de datos en LN
      */
     private clsDatos objDatos = new clsDatos();
@@ -287,8 +291,21 @@ public class GestorLN {
     }
 
     /**
-     * Metodo que se va a encargar de cargar los datos de cada una de las "tablas" de nuestra BD
+     * para cargar los datos de los eventos
      * @throws Exception fallos en la query
+     */
+    public void cargarDatosEventos() throws Exception {
+        ResultSet rs = objDatos.buscarEventos();
+        while (rs.next()) {
+            Evento e = new Evento();
+            e.resultsetLoad(rs);
+            eventos.add(e);
+        }
+    }
+
+    /**
+     * Metodo que se va a encargar de cargar los datos de cada una de las "tablas" de nuestra BD
+     * @throws Exception fallos en la carga de datos
      */
 
     public void cargarDatos() throws Exception {
@@ -300,6 +317,7 @@ public class GestorLN {
         cargarDatosPosiciones();
         cargarDatosTraspasos();
         cargarDatosTemporadas();
+        cargarDatosEventos();
         objDatos.desconectarBD();
     }
 }

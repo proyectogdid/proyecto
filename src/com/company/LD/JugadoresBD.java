@@ -20,11 +20,11 @@ public class JugadoresBD extends Conexion{
      * @param fechaNac fechaNac
      * @param dorsal dorsal
      * @param textoCamiseta textoCamiseta
-     * @param equipo
-     * @param estado
-     * @param posicion
-     * @return retur
-     * @throws Exception throws Exception
+     * @param equipo equipo
+     * @param estado estado
+     * @param posicion posicion
+     * @return return
+     * @throws Exception fallos en el insert
      */
     public static int insertar(Connection con, String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta, int equipo, int estado, int posicion) throws Exception {
 
@@ -35,8 +35,8 @@ public class JugadoresBD extends Conexion{
     /**
      * Metodo para obtener informcacion de los jugadores de la BD
      * @param con con
-     * @return return
-     * @throws Exception throws Exception
+     * @return resultset jugadores
+     * @throws Exception fallos en la select
      */
     public static ResultSet getAll(Connection con) throws Exception {
         String query = "SELECT " + TEMPLATE +" FROM jugadores jug";

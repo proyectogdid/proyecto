@@ -20,7 +20,7 @@ public class CampoBD extends Conexion {
      * @param cp cp
      * @param aforo aforo
      * @return return
-     * @throws Exception throws Exception
+     * @throws Exception fallos en el insert
      */
     public static int insertar(Connection con, String nombre, String ciudad, String calle, String numero, String cp, int aforo) throws Exception {
         Object[] parametros = {nombre, ciudad, calle, numero, cp, aforo};
@@ -30,8 +30,8 @@ public class CampoBD extends Conexion {
     /**
      * Metodo para obtener informacion de los campos de la BD
      *
-     * @return return
-     * @throws Exception throws Exception
+     * @return resultset campos
+     * @throws Exception fallos en la select
      */
     public static ResultSet getAll(Connection con) throws Exception {
         String query = "SELECT " + TEMPLATE + " FROM campos cmp";
