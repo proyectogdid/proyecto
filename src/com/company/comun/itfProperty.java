@@ -10,4 +10,6 @@ public interface itfProperty {
      * @return object
      */
     Object getProperty(String prop);
+
+
 }

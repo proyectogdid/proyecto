@@ -36,6 +36,11 @@ public class GestorLN {
      * array que guardara posiciones en memoria
      */
     ArrayList<Posicion> posiciones = new ArrayList<>();
+
+    /**
+     * array que guardara las temporadas en memoria
+     */
+    ArrayList<Temporada> temporadas=new ArrayList<>();
     /**
      * comunicacion con capa de datos en LN
      */
@@ -207,6 +212,11 @@ public class GestorLN {
         return retorno;
     }
 
+    /**
+     * para cargar los datos de los jugadores
+     * @throws Exception fallos en la query
+     */
+
     public void cargarDatosJugadores() throws Exception {
 
         ResultSet rs = objDatos.buscarJugador();
@@ -219,6 +229,11 @@ public class GestorLN {
 
     }
 
+    /**
+     * para cargar los datos de los estados
+     * @throws Exception fallos en la query
+     */
+
     public void cargarDatosEstados() throws Exception {
         ResultSet rs = objDatos.buscarEstados();
         while (rs.next()) {
@@ -227,6 +242,11 @@ public class GestorLN {
             estados.add(e);
         }
     }
+
+    /**
+     * para cargar los datos de las posiciones
+     * @throws Exception fallos en la query
+     */
 
     public void cargarDatosPosiciones() throws Exception {
         ResultSet rs = objDatos.buscarPosiciones();
@@ -238,6 +258,11 @@ public class GestorLN {
 
 
     }
+
+    /**
+     * para cargar los datos de los traspasos
+     * @throws Exception fallos en la query
+     */
     public void cargarDatosTraspasos() throws Exception{
         ResultSet rs = objDatos.buscarTraspasos();
         while (rs.next()) {
@@ -248,6 +273,23 @@ public class GestorLN {
 
 }
 
+    /**
+     * para cargar los datos de las temporadas
+     * @throws Exception fallos en la query
+     */
+    public void cargarDatosTemporadas() throws Exception{
+        ResultSet rs = objDatos.buscarTemporadas();
+        while (rs.next()) {
+            Temporada t = new Temporada();
+            t.resultsetLoad(rs);
+            temporadas.add(t);
+        }
+    }
+
+    /**
+     * Metodo que se va a encargar de cargar los datos de cada una de las "tablas" de nuestra BD
+     * @throws Exception fallos en la query
+     */
 
     public void cargarDatos() throws Exception {
         objDatos.conectarBD();
@@ -257,6 +299,7 @@ public class GestorLN {
         cargarDatosJugadores();
         cargarDatosPosiciones();
         cargarDatosTraspasos();
+        cargarDatosTemporadas();
         objDatos.desconectarBD();
     }
 }

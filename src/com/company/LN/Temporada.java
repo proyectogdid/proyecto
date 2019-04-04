@@ -1,7 +1,9 @@
 package com.company.LN;
 
+import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -11,7 +13,7 @@ import static com.company.comun.clsConstantes.*;
  * Esta clase gestiona las temporadas que almacenara nuestra applicacion
  * ademas de esto añadiremos un atributo que almacene los partidos de la temporada
  */
-public class Temporada implements itfProperty {
+public class Temporada implements itfProperty, itfPersistable {
     /**
      * atributo id de la temporada
      */
@@ -81,5 +83,11 @@ public class Temporada implements itfProperty {
             default:
                 return null;
         }
+    }
+    @Override
+    public void resultsetLoad(ResultSet rs) throws Exception {
+        id=rs.getInt(BD_TEMPORADA_ID);
+        ano=rs.getDate(BD_TEMPORADA_ANO);
+
     }
 }

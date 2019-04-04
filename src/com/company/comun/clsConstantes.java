@@ -89,6 +89,9 @@ public class clsConstantes {
     public static final String TEMPORADA_ANO = "ano";
     public static final String TEMPORADA_PARTIDOS = "partidos";
 
+    public static final String BD_TEMPORADA_ID = "tem.id";
+    public static final String BD_TEMPORADA_ANO = "tem.ano";
+
     public static final String TRASPASO_ID = "id";
     public static final String TRASPASO_PRECIO = "precio";
     public static final String TRASPASO_JUGADOR = "jugador";
