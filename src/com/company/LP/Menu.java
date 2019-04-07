@@ -85,7 +85,7 @@ public class Menu {
         String numero;
         String cp;
         int aforo;
-
+        
 
         System.out.println("Nombre:");
         nombre = clsUtilidades.leerCadena();
@@ -184,7 +184,8 @@ public class Menu {
     public static void altaJugador(GestorLN gln) {
         try {
 
-
+        	wdwJugador v=new wdwJugador(gln.leerEquipos(), gln.leerPosiciones(), gln.leerEstados());
+        	v.setVisible(true);
             String nombre;
             String apellido1;
             String apellido2;
