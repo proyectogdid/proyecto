@@ -139,20 +139,28 @@ public class Menu {
      * @param gln gln
      */
     public static void altaEquipo(GestorLN gln) {
-        String nombre;
-        String patrocinador;
-        int idcampo;
 
-        System.out.println("Nombre:");
-        nombre = clsUtilidades.leerCadena();
 
-        System.out.println("Patrocinador:");
-        patrocinador = clsUtilidades.leerCadena();
+        try {
+            wdwEquipo v=new wdwEquipo(gln.leerCampos());
+            v.setVisible(true);
+            String nombre;
+            String patrocinador;
+            int idcampo;
 
-        System.out.println("campo:");
-        idcampo = clsUtilidades.leerEntero();
+            System.out.println("Nombre:");
+            nombre = clsUtilidades.leerCadena();
 
-        gln.anadirEquipo(nombre, patrocinador, idcampo);
+            System.out.println("Patrocinador:");
+            patrocinador = clsUtilidades.leerCadena();
+
+            System.out.println("campo:");
+            idcampo = clsUtilidades.leerEntero();
+
+            gln.anadirEquipo(nombre, patrocinador, idcampo);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
     }
