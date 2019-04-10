@@ -229,7 +229,7 @@ public class Jugador implements itfProperty {
             case JUGADOR_ESTADO:
                 return this.estado;
             default:
-                return null;
+                throw new RuntimeException();
         }
     }
 }

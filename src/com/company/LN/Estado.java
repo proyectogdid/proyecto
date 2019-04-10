@@ -66,7 +66,7 @@ public class Estado implements itfProperty, itfPersistable {
             case ESTADO_NOMBRE:
                 return this.nombre;
             default:
-                return null;
+                throw new RuntimeException();
         }
     }
 

@@ -99,7 +99,7 @@ public class Evento implements itfProperty, itfPersistable {
             case EVENTO_JUGADOR:
                 return this.jugador;
             default:
-                return null;
+                throw new RuntimeException();
         }
     }
 

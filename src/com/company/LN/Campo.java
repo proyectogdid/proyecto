@@ -176,7 +176,7 @@ public class Campo implements itfProperty, Comparable<Campo>, itfPersistable {
             case CAMPO_AFORO:
                 return this.aforo;
             default:
-                return null;
+                 throw new RuntimeException();
         }
     }
 
@@ -185,6 +185,10 @@ public class Campo implements itfProperty, Comparable<Campo>, itfPersistable {
         return 0;
     }
 
+    @Override
+    public String toString() {
+        return this.nombre;
+    }
 }
 
 

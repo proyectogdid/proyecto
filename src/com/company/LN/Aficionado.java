@@ -53,7 +53,7 @@ public class Aficionado extends Usuario implements itfProperty {
             case AFICIONADO_FAVORITO:
                 return this.favorito;
             default:
-                return null;
+                return super.getProperty(prop);
         }
     }
 }

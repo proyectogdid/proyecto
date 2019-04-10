@@ -96,7 +96,7 @@ public class Participantes extends Equipo implements itfProperty {
             case PARTICIPANTES_PUNTOS_EN_CONTRA:
                 return this.puntosEnContra;
             default:
-                return null;
+                throw new RuntimeException();
         }
     }
 

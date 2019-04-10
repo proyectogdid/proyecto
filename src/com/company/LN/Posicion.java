@@ -69,7 +69,7 @@ public class Posicion implements itfProperty, itfPersistable {
             case POSICION_NOMBRE:
                 return this.nombre;
             default:
-                return null;
+                throw new RuntimeException();
         }
     }
 

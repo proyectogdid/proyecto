@@ -218,7 +218,7 @@ public class Partido implements itfProperty, itfPersistable {
             case PARTIDO_JORNADA:
                 return this.jornada;
             default:
-                return null;
+                throw new RuntimeException();
         }
     }
     @Override

@@ -113,7 +113,7 @@ public class Usuario implements itfProperty {
             case USUARIO_TIPO:
                 return this.tipo;
             default:
-                return null;
+                throw new RuntimeException();
         }
     }
 

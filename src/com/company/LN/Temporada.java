@@ -81,7 +81,7 @@ public class Temporada implements itfProperty, itfPersistable {
             case TEMPORADA_PARTIDOS:
                 return this.partidos;
             default:
-                return null;
+                throw new RuntimeException();
         }
     }
     @Override

@@ -116,7 +116,12 @@ public class Equipo implements itfProperty {
             case EQUIPO_CAMPO:
                 return this.campo;
             default:
-                return null;
+                throw new RuntimeException();
         }
+    }
+
+    @Override
+    public String toString() {
+        return this.nombre;
     }
 }
