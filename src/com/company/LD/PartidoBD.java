@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 
 public class PartidoBD extends Conexion{
 
-        public static final String TEMPLATE="par.id,par.fecha,par.ptosLocal,par.ptosVisitante";
+        public static final String TEMPLATE="par.id,par.fecha,par.ptosLocal,par.ptosVisitante,par.local,par.visitante ";
 
         /**
          * metodo para recuperar los distintos partidos de la temporada

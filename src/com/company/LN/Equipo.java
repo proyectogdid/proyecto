@@ -30,6 +30,10 @@ public class Equipo implements itfProperty {
      * Atributo jugagores del equipo
      */
     private ArrayList<Integer> jugadores;
+    /**
+     * atributo campo de equipo
+     */
+    private  int campo;
 
     /**
      * Este método recogera todos los datos necesarios para identificar los diferentes equipos.
@@ -48,7 +52,16 @@ public class Equipo implements itfProperty {
         id=rs.getInt(BD_EQUIPO_ID);
         nombre = rs.getString(BD_EQUIPO_NOMBRE);
         patrocinador = rs.getString(BD_EQUIPO_PATROCINADOR);
+        campo=rs.getInt(BD_EQUIPO_CAMPO);
 
+    }
+
+    public int getCampo() {
+        return campo;
+    }
+
+    public void setCampo(int campo) {
+        this.campo = campo;
     }
 
     public int getId() {
@@ -100,6 +113,8 @@ public class Equipo implements itfProperty {
                 return this.patrocinador;
             case EQUIPO_JUGADORES:
                 return this.jugadores;
+            case EQUIPO_CAMPO:
+                return this.campo;
             default:
                 return null;
         }

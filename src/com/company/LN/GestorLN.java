@@ -1,7 +1,9 @@
 package com.company.LN;
 
 import com.company.Excepciones.DorsalRepetidoException;
+import com.company.Excepciones.EquiposInsuficientesException;
 import com.company.LD.clsDatos;
+import com.company.comun.Utilidades;
 import com.company.comun.itfProperty;
 
 import java.sql.Array;
@@ -65,16 +67,31 @@ public class GestorLN {
      * basado en algoritmo Round Robin
      * https://en.wikipedia.org/wiki/Round-robin_scheduling
      */
-    public void generarCalendario(){
+    public void generarCalendario(int temporada_) throws EquiposInsuficientesException {
+        final int LOCAL=0;
+        final int VISITANTE=1;
+        final int FECHA=2;
+        final int TEMPORADA=3;
+        final int CAMPO=4;
         ArrayList<Equipo> locales=new ArrayList<>();
         ArrayList<Equipo> visitantes=new ArrayList<>();
+        int n=equipos.size();
+        int npartidos= Utilidades.factorial(n)/(Utilidades.factorial(n-2) *2);
+        /*
+         n!/(n-2)!*2
+         es la formula para saber cuantos partidos habra en una liga
+         */
+        System.out.println(npartidos);
+        Object[][] datos=new Object[npartidos][5];//5 es el numero de columnas necesarias que tiene partido
+
         for (int i = 0; i <equipos.size() ; i++) {
             locales.add(equipos.get(i));
         }
 
         if(locales.size()%2!=0){
            //aqui habra que mandar una excepcion
-            System.out.println("tienen que ser pares");
+            throw new EquiposInsuficientesException();
+
         }else{
             int jornadas=locales.size()-1;
             int mitad=(locales.size()/2)-1;
@@ -85,13 +102,27 @@ public class GestorLN {
             }
             Equipo fijo=locales.get(0);
             locales.remove(0);
+
+
+
             for(int k=0;k<jornadas*2;k++){
                 System.out.println("----JORNADA "+(k +1) +"---------- ");
+
                 System.out.println(fijo.getNombre()+"-"+visitantes.get(0).getNombre());
                 contador++;
+                datos[k][LOCAL]=fijo.getId();
+                datos[k][VISITANTE]=visitantes.get(0).getId();
+                datos[k][FECHA]=new Date();
+                datos[k][TEMPORADA]=temporada_;
+                datos[k][CAMPO]=fijo.getCampo();
                 for(int x=0;x<locales.size();x++){
                     System.out.println(locales.get(x).getNombre()+"-"+visitantes.get(x+1).getNombre());
                     contador++;
+                    datos[k][LOCAL]=locales.get(x).getId();
+                    datos[k][VISITANTE]=visitantes.get(x).getId();
+                    datos[k][FECHA]=new Date();
+                    datos[k][TEMPORADA]=temporada_;
+                    datos[k][CAMPO]=locales.get(x).getCampo();
                 }
                 locales.add(0,visitantes.get(0));
                 visitantes.remove(0);
