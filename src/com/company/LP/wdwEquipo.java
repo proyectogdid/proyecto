@@ -1,5 +1,6 @@
 package com.company.LP;
 
+import com.company.LN.GestorLN;
 import com.company.comun.itfProperty;
 
 import javax.swing.*;
@@ -20,6 +21,7 @@ public class wdwEquipo extends JFrame implements ActionListener {
     private JLabel lblNewLabel_1;
     private JLabel lblNewLabel_2;
     private JComboBox cbCampo;
+    private GestorLN gln;
 
 
     /**
@@ -42,11 +44,12 @@ public class wdwEquipo extends JFrame implements ActionListener {
 
     }
 
-    public wdwEquipo(ArrayList<itfProperty> campos) {
-
+    public wdwEquipo(GestorLN gln_) {
+        ArrayList<itfProperty> campos=gln_.leerCampos();
+        GestorLN gln=gln_;
         this.setTitle("Inserte un equipo");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 628, 300);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setBounds(100, 100, 628, 548);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -99,5 +102,7 @@ public class wdwEquipo extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        textField_1.getText();
+        //gln.anadirEquipo();
     }
 }

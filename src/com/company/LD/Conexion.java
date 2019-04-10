@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.ZoneId;
-
+import java.util.ArrayList;
 
 
 /**
@@ -73,10 +73,37 @@ public abstract class Conexion {
      * @throws Exception throws Exception
      */
     public static int insert(Connection con, String query, Object[] parametros) throws Exception {
-        PreparedStatement stt = con.prepareStatement(query);
+        PreparedStatement stt = con.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
         cargarDatos(stt, parametros);
         stt.execute();
-        return stt.getUpdateCount();
+
+        ResultSet rs=stt.getGeneratedKeys();
+        return (rs.next())?rs.getInt(1):-1;
+    }
+
+    /**
+     * metodo para hacer una insert de multiples filas
+     * @param con connexion de BD
+     * @param query insert "insert {template} into values"
+     * @param params matriz de parametros
+     * @return Array de PK
+     * @throws Exception Sql exception
+     */
+
+    public static ArrayList<Integer> multiInsert(Connection con, String query, Object[][]params) throws Exception{
+
+        PreparedStatement stt = con.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
+
+        //query builder
+        //for
+        //cargarDatos(stt, params);
+        stt.execute();
+        ResultSet rs=stt.getGeneratedKeys();
+        ArrayList<Integer> claves=new ArrayList<>();
+        while (rs.next()){
+            claves.add(rs.getInt(1));
+        }
+        return claves;
     }
 
     /**

@@ -31,7 +31,7 @@ public class ventanaMenu extends JFrame {
      * Create the frame.
      */
     public ventanaMenu() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 450, 300);
 
         JMenuBar menuBar = new JMenuBar();

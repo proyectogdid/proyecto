@@ -36,7 +36,8 @@ public class Menu {
             System.out.println("4.-Ver Equipo");
             System.out.println("5.-ALta jugador");
             System.out.println("6.-Ver jugaodes");
-            System.out.println("7.-Salir");
+            System.out.println("7.-calendario");
+            System.out.println("8.-Salir");
             op = clsUtilidades.leerEntero();
 
             switch (op) {
@@ -59,7 +60,7 @@ public class Menu {
                 case 6:
                     visualizarJugador(gln.leerJugadores());
                     break;
-                case 7:
+                case 7:gln.generarCalendario();
                     break;
                 default:
                     System.out.println("Introduzca una opción válida");
@@ -68,7 +69,7 @@ public class Menu {
 
             }
 
-        } while (op != 7);
+        } while (op != 8);
 
 
     }
@@ -142,7 +143,7 @@ public class Menu {
 
 
         try {
-            wdwEquipo v=new wdwEquipo(gln.leerCampos());
+            wdwEquipo v=new wdwEquipo(gln);
             v.setVisible(true);
             String nombre;
             String patrocinador;

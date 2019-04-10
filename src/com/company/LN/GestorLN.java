@@ -4,6 +4,7 @@ import com.company.Excepciones.DorsalRepetidoException;
 import com.company.LD.clsDatos;
 import com.company.comun.itfProperty;
 
+import java.sql.Array;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -59,6 +60,47 @@ public class GestorLN {
      */
     private clsDatos objDatos = new clsDatos();
 
+    /**
+     * metodo que se usará para generar los distintos partidos que tendrá una temporada
+     * basado en algoritmo Round Robin
+     * https://en.wikipedia.org/wiki/Round-robin_scheduling
+     */
+    public void generarCalendario(){
+        ArrayList<Equipo> locales=new ArrayList<>();
+        ArrayList<Equipo> visitantes=new ArrayList<>();
+        for (int i = 0; i <equipos.size() ; i++) {
+            locales.add(equipos.get(i));
+        }
+
+        if(locales.size()%2!=0){
+           //aqui habra que mandar una excepcion
+            System.out.println("tienen que ser pares");
+        }else{
+            int jornadas=locales.size()-1;
+            int mitad=(locales.size()/2)-1;
+            int contador=0;
+            for(int i=locales.size()-1;i>mitad;i--){
+                visitantes.add(locales.get(i));
+                locales.remove(i);
+            }
+            Equipo fijo=locales.get(0);
+            locales.remove(0);
+            for(int k=0;k<jornadas*2;k++){
+                System.out.println("----JORNADA "+(k +1) +"---------- ");
+                System.out.println(fijo.getNombre()+"-"+visitantes.get(0).getNombre());
+                contador++;
+                for(int x=0;x<locales.size();x++){
+                    System.out.println(locales.get(x).getNombre()+"-"+visitantes.get(x+1).getNombre());
+                    contador++;
+                }
+                locales.add(0,visitantes.get(0));
+                visitantes.remove(0);
+                visitantes.add(locales.get(locales.size()-1));
+                locales.remove(locales.size()-1);
+            }
+            System.out.println(contador);//si contador es igua a n!/(n-2)!*2 es que todo va bien
+        }
+    }
     /**
      * Este metodo se va a utilizar para añadir los campos en el Array de los campos
      *
