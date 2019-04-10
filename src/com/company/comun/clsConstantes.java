@@ -35,13 +35,18 @@ public class clsConstantes {
     public static final String EQUIPO_NOMBRE = "nombre";
     public static final String EQUIPO_PATROCINADOR = "patrocinador";
     public static final String EQUIPO_JUGADORES = "jugadores";
+    public static final String EQUIPO_CAMPO="campo";
+
 
     public static final String BD_EQUIPO_ID="eqp.id";
     public static final String BD_EQUIPO_NOMBRE = "eqp.nombre";
     public static final String BD_EQUIPO_PATROCINADOR = "eqp.patrocinador";
+    public static final String BD_EQUIPO_CAMPO="eqp.campo";
+
 
     public static final String ESTADO_ID = "id";
     public static final String ESTADO_NOMBRE = "nombre";
+
 
     public static final String BD_ESTADO_ID = "estd.id";
     public static final String BD_ESTADO_NOMBRE = "estd.nombre";
@@ -84,11 +89,15 @@ public class clsConstantes {
     public static final String PARTIDO_VISITANTE = "visitante";
     public static final String PARTIDO_TEMPORADA = "temporada";
     public static final String PARTIDO_CAMPO = "campo";
+    public static final String PARTIDO_JORNADA="jornada";
 
     public static final String BD_PARTIDO_ID = "par.id";
     public static final String BD_PARTIDO_FECHA = "par.fecha";
     public static final String BD_PARTIDO_PTOS_LOCAL = "par.ptosLocal";
     public static final String BD_PARTIDO_PTOS_VISITANTE = "par.ptosVisitante";
+    public static final String BD_PARTIDO_JORNADA = "par.jornada";
+    public static final String BD_PARTIDO_LOCAL = "par.local";
+    public static final String BD_PARTIDO_VISITANTE = "par.visitante";
 
     public static final String POSICION_ID = "id";
     public static final String POSICION_NOMBRE = "nombre";

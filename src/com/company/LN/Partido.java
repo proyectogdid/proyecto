@@ -47,6 +47,11 @@ public class Partido implements itfProperty, itfPersistable {
      */
     private int campo;
 
+    /**
+     * numero de la jornada
+     */
+    private int jornada;
+
     public Partido() {
     }
 
@@ -78,7 +83,7 @@ public class Partido implements itfProperty, itfPersistable {
      * @param temporada temporada
      * @param campo campo
      */
-    public Partido(int id, Date fecha, int ptosLocal, int ptosVisitante, int local, int visitante, int temporada, int campo) {
+    public Partido(int id, Date fecha, int ptosLocal, int ptosVisitante, int local, int visitante, int temporada, int campo, int jornada) {
         this.id = id;
         this.fecha = fecha;
         this.ptosLocal = ptosLocal;
@@ -87,6 +92,7 @@ public class Partido implements itfProperty, itfPersistable {
         this.visitante = visitante;
         this.temporada = temporada;
         this.campo = campo;
+        this.jornada=jornada;
     }
 
     /**
@@ -103,13 +109,14 @@ public class Partido implements itfProperty, itfPersistable {
      * @param campo campo
      */
 
-    public Partido(int id, Date fecha, int local, int visitante, int temporada, int campo) {
+    public Partido(int id, Date fecha, int local, int visitante, int temporada, int campo,int jornada) {
         this.id = id;
         this.fecha = fecha;
         this.local = local;
         this.visitante = visitante;
         this.temporada = temporada;
         this.campo = campo;
+        this.jornada=jornada;
 
 
     }
@@ -179,6 +186,10 @@ public class Partido implements itfProperty, itfPersistable {
         this.campo = campo;
     }
 
+    public int getJornada() { return jornada; }
+
+    public void setJornada(int jornada) {this.jornada = jornada;}
+
     /**
      * metodo get property de la interfaz itfProperty
      *
@@ -204,6 +215,8 @@ public class Partido implements itfProperty, itfPersistable {
                 return this.temporada;
             case PARTIDO_CAMPO:
                 return this.campo;
+            case PARTIDO_JORNADA:
+                return this.jornada;
             default:
                 return null;
         }
@@ -214,5 +227,7 @@ public class Partido implements itfProperty, itfPersistable {
         fecha=rs.getDate(BD_PARTIDO_FECHA);
         ptosLocal=rs.getInt(BD_PARTIDO_PTOS_LOCAL);
         ptosVisitante=rs.getInt(BD_PARTIDO_PTOS_VISITANTE);
+        local=rs.getInt(BD_PARTIDO_LOCAL);
+        visitante=rs.getInt(BD_PARTIDO_VISITANTE);
     }
 }
