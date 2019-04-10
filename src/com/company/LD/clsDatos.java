@@ -163,10 +163,21 @@ public class clsDatos {
 
     /**
      * Metodo para gestionar la carga de los eventos
+     *
      * @return resultset eventos
      * @throws Exception fallos en la query
      */
     public ResultSet buscarEventos() throws Exception {
         return EventoBD.getAll(con);
+    }
+
+    /**
+     * Metodo para gestionar la carga de los partidos
+     *
+     * @return resultset partidos
+     * @throws Exception fallos en la query
+     */
+    public ResultSet buscarPartidos() throws Exception {
+        return PartidoBD.getAll(con);
     }
 }

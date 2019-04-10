@@ -1,7 +1,9 @@
 package com.company.LN;
 
+import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
+import java.sql.ResultSet;
 import java.util.Date;
 
 import static com.company.comun.clsConstantes.*;
@@ -11,7 +13,7 @@ import static com.company.comun.clsConstantes.*;
  * un partido, tales como la id, fecha, ptsLocal,
  * ptsVisitante, local, visitante, temporada y campo.
  */
-public class Partido implements itfProperty {
+public class Partido implements itfProperty, itfPersistable {
     /**
      * Atributo id del partido
      */
@@ -205,5 +207,12 @@ public class Partido implements itfProperty {
             default:
                 return null;
         }
+    }
+    @Override
+    public void resultsetLoad(ResultSet rs) throws Exception {
+        id=rs.getInt(BD_PARTIDO_ID);
+        fecha=rs.getDate(BD_PARTIDO_FECHA);
+        ptosLocal=rs.getInt(BD_PARTIDO_PTOS_LOCAL);
+        ptosVisitante=rs.getInt(BD_PARTIDO_PTOS_VISITANTE);
     }
 }

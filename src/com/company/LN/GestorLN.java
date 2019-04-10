@@ -40,15 +40,20 @@ public class GestorLN {
     /**
      * array que guardara las temporadas en memoria
      */
-    ArrayList<Temporada> temporadas=new ArrayList<>();
+    ArrayList<Temporada> temporadas = new ArrayList<>();
     /**
      * array que guardara los eventos en memoria
      */
-    ArrayList<Evento> eventos=new ArrayList<>();
+    ArrayList<Evento> eventos = new ArrayList<>();
     /**
      * array que guardara los usuarios en memoria
      */
-    ArrayList<Usuario> usuarios=new ArrayList<>();
+    ArrayList<Usuario> usuarios = new ArrayList<>();
+    /**
+     * array que guardara los partidos en memoria
+     */
+
+    ArrayList<Partido> partidos = new ArrayList<>();
     /**
      * comunicacion con capa de datos en LN
      */
@@ -146,72 +151,73 @@ public class GestorLN {
     }
 
     /**
-	 * Este metodo lo vamos a emplear para leer los campos de los equipos
-	 *
-	 * @return return
-	 */
-	public ArrayList<itfProperty> leerCampos() {
-	    System.out.println("entro aqui");
-	    ArrayList<itfProperty> retorno = new ArrayList<>();
-	    try {
-	
-	        for (Campo c : campos) {
-	            retorno.add(c);
-	        }
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
-	
-	    return retorno;
-	}
+     * Este metodo lo vamos a emplear para leer los campos de los equipos
+     *
+     * @return return
+     */
+    public ArrayList<itfProperty> leerCampos() {
+        System.out.println("entro aqui");
+        ArrayList<itfProperty> retorno = new ArrayList<>();
+        try {
 
-	/**
-	 * Este metodo lo vamos a emplear para leer los estados de los jugadores
-	 *
-	 * @return return
-	 */
-	public ArrayList<itfProperty> leerEstados() {
-	    
-	    ArrayList<itfProperty> retorno = new ArrayList<>();
-	        for (Estado e : estados) {
-	            retorno.add(e);
-	        }
-	
-	    return retorno;
-	}
-	/**
-	 * Este metodo lo vamos a emplear para leer las posiciones de un jugador
-	 *
-	 * @return return
-	 */
-	public ArrayList<itfProperty> leerPosiciones() {
-	    
-	    ArrayList<itfProperty> retorno = new ArrayList<>();
-	        for (Posicion e : posiciones) {
-	            retorno.add(e);
-	        }
-	
-	    return retorno;
-	}
-	
+            for (Campo c : campos) {
+                retorno.add(c);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-	/**
-	 * Este metodo lo vamos a emplear para leer los equipos
-	 *
-	 * @return return
-	 */
-	public ArrayList<itfProperty> leerEquipos() {
-	    System.out.println("entro aqui");
-	    ArrayList<itfProperty> retorno = new ArrayList<>();
-	        for (Equipo e : equipos) {
-	            retorno.add(e);
-	        }
-	
-	    return retorno;
-	}
+        return retorno;
+    }
+
+    /**
+     * Este metodo lo vamos a emplear para leer los estados de los jugadores
+     *
+     * @return return
+     */
+    public ArrayList<itfProperty> leerEstados() {
+
+        ArrayList<itfProperty> retorno = new ArrayList<>();
+        for (Estado e : estados) {
+            retorno.add(e);
+        }
+
+        return retorno;
+    }
+
+    /**
+     * Este metodo lo vamos a emplear para leer las posiciones de un jugador
+     *
+     * @return return
+     */
+    public ArrayList<itfProperty> leerPosiciones() {
+
+        ArrayList<itfProperty> retorno = new ArrayList<>();
+        for (Posicion e : posiciones) {
+            retorno.add(e);
+        }
+
+        return retorno;
+    }
 
 
-	/**
+    /**
+     * Este metodo lo vamos a emplear para leer los equipos
+     *
+     * @return return
+     */
+    public ArrayList<itfProperty> leerEquipos() {
+        System.out.println("entro aqui");
+        ArrayList<itfProperty> retorno = new ArrayList<>();
+        for (Equipo e : equipos) {
+            retorno.add(e);
+        }
+
+        return retorno;
+    }
+
+
+    /**
      * Metodo para leer los jugadores
      *
      * @return return
@@ -232,23 +238,24 @@ public class GestorLN {
     }
 
     /**
-	 * Metodo para cargar los datos de los quipos previamente introducidos a la BD
-	 */
-	public void cargarDatosEquipos() throws Exception {
-	
-	    ResultSet rs = objDatos.buscarEquipo();
-	    while (rs.next()) {
-	
-	        Equipo e = new Equipo();
-	        e.resultSetToEquipo(rs);
-	        equipos.add(e);
-	    }
-	
-	}
+     * Metodo para cargar los datos de los quipos previamente introducidos a la BD
+     */
+    public void cargarDatosEquipos() throws Exception {
+
+        ResultSet rs = objDatos.buscarEquipo();
+        while (rs.next()) {
+
+            Equipo e = new Equipo();
+            e.resultSetToEquipo(rs);
+            equipos.add(e);
+        }
+
+    }
 
 
-	/**
+    /**
      * para cargar los datos de los jugadores
+     *
      * @throws Exception fallos en la query
      */
 
@@ -266,6 +273,7 @@ public class GestorLN {
 
     /**
      * para cargar los datos de los estados
+     *
      * @throws Exception fallos en la query
      */
 
@@ -280,6 +288,7 @@ public class GestorLN {
 
     /**
      * para cargar los datos de las posiciones
+     *
      * @throws Exception fallos en la query
      */
 
@@ -296,9 +305,10 @@ public class GestorLN {
 
     /**
      * para cargar los datos de los traspasos
+     *
      * @throws Exception fallos en la query
      */
-    public void cargarDatosTraspasos() throws Exception{
+    public void cargarDatosTraspasos() throws Exception {
         ResultSet rs = objDatos.buscarTraspasos();
         while (rs.next()) {
             Posicion p = new Posicion();
@@ -306,13 +316,14 @@ public class GestorLN {
             posiciones.add(p);
         }
 
-}
+    }
 
     /**
      * para cargar los datos de las temporadas
+     *
      * @throws Exception fallos en la query
      */
-    public void cargarDatosTemporadas() throws Exception{
+    public void cargarDatosTemporadas() throws Exception {
         ResultSet rs = objDatos.buscarTemporadas();
         while (rs.next()) {
             Temporada t = new Temporada();
@@ -323,6 +334,7 @@ public class GestorLN {
 
     /**
      * para cargar los datos de los eventos
+     *
      * @throws Exception fallos en la query
      */
     public void cargarDatosEventos() throws Exception {
@@ -335,9 +347,26 @@ public class GestorLN {
     }
 
     /**
+     * para cargar los datos de los partidos
+     *
+     * @throws Exception
+     */
+    public void cargarDatosPartidos() throws Exception {
+        ResultSet rs = objDatos.buscarPartidos();
+        while (rs.next()) {
+            Evento e = new Evento();
+            e.resultsetLoad(rs);
+            eventos.add(e);
+        }
+    }
+
+
+    /**
      * Metodo que se va a encargar de cargar los datos de cada una de las "tablas" de nuestra BD
+     *
      * @throws Exception fallos en la carga de datos
      */
+
 
     public void cargarDatos() throws Exception {
         objDatos.conectarBD();
@@ -349,6 +378,8 @@ public class GestorLN {
         cargarDatosTraspasos();
         cargarDatosTemporadas();
         cargarDatosEventos();
+        cargarDatosPartidos();
         objDatos.desconectarBD();
     }
 }
+

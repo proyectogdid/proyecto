@@ -85,6 +85,11 @@ public class clsConstantes {
     public static final String PARTIDO_TEMPORADA = "temporada";
     public static final String PARTIDO_CAMPO = "campo";
 
+    public static final String BD_PARTIDO_ID = "par.id";
+    public static final String BD_PARTIDO_FECHA = "par.fecha";
+    public static final String BD_PARTIDO_PTOS_LOCAL = "par.ptosLocal";
+    public static final String BD_PARTIDO_PTOS_VISITANTE = "par.ptosVisitante";
+
     public static final String POSICION_ID = "id";
     public static final String POSICION_NOMBRE = "nombre";
 
