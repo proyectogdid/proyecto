@@ -16,11 +16,11 @@ public class wdwEquipo extends JFrame implements ActionListener {
 
     private JPanel contentPane;
     private JLabel lblNewLabel;
-    private JTextField textField;
-    private JTextField textField_1;
+    private JTextField textoNombre;
+    private JTextField textoPatrocinador;
     private JLabel lblNewLabel_1;
     private JLabel lblNewLabel_2;
-    private JComboBox cbCampo;
+    private JComboBox<itfProperty> cbCampo;
     private GestorLN gln;
 
 
@@ -59,19 +59,19 @@ public class wdwEquipo extends JFrame implements ActionListener {
         lblNewLabel.setBounds(72, 50, 60, 14);
         contentPane.add(lblNewLabel);
 
-        textField = new JTextField();
-        textField.setBounds(198, 47, 212, 20);
-        contentPane.add(textField);
-        textField.setColumns(10);
+        textoNombre = new JTextField();
+        textoNombre.setBounds(198, 47, 212, 20);
+        contentPane.add(textoNombre);
+        textoNombre.setColumns(10);
 
         lblNewLabel_1 = new JLabel("Patrocinador");
         lblNewLabel_1.setBounds(72, 102, 100, 14);
         contentPane.add(lblNewLabel_1);
 
-        textField_1 = new JTextField();
-        textField_1.setBounds(198, 99, 212, 20);
-        contentPane.add(textField_1);
-        textField_1.setColumns(10);
+        textoPatrocinador = new JTextField();
+        textoPatrocinador.setBounds(198, 99, 212, 20);
+        contentPane.add(textoPatrocinador);
+        textoPatrocinador.setColumns(10);
 
         lblNewLabel_2 = new JLabel("Campo");
         lblNewLabel_2.setBounds(72, 154, 55, 14);
@@ -81,28 +81,31 @@ public class wdwEquipo extends JFrame implements ActionListener {
         comboBox.setBounds(176, 329, -12, 14);
         contentPane.add(comboBox);
 
-        cbCampo = new JComboBox();
+        cbCampo = new JComboBox<itfProperty>();
         cbCampo.setBounds(198, 154, 86, 20);
         contentPane.add(cbCampo);
 
         Button button = new Button("Aceptar");
+        button.addActionListener(this);
         button.setBounds(399, 214, 70, 22);
         contentPane.add(button);
 
         Button button1 = new Button("Cancelar");
         button1.setBounds(480, 214, 70, 22);
         contentPane.add(button1);
+  //      itfProperty[] a=campos.toArray();
+//DefaultComboBoxModel model=new
 
-        for (int i = 0; i < campos.size(); i++) {
             cbCampo.addItem(campos.get(i).getProperty(CAMPO_NOMBRE));
-        }
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        ;
+        ;
+        ;
 
-        textField_1.getText();
-        //gln.anadirEquipo();
+        //gln.anadirEquipo(textoNombre.getText(),textoPatrocinador.getText(), cbCampo.getSelectedItem());
     }
 }
