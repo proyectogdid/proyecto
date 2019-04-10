@@ -92,6 +92,24 @@ public abstract class Conexion {
 
     public static ArrayList<Integer> multiInsert(Connection con, String query, Object[][]params) throws Exception{
 
+        int filas=params.length;
+        int columnas=params[0].length;
+        for (int j = 0; j <filas ; j++) {
+
+
+            String txt = "(";
+            for (int i = 0; i < columnas; i++) {
+                txt+=(i<columnas-1)?"?,":"?";
+                            }
+            txt += (j<filas-1)?"),":")";
+
+            query+=txt;
+        }
+
+
+        System.out.println(query);
+        System.exit(0);
+
         PreparedStatement stt = con.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
 
         //query builder
