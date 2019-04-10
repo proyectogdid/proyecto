@@ -15,12 +15,12 @@ public class wdwJugador extends JFrame implements ActionListener {
 
     private JPanel contentPane;
     private JLabel lblNewLabel;
-    private JTextField textField;
-    private JTextField textField_1;
-    private JTextField textField_2;
-    private JTextField textField_3;
-    private JTextField textField_4;
-    private JTextField textField_5;
+    private JTextField textoNombre;
+    private JTextField textoPrimerApellido;
+    private JTextField textoSegundoApellido;
+    private JTextField textoFechaNcto;
+    private JTextField textoDorsal;
+    private JTextField textoTextoCamiseta;
     private JLabel lblNewLabel_1;
     private JLabel lblNewLabel_2;
     private JLabel lblNewLabel_3;
@@ -70,39 +70,9 @@ public class wdwJugador extends JFrame implements ActionListener {
         lblNewLabel.setBounds(72, 50, 60, 14);
         contentPane.add(lblNewLabel);
 
-        textField = new JTextField();
-        textField.setBounds(198, 47, 212, 20);
-        contentPane.add(textField);
-        textField.setColumns(10);
-
         lblNewLabel_1 = new JLabel("Primer apellido");
         lblNewLabel_1.setBounds(72, 102, 100, 14);
         contentPane.add(lblNewLabel_1);
-
-        textField_1 = new JTextField();
-        textField_1.setBounds(198, 99, 212, 20);
-        contentPane.add(textField_1);
-        textField_1.setColumns(10);
-
-        textField_2 = new JTextField();
-        textField_2.setBounds(198, 147, 86, 20);
-        contentPane.add(textField_2);
-        textField_2.setColumns(10);
-
-        textField_3 = new JTextField();
-        textField_3.setBounds(198, 178, 86, 20);
-        contentPane.add(textField_3);
-        textField_3.setColumns(10);
-
-        textField_4 = new JTextField();
-        textField_4.setBounds(198, 219, 86, 20);
-        contentPane.add(textField_4);
-        textField_4.setColumns(10);
-
-        textField_5 = new JTextField();
-        textField_5.setBounds(198, 268, 86, 20);
-        contentPane.add(textField_5);
-        textField_5.setColumns(10);
 
         lblNewLabel_2 = new JLabel("Segundo apellido");
         lblNewLabel_2.setBounds(72, 150, 120, 14);
@@ -119,6 +89,37 @@ public class wdwJugador extends JFrame implements ActionListener {
         lblNewLabel_5 = new JLabel("Texto camiseta");
         lblNewLabel_5.setBounds(72, 271, 110, 14);
         contentPane.add(lblNewLabel_5);
+
+        textoNombre = new JTextField();
+        textoNombre.setBounds(198, 47, 212, 20);
+        contentPane.add(textoNombre);
+        textoNombre.setColumns(10);
+
+        textoPrimerApellido = new JTextField();
+        textoPrimerApellido.setBounds(198, 99, 212, 20);
+        contentPane.add(textoPrimerApellido);
+        textoPrimerApellido.setColumns(10);
+
+        textoSegundoApellido = new JTextField();
+        textoSegundoApellido.setBounds(198, 147, 86, 20);
+        contentPane.add(textoSegundoApellido);
+        textoSegundoApellido.setColumns(10);
+
+        textoFechaNcto = new JTextField();
+        textoFechaNcto.setBounds(198, 178, 86, 20);
+        contentPane.add(textoFechaNcto);
+        textoFechaNcto.setColumns(10);
+
+        textoDorsal = new JTextField();
+        textoDorsal.setBounds(198, 219, 86, 20);
+        contentPane.add(textoDorsal);
+        textoDorsal.setColumns(10);
+
+        textoTextoCamiseta = new JTextField();
+        textoTextoCamiseta.setBounds(198, 268, 86, 20);
+        contentPane.add(textoTextoCamiseta);
+        textoTextoCamiseta.setColumns(10);
+
 
         JComboBox comboBox = new JComboBox();
         comboBox.setBounds(176, 329, -12, 14);
@@ -146,6 +147,7 @@ public class wdwJugador extends JFrame implements ActionListener {
 
         Button button = new Button("Aceptar");
         button.setBounds(399, 462, 70, 22);
+        button.addActionListener(this);
         contentPane.add(button);
 
         Button button1 = new Button("Cancelar");
@@ -169,8 +171,8 @@ public class wdwJugador extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
-        }
-
     }
+
+
+}
 
