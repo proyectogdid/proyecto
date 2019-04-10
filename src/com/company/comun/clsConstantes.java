@@ -118,6 +118,7 @@ public class clsConstantes {
     public static final String USUARIO_ID = "id";
     public static final String USUARIO_USERNAME = "username";
     public static final String USUARIO_CONTRASENA = "contrasena";
+    public static final String USUARIO_CORREO="correo";
     public static final String USUARIO_TIPO = "tipo";
 
 

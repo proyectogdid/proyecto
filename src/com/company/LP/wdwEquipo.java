@@ -17,6 +17,7 @@ public class wdwEquipo extends JFrame implements ActionListener {
     private JLabel lblNewLabel;
     private JTextField textField;
     private JTextField textField_1;
+    private JLabel lblNewLabel_1;
     private JLabel lblNewLabel_2;
     private JComboBox cbCampo;
 
@@ -60,7 +61,7 @@ public class wdwEquipo extends JFrame implements ActionListener {
         contentPane.add(textField);
         textField.setColumns(10);
 
-        JLabel lblNewLabel_1 = new JLabel("Patrocinador");
+        lblNewLabel_1 = new JLabel("Patrocinador");
         lblNewLabel_1.setBounds(72, 102, 100, 14);
         contentPane.add(lblNewLabel_1);
 

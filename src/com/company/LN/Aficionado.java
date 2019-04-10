@@ -20,15 +20,15 @@ public class Aficionado extends Usuario implements itfProperty {
 
     /**
      * Este metodo va a recoger los datos referidos a un tipo de usuario que va a ser el aficionado
-     *
      * @param id id
      * @param usuario usuario
      * @param contrasena contrasena
+     * @param correo correo
      * @param tipo tipo
      * @param favorito favorito
      */
-    public Aficionado(int id, String usuario, String contrasena, String tipo, int favorito) {
-        super(id, usuario, contrasena, tipo);
+    public Aficionado(int id, String usuario, String contrasena,String correo, String tipo, int favorito) {
+        super(id, usuario, contrasena, tipo,correo);
         this.favorito = favorito;
     }
 

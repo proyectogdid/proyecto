@@ -2,11 +2,7 @@ package com.company.LN;
 
 import com.company.comun.itfProperty;
 
-import static com.company.comun.clsConstantes.USUARIO_ID;
-import static com.company.comun.clsConstantes.USUARIO_USERNAME;
-import static com.company.comun.clsConstantes.USUARIO_CONTRASENA;
-import static com.company.comun.clsConstantes.USUARIO_TIPO;
-
+import static com.company.comun.clsConstantes.*;
 /**
  * clase para gestionar las cuentas de usuario
  */
@@ -27,8 +23,10 @@ public class Usuario implements itfProperty {
      * atributo para identificar el tipo de cuenta
      */
     private String tipo;
-
-
+    /**
+     * atributo correo del usuario
+     */
+    private String correo;
     public Usuario() {
     }
 
@@ -40,10 +38,11 @@ public class Usuario implements itfProperty {
      * @param contrasena contrasena
      * @param tipo tipo
      */
-    public Usuario(int id, String usuario, String contrasena, String tipo) {
+    public Usuario(int id, String usuario, String contrasena, String tipo, String correo) {
         this.id = id;
         this.username = usuario;
         this.contrasena = contrasena;
+        this.correo=correo;
         this.tipo = tipo;
     }
 
@@ -77,6 +76,13 @@ public class Usuario implements itfProperty {
         this.contrasena = contrasena;
     }
 
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
 
     public String getTipo() {
         return tipo;
@@ -102,6 +108,8 @@ public class Usuario implements itfProperty {
                 return this.username;
             case USUARIO_CONTRASENA:
                 return this.contrasena;
+            case USUARIO_CORREO:
+                return this.correo;
             case USUARIO_TIPO:
                 return this.tipo;
             default:

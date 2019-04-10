@@ -59,6 +59,15 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
         contentPane.add(textField_1);
         textField_1.setColumns(10);
 
+        lblNewLabel = new JLabel("Correo electrónico");
+        lblNewLabel.setBounds(72, 154, 60, 14);
+        contentPane.add(lblNewLabel);
+
+        textField = new JTextField();
+        textField.setBounds(198, 151, 212, 20);
+        contentPane.add(textField);
+        textField.setColumns(10);
+
         Button button = new Button("Aceptar");
         button.setBounds(399, 214, 70, 22);
         contentPane.add(button);

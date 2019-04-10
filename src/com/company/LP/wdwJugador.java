@@ -21,6 +21,7 @@ public class wdwJugador extends JFrame implements ActionListener {
     private JTextField textField_3;
     private JTextField textField_4;
     private JTextField textField_5;
+    private JLabel lblNewLabel_1;
     private JLabel lblNewLabel_2;
     private JLabel lblNewLabel_3;
     private JLabel lblNewLabel_4;
@@ -30,6 +31,7 @@ public class wdwJugador extends JFrame implements ActionListener {
     private JComboBox cbEstado;
     private JLabel lblNewLabel_6;
     private JLabel lblNewLabel_7;
+    private JLabel lblNewLabel_8;
 
     /**
      * Launch the application.
@@ -73,7 +75,7 @@ public class wdwJugador extends JFrame implements ActionListener {
         contentPane.add(textField);
         textField.setColumns(10);
 
-        JLabel lblNewLabel_1 = new JLabel("Primer apellido");
+        lblNewLabel_1 = new JLabel("Primer apellido");
         lblNewLabel_1.setBounds(72, 102, 100, 14);
         contentPane.add(lblNewLabel_1);
 
@@ -150,7 +152,7 @@ public class wdwJugador extends JFrame implements ActionListener {
         button1.setBounds(480, 462, 70, 22);
         contentPane.add(button1);
 
-        JLabel lblNewLabel_8 = new JLabel("Estado");
+        lblNewLabel_8 = new JLabel("Estado");
         lblNewLabel_8.setBounds(72, 424, 46, 14);
         contentPane.add(lblNewLabel_8);
         for (int i = 0; i < equipos.size(); i++) {
@@ -169,5 +171,6 @@ public class wdwJugador extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         }
+
     }
 
