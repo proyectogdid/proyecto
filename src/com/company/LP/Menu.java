@@ -1,5 +1,6 @@
 package com.company.LP;
 
+import com.company.Excepciones.EquiposInsuficientesException;
 import com.company.LN.GestorLN;
 import com.company.comun.itfProperty;
 
@@ -60,7 +61,13 @@ public class Menu {
                 case 6:
                     visualizarJugador(gln.leerJugadores());
                     break;
-                case 7:gln.generarCalendario();
+                case 7:
+                    try {
+                    gln.generarCalendario();
+
+                    } catch (EquiposInsuficientesException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 default:
                     System.out.println("Introduzca una opción válida");
