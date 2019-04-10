@@ -1,26 +1,17 @@
 package com.company.LP;
 
-import com.company.comun.itfProperty;
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
-import static com.company.comun.clsConstantes.CAMPO_NOMBRE;
-
-public class wdwEquipo extends JFrame implements ActionListener {
+public class wdwRegistrarUsuario extends JFrame implements ActionListener {
 
     private JPanel contentPane;
     private JLabel lblNewLabel;
     private JTextField textField;
     private JTextField textField_1;
-    private JLabel lblNewLabel_2;
-    private JComboBox cbCampo;
-
-
     /**
      * Launch the application.
      */
@@ -28,7 +19,7 @@ public class wdwEquipo extends JFrame implements ActionListener {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    wdwEquipo frame = new wdwEquipo();
+                    wdwRegistrarUsuario frame = new wdwRegistrarUsuario();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -37,21 +28,20 @@ public class wdwEquipo extends JFrame implements ActionListener {
         });
     }
 
-    public wdwEquipo() {
+    /**
+     * Create the frame.
+     */
+    public wdwRegistrarUsuario() {
 
-    }
-
-    public wdwEquipo(ArrayList<itfProperty> campos) {
-
-        this.setTitle("Inserte un equipo");
+        this.setTitle("Registrar nuevo usuario");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 628, 300);
+        setBounds(100, 100, 628, 548);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        lblNewLabel = new JLabel("Nombre");
+        lblNewLabel = new JLabel("Nombre de usuario");
         lblNewLabel.setBounds(72, 50, 60, 14);
         contentPane.add(lblNewLabel);
 
@@ -60,7 +50,7 @@ public class wdwEquipo extends JFrame implements ActionListener {
         contentPane.add(textField);
         textField.setColumns(10);
 
-        JLabel lblNewLabel_1 = new JLabel("Patrocinador");
+        JLabel lblNewLabel_1 = new JLabel("Contraseña");
         lblNewLabel_1.setBounds(72, 102, 100, 14);
         contentPane.add(lblNewLabel_1);
 
@@ -68,18 +58,6 @@ public class wdwEquipo extends JFrame implements ActionListener {
         textField_1.setBounds(198, 99, 212, 20);
         contentPane.add(textField_1);
         textField_1.setColumns(10);
-
-        lblNewLabel_2 = new JLabel("Campo");
-        lblNewLabel_2.setBounds(72, 154, 55, 14);
-        contentPane.add(lblNewLabel_2);
-
-        JComboBox comboBox = new JComboBox();
-        comboBox.setBounds(176, 329, -12, 14);
-        contentPane.add(comboBox);
-
-        cbCampo = new JComboBox();
-        cbCampo.setBounds(198, 154, 86, 20);
-        contentPane.add(cbCampo);
 
         Button button = new Button("Aceptar");
         button.setBounds(399, 214, 70, 22);
@@ -89,12 +67,7 @@ public class wdwEquipo extends JFrame implements ActionListener {
         button1.setBounds(480, 214, 70, 22);
         contentPane.add(button1);
 
-        for (int i = 0; i < campos.size(); i++) {
-            cbCampo.addItem(campos.get(i).getProperty(CAMPO_NOMBRE));
-        }
-
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
 

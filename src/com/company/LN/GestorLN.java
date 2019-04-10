@@ -46,6 +46,10 @@ public class GestorLN {
      */
     ArrayList<Evento> eventos=new ArrayList<>();
     /**
+     * array que guardara los usuarios en memoria
+     */
+    ArrayList<Usuario> usuarios=new ArrayList<>();
+    /**
      * comunicacion con capa de datos en LN
      */
     private clsDatos objDatos = new clsDatos();
