@@ -94,9 +94,12 @@ public class wdwEquipo extends JFrame implements ActionListener {
         button1.setBounds(480, 214, 70, 22);
         contentPane.add(button1);
   //      itfProperty[] a=campos.toArray();
-//DefaultComboBoxModel model=new
+        DefaultComboBoxModel model=new DefaultComboBoxModel();
 
-            cbCampo.addItem(campos.get(i).getProperty(CAMPO_NOMBRE));
+        for (int i = 0; i <campos.size() ; i++) {
+            cbCampo.addItem(campos.get(i));
+        }
+
 
     }
 
