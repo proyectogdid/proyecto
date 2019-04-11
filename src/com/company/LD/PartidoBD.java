@@ -2,6 +2,7 @@ package com.company.LD;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class PartidoBD extends Conexion{
 
@@ -15,6 +16,10 @@ public class PartidoBD extends Conexion{
          */
         public static ResultSet getAll(Connection con)throws Exception{
             return select(con, "SELECT "+TEMPLATE+" FROM partidos par");
+        }
+
+        public static ArrayList<Integer> insertarPartidos(Connection con,Object[][] datos)throws Exception{
+        return multiInsert(con,"INSERT INTO partidos  (local,visitante,fecha,temporada,campo,jornada) VALUES ",datos);
         }
     }
 

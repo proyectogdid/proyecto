@@ -2,6 +2,7 @@ package com.company.LD;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.util.Date;
 
 public class TemporadaBD extends Conexion {
     public static final String TEMPLATE="tem.id,tem.ano";
@@ -14,6 +15,19 @@ public class TemporadaBD extends Conexion {
      */
     public static ResultSet getAll(Connection con)throws Exception{
         return select(con, "SELECT "+TEMPLATE+" FROM temporadas tem");
+    }
+
+    /**
+     * metodo de BD para insertar temporda
+     * @param con objcon
+     * @param anio fecha de la temporada
+     * @return id
+     * @throws Exception SQL exception
+     */
+
+    public static int insertTemporada(Connection con, Date anio )throws Exception{
+        Object[] datos={anio};
+        return insert(con, "INSERT INTO temporadas (ano) VALUES(?)",datos);
     }
 
 
