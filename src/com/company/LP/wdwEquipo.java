@@ -10,8 +10,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import static com.company.comun.clsConstantes.CAMPO_NOMBRE;
-
 public class wdwEquipo extends JFrame implements ActionListener {
 
     private JPanel contentPane;
@@ -105,10 +103,7 @@ public class wdwEquipo extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        ;
-        ;
-        ;
 
-        //gln.anadirEquipo(textoNombre.getText(),textoPatrocinador.getText(), cbCampo.getSelectedItem());
+       // gln.anadirEquipo(textoNombre.getText(),textoPatrocinador.getText(), cbCampo.getSelectedItem());
     }
 }

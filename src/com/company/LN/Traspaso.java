@@ -113,7 +113,6 @@ public class Traspaso implements itfProperty, itfPersistable {
                 return this.equipoPrevio;
             case TRASPASO_EQUIPO_POSTERIOR:
                 return this.equipoPosterior;
-
             default:
                 throw new RuntimeException();
         }

@@ -1,6 +1,5 @@
 package com.company.LP;
 
-import com.company.Excepciones.EquiposInsuficientesException;
 import com.company.LN.GestorLN;
 import com.company.comun.itfProperty;
 
@@ -61,14 +60,14 @@ public class Menu {
                 case 6:
                     visualizarJugador(gln.leerJugadores());
                     break;
-                case 7:
+                /**case 7:
                     try {
                     gln.generarCalendario();
 
                     } catch (EquiposInsuficientesException e) {
                         e.printStackTrace();
                     }
-                    break;
+                    break;**/
                 default:
                     System.out.println("Introduzca una opción válida");
                     break;
@@ -200,7 +199,7 @@ public class Menu {
     public static void altaJugador(GestorLN gln) {
         try {
 
-        	wdwJugador v=new wdwJugador(gln.leerEquipos(), gln.leerPosiciones(), gln.leerEstados());
+        	wdwJugador v=new wdwJugador(gln);
         	v.setVisible(true);
             String nombre;
             String apellido1;

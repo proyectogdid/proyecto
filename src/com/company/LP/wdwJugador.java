@@ -1,5 +1,6 @@
 package com.company.LP;
 
+import com.company.LN.GestorLN;
 import com.company.comun.itfProperty;
 
 import javax.swing.*;
@@ -8,8 +9,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
-import static com.company.comun.clsConstantes.*;
 
 public class wdwJugador extends JFrame implements ActionListener {
 
@@ -26,12 +25,13 @@ public class wdwJugador extends JFrame implements ActionListener {
     private JLabel lblNewLabel_3;
     private JLabel lblNewLabel_4;
     private JLabel lblNewLabel_5;
-    private JComboBox cbEquipo;
-    private JComboBox cbPosicion;
-    private JComboBox cbEstado;
+    private JComboBox<itfProperty> cbEquipo;
+    private JComboBox<itfProperty> cbPosicion;
+    private JComboBox<itfProperty> cbEstado;
     private JLabel lblNewLabel_6;
     private JLabel lblNewLabel_7;
     private JLabel lblNewLabel_8;
+    private GestorLN gln;
 
     /**
      * Launch the application.
@@ -56,7 +56,11 @@ public class wdwJugador extends JFrame implements ActionListener {
     /**
      * Create the frame.
      */
-    public wdwJugador(ArrayList<itfProperty> equipos, ArrayList<itfProperty> posiciones, ArrayList<itfProperty> estados) {
+    public wdwJugador(GestorLN gln_) {
+        ArrayList<itfProperty> equipos=gln_.leerEquipos();
+        ArrayList<itfProperty> posiciones=gln_.leerPosiciones();
+        ArrayList<itfProperty> estados= gln_.leerEstados();
+        GestorLN gln=gln_;
 
         this.setTitle("Inserte un jugador");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -157,20 +161,24 @@ public class wdwJugador extends JFrame implements ActionListener {
         lblNewLabel_8 = new JLabel("Estado");
         lblNewLabel_8.setBounds(72, 424, 46, 14);
         contentPane.add(lblNewLabel_8);
-        for (int i = 0; i < equipos.size(); i++) {
-            cbEquipo.addItem(equipos.get(i).getProperty(EQUIPO_NOMBRE));
-        }
 
+        for (int i = 0; i <equipos.size() ; i++) {
+            cbEquipo.addItem(equipos.get(i));
+        }
         for (int i = 0; i < posiciones.size(); i++) {
-            cbPosicion.addItem(posiciones.get(i).getProperty(POSICION_NOMBRE));
+            cbPosicion.addItem(posiciones.get(i));
         }
         for (int i = 0; i < estados.size(); i++) {
-            cbEstado.addItem(estados.get(i).getProperty(ESTADO_NOMBRE));
+            cbEstado.addItem(estados.get(i));
         }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        /**gln.anadirJugador(textoNombre.getText(),textoPrimerApellido.getText(), textoSegundoApellido.getText(),
+                textoFechaNcto.getText(), textoDorsal.getText(), textoTextoCamiseta.getText(), cbEquipo.getSelectedItem(),
+                cbPosicion.getSelectedItem(),cbEstado.getSelectedItem());**/
     }
 
 

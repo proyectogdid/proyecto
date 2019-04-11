@@ -172,8 +172,7 @@ public class GestorLN {
 
     /**
      * Metodo para añadir equipos al array de equipos
-     *
-     * @param nombre       nombre
+     *  @param nombre       nombre
      * @param patrocinador patrocinador
      * @param campo        campo
      */

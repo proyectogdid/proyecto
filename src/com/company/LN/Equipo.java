@@ -33,7 +33,7 @@ public class Equipo implements itfProperty {
     /**
      * atributo campo de equipo
      */
-    private  int campo;
+    private Object campo;
 
     /**
      * Este método recogera todos los datos necesarios para identificar los diferentes equipos.
@@ -52,11 +52,11 @@ public class Equipo implements itfProperty {
         id=rs.getInt(BD_EQUIPO_ID);
         nombre = rs.getString(BD_EQUIPO_NOMBRE);
         patrocinador = rs.getString(BD_EQUIPO_PATROCINADOR);
-        campo=rs.getInt(BD_EQUIPO_CAMPO);
+        campo=rs.getObject(BD_EQUIPO_CAMPO);
 
     }
 
-    public int getCampo() {
+    public Object getCampo() {
         return campo;
     }
 
