@@ -62,9 +62,11 @@ public class Menu {
                     break;
                 /**case 7:
                     try {
-                    gln.generarCalendario();
+                        altaTemporada(gln);
 
                     } catch (EquiposInsuficientesException e) {
+                        e.printStackTrace();
+                    }catch (Exception e){
                         e.printStackTrace();
                     }
                     break;**/
@@ -78,6 +80,11 @@ public class Menu {
         } while (op != 8);
 
 
+    }
+
+
+    public static void altaTemporada(GestorLN gln) throws Exception, EquiposInsuficientesException {
+        gln.anadirTemporada();
     }
 
     /**

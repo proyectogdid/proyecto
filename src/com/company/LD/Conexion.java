@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -108,10 +109,10 @@ public abstract class Conexion {
 
 
         System.out.println(query);
-        System.exit(0);
+
 
         PreparedStatement stt = con.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
-
+        cargarMultiDatos(stt,params);
         //query builder
         //for
         //cargarDatos(stt, params);
@@ -125,8 +126,8 @@ public abstract class Conexion {
     }
 
     /**
-     * metodo para cargar datos dentro de un prepared statement
-     * usando un array de clase object y un prepared statement para poder cargar los datos en el Prepared statement
+     * metodo para cargar datos dentro de un prepared statement multifilas
+     * usando una matriz de clase object y un prepared statement para poder cargar los datos en el Prepared statement
      *
      * @param stt stt
      * @param parametros parametros
@@ -151,6 +152,45 @@ public abstract class Conexion {
                 stt.setDate(j,fechabd);
             }
         }
+    }
+
+
+    /**
+     * metodo para cargar datos dentro de un prepared statement
+     * usando un array de clase object y un prepared statement para poder cargar los datos en el Prepared statement
+     *
+     * @param stt stt
+     * @param parametros parametros
+     * @throws Exception Throws Exception
+     */
+    private static void cargarMultiDatos(PreparedStatement stt, Object[][] parametros) throws Exception {
+        int n=1;
+        for (int k = 0; k <parametros.length; k++) {
+
+            for (int i = 0; i < parametros[k].length; i++) {
+
+                if (parametros[k][i] instanceof String) {
+                    stt.setString(n, (String) parametros[k][i]);
+                } else if (parametros[k][i] instanceof Integer) {
+                    stt.setInt(n, (Integer) parametros[k][i]);
+                } else if (parametros[k][i] instanceof Double) {
+                    stt.setDouble(n, (Double) parametros[k][i]);
+                } else if (parametros[k][i] instanceof java.util.Date) {
+                    java.util.Date date = (java.util.Date) parametros[k][i];
+
+
+                    LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                    int month = localDate.getMonthValue();
+                    int day = localDate.getDayOfMonth();
+                    int year = localDate.getYear();
+                    java.sql.Date fechabd = new java.sql.Date(date.getTime());
+                    stt.setDate(n, fechabd);
+                    System.out.println(fechabd);
+                }
+                n++;
+            }
+        }
+        System.out.println(n);
     }
 
 }

@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Date;
 
 import static com.company.LD.constantesBD.*;
 
@@ -109,6 +111,26 @@ public class clsDatos {
 
     public int insertarJugador(String nombre, String apellido1, String apellido2, java.util.Date fechaNac, String dorsal, String textoCamiseta, int equipo, int posicion, int estado) throws Exception {
         return JugadoresBD.insertar(con, nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta, equipo, estado, posicion);
+    }
+
+    /**
+     * metodo para insertar nueva temporada
+     * @param ano date de la temporada
+     * @return id
+     * @throws Exception sql exception
+     */
+    public int insertTemporada(Date ano)throws Exception{
+        return TemporadaBD.insertTemporada(con,ano);
+    }
+
+    /**
+     * metodo para insertar partidos de la temporada
+     * @param datos matriz de datos
+     * @return ids
+     * @throws Exception SQL exception
+     */
+    public ArrayList<Integer> insertPartidos(Object[][] datos) throws Exception{
+        return PartidoBD.insertarPartidos(con,datos);
     }
 
     /**
