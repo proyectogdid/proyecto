@@ -442,14 +442,14 @@ public class GestorLN {
     /**
      * para cargar los datos de los partidos
      *
-     * @throws Exception
+     * @throws Exception sql excption
      */
     public void cargarDatosPartidos() throws Exception {
         ResultSet rs = objDatos.buscarPartidos();
         while (rs.next()) {
-            Evento e = new Evento();
+            Partido e = new Partido();
             e.resultsetLoad(rs);
-            eventos.add(e);
+            partidos.add(e);
         }
     }
 
