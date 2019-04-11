@@ -6,7 +6,6 @@ import com.company.LD.clsDatos;
 import com.company.comun.Utilidades;
 import com.company.comun.itfProperty;
 
-import java.sql.Array;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -129,7 +128,7 @@ public class GestorLN {
                 visitantes.add(locales.get(locales.size()-1));
                 locales.remove(locales.size()-1);
             }
-            System.out.println(contador);//si contador es igua a n!/(n-2)!*2 es que todo va bien
+            System.out.println(contador);//si contador es igual a n!/(n-2)!*2 es que todo va bien
         }
     }
     /**
