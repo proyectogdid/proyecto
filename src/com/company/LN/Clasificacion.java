@@ -12,6 +12,6 @@ public class Clasificacion implements Comparator<Participantes> {
 
     @Override
     public int compare(Participantes p1, Participantes p2) {
-        return p1.getPartidosGanados() - (p2.getPartidosGanados());
+        return p1.getPartidosGanados() - p2.getPartidosGanados();
     }
 }

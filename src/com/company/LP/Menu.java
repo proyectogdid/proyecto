@@ -37,8 +37,9 @@ public class Menu {
             System.out.println("4.-Ver Equipo");
             System.out.println("5.-ALta jugador");
             System.out.println("6.-Ver jugaodes");
-            System.out.println("7.-calendario");
-            System.out.println("8.-Salir");
+            System.out.println("7.-Calendario");
+            System.out.println("8.-Clasificación");
+            System.out.println("9.-Salir");
             op = clsUtilidades.leerEntero();
 
             switch (op) {
@@ -71,6 +72,9 @@ public class Menu {
                         e.printStackTrace();
                     }
                     break;
+                case 8:
+                    Clasificacion(gln);
+                    break;
                 default:
                     System.out.println("Introduzca una opción válida");
                     break;
@@ -78,7 +82,7 @@ public class Menu {
 
             }
 
-        } while (op != 8);
+        } while (op != 9);
 
 
     }
@@ -232,6 +236,7 @@ public class Menu {
             System.out.println("Fecha de nacimiento:(dd/MM/yyyy)");
             fechaNac = clsUtilidades.leerCadena();
             Date fecha = new SimpleDateFormat("dd/MM/yyyy").parse(fechaNac);
+
             System.out.println("Dorsal:");
             dorsal = clsUtilidades.leerCadena();
 
@@ -273,6 +278,13 @@ public class Menu {
             System.out.println();
 
         }
+    }
+    public static void Clasificacion(GestorLN gln){
+        System.out.println("CLASIFICACION DE LA LIGA:");
+        System.out.println("---------------------");
+
+        gln.ordenarClasificacion();
+
     }
 
 

@@ -91,7 +91,7 @@ public class wdwEquipo extends JFrame implements ActionListener {
         Button button1 = new Button("Cancelar");
         button1.setBounds(480, 214, 70, 22);
         contentPane.add(button1);
-  //      itfProperty[] a=campos.toArray();
+  //     itfProperty[] a=campos.toArray();
         DefaultComboBoxModel model=new DefaultComboBoxModel();
 
         for (int i = 0; i <campos.size() ; i++) {

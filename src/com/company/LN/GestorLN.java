@@ -57,92 +57,97 @@ public class GestorLN {
 
     ArrayList<Partido> partidos = new ArrayList<>();
     /**
+     * array que guarda los participantes en memoria
+     */
+    ArrayList<Participantes> participantes = new ArrayList<>();
+    /**
      * comunicacion con capa de datos en LN
      */
     private clsDatos objDatos = new clsDatos();
+
 
     /**
      * metodo que se usará para generar los distintos partidos que tendrá una temporada
      * basado en algoritmo Round Robin
      * https://en.wikipedia.org/wiki/Round-robin_scheduling
      */
-    public void generarCalendario(int temporada_) throws EquiposInsuficientesException,Exception {
+    public void generarCalendario(int temporada_) throws EquiposInsuficientesException, Exception {
 
-        final int LOCAL=0;
-        final int VISITANTE=1;
-        final int FECHA=2;
-        final int TEMPORADA=3;
-        final int CAMPO=4;
-        final int JORNADA=5;
-        ArrayList<Equipo> locales=new ArrayList<>();
-        ArrayList<Equipo> visitantes=new ArrayList<>();
-        int n=equipos.size();
-        int npartidos= Utilidades.factorial(n)/(Utilidades.factorial(n-2) *2);
+        final int LOCAL = 0;
+        final int VISITANTE = 1;
+        final int FECHA = 2;
+        final int TEMPORADA = 3;
+        final int CAMPO = 4;
+        final int JORNADA = 5;
+        ArrayList<Equipo> locales = new ArrayList<>();
+        ArrayList<Equipo> visitantes = new ArrayList<>();
+        int n = equipos.size();
+        int npartidos = Utilidades.factorial(n) / (Utilidades.factorial(n - 2) * 2);
         /*
          n!/(n-2)!*2
          es la formula para saber cuantos partidos habra en una liga
          */
         System.out.println(npartidos);
-        Object[][] datos=new Object[npartidos*2][6];//6 es el numero de columnas necesarias que tiene partido
+        Object[][] datos = new Object[npartidos * 2][6];//6 es el numero de columnas necesarias que tiene partido
 
-        for (int i = 0; i <equipos.size() ; i++) {
+        for (int i = 0; i < equipos.size(); i++) {
             locales.add(equipos.get(i));
         }
 
-        if(locales.size()%2!=0){
-           //aqui habra que mandar una excepcion
+        if (locales.size() % 2 != 0) {
+            //aqui habra que mandar una excepcion
             throw new EquiposInsuficientesException();
 
-        }else{
-            int jornadas=locales.size()-1;
-            int mitad=(locales.size()/2)-1;
-            int r=0;
-            for(int i=locales.size()-1;i>mitad;i--){
+        } else {
+            int jornadas = locales.size() - 1;
+            int mitad = (locales.size() / 2) - 1;
+            int r = 0;
+            for (int i = locales.size() - 1; i > mitad; i--) {
                 visitantes.add(locales.get(i));
                 locales.remove(i);
             }
-            Equipo fijo=locales.get(0);
+            Equipo fijo = locales.get(0);
             locales.remove(0);
 
 
+            for (int k = 0; k < jornadas * 2; k++) {
+                System.out.println("----JORNADA " + (k + 1) + "---------- ");
 
-            for(int k=0;k<jornadas*2;k++){
-                System.out.println("----JORNADA "+(k +1) +"---------- ");
+                System.out.println(fijo.getNombre() + "-" + visitantes.get(0).getNombre());
 
-                System.out.println(fijo.getNombre()+"-"+visitantes.get(0).getNombre());
-
-                datos[r][LOCAL]=fijo.getId();
-                datos[r][VISITANTE]=visitantes.get(0).getId();
-                datos[r][FECHA]=new Date();
-                datos[r][TEMPORADA]=temporada_;
-                datos[r][CAMPO]=fijo.getCampo();
-                datos[r][JORNADA]=k;
+                datos[r][LOCAL] = fijo.getId();
+                datos[r][VISITANTE] = visitantes.get(0).getId();
+                datos[r][FECHA] = new Date();
+                datos[r][TEMPORADA] = temporada_;
+                datos[r][CAMPO] = fijo.getCampo();
+                datos[r][JORNADA] = k;
                 r++;
-                for(int x=0;x<locales.size();x++){
-                    System.out.println(locales.get(x).getNombre()+"-"+visitantes.get(x+1).getNombre());
+                for (int x = 0; x < locales.size(); x++) {
+                    System.out.println(locales.get(x).getNombre() + "-" + visitantes.get(x + 1).getNombre());
 
-                    datos[r][LOCAL]=locales.get(x).getId();
-                    datos[r][VISITANTE]=visitantes.get(x).getId();
-                    datos[r][FECHA]=new Date();
-                    datos[r][TEMPORADA]=temporada_;
-                    datos[r][CAMPO]=locales.get(x).getCampo();
-                    datos[r][JORNADA]=k;
+                    datos[r][LOCAL] = locales.get(x).getId();
+                    datos[r][VISITANTE] = visitantes.get(x).getId();
+                    datos[r][FECHA] = new Date();
+                    datos[r][TEMPORADA] = temporada_;
+                    datos[r][CAMPO] = locales.get(x).getCampo();
+                    datos[r][JORNADA] = k;
                     r++;
                 }
-                locales.add(0,visitantes.get(0));
+                locales.add(0, visitantes.get(0));
                 visitantes.remove(0);
-                visitantes.add(locales.get(locales.size()-1));
-                locales.remove(locales.size()-1);
+                visitantes.add(locales.get(locales.size() - 1));
+                locales.remove(locales.size() - 1);
             }
             System.out.println(r);//si contador es igual a n!/(n-2)!*2 es que todo va bien
-            ArrayList<Integer>claves= objDatos.insertPartidos(datos);
-            for (int i = 0; i <claves.size() ; i++) {
-                Partido p=new Partido(claves.get(i),(Date) datos[i][FECHA],(int)datos[i][LOCAL],(int)datos[i][VISITANTE],(int)datos[i][TEMPORADA],(int)datos[i][CAMPO],(int)datos[i][JORNADA]);
+            ArrayList<Integer> claves = objDatos.insertPartidos(datos);
+            for (int i = 0; i < claves.size(); i++) {
+                Partido p = new Partido(claves.get(i), (Date) datos[i][FECHA], (int) datos[i][LOCAL], (int) datos[i][VISITANTE], (int) datos[i][TEMPORADA], (int) datos[i][CAMPO], (int) datos[i][JORNADA]);
                 partidos.add(p);
             }
 
         }
     }
+
     /**
      * Este metodo se va a utilizar para añadir los campos en el Array de los campos
      *
@@ -182,9 +187,9 @@ public class GestorLN {
 
     }
 
-    public void  anadirTemporada()throws Exception, EquiposInsuficientesException{
+    public void anadirTemporada() throws Exception, EquiposInsuficientesException {
         objDatos.conectarBD();
-        Temporada t=new Temporada();
+        Temporada t = new Temporada();
         t.setAno(new Date());
         t.setId(objDatos.insertTemporada(t.getAno()));
         temporadas.add(t);
@@ -194,7 +199,8 @@ public class GestorLN {
 
     /**
      * Metodo para añadir equipos al array de equipos
-     *  @param nombre       nombre
+     *
+     * @param nombre       nombre
      * @param patrocinador patrocinador
      * @param campo        campo
      */
@@ -473,6 +479,13 @@ public class GestorLN {
         cargarDatosEventos();
         cargarDatosPartidos();
         objDatos.desconectarBD();
+    }
+
+    public void ordenarClasificacion() {
+        Clasificacion c = new Clasificacion();
+        Collections.sort(participantes, c);
+
+
     }
 }
 
