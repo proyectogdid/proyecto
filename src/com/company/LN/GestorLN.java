@@ -113,9 +113,9 @@ public class GestorLN {
 
 
             for (int k = 0; k < jornadas * 2; k++) {
-                System.out.println("----JORNADA " + (k + 1) + "---------- ");
+  //              System.out.println("----JORNADA " + (k + 1) + "---------- ");
 
-                System.out.println(fijo.getNombre() + "-" + visitantes.get(0).getNombre());
+//                System.out.println(fijo.getNombre() + "-" + visitantes.get(0).getNombre());
 
                 datos[r][LOCAL] = fijo.getId();
                 datos[r][VISITANTE] = visitantes.get(0).getId();
@@ -125,7 +125,7 @@ public class GestorLN {
                 datos[r][JORNADA] = k;
                 r++;
                 for (int x = 0; x < locales.size(); x++) {
-                    System.out.println(locales.get(x).getNombre() + "-" + visitantes.get(x + 1).getNombre());
+    //                System.out.println(locales.get(x).getNombre() + "-" + visitantes.get(x + 1).getNombre());
 
                     datos[r][LOCAL] = locales.get(x).getId();
                     datos[r][VISITANTE] = visitantes.get(x).getId();
@@ -140,7 +140,7 @@ public class GestorLN {
                 visitantes.add(locales.get(locales.size() - 1));
                 locales.remove(locales.size() - 1);
             }
-            System.out.println(r);//si contador es igual a n!/(n-2)!*2 es que todo va bien
+      //      System.out.println(r);//si contador es igual a n!/(n-2)!*2 es que todo va bien
             ArrayList<Integer> claves = objDatos.insertPartidos(datos);
             for (int i = 0; i < claves.size(); i++) {
                 Partido p = new Partido(claves.get(i), (Date) datos[i][FECHA], (int) datos[i][LOCAL], (int) datos[i][VISITANTE], (int) datos[i][TEMPORADA], (int) datos[i][CAMPO], (int) datos[i][JORNADA]);

@@ -25,7 +25,7 @@ public abstract class Conexion {
 
     public static ResultSet select(Connection con, String query) throws Exception {
         Statement stt = con.createStatement();
-        System.out.println(query);
+      //  System.out.println(query);
         ResultSet rs = stt.executeQuery(query);
 
         return rs;
@@ -107,7 +107,7 @@ public abstract class Conexion {
         }
 
 
-        System.out.println(query);
+//        System.out.println(query);
 
 
         PreparedStatement stt = con.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
@@ -184,12 +184,12 @@ public abstract class Conexion {
                     int year = localDate.getYear();
                     java.sql.Date fechabd = new java.sql.Date(date.getTime());
                     stt.setDate(n, fechabd);
-                    System.out.println(fechabd);
+  //                  System.out.println(fechabd);
                 }
                 n++;
             }
         }
-        System.out.println(n);
+    //    System.out.println(n);
     }
 
 }
