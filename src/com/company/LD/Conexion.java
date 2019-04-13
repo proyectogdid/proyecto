@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -68,7 +67,7 @@ public abstract class Conexion {
      * Metodo generico para llamar a inserts ahorrando el codigo repetido
      *
      * @param con con
-     * @param query      sentencia sql a ejecutar
+     * @param query sentencia sql a ejecutar
      * @param parametros parametros
      * @return id del objeto insertado
      * @throws Exception throws Exception

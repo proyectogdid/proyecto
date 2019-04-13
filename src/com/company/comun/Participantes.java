@@ -1,6 +1,6 @@
-package com.company.LN;
+package com.company.comun;
 
-import com.company.comun.itfProperty;
+import com.company.LN.Equipo;
 
 import static com.company.comun.clsConstantes.*;
 

@@ -3,6 +3,8 @@ package com.company.LN;
 import com.company.Excepciones.DorsalRepetidoException;
 import com.company.Excepciones.EquiposInsuficientesException;
 import com.company.LD.clsDatos;
+import com.company.comun.Clasificacion;
+import com.company.comun.Participantes;
 import com.company.comun.Utilidades;
 import com.company.comun.itfProperty;
 

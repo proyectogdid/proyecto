@@ -1,5 +1,5 @@
 
-package com.company.LN;
+package com.company.comun;
 
 import java.util.Comparator;
 

@@ -18,6 +18,13 @@ public class PartidoBD extends Conexion{
             return select(con, "SELECT "+TEMPLATE+" FROM partidos par");
         }
 
+    /**
+     * Metodo para insertar los partidos del ArrayLisst
+     * @param con con
+     * @param datos datos
+     * @return return
+     * @throws Exception cualquier fallo que pueda haber en la multiInsert
+     */
         public static ArrayList<Integer> insertarPartidos(Connection con,Object[][] datos)throws Exception{
         return multiInsert(con,"INSERT INTO partidos  (local,visitante,fecha,temporada,campo,jornada) VALUES ",datos);
         }
