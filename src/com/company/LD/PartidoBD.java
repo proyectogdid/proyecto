@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+/**
+ * Esta clase se utilizara para hacer multiInserts y obtener informacion sobre los partidos de la BD
+ */
+
 public class PartidoBD extends Conexion{
 
         public static final String TEMPLATE="par.id,par.fecha,par.ptosLocal,par.ptosVisitante,par.local,par.visitante ";

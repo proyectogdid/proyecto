@@ -3,6 +3,9 @@ package com.company.LD;
 import java.sql.Connection;
 import java.sql.ResultSet;
 
+/**
+ * Clase para obtener informacion sobre los traspasos de la BD
+ */
 public class TraspasoBD extends Conexion{
     public static final String TEMPLATE="tra.id, tra.precio, tra.jugador, tra.equipoPrevio, tra.equipoPosterior";
 

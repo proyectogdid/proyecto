@@ -89,6 +89,7 @@ public class Menu {
 
 
     public static void altaTemporada(GestorLN gln) throws Exception, EquiposInsuficientesException {
+
         gln.anadirTemporada();
     }
 

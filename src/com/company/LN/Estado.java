@@ -56,7 +56,7 @@ public class Estado implements itfProperty, itfPersistable {
      * metodo get property de la interfaz itfProperty
      *
      * @param prop prop
-     * @return
+     * @return return
      */
     @Override
     public Object getProperty(String prop) {
@@ -70,6 +70,11 @@ public class Estado implements itfProperty, itfPersistable {
         }
     }
 
+    /**
+     * Metodo para cargar los datos de los estados en el resultset
+     * @param rs rs
+     * @throws Exception throws Exception
+     */
     @Override
     public void resultsetLoad(ResultSet rs) throws Exception {
         id=rs.getInt(BD_ESTADO_ID);

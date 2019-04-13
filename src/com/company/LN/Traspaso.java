@@ -118,6 +118,11 @@ public class Traspaso implements itfProperty, itfPersistable {
         }
     }
 
+    /**
+     * MEtodo para cargar los traspasos en el resultset
+     * @param rs rs
+     * @throws Exception throws Exception
+     */
     @Override
     public void resultsetLoad(ResultSet rs) throws Exception {
         id=rs.getInt(BD_TRASPASO_ID);

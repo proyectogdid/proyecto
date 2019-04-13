@@ -107,7 +107,11 @@ public class Jugador implements itfProperty {
         this.textoCamiseta = textoCamiseta;
     }
 
-
+    /**
+     * MEtodo para cargar los datos de los jugadores en el resultset
+     * @param rs rs
+     * @throws Exception throws Exception
+     */
     public void resultSetToJugador(ResultSet rs) throws Exception {
         id = rs.getInt(BD_JUGADOR_ID);
         nombre = rs.getString(BD_JUGADOR_NOMBRE);

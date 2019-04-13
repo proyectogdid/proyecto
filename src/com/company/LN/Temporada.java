@@ -84,6 +84,12 @@ public class Temporada implements itfProperty, itfPersistable {
                 throw new RuntimeException();
         }
     }
+
+    /**
+     * Metodo para cargar los datos de la temporada en el resutlset
+     * @param rs rs
+     * @throws Exception throws Exception
+     */
     @Override
     public void resultsetLoad(ResultSet rs) throws Exception {
         id=rs.getInt(BD_TEMPORADA_ID);

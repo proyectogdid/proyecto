@@ -221,6 +221,12 @@ public class Partido implements itfProperty, itfPersistable {
                 throw new RuntimeException();
         }
     }
+
+    /**
+     * Metodo para cargar los datos de los partidos en el resultset
+     * @param rs rs
+     * @throws Exception throws Exception
+     */
     @Override
     public void resultsetLoad(ResultSet rs) throws Exception {
         id=rs.getInt(BD_PARTIDO_ID);

@@ -86,6 +86,11 @@ public class Campo implements itfProperty, Comparable<Campo>, itfPersistable {
         this.aforo = aforo;
     }
 
+    /**
+     * Metodo para anadir los campos al resultset
+     * @param rs rs
+     * @throws Exception throws Exception
+     */
     public void resultsetLoad(ResultSet rs) throws Exception {
         id = rs.getInt(BD_CAMPO_ID);
         aforo = rs.getInt(BD_CAMPO_AFORO);
@@ -180,14 +185,23 @@ public class Campo implements itfProperty, Comparable<Campo>, itfPersistable {
         }
     }
 
+    /**
+     * Metodo para comparar los campos por nombre
+     * @param o o
+     * @return return
+     */
     @Override
     public int compareTo(Campo o) {
-        return 0;
+        return this.nombre.compareTo(o.nombre);
     }
 
+    /**
+     * Metodo toString de otfProperty
+     * @return return
+     */
     @Override
     public String toString() {
-        return this.nombre;
+        return getNombre();
     }
 }
 

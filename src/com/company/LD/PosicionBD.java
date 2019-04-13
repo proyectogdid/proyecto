@@ -3,6 +3,9 @@ package com.company.LD;
 import java.sql.Connection;
 import java.sql.ResultSet;
 
+/**
+ * Clase que se usara para obtener informacion sobre las posiciones de los jugadores de la BD
+ */
 public class PosicionBD extends Conexion {
     public static final String TEMPLATE="pscn.id, pscn.nombre";
 

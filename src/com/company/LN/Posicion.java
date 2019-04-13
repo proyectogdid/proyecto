@@ -73,6 +73,11 @@ public class Posicion implements itfProperty, itfPersistable {
         }
     }
 
+    /**
+     * Metodo para cargar los datos de las posiciones en el resultset
+     * @param rs rs
+     * @throws Exception throws Exception
+     */
     @Override
     public void resultsetLoad(ResultSet rs) throws Exception {
         id=rs.getInt(BD_POSICION_ID);

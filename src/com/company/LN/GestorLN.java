@@ -89,7 +89,7 @@ public class GestorLN {
          n!/(n-2)!*2
          es la formula para saber cuantos partidos habra en una liga
          */
-        System.out.println(npartidos);
+       // System.out.println(npartidos);
         Object[][] datos = new Object[npartidos * 2][6];//6 es el numero de columnas necesarias que tiene partido
 
         for (int i = 0; i < equipos.size(); i++) {
@@ -257,7 +257,7 @@ public class GestorLN {
      * @return return
      */
     public ArrayList<itfProperty> leerCampos() {
-        System.out.println("entro aqui");
+
         ArrayList<itfProperty> retorno = new ArrayList<>();
         try {
 
@@ -308,7 +308,7 @@ public class GestorLN {
      * @return return
      */
     public ArrayList<itfProperty> leerEquipos() {
-        System.out.println("entro aqui");
+
         ArrayList<itfProperty> retorno = new ArrayList<>();
         for (Equipo e : equipos) {
             retorno.add(e);
@@ -324,7 +324,7 @@ public class GestorLN {
      * @return return
      */
     public ArrayList<itfProperty> leerJugadores() {
-        System.out.println("entro aqui");
+
         ArrayList<itfProperty> retorno = new ArrayList<>();
         try {
 
@@ -483,6 +483,9 @@ public class GestorLN {
         objDatos.desconectarBD();
     }
 
+    /**
+     * Metodo para ordenar la clasificacion de los participantes
+     */
     public void ordenarClasificacion() {
         Clasificacion c = new Clasificacion();
         Collections.sort(participantes, c);

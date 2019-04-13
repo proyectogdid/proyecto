@@ -27,6 +27,7 @@ public class Usuario implements itfProperty {
      * atributo correo del usuario
      */
     private String correo;
+
     public Usuario() {
     }
 

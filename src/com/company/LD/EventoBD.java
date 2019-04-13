@@ -3,6 +3,9 @@ package com.company.LD;
 import java.sql.Connection;
 import java.sql.ResultSet;
 
+/**
+ * clase que va a gestionar la situacion de cada jugador de la BD
+ */
 public class EventoBD extends Conexion{
 
     public static final String TEMPLATE="eve.id,eve.estadoPrevio,eve.estadoPosterior,eve.jugador";

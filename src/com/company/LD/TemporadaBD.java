@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.Date;
 
+/**
+ * Clase para insertar y obtener informacion sobre la temporada de la BD
+ */
 public class TemporadaBD extends Conexion {
     public static final String TEMPLATE="tem.id,tem.ano";
 
