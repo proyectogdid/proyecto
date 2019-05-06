@@ -50,6 +50,10 @@ public class GestorLN {
      */
     ArrayList<Evento> eventos = new ArrayList<>();
     /**
+     * array que guardara los traspsos en memoria
+     */
+    ArrayList<Traspaso> traspasos = new ArrayList<>();
+    /**
      * array que guardara los usuarios en memoria
      */
     ArrayList<Usuario> usuarios = new ArrayList<>();
@@ -412,9 +416,9 @@ public class GestorLN {
     public void cargarDatosTraspasos() throws Exception {
         ResultSet rs = objDatos.buscarTraspasos();
         while (rs.next()) {
-            Posicion p = new Posicion();
+            Traspaso p = new Traspaso();
             p.resultsetLoad(rs);
-            posiciones.add(p);
+            traspasos.add(p);
         }
 
     }
