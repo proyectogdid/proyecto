@@ -16,10 +16,7 @@ public class Traspaso implements itfProperty, itfPersistable {
      * atributo id del traspaso
      */
     private int id;
-    /**
-     * atributo precio por el que se ha realizado el traspaso
-     */
-    private int precio;
+
     /**
      * atributo que especifica el jugador objeto del traspaso
      */
@@ -40,14 +37,14 @@ public class Traspaso implements itfProperty, itfPersistable {
      * Este metodo va a recoger los datos de todos los traspasos que se vayan reslizando
      *
      * @param id id
-     * @param precio precio
+
      * @param jugador jugador
      * @param equipoPrevio equipoPRevio
      * @param equipoPosterior equipoPosterior
      */
-    public Traspaso(int id, int precio, int jugador, int equipoPrevio, int equipoPosterior) {
+    public Traspaso(int id, int jugador, int equipoPrevio, int equipoPosterior) {
         this.id = id;
-        this.precio = precio;
+
         this.jugador = jugador;
         this.equipoPrevio = equipoPrevio;
         this.equipoPosterior = equipoPosterior;
@@ -62,13 +59,7 @@ public class Traspaso implements itfProperty, itfPersistable {
         this.id = id;
     }
 
-    public int getPrecio() {
-        return precio;
-    }
 
-    public void setPrecio(int precio) {
-        this.precio = precio;
-    }
 
     public int getJugador() {
         return jugador;
@@ -105,8 +96,7 @@ public class Traspaso implements itfProperty, itfPersistable {
         switch (prop) {
             case TRASPASO_ID:
                 return this.id;
-            case TRASPASO_PRECIO:
-                return this.precio;
+
             case TRASPASO_JUGADOR:
                 return this.jugador;
             case TRASPASO_EQUIPO_PREVIO:
@@ -127,7 +117,7 @@ public class Traspaso implements itfProperty, itfPersistable {
     public void resultsetLoad(ResultSet rs) throws Exception {
         id=rs.getInt(BD_TRASPASO_ID);
         jugador=rs.getInt(BD_TRASPASO_JUGADOR);
-        precio=rs.getInt(BD_TRASPASO_PRECIO);
+
         equipoPrevio=rs.getInt(BD_TRASPASO_EQUIPO_PREVIO);
         equipoPosterior=rs.getInt(BD_TRASPASO_EQUIPO_POSTERIOR);
 
