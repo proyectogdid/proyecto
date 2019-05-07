@@ -1,9 +1,6 @@
 package com.company.LD;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -25,7 +22,7 @@ public abstract class Conexion {
 
     public static ResultSet select(Connection con, String query) throws Exception {
         Statement stt = con.createStatement();
-        //  System.out.println(query);
+        System.out.println(query);
         ResultSet rs = stt.executeQuery(query);
 
         return rs;
@@ -136,21 +133,7 @@ public abstract class Conexion {
     private static void cargarDatos(PreparedStatement stt, Object[] parametros) throws Exception {
         for (int i = 0; i < parametros.length; i++) {
             int j = i + 1;
-            if (parametros[i] instanceof String) {
-                stt.setString(j, (String) parametros[i]);
-            } else if (parametros[i] instanceof Integer) {
-                stt.setInt(j, (Integer) parametros[i]);
-            } else if (parametros[i] instanceof Double) {
-                stt.setDouble(j, (Double) parametros[i]);
-            } else if (parametros[i] instanceof java.util.Date) {
-                java.util.Date date = (java.util.Date) parametros[i];
-                LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                int month = localDate.getMonthValue();
-                int day = localDate.getDayOfMonth();
-                int year = localDate.getYear();
-                java.sql.Date fechabd = new java.sql.Date(year, month, day);
-                stt.setDate(j, fechabd);
-            }
+            setData(stt,parametros[i],j);
         }
     }
 
@@ -168,29 +151,32 @@ public abstract class Conexion {
         for (int k = 0; k < parametros.length; k++) {
 
             for (int i = 0; i < parametros[k].length; i++) {
-
-                if (parametros[k][i] instanceof String) {
-                    stt.setString(n, (String) parametros[k][i]);
-                } else if (parametros[k][i] instanceof Integer) {
-                    stt.setInt(n, (Integer) parametros[k][i]);
-                } else if (parametros[k][i] instanceof Double) {
-                    stt.setDouble(n, (Double) parametros[k][i]);
-                } else if (parametros[k][i] instanceof java.util.Date) {
-                    java.util.Date date = (java.util.Date) parametros[k][i];
-
-
-                    LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                    int month = localDate.getMonthValue();
-                    int day = localDate.getDayOfMonth();
-                    int year = localDate.getYear();
-                    java.sql.Date fechabd = new java.sql.Date(date.getTime());
-                    stt.setDate(n, fechabd);
-                    //                  System.out.println(fechabd);
-                }
+                setData(stt,parametros[k][i],n);
                 n++;
             }
         }
         //    System.out.println(n);
+    }
+
+    private static void setData(PreparedStatement stt, Object obj, int index) throws SQLException {
+        if (obj instanceof String) {
+            stt.setString(index, (String)obj);
+        } else if (obj instanceof Integer) {
+            stt.setInt(index, (Integer) obj);
+        } else if (obj instanceof Double) {
+            stt.setDouble(index, (Double) obj);
+        } else if (obj instanceof java.util.Date) {
+            java.util.Date date = (java.util.Date) obj;
+
+
+            LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            int month = localDate.getMonthValue();
+            int day = localDate.getDayOfMonth();
+            int year = localDate.getYear();
+            java.sql.Date fechabd = new java.sql.Date(date.getTime());
+            stt.setDate(index, fechabd);
+            //                  System.out.println(fechabd);
+        }
     }
 
 }
