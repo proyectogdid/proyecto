@@ -104,6 +104,6 @@ public class wdwEquipo extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-       // gln.anadirEquipo(textoNombre.getText(),textoPatrocinador.getText(), cbCampo.getSelectedItem());
+       gln.anadirEquipo(textoNombre.getText(),textoPatrocinador.getText(), (Integer) cbCampo.getSelectedItem());
     }
 }

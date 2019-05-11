@@ -149,14 +149,17 @@ public class wdwJugador extends JFrame implements ActionListener {
         lblNewLabel_7.setBounds(72, 379, 50, 14);
         contentPane.add(lblNewLabel_7);
 
-        Button button = new Button("Aceptar");
-        button.setBounds(399, 462, 70, 22);
-        button.addActionListener(this);
-        contentPane.add(button);
+        Button aceptar = new Button("Aceptar");
+        aceptar.setBounds(399, 462, 70, 22);
+        aceptar.addActionListener(this);
+        aceptar.setActionCommand("1");
+        contentPane.add(aceptar);
 
-        Button button1 = new Button("Cancelar");
-        button1.setBounds(480, 462, 70, 22);
-        contentPane.add(button1);
+        Button cancelar = new Button("Cancelar");
+        cancelar.setBounds(480, 462, 70, 22);
+        cancelar.addActionListener(this);
+        cancelar.setActionCommand("0");
+        contentPane.add(cancelar);
 
         lblNewLabel_8 = new JLabel("Estado");
         lblNewLabel_8.setBounds(72, 424, 46, 14);
@@ -175,10 +178,20 @@ public class wdwJugador extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        e.getActionCommand();
+        switch (e.getActionCommand()){
+            case "1":
+                /**gln.anadirJugador(textoNombre.getText(),textoPrimerApellido.getText(), textoSegundoApellido.getText(),
+                        textoFechaNcto.getText(), textoDorsal.getText(), textoTextoCamiseta.getText(), cbEquipo.getSelectedItem(),
+                        cbPosicion.getSelectedItem(),cbEstado.getSelectedItem());*/
+                break;
+            case "0":
+                break;
 
-        /**gln.anadirJugador(textoNombre.getText(),textoPrimerApellido.getText(), textoSegundoApellido.getText(),
-                textoFechaNcto.getText(), textoDorsal.getText(), textoTextoCamiseta.getText(), cbEquipo.getSelectedItem(),
-                cbPosicion.getSelectedItem(),cbEstado.getSelectedItem());**/
+
+
+        }
+
     }
 
 
