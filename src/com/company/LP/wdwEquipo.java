@@ -22,25 +22,7 @@ public class wdwEquipo extends JFrame implements ActionListener {
     private GestorLN gln;
 
 
-    /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    wdwEquipo frame = new wdwEquipo();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
 
-    public wdwEquipo() {
-
-    }
 
     public wdwEquipo(GestorLN gln_) {
         ArrayList<itfProperty> campos=gln_.leerCampos();

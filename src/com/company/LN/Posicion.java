@@ -83,4 +83,12 @@ public class Posicion implements itfProperty, itfPersistable {
         id=rs.getInt(BD_POSICION_ID);
         nombre=rs.getString(BD_POSICION_NOMBRE);
     }
+
+    /**
+     *
+     * @return nombre de la posciion
+     */
+    public String toString(){
+        return this.nombre;
+    }
 }

@@ -60,7 +60,7 @@ public class wdwJugador extends JFrame implements ActionListener {
         ArrayList<itfProperty> equipos=gln_.leerEquipos();
         ArrayList<itfProperty> posiciones=gln_.leerPosiciones();
         ArrayList<itfProperty> estados= gln_.leerEstados();
-        GestorLN gln=gln_;
+         gln=gln_;
 
         this.setTitle("Inserte un jugador");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

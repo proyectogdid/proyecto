@@ -20,13 +20,16 @@ public class Menu {
      */
     public static void menu() {
         GestorLN gln = new GestorLN();
+
+
         try {
             gln.cargarDatos();
         } catch (Exception e) {
             javax.swing.JOptionPane.showMessageDialog(null, "error al cargar datos");
             e.printStackTrace();
         }
-
+        ventanaMenu vm=new ventanaMenu(gln);
+        vm.setVisible(true);
 
         int op = 0;
         do {

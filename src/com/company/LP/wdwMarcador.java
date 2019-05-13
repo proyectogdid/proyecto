@@ -15,31 +15,13 @@ public class wdwMarcador extends JFrame implements ActionListener {
     private JTextField ptosEquipo2;
     private JLabel lblNewLabel_1;
     private GestorLN gln;
-    /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    wdwJugador frame = new wdwJugador();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
 
-    public wdwMarcador() {
-
-    }
 
     /**
      * Create the frame.
      */
     public wdwMarcador(GestorLN gln_) {
-
+        gln=gln_;
         this.setTitle("MARCADOR");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 628, 548);
