@@ -1,6 +1,5 @@
 package com.company.LN;
 
-import com.company.Excepciones.DorsalRepetidoException;
 import com.company.Excepciones.EquiposInsuficientesException;
 import com.company.LD.clsDatos;
 import com.company.comun.Clasificacion;
@@ -238,9 +237,9 @@ public class GestorLN {
      * @param posicion      posicion
      * @param estado        estado
      */
-    public void anadirJugador(String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta, int equipo, int posicion, int estado) throws DorsalRepetidoException {
+    public void anadirJugador(String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta, int equipo, int posicion, int estado) throws  Exception{
 
-        try {
+
             objDatos.conectarBD();
             Jugador jugador = new Jugador(nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta);
 
@@ -249,9 +248,7 @@ public class GestorLN {
 
             objDatos.desconectarBD();
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
 
     }
 

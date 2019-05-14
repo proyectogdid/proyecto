@@ -1,13 +1,17 @@
 package com.company.LP;
 
+//import com.company.Excepciones.DorsalRepetidoException;
 import com.company.LN.GestorLN;
 import com.company.comun.itfProperty;
+import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.text.DateFormat;
 import java.util.ArrayList;
 
 public class wdwJugador extends JFrame implements ActionListener {
@@ -32,6 +36,8 @@ public class wdwJugador extends JFrame implements ActionListener {
     private JLabel lblNewLabel_7;
     private JLabel lblNewLabel_8;
     private GestorLN gln;
+    private JDateChooser fechaNcto;
+    private DateFormat miFormato;
 
     /**
      * Launch the application.
@@ -56,7 +62,7 @@ public class wdwJugador extends JFrame implements ActionListener {
     /**
      * Create the frame.
      */
-    public wdwJugador(GestorLN gln_) {
+    public wdwJugador(GestorLN gln_) throws SQLException {
         ArrayList<itfProperty> equipos=gln_.leerEquipos();
         ArrayList<itfProperty> posiciones=gln_.leerPosiciones();
         ArrayList<itfProperty> estados= gln_.leerEstados();
@@ -109,10 +115,10 @@ public class wdwJugador extends JFrame implements ActionListener {
         contentPane.add(textoSegundoApellido);
         textoSegundoApellido.setColumns(10);
 
-        textoFechaNcto = new JTextField();
-        textoFechaNcto.setBounds(198, 178, 86, 20);
-        contentPane.add(textoFechaNcto);
-        textoFechaNcto.setColumns(10);
+        fechaNcto = new JDateChooser();
+        fechaNcto.setDateFormatString("dd-MM-yyyy");
+        fechaNcto.setBounds(198, 178, 86, 20);
+        contentPane.add(fechaNcto);
 
         textoDorsal = new JTextField();
         textoDorsal.setBounds(198, 219, 86, 20);
@@ -123,7 +129,6 @@ public class wdwJugador extends JFrame implements ActionListener {
         textoTextoCamiseta.setBounds(198, 268, 86, 20);
         contentPane.add(textoTextoCamiseta);
         textoTextoCamiseta.setColumns(10);
-
 
         JComboBox comboBox = new JComboBox();
         comboBox.setBounds(176, 329, -12, 14);
@@ -181,9 +186,14 @@ public class wdwJugador extends JFrame implements ActionListener {
         e.getActionCommand();
         switch (e.getActionCommand()){
             case "1":
-                /**gln.anadirJugador(textoNombre.getText(),textoPrimerApellido.getText(), textoSegundoApellido.getText(),
-                        textoFechaNcto.getText(), textoDorsal.getText(), textoTextoCamiseta.getText(), cbEquipo.getSelectedItem(),
-                        cbPosicion.getSelectedItem(),cbEstado.getSelectedItem());*/
+                try {
+                    miFormato = DateFormat.getDateInstance(DateFormat.SHORT);
+                    gln.anadirJugador(textoNombre.getText(),textoPrimerApellido.getText(), textoSegundoApellido.getText(),
+                            fechaNcto.getDate(),textoDorsal.getText(), textoTextoCamiseta.getText(), (int)cbEquipo.getSelectedItem(),
+                            (int)cbPosicion.getSelectedItem(),(int)cbEstado.getSelectedItem());
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
                 break;
             case "0":
                 break;

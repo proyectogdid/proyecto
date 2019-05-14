@@ -26,7 +26,7 @@ public class wdwEquipo extends JFrame implements ActionListener {
 
     public wdwEquipo(GestorLN gln_) {
         ArrayList<itfProperty> campos=gln_.leerCampos();
-        GestorLN gln=gln_;
+        gln=gln_;
         this.setTitle("Inserte un equipo");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 628, 548);
