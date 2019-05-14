@@ -166,7 +166,6 @@ public class wdwJugador extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        e.getActionCommand();
         switch (e.getActionCommand()){
             case "1":
                 try {

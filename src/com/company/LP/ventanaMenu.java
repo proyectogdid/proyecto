@@ -16,6 +16,8 @@ public class ventanaMenu extends JFrame  implements ActionListener {
     private JPanel contentPane;
     private GestorLN gln;
     private final String ABRIR_NOTICIAS="noticias";
+    private final String INSERTAR="insertar";
+
 
     /**
      * Create the frame.
@@ -44,6 +46,12 @@ public class ventanaMenu extends JFrame  implements ActionListener {
         btnNoticias.addActionListener(this);
         panel.add(btnNoticias);
 
+        JButton btnInsertar = new JButton("Insertar");
+        btnInsertar.setActionCommand(INSERTAR);
+        btnInsertar.addActionListener(this);
+        panel.add(btnInsertar);
+
+
         JButton btnClasificacion = new JButton("Clasificacion");
         panel.add(btnClasificacion);
 
@@ -58,6 +66,10 @@ public class ventanaMenu extends JFrame  implements ActionListener {
             case ABRIR_NOTICIAS:
                 wdwJugador w=new wdwJugador(gln);
                 w.setVisible(true);
+                break;
+            case INSERTAR:
+                insertar i=new insertar(gln);
+                i.setVisible(true);
                 break;
         }
     }
