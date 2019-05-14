@@ -23,7 +23,6 @@ public class wdwJugador extends JFrame implements ActionListener {
     private JTextField textoNombre;
     private JTextField textoPrimerApellido;
     private JTextField textoSegundoApellido;
-    private JTextField textoFechaNcto;
     private JTextField textoDorsal;
     private JTextField textoTextoCamiseta;
     private JLabel lblNewLabel_1;
@@ -41,25 +40,7 @@ public class wdwJugador extends JFrame implements ActionListener {
     private JDateChooser fechaNcto;
     private DateFormat miFormato;
 
-    /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    wdwJugador frame = new wdwJugador();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
 
-    public wdwJugador() {
-
-    }
 
     /**
      * Create the frame.
@@ -68,7 +49,7 @@ public class wdwJugador extends JFrame implements ActionListener {
         ArrayList<itfProperty> equipos=gln_.leerEquipos();
         ArrayList<itfProperty> posiciones=gln_.leerPosiciones();
         ArrayList<itfProperty> estados= gln_.leerEstados();
-         gln=gln_;
+        gln=gln_;
 
         this.setTitle("Inserte un jugador");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
