@@ -17,6 +17,8 @@ public class ventanaMenu extends JFrame  implements ActionListener {
     private GestorLN gln;
     private final String ABRIR_NOTICIAS="noticias";
     private final String INSERTAR="insertar";
+    private final String ABRIR_CLASIFICACION ="clasificacion";
+    private final String ABRIR_JORNADA="jornada";
 
 
     /**
@@ -53,9 +55,13 @@ public class ventanaMenu extends JFrame  implements ActionListener {
 
 
         JButton btnClasificacion = new JButton("Clasificacion");
+        btnClasificacion.setActionCommand(ABRIR_CLASIFICACION);
+        btnClasificacion.addActionListener(this);
         panel.add(btnClasificacion);
 
         JButton btnJornada = new JButton("Jornada");
+        btnJornada.setActionCommand(ABRIR_JORNADA);
+        btnJornada.addActionListener(this);
         panel.add(btnJornada);
     }
 
@@ -67,6 +73,13 @@ public class ventanaMenu extends JFrame  implements ActionListener {
                 wdwJugador w=new wdwJugador(gln);
                 w.setVisible(true);
                 break;
+            case ABRIR_CLASIFICACION:
+                wdwClasificacion c=new wdwClasificacion(gln);
+                c.setVisible(true);
+                break;
+           /** case ABRIR_JORNADA:
+                break;
+            */
             case INSERTAR:
                 insertar i=new insertar(gln);
                 i.setVisible(true);
