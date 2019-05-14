@@ -15,7 +15,9 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 
 import static com.company.comun.clsConstantes.*;
-
+/**
+ * Clase que utilizaremos para crear la ventana de insertar jugadores en la BD
+ */
 public class wdwJugador extends JFrame implements ActionListener {
 
     private JPanel contentPane;
@@ -164,6 +166,10 @@ public class wdwJugador extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * Metodo para realizar las acciones de los eventos de la ventana
+     * @param e e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){

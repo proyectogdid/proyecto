@@ -12,6 +12,9 @@ import java.util.ArrayList;
 
 import static com.company.comun.clsConstantes.EQUIPO_ID;
 
+/**
+ * Clase que utilizaremos para que una persona se pueda registrar en la apk
+ */
 public class wdwRegistrarUsuario extends JFrame implements ActionListener {
 
     private JPanel contentPane;
@@ -22,6 +25,7 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
     private GestorLN gln;
     private JComboBox<itfProperty> cbEquipo;
     private final String BOTON_ACEPTAR_REGISTRO="aceptarRegistro";
+    private final String BOTON_CANCELAR_REGISTRO="cancelarRegistro";
 
 
     /**
@@ -71,18 +75,25 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
         contentPane.add(txtRegistroemail);
         txtRegistroemail.setColumns(10);
 
-        Button button = new Button("Aceptar");
-        button.setBounds(399, 214, 70, 22);
-        contentPane.add(button);
-        button.setActionCommand(BOTON_ACEPTAR_REGISTRO);
-        button.addActionListener(this);
+        Button aceptar = new Button("Aceptar");
+        aceptar.setBounds(399, 214, 70, 22);
+        contentPane.add(aceptar);
+        aceptar.setActionCommand(BOTON_ACEPTAR_REGISTRO);
+        aceptar.addActionListener(this);
 
 
-        Button button1 = new Button("Cancelar");
-        button1.setBounds(480, 214, 70, 22);
-        contentPane.add(button1);
+        Button cancelar = new Button("Cancelar");
+        cancelar.setBounds(480, 214, 70, 22);
+        contentPane.add(cancelar);
+        cancelar.setActionCommand(BOTON_CANCELAR_REGISTRO);
+        cancelar.addActionListener(this);
 
     }
+
+    /**
+     * Clase para ejecutar las acciones del evento
+     * @param e e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
@@ -94,6 +105,8 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
                    javax.swing.JOptionPane.showMessageDialog(this,"error en el registro");
                 }
             break;
+            case BOTON_CANCELAR_REGISTRO:
+                break;
         }
 
     }

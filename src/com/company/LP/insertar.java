@@ -8,6 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase que utilizaremos para insertar jugadores y equipos desde ventana en la BD
+ */
 public class insertar extends JFrame implements ActionListener {
 
     private JPanel contentPane;
@@ -50,6 +53,10 @@ public class insertar extends JFrame implements ActionListener {
 
     }
 
+    /**
+     * Metodo para realizar las acciones del evento
+     * @param e e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {

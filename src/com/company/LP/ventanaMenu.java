@@ -65,6 +65,10 @@ public class ventanaMenu extends JFrame  implements ActionListener {
         panel.add(btnJornada);
     }
 
+    /**
+     * Metodo para realizar las acciones del evento
+     * @param e e
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {

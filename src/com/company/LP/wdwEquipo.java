@@ -10,6 +10,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import static com.company.comun.clsConstantes.CAMPO_ID;
+import static com.company.comun.clsConstantes.EQUIPO_ID;
+
+/**
+ * Clase que utilizaremos para crear la ventana de insertar equipos en la BD
+ */
 public class wdwEquipo extends JFrame implements ActionListener {
 
     private JPanel contentPane;
@@ -65,17 +71,21 @@ public class wdwEquipo extends JFrame implements ActionListener {
         cbCampo.setBounds(198, 154, 86, 20);
         contentPane.add(cbCampo);
 
-        Button button = new Button("Aceptar");
-        button.addActionListener(this);
-        button.setBounds(399, 214, 70, 22);
-        contentPane.add(button);
-
-        Button button1 = new Button("Cancelar");
-        button1.setBounds(480, 214, 70, 22);
-        contentPane.add(button1);
-  //     itfProperty[] a=campos.toArray();
         DefaultComboBoxModel model=new DefaultComboBoxModel();
 
+        Button aceptar = new Button("Aceptar");
+        aceptar.setBounds(399, 214, 70, 22);
+        aceptar.addActionListener(this);
+        aceptar.setActionCommand("1");
+        contentPane.add(aceptar);
+
+        Button cancelar = new Button("Cancelar");
+        cancelar.setBounds(480, 214, 70, 22);
+        cancelar.addActionListener(this);
+        cancelar.setActionCommand("0");
+        contentPane.add(cancelar);
+
+        //     itfProperty[] a=campos.toArray();
         for (int i = 0; i <campos.size() ; i++) {
             cbCampo.addItem(campos.get(i));
         }
@@ -85,7 +95,13 @@ public class wdwEquipo extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        switch (e.getActionCommand()){
+            case "1":
+                gln.anadirEquipo(textoNombre.getText(),textoPatrocinador.getText(),(int) ((itfProperty)cbCampo.getSelectedItem()).getProperty(CAMPO_ID));
+                break;
+            case "2":
+                break;
+        }
 
-       gln.anadirEquipo(textoNombre.getText(),textoPatrocinador.getText(), (Integer) cbCampo.getSelectedItem());
     }
 }

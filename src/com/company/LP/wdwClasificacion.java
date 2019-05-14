@@ -8,6 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase que utilizaremos para crear la tabla de la ventana clasificacion
+ */
 public class wdwClasificacion extends JFrame implements ActionListener {
     private GestorLN gln;
     private JPanel contentPane;

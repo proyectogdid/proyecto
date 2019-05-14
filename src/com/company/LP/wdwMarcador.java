@@ -7,6 +7,9 @@ import javax.swing.border.EmptyBorder;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase que utilizaremos para visualizar el marcador de un partido
+ */
 public class wdwMarcador extends JFrame implements ActionListener {
     private JPanel contentPane;
     private JLabel lblNewLabel;
