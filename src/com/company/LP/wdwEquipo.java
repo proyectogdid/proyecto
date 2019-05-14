@@ -85,7 +85,7 @@ public class wdwEquipo extends JFrame implements ActionListener {
         cancelar.setActionCommand("0");
         contentPane.add(cancelar);
 
-        //     itfProperty[] a=campos.toArray();
+        //itfProperty[] a=campos.toArray();
         for (int i = 0; i <campos.size() ; i++) {
             cbCampo.addItem(campos.get(i));
         }
@@ -93,13 +93,17 @@ public class wdwEquipo extends JFrame implements ActionListener {
 
     }
 
+    /**
+     * Metodo para realizar acciones en funcion del evento
+     * @param e e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
             case "1":
                 gln.anadirEquipo(textoNombre.getText(),textoPatrocinador.getText(),(int) ((itfProperty)cbCampo.getSelectedItem()).getProperty(CAMPO_ID));
                 break;
-            case "2":
+            case "0":
                 break;
         }
 
