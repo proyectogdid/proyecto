@@ -28,9 +28,11 @@ public class Menu {
             javax.swing.JOptionPane.showMessageDialog(null, "error al cargar datos");
             e.printStackTrace();
         }
+        wdwRegistrarUsuario v1=new wdwRegistrarUsuario(gln);
+        v1.setVisible(true);
         ventanaMenu vm=new ventanaMenu(gln);
         vm.setVisible(true);
-
+/*
         int op = 0;
         do {
             System.out.println("Elija:");
@@ -87,7 +89,7 @@ public class Menu {
 
         } while (op != 9);
 
-
+*/
     }
 
 

@@ -71,6 +71,20 @@ public class clsDatos {
     }
 
     /**
+     *
+     *@param usuario nombre de usuaario
+     *@param passw contrsensa
+     *@param equipo equipo favorito del usuario
+     *@param tipo tipo de usuario
+     *@param correo correo del usuario
+     * @return id
+     * @throws Exception SQLException
+     */
+    public int insertarUsuario(String usuario,String passw,int equipo,String tipo,String correo)throws Exception{
+       return UsuarioBD.registrarUsuario(con, usuario, passw, equipo, tipo, correo);
+    }
+
+    /**
      * Metodo para insertar un nuevo Equipo
      *
      * @param nombre       nombre

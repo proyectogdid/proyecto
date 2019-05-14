@@ -4,7 +4,7 @@ package com.company.LP;
 import com.company.LN.GestorLN;
 import com.company.comun.itfProperty;
 import com.toedter.calendar.JDateChooser;
-
+import com.company.comun.clsConstantes.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -13,6 +13,8 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.util.ArrayList;
+
+import static com.company.comun.clsConstantes.*;
 
 public class wdwJugador extends JFrame implements ActionListener {
 
@@ -62,7 +64,7 @@ public class wdwJugador extends JFrame implements ActionListener {
     /**
      * Create the frame.
      */
-    public wdwJugador(GestorLN gln_) throws SQLException {
+    public wdwJugador(GestorLN gln_) {
         ArrayList<itfProperty> equipos=gln_.leerEquipos();
         ArrayList<itfProperty> posiciones=gln_.leerPosiciones();
         ArrayList<itfProperty> estados= gln_.leerEstados();
@@ -189,8 +191,8 @@ public class wdwJugador extends JFrame implements ActionListener {
                 try {
                     miFormato = DateFormat.getDateInstance(DateFormat.SHORT);
                     gln.anadirJugador(textoNombre.getText(),textoPrimerApellido.getText(), textoSegundoApellido.getText(),
-                            fechaNcto.getDate(),textoDorsal.getText(), textoTextoCamiseta.getText(), (int)cbEquipo.getSelectedItem(),
-                            (int)cbPosicion.getSelectedItem(),(int)cbEstado.getSelectedItem());
+                            fechaNcto.getDate(),textoDorsal.getText(), textoTextoCamiseta.getText(),(int) ((itfProperty)cbEquipo.getSelectedItem()).getProperty(EQUIPO_ID),
+                            (int)((itfProperty)cbPosicion.getSelectedItem()).getProperty(POSICION_ID),(int)((itfProperty)cbEstado.getSelectedItem()).getProperty(ESTADO_ID));
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }

@@ -2,6 +2,7 @@ package com.company.LN;
 
 import com.company.Excepciones.EquiposInsuficientesException;
 import com.company.LD.clsDatos;
+
 import com.company.comun.Clasificacion;
 import com.company.comun.Participantes;
 import com.company.comun.Utilidades;
@@ -12,11 +13,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 
+import static com.company.comun.clsConstantes.USUARIO_TIPO_AFICIONADO;
+
 /**
  * Clase que va a gestionar la comunicacion entre el paquete LN y el paquete LP
  */
 public class GestorLN {
-
+    Usuario logeado;
     /**
      * Este va a ser el ArrayList que va a contener los campos de los diferentes equipos
      */
@@ -151,6 +154,24 @@ public class GestorLN {
             }
 
         }
+    }
+
+    /**
+     *
+     *@param usuario nombre de usuaario
+     *@param passw contrsensa
+     *@param equipo equipo favorito del usuario
+
+     *@param correo correo del usuario
+     * @return id
+     * @throws Exception SQLException
+     */
+    public void registrarUsuario(String usuario,String passw,int equipo,String correo)throws Exception{
+        objDatos.conectarBD();
+        int id=objDatos.insertarUsuario( usuario, passw, equipo,USUARIO_TIPO_AFICIONADO , correo);//todos los usuarios que se registren seran aficionados, los admins los dara de alta un admin de sistemas
+        Aficionado a=new Aficionado( id,  usuario,  passw, correo, USUARIO_TIPO_AFICIONADO,  equipo);
+        logeado=a;//entra directamente logrado
+        objDatos.desconectarBD();
     }
 
     /**

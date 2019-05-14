@@ -56,7 +56,7 @@ public class ventanaMenu extends JFrame  implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
             case ABRIR_NOTICIAS:
-                wdwClasificacion w=new wdwClasificacion(gln);
+                wdwJugador w=new wdwJugador(gln);
                 w.setVisible(true);
                 break;
         }
