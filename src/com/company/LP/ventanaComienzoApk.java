@@ -14,14 +14,15 @@ public class ventanaComienzoApk extends JFrame implements ActionListener {
     private final String COMENZAR = "comenzar";
 
     public ventanaComienzoApk(GestorLN gln_) {
+        this.setTitle("BASKET LIVE ⛹️");
         gln = gln_;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 450, 300);
+        setBounds(100, 100, 450, 120);
 
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
-        JMenuItem mntmNewMenuItem = new JMenuItem("Basket Live");
+        JMenuItem mntmNewMenuItem = new JMenuItem("BASKET LIVE \uD83C\uDFC0");
         menuBar.add(mntmNewMenuItem);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -44,6 +45,8 @@ public class ventanaComienzoApk extends JFrame implements ActionListener {
         switch (e.getActionCommand()) {
             case COMENZAR:
                 wdwRegistrarUsuario ru=new wdwRegistrarUsuario(gln);
+                ru.setVisible(true);
+                this.dispose();
                 break;
 
         }

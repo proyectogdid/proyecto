@@ -28,14 +28,10 @@ private static GestorLN gln;
             javax.swing.JOptionPane.showMessageDialog(null, "error al cargar datos");
             e.printStackTrace();
         }
-        wdwRegistrarUsuario v1=new wdwRegistrarUsuario(gln);
-        v1.setVisible(true);
-<<<<<<< HEAD
-=======
+        ventanaComienzoApk c=new ventanaComienzoApk(gln);
+        c.setVisible(true);
 
->>>>>>> master
-/*
-        int op = 0;
+      /*  int op = 0;
         do {
             System.out.println("Elija:");
             System.out.println("1.-Introducir campo");
