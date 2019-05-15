@@ -104,6 +104,7 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
                 }catch (Exception ex){
                    javax.swing.JOptionPane.showMessageDialog(this,"error en el registro");
                 }
+                ventanaMenu vm=new ventanaMenu(gln);
             break;
             case BOTON_CANCELAR_REGISTRO:
                 break;

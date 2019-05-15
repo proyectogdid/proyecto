@@ -30,8 +30,6 @@ public class Menu {
         }
         wdwRegistrarUsuario v1=new wdwRegistrarUsuario(gln);
         v1.setVisible(true);
-        ventanaMenu vm=new ventanaMenu(gln);
-        vm.setVisible(true);
 /*
         int op = 0;
         do {

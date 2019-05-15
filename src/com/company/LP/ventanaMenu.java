@@ -32,7 +32,7 @@ public class ventanaMenu extends JFrame  implements ActionListener {
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
-        JMenuItem mntmNewMenuItem = new JMenuItem("Bienvenido a 'Nombre de la aplicación'!!");
+        JMenuItem mntmNewMenuItem = new JMenuItem("Basket Live");
         menuBar.add(mntmNewMenuItem);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -81,9 +81,9 @@ public class ventanaMenu extends JFrame  implements ActionListener {
                 wdwClasificacion c=new wdwClasificacion(gln);
                 c.setVisible(true);
                 break;
-           /** case ABRIR_JORNADA:
+           case ABRIR_JORNADA:
                 break;
-            */
+
             case INSERTAR:
                 insertar i=new insertar(gln);
                 i.setVisible(true);
