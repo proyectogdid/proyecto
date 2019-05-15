@@ -1,5 +1,6 @@
 package com.company.LP;
 
+import com.company.LN.Equipo;
 import com.company.LN.GestorLN;
 import com.company.comun.itfProperty;
 
@@ -21,11 +22,13 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
     private JLabel UserRegistro;
     private JLabel UserLogin;
     private JLabel Correo;
+    private JLabel Equipo;
     private JLabel PassLogin;
     private JLabel PassRegistro;
     private JTextField txtRegistrousername;
     private JTextField txtRegistropassw;
     private JTextField txtRegistroemail;
+    private JTextField txtRegistroEquipo;
     private JTextField txtLoginusername, txtLoginpassw;
     private GestorLN gln;
     private JComboBox<itfProperty> cbEquipo;
@@ -75,7 +78,7 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
         contentPane.add(txtRegistrousername);
         txtRegistrousername.setColumns(10);
 
-        PassRegistro= new JLabel("Contraseña");
+        PassRegistro = new JLabel("Contraseña");
         PassRegistro.setBounds(72, 102, 100, 14);
         contentPane.add(PassRegistro);
 
@@ -93,42 +96,69 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
         contentPane.add(txtRegistroemail);
         txtRegistroemail.setColumns(10);
 
+        Equipo = new JLabel("Equipo favorito");
+        Equipo.setBounds(72, 206, 110, 14);
+        contentPane.add(Equipo);
+
+        cbEquipo = new JComboBox();
+        cbEquipo.setBounds(198, 203, 212, 20);
+        contentPane.add(cbEquipo);
+
+        txtRegistroEquipo = new JTextField();
+        txtRegistroEquipo.setBounds(198, 203, 212, 20);
+        contentPane.add(txtRegistroEquipo);
+        txtRegistroEquipo.setColumns(10);
+
         Button aceptar = new Button("Aceptar");
-        aceptar.setBounds(399, 214, 70, 22);
+        aceptar.setBounds(225, 240, 70, 22);
         contentPane.add(aceptar);
         aceptar.setActionCommand(BOTON_ACEPTAR_REGISTRO);
         aceptar.addActionListener(this);
+        aceptar.setBackground(Color.GREEN);
 
 
         Button cancelar = new Button("Cancelar");
-        cancelar.setBounds(480, 214, 70, 22);
+        cancelar.setBounds(306, 240, 70, 22);
         contentPane.add(cancelar);
         cancelar.setActionCommand(BOTON_CANCELAR_REGISTRO);
         cancelar.addActionListener(this);
+        cancelar.setBackground(Color.ORANGE);
 
-        UserLogin= new JLabel("Usuario");
-        UserLogin.setBounds(72, 260, 110, 14);
+        UserLogin = new JLabel("Usuario");
+        UserLogin.setBounds(72, 310, 110, 14);
         contentPane.add(UserLogin);
 
         txtLoginusername = new JTextField();
-        txtLoginusername.setBounds(198, 260, 212, 20);
+        txtLoginusername.setBounds(198, 310, 212, 20);
         contentPane.add(txtLoginusername);
         txtLoginusername.setColumns(10);
 
-        PassLogin= new JLabel("Contraseña");
-        PassLogin.setBounds(72, 300, 110, 14);
+        PassLogin = new JLabel("Contraseña");
+        PassLogin.setBounds(72, 350, 110, 14);
         contentPane.add(PassLogin);
 
         txtLoginpassw = new JTextField();
-        txtLoginpassw.setBounds(198, 300, 212, 20);
+        txtLoginpassw.setBounds(198, 350, 212, 20);
         contentPane.add(txtLoginpassw);
         txtLoginpassw.setColumns(10);
 
         Button blogin = new Button("Iniciar Sesion");
-        blogin.setBounds(480, 214, 80, 22);
+        blogin.setBounds(265, 380, 80, 22);
         contentPane.add(blogin);
         blogin.setActionCommand(BOTON_ACEPTAR_LOGIN);
         blogin.addActionListener(this);
+
+        /*
+        * Este boton se ha creado para que el boton iniciar sesion no de fallo y ocupe toda la pantalla
+        */
+        Button bfixed=new Button("Arreglo de iniciar sesion");
+        contentPane.add(bfixed);
+        bfixed.setVisible(false);
+
+        for (int i = 0; i <equipos.size() ; i++) {
+            cbEquipo.addItem(equipos.get(i));
+        }
+
     }
 
     /**
@@ -144,7 +174,7 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
                 try {
                     gln.registrarUsuario(txtRegistrousername.getText(), txtRegistropassw.getText(), (int) ((itfProperty) cbEquipo.getSelectedItem()).getProperty(EQUIPO_ID), txtRegistroemail.getText());
                 } catch (Exception ex) {
-                    javax.swing.JOptionPane.showMessageDialog(this, "error en el registro");
+                    javax.swing.JOptionPane.showMessageDialog(this, "Fallo en el registro");
                 }
                 ventanaMenu vm = new ventanaMenu(gln);
                 vm.setVisible(true);

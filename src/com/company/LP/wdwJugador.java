@@ -179,7 +179,7 @@ public class wdwJugador extends JFrame implements ActionListener {
                             fechaNcto.getDate(),textoDorsal.getText(), textoTextoCamiseta.getText(),(int) ((itfProperty)cbEquipo.getSelectedItem()).getProperty(EQUIPO_ID),
                             (int)((itfProperty)cbPosicion.getSelectedItem()).getProperty(POSICION_ID),(int)((itfProperty)cbEstado.getSelectedItem()).getProperty(ESTADO_ID));
                 } catch (Exception ex) {
-                    ex.printStackTrace();
+                    javax.swing.JOptionPane.showMessageDialog(this, "Fallo en la inserción del jugador");
                 }
                 break;
             case "0":

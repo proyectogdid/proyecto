@@ -1,5 +1,7 @@
 package com.company.LD;
 
+import com.company.LN.Posicion;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -94,7 +96,7 @@ public class clsDatos {
      * @throws Exception fallos en la query
      */
     public int insertarEquipo(String nombre, String patrocinador, int campo) throws Exception {
-        return EquipoBD.insertar(con, nombre, patrocinador, campo);
+        return EquipoBD.insertarEquipo(con, nombre, patrocinador, campo);
     }
 
     /**
@@ -145,6 +147,10 @@ public class clsDatos {
      */
     public ArrayList<Integer> insertPartidos(Object[][] datos) throws Exception{
         return PartidoBD.insertarPartidos(con,datos);
+    }
+
+    public int insertarPosicion(String nombre) throws Exception {
+        return PosicionBD.insertarPosicion(con, nombre);
     }
 
     /**

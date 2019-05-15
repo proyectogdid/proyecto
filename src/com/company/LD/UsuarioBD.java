@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 
 public class UsuarioBD extends Conexion{
 
-    public static final String TEMPLATE="usr.id,usr.usuario,usr.contrasena,usr.tipo,usr.equipo_favorito";
+    public static final String TEMPLATE="usr.id,usr.usuario,usr.contrasena,usr.correo,usr.tipo,usr.equipo_favorito";
 
     /**
      * metodo para recuperar el usuario logeado

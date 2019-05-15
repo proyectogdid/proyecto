@@ -25,6 +25,7 @@ public class ventanaMenu extends JFrame  implements ActionListener {
      * Create the frame.
      */
     public ventanaMenu(GestorLN gln_) {
+        this.setTitle("BASKET LIVE ⛹️");
         gln=gln_;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);

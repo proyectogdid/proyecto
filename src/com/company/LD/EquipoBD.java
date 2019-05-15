@@ -19,7 +19,7 @@ public class EquipoBD extends Conexion {
      * @return return
      * @throws Exception dallos en el insert
      */
-    public static int insertar(Connection con, String nombre, String patrocinador, int campo) throws Exception {
+    public static int insertarEquipo(Connection con, String nombre, String patrocinador, int campo) throws Exception {
 
         Object[] parametros = {nombre, patrocinador, campo};
         return insert(con, "INSERT INTO equipos(nombre,patrocinador,campo)VALUES(?,?,?)", parametros);

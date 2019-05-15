@@ -39,6 +39,10 @@ public class Posicion implements itfProperty, itfPersistable {
         this.nombre = nombre;
     }
 
+    public Posicion(String nombre) {
+        this.nombre=nombre;
+    }
+
     public int getId() {
         return id;
     }

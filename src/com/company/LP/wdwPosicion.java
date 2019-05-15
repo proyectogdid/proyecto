@@ -11,29 +11,20 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import static com.company.comun.clsConstantes.CAMPO_ID;
-import static com.company.comun.clsConstantes.EQUIPO_ID;
 
-/**
- * Clase que utilizaremos para crear la ventana de insertar equipos en la BD
- */
-public class wdwEquipo extends JFrame implements ActionListener {
+public class wdwPosicion extends JFrame implements ActionListener {
 
     private JPanel contentPane;
     private JLabel lblNewLabel;
     private JTextField textoNombre;
-    private JTextField textoPatrocinador;
-    private JLabel lblNewLabel_1;
-    private JLabel lblNewLabel_2;
-    private JComboBox<itfProperty> cbCampo;
     private GestorLN gln;
 
 
 
 
-    public wdwEquipo(GestorLN gln_) {
-        ArrayList<itfProperty> campos=gln_.leerCampos();
+    public wdwPosicion(GestorLN gln_) {
         gln=gln_;
-        this.setTitle("Inserte un equipo");
+        this.setTitle("Inserte una posición");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 628, 548);
         contentPane = new JPanel();
@@ -50,29 +41,6 @@ public class wdwEquipo extends JFrame implements ActionListener {
         contentPane.add(textoNombre);
         textoNombre.setColumns(10);
 
-        lblNewLabel_1 = new JLabel("Patrocinador");
-        lblNewLabel_1.setBounds(72, 102, 100, 14);
-        contentPane.add(lblNewLabel_1);
-
-        textoPatrocinador = new JTextField();
-        textoPatrocinador.setBounds(198, 99, 212, 20);
-        contentPane.add(textoPatrocinador);
-        textoPatrocinador.setColumns(10);
-
-        lblNewLabel_2 = new JLabel("Campo");
-        lblNewLabel_2.setBounds(72, 154, 55, 14);
-        contentPane.add(lblNewLabel_2);
-
-        JComboBox comboBox = new JComboBox();
-        comboBox.setBounds(176, 329, -12, 14);
-        contentPane.add(comboBox);
-
-        cbCampo = new JComboBox<itfProperty>();
-        cbCampo.setBounds(198, 154, 86, 20);
-        contentPane.add(cbCampo);
-
-        DefaultComboBoxModel model=new DefaultComboBoxModel();
-
         Button aceptar = new Button("Aceptar");
         aceptar.setBounds(399, 214, 70, 22);
         aceptar.addActionListener(this);
@@ -85,12 +53,6 @@ public class wdwEquipo extends JFrame implements ActionListener {
         cancelar.setActionCommand("0");
         contentPane.add(cancelar);
 
-        //itfProperty[] a=campos.toArray();
-        for (int i = 0; i <campos.size() ; i++) {
-            cbCampo.addItem(campos.get(i));
-        }
-
-
     }
 
     /**
@@ -102,9 +64,9 @@ public class wdwEquipo extends JFrame implements ActionListener {
         switch (e.getActionCommand()){
             case "1":
                 try {
-                    gln.anadirEquipo(textoNombre.getText(),textoPatrocinador.getText(),(int) ((itfProperty)cbCampo.getSelectedItem()).getProperty(CAMPO_ID));
+                    gln.anadirPosicion(textoNombre.getText());
                 } catch (Exception ex) {
-                    javax.swing.JOptionPane.showMessageDialog(this, "Fallo en la inserción del equipo");
+                    javax.swing.JOptionPane.showMessageDialog(this, "Fallo en la inserción de la posición");
                 }
                 break;
             case "0":
@@ -113,3 +75,4 @@ public class wdwEquipo extends JFrame implements ActionListener {
 
     }
 }
+

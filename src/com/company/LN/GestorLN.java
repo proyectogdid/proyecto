@@ -10,6 +10,7 @@ import com.company.comun.Utilidades;
 import com.company.comun.itfProperty;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -66,6 +67,9 @@ public class GestorLN {
     ArrayList<Usuario> usuarios = new ArrayList<>();
     /**
      * array que guardara los partidos en memoria
+     */
+    /**
+     * array que guasrsara las posiciones
      */
 
     ArrayList<Partido> partidos = new ArrayList<>();
@@ -280,6 +284,18 @@ public class GestorLN {
             objDatos.desconectarBD();
 
 
+    }
+
+    public void anadirPosicion(String nombre) throws Exception {
+
+        objDatos.conectarBD();
+        Posicion posicion = new Posicion(nombre);
+
+        posicion.setId(objDatos.insertarPosicion(nombre));
+        posiciones.add(posicion);
+
+        objDatos.desconectarBD();
+
 
     }
 
@@ -478,7 +494,6 @@ public class GestorLN {
             eventos.add(e);
         }
     }
-
     /**
      * para cargar los datos de los partidos
      *
@@ -512,6 +527,7 @@ public class GestorLN {
         cargarDatosTemporadas();
         cargarDatosEventos();
         cargarDatosPartidos();
+        cargarDatosPosiciones();
         objDatos.desconectarBD();
     }
 

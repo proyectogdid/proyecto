@@ -13,6 +13,7 @@ public class ventanaComienzoApk extends JFrame implements ActionListener {
     private GestorLN gln;
     private final String COMENZAR = "comenzar";
 
+
     public ventanaComienzoApk(GestorLN gln_) {
         this.setTitle("BASKET LIVE ⛹️");
         gln = gln_;

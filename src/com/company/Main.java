@@ -10,7 +10,8 @@ public class Main {
     public static void main(String[] args)
     {
         Menu.menu();
-    /*   ventanaMenu vm=new ventanaMenu();
+    /*  ventanaMenu vm=new ventanaMenu();
        vm.setVisible(true);*/
+
     }
 }

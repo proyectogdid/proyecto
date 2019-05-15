@@ -17,6 +17,7 @@ public class insertar extends JFrame implements ActionListener {
     private GestorLN gln;
     private final String INSERTAR_JUGADOR = "jugador";
     private final String INSERTAR_EQUIPO = "equipo";
+    private final String INSERTAR_POSICION="posicion";
 
     /**
      * Create the frame.
@@ -29,7 +30,7 @@ public class insertar extends JFrame implements ActionListener {
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
-        JMenuItem mntmNewMenuItem = new JMenuItem("Ventana para insertar Equipos y Jugadores");
+        JMenuItem mntmNewMenuItem = new JMenuItem("Ventana para insertar Equipos, jugadores y posiciones");
         menuBar.add(mntmNewMenuItem);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -50,6 +51,12 @@ public class insertar extends JFrame implements ActionListener {
         btnEquipo.addActionListener(this);
         panel.add(btnEquipo);
 
+        JButton btnPosicion = new JButton("Insertar posicion");
+        btnPosicion.setActionCommand(INSERTAR_POSICION);
+        btnPosicion.addActionListener(this);
+        panel.add(btnPosicion);
+
+
 
     }
 
@@ -67,6 +74,10 @@ public class insertar extends JFrame implements ActionListener {
             case INSERTAR_EQUIPO:
                 wdwEquipo eq = new wdwEquipo(gln);
                 eq.setVisible(true);
+                break;
+            case INSERTAR_POSICION:
+                wdwPosicion p=new wdwPosicion(gln);
+                p.setVisible(true);
                 break;
         }
     }
