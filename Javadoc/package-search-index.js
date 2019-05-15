@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"com.company.com.company.comun"},{"l":"com.company.comun"},{"l":"com.company.LD"},{"l":"com.company.LN"},{"l":"com.company.LP"}]
+packageSearchIndex = [{"l":"com.company"},{"l":"com.company.comun"},{"l":"com.company.Excepciones"},{"l":"com.company.LD"},{"l":"com.company.LN"},{"l":"com.company.LP"}]

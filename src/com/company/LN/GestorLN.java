@@ -218,6 +218,11 @@ public class GestorLN {
 
     }
 
+    /**
+     * Metodo para anadir la temporada a la BD
+     * @throws Exception Exception
+     * @throws EquiposInsuficientesException si no hay equipos suficientes no se generara el calendario de la temporada
+     */
     public void anadirTemporada() throws Exception, EquiposInsuficientesException {
         objDatos.conectarBD();
         Temporada t = new Temporada();

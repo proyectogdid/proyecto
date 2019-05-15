@@ -9,12 +9,14 @@ import javax.swing.table.AbstractTableModel;
 
 import com.company.comun.itfProperty;
 
-import static com.company.comun.clsConstantes.CAMPO_NOMBRE;
+import static com.company.comun.clsConstantes.*;
 
-
+/**
+ * Clase que utilizaremos para crear  la tabla de la clasificacion de la liga
+ */
 class ClasificacionModel extends AbstractTableModel
 {
-    private String[] columnNames = {"idDepartamento","Tipo","Jefe","Numero de Empleados"};
+    private String[] columnNames = {"Nombre","PJ","PG","PP","PtosF","PtosC"};
     Object[][] data;
     
     public ClasificacionModel(ArrayList<itfProperty>clasificados)
@@ -31,10 +33,9 @@ class ClasificacionModel extends AbstractTableModel
 		//Nos recorremos el map para cargar la variable data[][]
 		for (itfProperty b: clasificados)
 		{
-			Object[]a={b.getProperty(CAMPO_NOMBRE),
-                    b.getProperty(CAMPO_NOMBRE),
-            b.getProperty(CAMPO_NOMBRE),
-                    b.getProperty(CAMPO_NOMBRE),};
+			Object[]a={b.getProperty(EQUIPO_NOMBRE),b.getProperty(PARTICIPANTES_PARTIDOS_JUGADOS),
+                    b.getProperty(PARTICIPANTES_PARTIDOS_GANADOS),b.getProperty(PARTICIPANTES_PARTIDOS_PERDIDOS),
+                    b.getProperty(PARTICIPANTES_PUNTOS_A_FAVOR),b.getProperty(PARTICIPANTES_PUNTOS_EN_CONTRA)};
 			data[cont]=a;
 			cont++;
 		}
@@ -52,10 +53,9 @@ class ClasificacionModel extends AbstractTableModel
 		
 		for (itfProperty b: Departamentos)
 		{
-            Object[]a={b.getProperty(CAMPO_NOMBRE),
-                    b.getProperty(CAMPO_NOMBRE),
-                    b.getProperty(CAMPO_NOMBRE),
-                    b.getProperty(CAMPO_NOMBRE),};
+            Object[]a={b.getProperty(EQUIPO_NOMBRE),b.getProperty(PARTICIPANTES_PARTIDOS_JUGADOS),
+                    b.getProperty(PARTICIPANTES_PARTIDOS_GANADOS),b.getProperty(PARTICIPANTES_PARTIDOS_PERDIDOS),
+                    b.getProperty(PARTICIPANTES_PUNTOS_A_FAVOR),b.getProperty(PARTICIPANTES_PUNTOS_EN_CONTRA)};
 			data[cont]=a;
 			cont++;
 		}
