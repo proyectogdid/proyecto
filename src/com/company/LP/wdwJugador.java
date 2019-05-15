@@ -43,7 +43,6 @@ public class wdwJugador extends JFrame implements ActionListener {
     private DateFormat miFormato;
 
 
-
     /**
      * Create the frame.
      */

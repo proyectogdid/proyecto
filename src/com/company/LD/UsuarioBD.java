@@ -15,6 +15,8 @@ public class UsuarioBD extends Conexion{
      */
     public static ResultSet getLogin(Connection con,String usuario,String contrasena)throws Exception{
         Object[] params={usuario,contrasena};
+        System.out.println(usuario);
+        System.out.println(contrasena);
         return query(con, "SELECT "+TEMPLATE+" FROM usuario usr where usuario=? and contrasena=?",params);
     }
 

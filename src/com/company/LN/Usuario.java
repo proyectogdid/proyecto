@@ -1,12 +1,15 @@
 package com.company.LN;
 
+import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
+
+import java.sql.ResultSet;
 
 import static com.company.comun.clsConstantes.*;
 /**
  * clase para gestionar las cuentas de usuario
  */
-public class Usuario implements itfProperty {
+public class Usuario implements itfProperty, itfPersistable {
     /**
      * atributo id para el usuario
      */
@@ -118,4 +121,14 @@ public class Usuario implements itfProperty {
         }
     }
 
+    @Override
+    public void resultsetLoad(ResultSet rs) throws Exception {
+        id=rs.getInt(BD_USUARIO_ID);
+        username=rs.getString(BD_USUARIO_USERNAME);
+        contrasena=rs.getString(BD_USUARIO_CONTRASENA);
+        correo=rs.getString(BD_USUARIO_CORREO);
+        tipo=rs.getString(BD_USUARIO_TIPO);
+
+
+    }
 }

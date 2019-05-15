@@ -3,6 +3,7 @@ package com.company.LN;
 import com.company.Excepciones.EquiposInsuficientesException;
 import com.company.LD.clsDatos;
 
+import com.company.LP.ventanaMenu;
 import com.company.comun.Clasificacion;
 import com.company.comun.Participantes;
 import com.company.comun.Utilidades;
@@ -13,13 +14,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 
+import static com.company.comun.clsConstantes.USUARIO_TIPO_ADMIN;
 import static com.company.comun.clsConstantes.USUARIO_TIPO_AFICIONADO;
 
 /**
  * Clase que va a gestionar la comunicacion entre el paquete LN y el paquete LP
  */
 public class GestorLN {
-    Usuario logeado;
+    /**
+     * objeto con los datos del usuario logeado
+     */
+    Usuario logeado=new Usuario();
     /**
      * Este va a ser el ArrayList que va a contener los campos de los diferentes equipos
      */
@@ -518,6 +523,28 @@ public class GestorLN {
         Collections.sort(participantes, c);
 
 
+    }
+
+    /**
+     *
+     * @return boolean para saber si es admin el usuario logeado
+     */
+    public boolean isAdmin(){
+        return logeado.getTipo().equals(USUARIO_TIPO_ADMIN);
+    }
+
+    public boolean login(String username,String password)throws Exception{
+        objDatos.conectarBD();
+        ResultSet rs=objDatos.login(username,password);
+        if(rs.next()){
+            logeado.resultsetLoad(rs);
+            objDatos.desconectarBD();
+
+            return true;
+        }else {
+            objDatos.desconectarBD();
+            return false;
+        }
     }
 }
 

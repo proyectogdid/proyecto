@@ -132,6 +132,10 @@ public class clsConstantes {
     public static final String USUARIO_TIPO_ADMIN = "ADMIN";
     public static final String USUARIO_TIPO_AFICIONADO = "AFICIONADO";
 
-
+    public static final String BD_USUARIO_ID = "usr.id";
+    public static final String BD_USUARIO_USERNAME = "usr.usuario";
+    public static final String BD_USUARIO_CONTRASENA = "usr.contrasena";
+    public static final String BD_USUARIO_CORREO="usr.correo";
+    public static final String BD_USUARIO_TIPO = "usr.tipo";
 
 }
