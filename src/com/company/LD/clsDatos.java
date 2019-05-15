@@ -216,4 +216,7 @@ public class clsDatos {
     public ResultSet buscarPartidos() throws Exception {
         return PartidoBD.getAll(con);
     }
+    public ResultSet login(String username, String passw) throws  Exception{
+        return UsuarioBD.getLogin(con,username,passw);
+    }
 }

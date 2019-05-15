@@ -14,12 +14,12 @@ import static com.company.comun.clsConstantes.*;
  * Clase que gestionara la interaccion con el usuario
  */
 public class Menu {
-
+private static GestorLN gln;
     /**
      * punto de entrada de la aplicacion
      */
     public static void menu() {
-        GestorLN gln = new GestorLN();
+        gln = new GestorLN();
 
 
         try {
@@ -30,8 +30,7 @@ public class Menu {
         }
         wdwRegistrarUsuario v1=new wdwRegistrarUsuario(gln);
         v1.setVisible(true);
-        ventanaMenu vm=new ventanaMenu(gln);
-        vm.setVisible(true);
+
 /*
         int op = 0;
         do {
@@ -292,6 +291,8 @@ public class Menu {
         gln.ordenarClasificacion();
 
     }
+
+
 
 
 }

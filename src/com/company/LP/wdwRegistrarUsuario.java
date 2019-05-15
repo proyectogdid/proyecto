@@ -19,10 +19,12 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
     private JTextField txtRegistrousername;
     private JTextField txtRegistropassw;
     private JTextField txtRegistroemail;
+    private JTextField txtLoginusername,txtLoginpassw;
     private GestorLN gln;
     private JComboBox<itfProperty> cbEquipo;
     private final String BOTON_ACEPTAR_REGISTRO="aceptarRegistro";
-
+    private final String BOTON_CANCELAR_REGISTRO="cancelarRegistro";
+    private final String BOTON_ACEPTAR_LOGIN="aceptarLogin";
 
     /**
      * Create the frame.
@@ -81,7 +83,24 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
         Button button1 = new Button("Cancelar");
         button1.setBounds(480, 214, 70, 22);
         contentPane.add(button1);
+        button1.setActionCommand(BOTON_CANCELAR_REGISTRO);
+        button1.addActionListener(this);
 
+        txtLoginusername = new JTextField();
+        txtLoginusername.setBounds(198, 260, 212, 20);
+        contentPane.add(txtLoginusername);
+        txtLoginusername.setColumns(10);
+
+        txtLoginpassw = new JTextField();
+        txtLoginpassw.setBounds(198, 300, 212, 20);
+        contentPane.add(txtLoginpassw);
+        txtLoginpassw.setColumns(10);
+
+        Button blogin = new Button("Iniciar Sesion");
+        blogin.setBounds(480, 254, 70, 22);
+        contentPane.add(blogin);
+        blogin.setActionCommand(BOTON_ACEPTAR_LOGIN);
+        blogin.addActionListener(this);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -94,6 +113,23 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
                    javax.swing.JOptionPane.showMessageDialog(this,"error en el registro");
                 }
             break;
+            case BOTON_CANCELAR_REGISTRO:
+                cbEquipo.setSelectedIndex(0);
+                txtRegistroemail.setText("");
+                txtRegistropassw.setText("");
+                txtRegistrousername.setText("");
+                break;
+            case BOTON_ACEPTAR_LOGIN:
+                try {
+                    if(gln.login(txtLoginusername.getText(), txtLoginpassw.getText())){
+                        ventanaMenu vm=new ventanaMenu(gln);
+                        vm.setVisible(true);
+                        this.dispose();
+                    }
+                }catch (Exception ex){
+                    javax.swing.JOptionPane.showMessageDialog(this,"error con en login");
+                    ex.printStackTrace();
+                }
         }
 
     }

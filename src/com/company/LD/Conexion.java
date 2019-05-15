@@ -54,8 +54,9 @@ public abstract class Conexion {
      */
     public static ResultSet query(Connection con, String query, Object[] parametros) throws Exception {
         PreparedStatement stt = con.prepareStatement(query);
+        System.out.println(query);
         cargarDatos(stt, parametros);
-        ResultSet rs = stt.executeQuery(query);
+        ResultSet rs = stt.executeQuery();
 
         return rs;
     }
