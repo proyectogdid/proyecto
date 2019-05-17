@@ -1,6 +1,7 @@
 package com.company.LP;
 
 import com.company.LN.GestorLN;
+import com.company.LP.InsertarPorVentanas.insertar;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

@@ -2,6 +2,8 @@ package com.company.LP;
 
 import com.company.Excepciones.EquiposInsuficientesException;
 import com.company.LN.GestorLN;
+import com.company.LP.InsertarPorVentanas.wdwEquipo;
+import com.company.LP.InsertarPorVentanas.wdwJugador;
 import com.company.comun.itfProperty;
 
 import java.text.SimpleDateFormat;

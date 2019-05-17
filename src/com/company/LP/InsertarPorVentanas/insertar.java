@@ -1,4 +1,4 @@
-package com.company.LP;
+package com.company.LP.InsertarPorVentanas;
 
 import com.company.LN.GestorLN;
 

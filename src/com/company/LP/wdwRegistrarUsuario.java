@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.util.ArrayList;
 
 import static com.company.comun.clsConstantes.EQUIPO_ID;
@@ -16,7 +18,7 @@ import static com.company.comun.clsConstantes.EQUIPO_ID;
 /**
  * Clase que utilizaremos para que una persona se pueda registrar en la apk
  */
-public class wdwRegistrarUsuario extends JFrame implements ActionListener {
+public class wdwRegistrarUsuario extends JFrame implements WindowListener, ActionListener {
 
     private JPanel contentPane;
     private JLabel UserRegistro;
@@ -52,7 +54,8 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
         cbEquipo.setBounds(198, 190, 120, 34);
 
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        addWindowListener(this);
         setBounds(100, 100, 628, 548);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -113,7 +116,7 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
         aceptar.setBounds(225, 240, 70, 22);
         contentPane.add(aceptar);
         aceptar.setActionCommand(BOTON_ACEPTAR_REGISTRO);
-        aceptar.addActionListener(this);
+        aceptar.addActionListener((ActionListener) this);
         aceptar.setBackground(Color.GREEN);
 
 
@@ -146,16 +149,16 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
         blogin.setBounds(265, 380, 80, 22);
         contentPane.add(blogin);
         blogin.setActionCommand(BOTON_ACEPTAR_LOGIN);
-        blogin.addActionListener(this);
+        blogin.addActionListener((ActionListener) this);
 
         /*
-        * Este boton se ha creado para que el boton iniciar sesion no de fallo y ocupe toda la pantalla
-        */
-        Button bfixed=new Button("Arreglo de iniciar sesion");
+         * Este boton se ha creado para que el boton iniciar sesion no de fallo y ocupe toda la pantalla
+         */
+        Button bfixed = new Button("Arreglo de iniciar sesion");
         contentPane.add(bfixed);
         bfixed.setVisible(false);
 
-        for (int i = 0; i <equipos.size() ; i++) {
+        for (int i = 0; i < equipos.size(); i++) {
             cbEquipo.addItem(equipos.get(i));
         }
 
@@ -198,6 +201,52 @@ public class wdwRegistrarUsuario extends JFrame implements ActionListener {
                     ex.printStackTrace();
                 }
         }
+
+    }
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        close();
+    }
+
+    private void close() {
+        Object[] opciones = {"Aceptar", "Cancelar"};
+        int eleccion = JOptionPane.showConfirmDialog(this, "¿Estás seguro?","Salir",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
+        if (eleccion == JOptionPane.YES_OPTION) {
+            System.exit(0);
+
+
+        }
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
 
     }
 }
