@@ -16,7 +16,8 @@ import static com.company.comun.clsConstantes.*;
  * Clase que gestionara la interaccion con el usuario
  */
 public class Menu {
-private static GestorLN gln;
+    private static GestorLN gln;
+
     /**
      * punto de entrada de la aplicacion
      */
@@ -30,8 +31,9 @@ private static GestorLN gln;
             javax.swing.JOptionPane.showMessageDialog(null, "error al cargar datos");
             e.printStackTrace();
         }
-        ventanaComienzoApk c=new ventanaComienzoApk(gln);
+        ventanaComienzoApk c = new ventanaComienzoApk(gln);
         c.setVisible(true);
+
 
       /*  int op = 0;
         do {
@@ -90,10 +92,10 @@ private static GestorLN gln;
         } while (op != 9);
 
 */
-    }
 
 
-    public static void altaTemporada(GestorLN gln) throws Exception, EquiposInsuficientesException {
+
+   /* public static void altaTemporada(GestorLN gln) throws Exception, EquiposInsuficientesException {
 
         gln.anadirTemporada();
     }
@@ -103,14 +105,14 @@ private static GestorLN gln;
      *
      * @param gln gln
      */
-    public static void altaCampo(GestorLN gln) {
+  /*  public static void altaCampo(GestorLN gln) {
         String nombre;
         String ciudad;
         String calle;
         String numero;
         String cp;
         int aforo;
-        
+
 
         System.out.println("Nombre:");
         nombre = clsUtilidades.leerCadena();
@@ -142,7 +144,7 @@ private static GestorLN gln;
      * @param campos campos
      */
 
-    public static void visualizarCampo(ArrayList<itfProperty> campos) {
+    /*public static void visualizarCampo(ArrayList<itfProperty> campos) {
 
         for (itfProperty a : campos) {
 
@@ -163,11 +165,11 @@ private static GestorLN gln;
      *
      * @param gln gln
      */
-    public static void altaEquipo(GestorLN gln) {
+/*    public static void altaEquipo(GestorLN gln) {
 
 
         try {
-            wdwEquipo v=new wdwEquipo(gln);
+            wdwEquipo v = new wdwEquipo(gln);
             v.setVisible(true);
             String nombre;
             String patrocinador;
@@ -196,7 +198,7 @@ private static GestorLN gln;
      * @param equipos equipos
      */
 
-    public static void visualizarEquipo(ArrayList<itfProperty> equipos) {
+   /* public static void visualizarEquipo(ArrayList<itfProperty> equipos) {
 
         for (itfProperty a : equipos) {
 
@@ -214,11 +216,11 @@ private static GestorLN gln;
      *
      * @param gln gln
      */
-    public static void altaJugador(GestorLN gln) {
+    /*public static void altaJugador(GestorLN gln) {
         try {
 
-        	wdwJugador v=new wdwJugador(gln);
-        	v.setVisible(true);
+            wdwJugador v = new wdwJugador(gln);
+            v.setVisible(true);
             String nombre;
             String apellido1;
             String apellido2;
@@ -269,7 +271,7 @@ private static GestorLN gln;
      *
      * @param jugadores jugadores
      */
-    public static void visualizarJugador(ArrayList<itfProperty> jugadores) {
+   /* public static void visualizarJugador(ArrayList<itfProperty> jugadores) {
 
         for (itfProperty a : jugadores) {
 
@@ -285,7 +287,8 @@ private static GestorLN gln;
 
         }
     }
-    public static void Clasificacion(GestorLN gln){
+
+    public static void Clasificacion(GestorLN gln) {
         System.out.println("CLASIFICACION DE LA LIGA:");
         System.out.println("---------------------");
 
@@ -294,7 +297,8 @@ private static GestorLN gln;
     }
 
 
-
-
 }
 
+    */
+    }
+}

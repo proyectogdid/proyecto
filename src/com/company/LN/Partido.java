@@ -57,13 +57,14 @@ public class Partido implements itfProperty, itfPersistable {
 
     /**
      * Metodo que utilizaremos para añadir partidos en la BD
-     * @param fecha fecha
-     * @param local local
+     *
+     * @param fecha     fecha
+     * @param local     local
      * @param visitante visitante
      * @param temporada temporada
-     * @param campo campo
+     * @param campo     campo
      */
-    public Partido( Date fecha, int local, int visitante, int temporada, int campo){
+    public Partido(Date fecha, int local, int visitante, int temporada, int campo) {
         this.fecha = fecha;
         this.local = local;
         this.visitante = visitante;
@@ -74,14 +75,14 @@ public class Partido implements itfProperty, itfPersistable {
     /**
      * Este metodo recogera todos los datos necesarios para conocer al detalle dichos datos de cada partido
      *
-     * @param id id
-     * @param fecha fecha
-     * @param ptosLocal ptosLocal
+     * @param id            id
+     * @param fecha         fecha
+     * @param ptosLocal     ptosLocal
      * @param ptosVisitante ptosVisitante
-     * @param local local
-     * @param visitante visitantes
-     * @param temporada temporada
-     * @param campo campo
+     * @param local         local
+     * @param visitante     visitantes
+     * @param temporada     temporada
+     * @param campo         campo
      */
     public Partido(int id, Date fecha, int ptosLocal, int ptosVisitante, int local, int visitante, int temporada, int campo, int jornada) {
         this.id = id;
@@ -92,7 +93,7 @@ public class Partido implements itfProperty, itfPersistable {
         this.visitante = visitante;
         this.temporada = temporada;
         this.campo = campo;
-        this.jornada=jornada;
+        this.jornada = jornada;
     }
 
     /**
@@ -101,22 +102,22 @@ public class Partido implements itfProperty, itfPersistable {
      * Una vez que comiencen los partidos ya utilizaremos el constructor de arriba,
      * con todos los atributos
      *
-     * @param id id
-     * @param fecha fecha
-     * @param local local
+     * @param id        id
+     * @param fecha     fecha
+     * @param local     local
      * @param visitante visitante
      * @param temporada temporada
-     * @param campo campo
+     * @param campo     campo
      */
 
-    public Partido(int id, Date fecha, int local, int visitante, int temporada, int campo,int jornada) {
+    public Partido(int id, Date fecha, int local, int visitante, int temporada, int campo, int jornada) {
         this.id = id;
         this.fecha = fecha;
         this.local = local;
         this.visitante = visitante;
         this.temporada = temporada;
         this.campo = campo;
-        this.jornada=jornada;
+        this.jornada = jornada;
 
 
     }
@@ -186,9 +187,13 @@ public class Partido implements itfProperty, itfPersistable {
         this.campo = campo;
     }
 
-    public int getJornada() { return jornada; }
+    public int getJornada() {
+        return jornada;
+    }
 
-    public void setJornada(int jornada) {this.jornada = jornada;}
+    public void setJornada(int jornada) {
+        this.jornada = jornada;
+    }
 
     /**
      * metodo get property de la interfaz itfProperty
@@ -224,16 +229,17 @@ public class Partido implements itfProperty, itfPersistable {
 
     /**
      * Metodo para cargar los datos de los partidos en el resultset
+     *
      * @param rs rs
      * @throws Exception throws Exception
      */
     @Override
     public void resultsetLoad(ResultSet rs) throws Exception {
-        id=rs.getInt(BD_PARTIDO_ID);
-        fecha=rs.getDate(BD_PARTIDO_FECHA);
-        ptosLocal=rs.getInt(BD_PARTIDO_PTOS_LOCAL);
-        ptosVisitante=rs.getInt(BD_PARTIDO_PTOS_VISITANTE);
-        local=rs.getInt(BD_PARTIDO_LOCAL);
-        visitante=rs.getInt(BD_PARTIDO_VISITANTE);
+        id = rs.getInt(BD_PARTIDO_ID);
+        fecha = rs.getDate(BD_PARTIDO_FECHA);
+        ptosLocal = rs.getInt(BD_PARTIDO_PTOS_LOCAL);
+        ptosVisitante = rs.getInt(BD_PARTIDO_PTOS_VISITANTE);
+        local = rs.getInt(BD_PARTIDO_LOCAL);
+        visitante = rs.getInt(BD_PARTIDO_VISITANTE);
     }
 }

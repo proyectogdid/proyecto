@@ -105,6 +105,7 @@ public class Evento implements itfProperty, itfPersistable {
 
     /**
      * Metodo para cargar los datos de los eventos en el resultset
+     *
      * @param rs rs
      * @throws Exception throws Exception
      */

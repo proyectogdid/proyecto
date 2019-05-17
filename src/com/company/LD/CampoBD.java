@@ -15,10 +15,10 @@ public class CampoBD extends Conexion {
      *
      * @param nombre nombre
      * @param ciudad ciudad
-     * @param calle calle
+     * @param calle  calle
      * @param numero numero
-     * @param cp cp
-     * @param aforo aforo
+     * @param cp     cp
+     * @param aforo  aforo
      * @return return
      * @throws Exception fallos en el insert
      */

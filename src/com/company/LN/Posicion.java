@@ -31,7 +31,7 @@ public class Posicion implements itfProperty, itfPersistable {
     /**
      * Este metodo recogera todos los datos necesarios para poder identificar la posición de cada jugador.
      *
-     * @param id id
+     * @param id     id
      * @param nombre nombre
      */
     public Posicion(int id, String nombre) {
@@ -40,7 +40,7 @@ public class Posicion implements itfProperty, itfPersistable {
     }
 
     public Posicion(String nombre) {
-        this.nombre=nombre;
+        this.nombre = nombre;
     }
 
     public int getId() {
@@ -79,20 +79,20 @@ public class Posicion implements itfProperty, itfPersistable {
 
     /**
      * Metodo para cargar los datos de las posiciones en el resultset
+     *
      * @param rs rs
      * @throws Exception throws Exception
      */
     @Override
     public void resultsetLoad(ResultSet rs) throws Exception {
-        id=rs.getInt(BD_POSICION_ID);
-        nombre=rs.getString(BD_POSICION_NOMBRE);
+        id = rs.getInt(BD_POSICION_ID);
+        nombre = rs.getString(BD_POSICION_NOMBRE);
     }
 
     /**
-     *
      * @return nombre de la posciion
      */
-    public String toString(){
+    public String toString() {
         return this.nombre;
     }
 }

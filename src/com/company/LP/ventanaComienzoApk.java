@@ -48,7 +48,7 @@ public class ventanaComienzoApk extends JFrame implements ActionListener, Window
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case COMENZAR:
-                wdwRegistrarUsuario ru=new wdwRegistrarUsuario(gln);
+                wdwRegistrarUsuario ru = new wdwRegistrarUsuario(gln);
                 ru.setVisible(true);
                 this.dispose();
                 break;

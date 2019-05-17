@@ -108,7 +108,8 @@ public class Jugador implements itfProperty {
     }
 
     /**
-     * MEtodo para cargar los datos de los jugadores en el resultset
+     * Metodo para cargar los datos de los jugadores en el resultset
+     *
      * @param rs rs
      * @throws Exception throws Exception
      */

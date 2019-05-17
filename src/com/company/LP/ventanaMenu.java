@@ -14,14 +14,14 @@ import java.awt.event.WindowListener;
 /**
  * Esta clase se va a utilizar para sacar por pantalla la ventana del menu principal de la aplicacion
  */
-public class ventanaMenu extends JFrame  implements ActionListener, WindowListener {
+public class ventanaMenu extends JFrame implements ActionListener, WindowListener {
 
     private JPanel contentPane;
     private GestorLN gln;
-    private final String ABRIR_NOTICIAS="noticias";
-    private final String INSERTAR="insertar";
-    private final String ABRIR_CLASIFICACION ="clasificacion";
-    private final String ABRIR_JORNADA="jornada";
+    private final String ABRIR_NOTICIAS = "noticias";
+    private final String INSERTAR = "insertar";
+    private final String ABRIR_CLASIFICACION = "clasificacion";
+    private final String ABRIR_JORNADA = "jornada";
 
 
     /**
@@ -29,7 +29,7 @@ public class ventanaMenu extends JFrame  implements ActionListener, WindowListen
      */
     public ventanaMenu(GestorLN gln_) {
         this.setTitle("BASKET LIVE ⛹️");
-        gln=gln_;
+        gln = gln_;
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(this);
         setBounds(100, 100, 450, 300);
@@ -72,25 +72,26 @@ public class ventanaMenu extends JFrame  implements ActionListener, WindowListen
 
     /**
      * Metodo para realizar las acciones del evento
+     *
      * @param e e
      */
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        switch (e.getActionCommand()){
+        switch (e.getActionCommand()) {
             case ABRIR_NOTICIAS:
-               // wdwJugador w=new wdwJugador(gln);
-               // w.setVisible(true);
+                // wdwJugador w=new wdwJugador(gln);
+                // w.setVisible(true);
                 break;
             case ABRIR_CLASIFICACION:
-                wdwClasificacion c=new wdwClasificacion(gln);
+                wdwClasificacion c = new wdwClasificacion(gln);
                 c.setVisible(true);
                 break;
-           case ABRIR_JORNADA:
+            case ABRIR_JORNADA:
                 break;
 
             case INSERTAR:
-                insertar i=new insertar(gln);
+                insertar i = new insertar(gln);
                 i.setVisible(true);
                 break;
         }

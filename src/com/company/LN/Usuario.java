@@ -6,6 +6,7 @@ import com.company.comun.itfProperty;
 import java.sql.ResultSet;
 
 import static com.company.comun.clsConstantes.*;
+
 /**
  * clase para gestionar las cuentas de usuario
  */
@@ -37,16 +38,16 @@ public class Usuario implements itfProperty, itfPersistable {
     /**
      * Este metodo va a recoger los datos de los usuarios de la aplicacion
      *
-     * @param id id
-     * @param usuario usuario
+     * @param id         id
+     * @param usuario    usuario
      * @param contrasena contrasena
-     * @param tipo tipo
+     * @param tipo       tipo
      */
     public Usuario(int id, String usuario, String contrasena, String tipo, String correo) {
         this.id = id;
         this.username = usuario;
         this.contrasena = contrasena;
-        this.correo=correo;
+        this.correo = correo;
         this.tipo = tipo;
     }
 
@@ -123,11 +124,11 @@ public class Usuario implements itfProperty, itfPersistable {
 
     @Override
     public void resultsetLoad(ResultSet rs) throws Exception {
-        id=rs.getInt(BD_USUARIO_ID);
-        username=rs.getString(BD_USUARIO_USERNAME);
-        contrasena=rs.getString(BD_USUARIO_CONTRASENA);
-        correo=rs.getString(BD_USUARIO_CORREO);
-        tipo=rs.getString(BD_USUARIO_TIPO);
+        id = rs.getInt(BD_USUARIO_ID);
+        username = rs.getString(BD_USUARIO_USERNAME);
+        contrasena = rs.getString(BD_USUARIO_CONTRASENA);
+        correo = rs.getString(BD_USUARIO_CORREO);
+        tipo = rs.getString(BD_USUARIO_TIPO);
 
 
     }

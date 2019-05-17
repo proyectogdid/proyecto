@@ -48,13 +48,13 @@ public class Campo implements itfProperty, Comparable<Campo>, itfPersistable {
     /**
      * Este metodo, va a recoger todos los datos necesarios para identificar un campo.
      *
-     * @param id id
+     * @param id     id
      * @param nombre nombre
      * @param ciudad ciudad
-     * @param calle calle
+     * @param calle  calle
      * @param numero numero
-     * @param cp cp
-     * @param aforo aforo
+     * @param cp     cp
+     * @param aforo  aforo
      */
     public Campo(int id, String nombre, String ciudad, String calle, String numero, String cp, int aforo) {
         this.id = id;
@@ -71,10 +71,10 @@ public class Campo implements itfProperty, Comparable<Campo>, itfPersistable {
      *
      * @param nombre nombre
      * @param ciudad ciudad
-     * @param calle calle
+     * @param calle  calle
      * @param numero numero
-     * @param cp cp
-     * @param aforo aforo
+     * @param cp     cp
+     * @param aforo  aforo
      */
 
     public Campo(String nombre, String ciudad, String calle, String numero, String cp, int aforo) {
@@ -88,6 +88,7 @@ public class Campo implements itfProperty, Comparable<Campo>, itfPersistable {
 
     /**
      * Metodo para anadir los campos al resultset
+     *
      * @param rs rs
      * @throws Exception throws Exception
      */
@@ -181,12 +182,13 @@ public class Campo implements itfProperty, Comparable<Campo>, itfPersistable {
             case CAMPO_AFORO:
                 return this.aforo;
             default:
-                 throw new RuntimeException();
+                throw new RuntimeException();
         }
     }
 
     /**
      * Metodo para comparar los campos por nombre
+     *
      * @param o o
      * @return return
      */
@@ -197,6 +199,7 @@ public class Campo implements itfProperty, Comparable<Campo>, itfPersistable {
 
     /**
      * Metodo toString de otfProperty
+     *
      * @return return
      */
     @Override

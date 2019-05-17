@@ -33,7 +33,7 @@ public class Temporada implements itfProperty, itfPersistable {
     /**
      * Este metodo va a recoger los datos de la temporada, tanto la id como el ano en cuestion
      *
-     * @param id id
+     * @param id  id
      * @param ano ano
      */
     public Temporada(int id, Date ano) {
@@ -87,13 +87,14 @@ public class Temporada implements itfProperty, itfPersistable {
 
     /**
      * Metodo para cargar los datos de la temporada en el resutlset
+     *
      * @param rs rs
      * @throws Exception throws Exception
      */
     @Override
     public void resultsetLoad(ResultSet rs) throws Exception {
-        id=rs.getInt(BD_TEMPORADA_ID);
-        ano=rs.getDate(BD_TEMPORADA_ANO);
+        id = rs.getInt(BD_TEMPORADA_ID);
+        ano = rs.getDate(BD_TEMPORADA_ANO);
 
     }
 }

@@ -23,7 +23,7 @@ public class GestorLN {
     /**
      * objeto con los datos del usuario logeado
      */
-    Usuario logeado=new Usuario();
+    Usuario logeado = new Usuario();
     /**
      * Este va a ser el ArrayList que va a contener los campos de los diferentes equipos
      */
@@ -99,7 +99,7 @@ public class GestorLN {
          n!/(n-2)!*2
          es la formula para saber cuantos partidos habra en una liga
          */
-       // System.out.println(npartidos);
+        // System.out.println(npartidos);
         Object[][] datos = new Object[npartidos * 2][6];//6 es el numero de columnas necesarias que tiene partido
 
         for (int i = 0; i < equipos.size(); i++) {
@@ -123,7 +123,7 @@ public class GestorLN {
 
 
             for (int k = 0; k < jornadas * 2; k++) {
-  //              System.out.println("----JORNADA " + (k + 1) + "---------- ");
+                //              System.out.println("----JORNADA " + (k + 1) + "---------- ");
 
 //                System.out.println(fijo.getNombre() + "-" + visitantes.get(0).getNombre());
 
@@ -135,7 +135,7 @@ public class GestorLN {
                 datos[r][JORNADA] = k;
                 r++;
                 for (int x = 0; x < locales.size(); x++) {
-    //                System.out.println(locales.get(x).getNombre() + "-" + visitantes.get(x + 1).getNombre());
+                    //                System.out.println(locales.get(x).getNombre() + "-" + visitantes.get(x + 1).getNombre());
 
                     datos[r][LOCAL] = locales.get(x).getId();
                     datos[r][VISITANTE] = visitantes.get(x).getId();
@@ -150,7 +150,7 @@ public class GestorLN {
                 visitantes.add(locales.get(locales.size() - 1));
                 locales.remove(locales.size() - 1);
             }
-      //      System.out.println(r);//si contador es igual a n!/(n-2)!*2 es que todo va bien
+            //      System.out.println(r);//si contador es igual a n!/(n-2)!*2 es que todo va bien
             ArrayList<Integer> claves = objDatos.insertPartidos(datos);
             for (int i = 0; i < claves.size(); i++) {
                 Partido p = new Partido(claves.get(i), (Date) datos[i][FECHA], (int) datos[i][LOCAL], (int) datos[i][VISITANTE], (int) datos[i][TEMPORADA], (int) datos[i][CAMPO], (int) datos[i][JORNADA]);
@@ -161,20 +161,18 @@ public class GestorLN {
     }
 
     /**
-     *
-     *@param usuario nombre de usuaario
-     *@param passw contrsensa
-     *@param equipo equipo favorito del usuario
-
-     *@param correo correo del usuario
+     * @param usuario nombre de usuaario
+     * @param passw   contrsensa
+     * @param equipo  equipo favorito del usuario
+     * @param correo  correo del usuario
      * @return id
      * @throws Exception SQLException
      */
-    public void registrarUsuario(String usuario,String passw,int equipo,String correo)throws Exception{
+    public void registrarUsuario(String usuario, String passw, int equipo, String correo) throws Exception {
         objDatos.conectarBD();
-        int id=objDatos.insertarUsuario( usuario, passw, equipo,USUARIO_TIPO_AFICIONADO , correo);//todos los usuarios que se registren seran aficionados, los admins los dara de alta un admin de sistemas
-        Aficionado a=new Aficionado( id,  usuario,  passw, correo, USUARIO_TIPO_AFICIONADO,  equipo);
-        logeado=a;//entra directamente logrado
+        int id = objDatos.insertarUsuario(usuario, passw, equipo, USUARIO_TIPO_AFICIONADO, correo);//todos los usuarios que se registren seran aficionados, los admins los dara de alta un admin de sistemas
+        Aficionado a = new Aficionado(id, usuario, passw, correo, USUARIO_TIPO_AFICIONADO, equipo);
+        logeado = a;//entra directamente logrado
         objDatos.desconectarBD();
     }
 
@@ -219,7 +217,8 @@ public class GestorLN {
 
     /**
      * Metodo para anadir la temporada a la BD
-     * @throws Exception Exception
+     *
+     * @throws Exception                     Exception
      * @throws EquiposInsuficientesException si no hay equipos suficientes no se generara el calendario de la temporada
      */
     public void anadirTemporada() throws Exception, EquiposInsuficientesException {
@@ -267,22 +266,23 @@ public class GestorLN {
      * @param posicion      posicion
      * @param estado        estado
      */
-    public void anadirJugador(String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta, int equipo, int posicion, int estado) throws  Exception{
+    public void anadirJugador(String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta, int equipo, int posicion, int estado) throws Exception {
 
 
-            objDatos.conectarBD();
-            Jugador jugador = new Jugador(nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta);
+        objDatos.conectarBD();
+        Jugador jugador = new Jugador(nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta);
 
-            jugador.setId(objDatos.insertarJugador(nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta, equipo, posicion, estado));
-            jugadores.add(jugador);
+        jugador.setId(objDatos.insertarJugador(nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta, equipo, posicion, estado));
+        jugadores.add(jugador);
 
-            objDatos.desconectarBD();
+        objDatos.desconectarBD();
 
 
     }
 
     /**
      * Este metodo lo vamos a emplear para introducir las posiciones en la BD
+     *
      * @param nombre nombre
      * @throws Exception exception
      */
@@ -301,6 +301,7 @@ public class GestorLN {
 
     /**
      * Metodo para introducir los estados en la BD
+     *
      * @param nombre nombre
      * @throws Exception excepcion
      */
@@ -513,6 +514,7 @@ public class GestorLN {
             eventos.add(e);
         }
     }
+
     /**
      * para cargar los datos de los partidos
      *
@@ -561,22 +563,21 @@ public class GestorLN {
     }
 
     /**
-     *
      * @return boolean para saber si es admin el usuario logeado
      */
-    public boolean isAdmin(){
+    public boolean isAdmin() {
         return logeado.getTipo().equals(USUARIO_TIPO_ADMIN);
     }
 
-    public boolean login(String username,String password)throws Exception{
+    public boolean login(String username, String password) throws Exception {
         objDatos.conectarBD();
-        ResultSet rs=objDatos.login(username,password);
-        if(rs.next()){
+        ResultSet rs = objDatos.login(username, password);
+        if (rs.next()) {
             logeado.resultsetLoad(rs);
             objDatos.desconectarBD();
 
             return true;
-        }else {
+        } else {
             objDatos.desconectarBD();
             return false;
         }

@@ -15,9 +15,10 @@ public class wdwClasificacion extends JFrame implements ActionListener {
     private GestorLN gln;
     private JPanel contentPane;
     private JTable tblClasificacion;
+
     public wdwClasificacion(GestorLN gln_) {
         this.setTitle("Clasificacion");
-        gln=gln_;
+        gln = gln_;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
         contentPane = new JPanel();
@@ -25,7 +26,7 @@ public class wdwClasificacion extends JFrame implements ActionListener {
         contentPane.setLayout(new BorderLayout(0, 0));
         setContentPane(contentPane);
 
-        ClasificacionModel tcm=new ClasificacionModel(gln.leerCampos());
+        ClasificacionModel tcm = new ClasificacionModel(gln.leerCampos());
 
 
         tblClasificacion = new JTable(tcm);

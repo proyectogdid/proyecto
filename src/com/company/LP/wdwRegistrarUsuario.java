@@ -116,7 +116,7 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
         aceptar.setBounds(225, 240, 70, 22);
         contentPane.add(aceptar);
         aceptar.setActionCommand(BOTON_ACEPTAR_REGISTRO);
-        aceptar.addActionListener((ActionListener) this);
+        aceptar.addActionListener(this);
         aceptar.setBackground(Color.GREEN);
 
 
@@ -216,7 +216,7 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
 
     private void close() {
 
-        int eleccion = JOptionPane.showConfirmDialog(this, "¿Estás seguro?","Salir",
+        int eleccion = JOptionPane.showConfirmDialog(this, "¿Estás seguro?", "Salir",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
         if (eleccion == JOptionPane.YES_OPTION) {
             System.exit(0);

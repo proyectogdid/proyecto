@@ -23,7 +23,7 @@ public class wdwMarcador extends JFrame implements ActionListener {
      * Create the frame.
      */
     public wdwMarcador(GestorLN gln_) {
-        gln=gln_;
+        gln = gln_;
         this.setTitle("MARCADOR");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 628, 548);

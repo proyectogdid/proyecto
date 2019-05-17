@@ -13,6 +13,7 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 
 import static com.company.comun.clsConstantes.*;
+
 /**
  * Clase que utilizaremos para crear la ventana de insertar jugadores en la BD
  */
@@ -45,10 +46,10 @@ public class wdwJugador extends JFrame implements ActionListener {
      * Create the frame.
      */
     public wdwJugador(GestorLN gln_) {
-        ArrayList<itfProperty> equipos=gln_.leerEquipos();
-        ArrayList<itfProperty> posiciones=gln_.leerPosiciones();
-        ArrayList<itfProperty> estados= gln_.leerEstados();
-        gln=gln_;
+        ArrayList<itfProperty> equipos = gln_.leerEquipos();
+        ArrayList<itfProperty> posiciones = gln_.leerPosiciones();
+        ArrayList<itfProperty> estados = gln_.leerEstados();
+        gln = gln_;
 
         this.setTitle("Inserte un jugador");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -152,7 +153,7 @@ public class wdwJugador extends JFrame implements ActionListener {
         lblNewLabel_8.setBounds(72, 424, 46, 14);
         contentPane.add(lblNewLabel_8);
 
-        for (int i = 0; i <equipos.size() ; i++) {
+        for (int i = 0; i < equipos.size(); i++) {
             cbEquipo.addItem(equipos.get(i));
         }
         for (int i = 0; i < posiciones.size(); i++) {
@@ -165,24 +166,24 @@ public class wdwJugador extends JFrame implements ActionListener {
 
     /**
      * Metodo para realizar las acciones de los eventos de la ventana
+     *
      * @param e e
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        switch (e.getActionCommand()){
+        switch (e.getActionCommand()) {
             case "1":
                 try {
                     miFormato = DateFormat.getDateInstance(DateFormat.SHORT);
-                    gln.anadirJugador(textoNombre.getText(),textoPrimerApellido.getText(), textoSegundoApellido.getText(),
-                            fechaNcto.getDate(),textoDorsal.getText(), textoTextoCamiseta.getText(),(int) ((itfProperty)cbEquipo.getSelectedItem()).getProperty(EQUIPO_ID),
-                            (int)((itfProperty)cbPosicion.getSelectedItem()).getProperty(POSICION_ID),(int)((itfProperty)cbEstado.getSelectedItem()).getProperty(ESTADO_ID));
+                    gln.anadirJugador(textoNombre.getText(), textoPrimerApellido.getText(), textoSegundoApellido.getText(),
+                            fechaNcto.getDate(), textoDorsal.getText(), textoTextoCamiseta.getText(), (int) ((itfProperty) cbEquipo.getSelectedItem()).getProperty(EQUIPO_ID),
+                            (int) ((itfProperty) cbPosicion.getSelectedItem()).getProperty(POSICION_ID), (int) ((itfProperty) cbEstado.getSelectedItem()).getProperty(ESTADO_ID));
                 } catch (Exception ex) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Fallo en la inserción del jugador");
                 }
                 break;
             case "0":
                 break;
-
 
 
         }

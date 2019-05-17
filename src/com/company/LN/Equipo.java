@@ -50,14 +50,15 @@ public class Equipo implements itfProperty {
 
     /**
      * Metodo para cargar datos de los quipos en el resultset
+     *
      * @param rs rs
      * @throws Exception throws Exception
      */
     public void resultSetToEquipo(ResultSet rs) throws Exception {
-        id=rs.getInt(BD_EQUIPO_ID);
+        id = rs.getInt(BD_EQUIPO_ID);
         nombre = rs.getString(BD_EQUIPO_NOMBRE);
         patrocinador = rs.getString(BD_EQUIPO_PATROCINADOR);
-        campo=rs.getObject(BD_EQUIPO_CAMPO);
+        campo = rs.getObject(BD_EQUIPO_CAMPO);
 
     }
 
@@ -127,6 +128,7 @@ public class Equipo implements itfProperty {
 
     /**
      * Metodo toString de itfProperty
+     *
      * @return return
      */
     @Override

@@ -74,17 +74,16 @@ public class clsDatos {
     }
 
     /**
-     *
-     *@param usuario nombre de usuaario
-     *@param passw contrsensa
-     *@param equipo equipo favorito del usuario
-     *@param tipo tipo de usuario
-     *@param correo correo del usuario
+     * @param usuario nombre de usuaario
+     * @param passw   contrsensa
+     * @param equipo  equipo favorito del usuario
+     * @param tipo    tipo de usuario
+     * @param correo  correo del usuario
      * @return id
      * @throws Exception SQLException
      */
-    public int insertarUsuario(String usuario,String passw,int equipo,String tipo,String correo)throws Exception{
-       return UsuarioBD.registrarUsuario(con, usuario, passw, equipo, tipo, correo);
+    public int insertarUsuario(String usuario, String passw, int equipo, String tipo, String correo) throws Exception {
+        return UsuarioBD.registrarUsuario(con, usuario, passw, equipo, tipo, correo);
     }
 
     /**
@@ -132,26 +131,29 @@ public class clsDatos {
 
     /**
      * metodo para insertar nueva temporada
+     *
      * @param ano date de la temporada
      * @return id
      * @throws Exception sql exception
      */
-    public int insertTemporada(Date ano)throws Exception{
-        return TemporadaBD.insertTemporada(con,ano);
+    public int insertTemporada(Date ano) throws Exception {
+        return TemporadaBD.insertTemporada(con, ano);
     }
 
     /**
      * metodo para insertar partidos de la temporada
+     *
      * @param datos matriz de datos
      * @return ids
      * @throws Exception SQL exception
      */
-    public ArrayList<Integer> insertPartidos(Object[][] datos) throws Exception{
-        return PartidoBD.insertarPartidos(con,datos);
+    public ArrayList<Integer> insertPartidos(Object[][] datos) throws Exception {
+        return PartidoBD.insertarPartidos(con, datos);
     }
 
     /**
      * Metodo para insertar posiciones de los jugadores
+     *
      * @param nombre nombre
      * @return return
      * @throws Exception Excepcion
@@ -162,6 +164,7 @@ public class clsDatos {
 
     /**
      * Metodo para insertar los estados de los jugadores
+     *
      * @param nombre nombre
      * @return return
      * @throws Exception excepcion
@@ -239,7 +242,8 @@ public class clsDatos {
     public ResultSet buscarPartidos() throws Exception {
         return PartidoBD.getAll(con);
     }
-    public ResultSet login(String username, String passw) throws  Exception{
-        return UsuarioBD.getLogin(con,username,passw);
+
+    public ResultSet login(String username, String passw) throws Exception {
+        return UsuarioBD.getLogin(con, username, passw);
     }
 }

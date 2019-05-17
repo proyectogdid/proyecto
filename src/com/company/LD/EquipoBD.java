@@ -13,8 +13,8 @@ public class EquipoBD extends Conexion {
     /**
      * Metodo para insertar los equipos en nuestra BD
      *
-     * @param con con
-     * @param nombre nombre
+     * @param con          con
+     * @param nombre       nombre
      * @param patrocinador patrocinador
      * @return return
      * @throws Exception dallos en el insert

@@ -36,10 +36,9 @@ public class Traspaso implements itfProperty, itfPersistable {
     /**
      * Este metodo va a recoger los datos de todos los traspasos que se vayan reslizando
      *
-     * @param id id
-
-     * @param jugador jugador
-     * @param equipoPrevio equipoPRevio
+     * @param id              id
+     * @param jugador         jugador
+     * @param equipoPrevio    equipoPRevio
      * @param equipoPosterior equipoPosterior
      */
     public Traspaso(int id, int jugador, int equipoPrevio, int equipoPosterior) {
@@ -58,7 +57,6 @@ public class Traspaso implements itfProperty, itfPersistable {
     public void setId(int id) {
         this.id = id;
     }
-
 
 
     public int getJugador() {
@@ -110,16 +108,17 @@ public class Traspaso implements itfProperty, itfPersistable {
 
     /**
      * MEtodo para cargar los traspasos en el resultset
+     *
      * @param rs rs
      * @throws Exception throws Exception
      */
     @Override
     public void resultsetLoad(ResultSet rs) throws Exception {
-        id=rs.getInt(BD_TRASPASO_ID);
-        jugador=rs.getInt(BD_TRASPASO_JUGADOR);
+        id = rs.getInt(BD_TRASPASO_ID);
+        jugador = rs.getInt(BD_TRASPASO_JUGADOR);
 
-        equipoPrevio=rs.getInt(BD_TRASPASO_EQUIPO_PREVIO);
-        equipoPosterior=rs.getInt(BD_TRASPASO_EQUIPO_POSTERIOR);
+        equipoPrevio = rs.getInt(BD_TRASPASO_EQUIPO_PREVIO);
+        equipoPosterior = rs.getInt(BD_TRASPASO_EQUIPO_POSTERIOR);
 
     }
 }

@@ -35,13 +35,13 @@ public class clsConstantes {
     public static final String EQUIPO_NOMBRE = "nombre";
     public static final String EQUIPO_PATROCINADOR = "patrocinador";
     public static final String EQUIPO_JUGADORES = "jugadores";
-    public static final String EQUIPO_CAMPO="campo";
+    public static final String EQUIPO_CAMPO = "campo";
 
 
-    public static final String BD_EQUIPO_ID="eqp.id";
+    public static final String BD_EQUIPO_ID = "eqp.id";
     public static final String BD_EQUIPO_NOMBRE = "eqp.nombre";
     public static final String BD_EQUIPO_PATROCINADOR = "eqp.patrocinador";
-    public static final String BD_EQUIPO_CAMPO="eqp.campo";
+    public static final String BD_EQUIPO_CAMPO = "eqp.campo";
 
 
     public static final String ESTADO_ID = "id";
@@ -89,7 +89,7 @@ public class clsConstantes {
     public static final String PARTIDO_VISITANTE = "visitante";
     public static final String PARTIDO_TEMPORADA = "temporada";
     public static final String PARTIDO_CAMPO = "campo";
-    public static final String PARTIDO_JORNADA="jornada";
+    public static final String PARTIDO_JORNADA = "jornada";
 
     public static final String BD_PARTIDO_ID = "par.id";
     public static final String BD_PARTIDO_FECHA = "par.fecha";
@@ -127,7 +127,7 @@ public class clsConstantes {
     public static final String USUARIO_ID = "id";
     public static final String USUARIO_USERNAME = "username";
     public static final String USUARIO_CONTRASENA = "contrasena";
-    public static final String USUARIO_CORREO="correo";
+    public static final String USUARIO_CORREO = "correo";
     public static final String USUARIO_TIPO = "tipo";
     public static final String USUARIO_TIPO_ADMIN = "ADMIN";
     public static final String USUARIO_TIPO_AFICIONADO = "AFICIONADO";
@@ -135,7 +135,7 @@ public class clsConstantes {
     public static final String BD_USUARIO_ID = "usr.id";
     public static final String BD_USUARIO_USERNAME = "usr.usuario";
     public static final String BD_USUARIO_CONTRASENA = "usr.contrasena";
-    public static final String BD_USUARIO_CORREO="usr.correo";
+    public static final String BD_USUARIO_CORREO = "usr.correo";
     public static final String BD_USUARIO_TIPO = "usr.tipo";
 
 }

@@ -1,6 +1,7 @@
 package com.company.LP.InsertarPorVentanas;
 
 import com.company.LN.GestorLN;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -16,10 +17,8 @@ public class wdwPosicion extends JFrame implements ActionListener {
     private GestorLN gln;
 
 
-
-
     public wdwPosicion(GestorLN gln_) {
-        gln=gln_;
+        gln = gln_;
         this.setTitle("Inserte una posición");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 628, 548);
@@ -53,11 +52,12 @@ public class wdwPosicion extends JFrame implements ActionListener {
 
     /**
      * Metodo para realizar acciones en funcion del evento
+     *
      * @param e e
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        switch (e.getActionCommand()){
+        switch (e.getActionCommand()) {
             case "1":
                 try {
                     gln.anadirPosicion(textoNombre.getText());

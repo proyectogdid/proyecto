@@ -134,7 +134,7 @@ public abstract class Conexion {
     private static void cargarDatos(PreparedStatement stt, Object[] parametros) throws Exception {
         for (int i = 0; i < parametros.length; i++) {
             int j = i + 1;
-            setData(stt,parametros[i],j);
+            setData(stt, parametros[i], j);
         }
     }
 
@@ -152,7 +152,7 @@ public abstract class Conexion {
         for (int k = 0; k < parametros.length; k++) {
 
             for (int i = 0; i < parametros[k].length; i++) {
-                setData(stt,parametros[k][i],n);
+                setData(stt, parametros[k][i], n);
                 n++;
             }
         }
@@ -161,7 +161,7 @@ public abstract class Conexion {
 
     private static void setData(PreparedStatement stt, Object obj, int index) throws SQLException {
         if (obj instanceof String) {
-            stt.setString(index, (String)obj);
+            stt.setString(index, (String) obj);
         } else if (obj instanceof Integer) {
             stt.setInt(index, (Integer) obj);
         } else if (obj instanceof Double) {

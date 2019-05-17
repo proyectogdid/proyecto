@@ -18,13 +18,14 @@ public class Participantes extends Equipo implements itfProperty {
 
     /**
      * Este metodo recogerá todos los datos necesarios para identificar los diferentes participantes.
-     * @param nombre nombre
-     * @param patrocinador patrocinador
-     * @param partidosGanados partidosGanados
-     * @param partidosJugados partidosJugados
+     *
+     * @param nombre           nombre
+     * @param patrocinador     patrocinador
+     * @param partidosGanados  partidosGanados
+     * @param partidosJugados  partidosJugados
      * @param partidosPerdidos partidosPerdidos
-     * @param puntosAFavor puntosAFavor
-     * @param puntosEnContra puntosEnContra
+     * @param puntosAFavor     puntosAFavor
+     * @param puntosEnContra   puntosEnContra
      */
 
     public Participantes(String nombre, String patrocinador, int partidosGanados, int partidosJugados, int partidosPerdidos, int puntosAFavor, int puntosEnContra) {
@@ -78,6 +79,7 @@ public class Participantes extends Equipo implements itfProperty {
 
     /**
      * Metodo getproperty de la interfaz itfProperty
+     *
      * @param prop prop
      * @return return
      */
@@ -102,6 +104,7 @@ public class Participantes extends Equipo implements itfProperty {
 
     /**
      * Metodo para mostrar los datos de los participantes.
+     *
      * @return return
      */
     @Override
