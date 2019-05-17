@@ -8,11 +8,13 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 /**
  * Esta clase se va a utilizar para sacar por pantalla la ventana del menu principal de la aplicacion
  */
-public class ventanaMenu extends JFrame  implements ActionListener {
+public class ventanaMenu extends JFrame  implements ActionListener, WindowListener {
 
     private JPanel contentPane;
     private GestorLN gln;
@@ -28,13 +30,14 @@ public class ventanaMenu extends JFrame  implements ActionListener {
     public ventanaMenu(GestorLN gln_) {
         this.setTitle("BASKET LIVE ⛹️");
         gln=gln_;
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        addWindowListener(this);
         setBounds(100, 100, 450, 300);
 
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
-        JMenuItem mntmNewMenuItem = new JMenuItem("Basket Live");
+        JMenuItem mntmNewMenuItem = new JMenuItem("Menú principal");
         menuBar.add(mntmNewMenuItem);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -91,5 +94,44 @@ public class ventanaMenu extends JFrame  implements ActionListener {
                 i.setVisible(true);
                 break;
         }
+    }
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        int eleccion = JOptionPane.showConfirmDialog(this, "¿Estás seguro?", "Salir",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
+        if (eleccion == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
     }
 }

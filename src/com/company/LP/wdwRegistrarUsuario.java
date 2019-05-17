@@ -215,7 +215,7 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
     }
 
     private void close() {
-        Object[] opciones = {"Aceptar", "Cancelar"};
+
         int eleccion = JOptionPane.showConfirmDialog(this, "¿Estás seguro?","Salir",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
         if (eleccion == JOptionPane.YES_OPTION) {
