@@ -1,5 +1,6 @@
 package com.company.LD;
 
+import com.company.LN.Estado;
 import com.company.LN.Posicion;
 
 import java.sql.Connection;
@@ -149,8 +150,24 @@ public class clsDatos {
         return PartidoBD.insertarPartidos(con,datos);
     }
 
+    /**
+     * Metodo para insertar posiciones de los jugadores
+     * @param nombre nombre
+     * @return return
+     * @throws Exception Excepcion
+     */
     public int insertarPosicion(String nombre) throws Exception {
         return PosicionBD.insertarPosicion(con, nombre);
+    }
+
+    /**
+     * Metodo para insertar los estados de los jugadores
+     * @param nombre nombre
+     * @return return
+     * @throws Exception excepcion
+     */
+    public int insertarEstado(String nombre) throws Exception {
+        return EstadoBD.insertarEstado(con, nombre);
     }
 
     /**

@@ -1,16 +1,14 @@
 package com.company.LP.InsertarPorVentanas;
 
-//import com.company.Excepciones.DorsalRepetidoException;
 import com.company.LN.GestorLN;
 import com.company.comun.itfProperty;
 import com.toedter.calendar.JDateChooser;
-import com.company.comun.clsConstantes.*;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 import java.text.DateFormat;
 import java.util.ArrayList;
 
@@ -95,7 +93,7 @@ public class wdwJugador extends JFrame implements ActionListener {
         textoPrimerApellido.setColumns(10);
 
         textoSegundoApellido = new JTextField();
-        textoSegundoApellido.setBounds(198, 147, 86, 20);
+        textoSegundoApellido.setBounds(198, 147, 212, 20);
         contentPane.add(textoSegundoApellido);
         textoSegundoApellido.setColumns(10);
 
@@ -105,12 +103,12 @@ public class wdwJugador extends JFrame implements ActionListener {
         contentPane.add(fechaNcto);
 
         textoDorsal = new JTextField();
-        textoDorsal.setBounds(198, 219, 86, 20);
+        textoDorsal.setBounds(198, 219, 212, 20);
         contentPane.add(textoDorsal);
         textoDorsal.setColumns(10);
 
         textoTextoCamiseta = new JTextField();
-        textoTextoCamiseta.setBounds(198, 268, 86, 20);
+        textoTextoCamiseta.setBounds(198, 268, 212, 20);
         contentPane.add(textoTextoCamiseta);
         textoTextoCamiseta.setColumns(10);
 

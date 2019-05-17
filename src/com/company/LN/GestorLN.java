@@ -3,14 +3,12 @@ package com.company.LN;
 import com.company.Excepciones.EquiposInsuficientesException;
 import com.company.LD.clsDatos;
 
-import com.company.LP.ventanaMenu;
 import com.company.comun.Clasificacion;
 import com.company.comun.Participantes;
 import com.company.comun.Utilidades;
 import com.company.comun.itfProperty;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -67,9 +65,6 @@ public class GestorLN {
     ArrayList<Usuario> usuarios = new ArrayList<>();
     /**
      * array que guardara los partidos en memoria
-     */
-    /**
-     * array que guasrsara las posiciones
      */
 
     ArrayList<Partido> partidos = new ArrayList<>();
@@ -286,6 +281,11 @@ public class GestorLN {
 
     }
 
+    /**
+     * Este metodo lo vamos a emplear para introducir las posiciones en la BD
+     * @param nombre nombre
+     * @throws Exception exception
+     */
     public void anadirPosicion(String nombre) throws Exception {
 
         objDatos.conectarBD();
@@ -298,6 +298,25 @@ public class GestorLN {
 
 
     }
+
+    /**
+     * Metodo para introducir los estados en la BD
+     * @param nombre nombre
+     * @throws Exception excepcion
+     */
+    public void anadirEstado(String nombre) throws Exception {
+
+        objDatos.conectarBD();
+        Estado estado = new Estado(nombre);
+
+        estado.setId(objDatos.insertarEstado(nombre));
+        estados.add(estado);
+
+        objDatos.desconectarBD();
+
+
+    }
+
 
     /**
      * Este metodo lo vamos a emplear para leer los campos de los equipos

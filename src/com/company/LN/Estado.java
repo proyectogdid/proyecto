@@ -26,7 +26,7 @@ public class Estado implements itfProperty, itfPersistable {
     }
 
     /**
-     * Este método, recogera los datos necesarios para poder identificar cada estado.
+     * Este metodo, recogera los datos necesarios para poder identificar cada estado.
      *
      * @param id id
      * @param nombre nombre
@@ -34,6 +34,14 @@ public class Estado implements itfProperty, itfPersistable {
     public Estado(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
+    }
+
+    /**
+     * Metodo que usaremos para introducir los nombres del estado en la BD
+     * @param nombre nombre
+     */
+    public Estado(String nombre){
+        this.nombre=nombre;
     }
 
     public int getId() {
@@ -80,4 +88,13 @@ public class Estado implements itfProperty, itfPersistable {
         id=rs.getInt(BD_ESTADO_ID);
         nombre=rs.getString(BD_ESTADO_NOMBRE);
     }
+
+    /**
+     * Devuelve el nombre del estado
+     * @return
+     */
+    public String toString(){
+        return this.nombre;
+    }
 }
+

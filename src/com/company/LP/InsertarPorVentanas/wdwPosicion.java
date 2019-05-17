@@ -1,16 +1,12 @@
 package com.company.LP.InsertarPorVentanas;
 
 import com.company.LN.GestorLN;
-import com.company.comun.itfProperty;
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
-import static com.company.comun.clsConstantes.CAMPO_ID;
 
 public class wdwPosicion extends JFrame implements ActionListener {
 

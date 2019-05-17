@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Clase que utilizaremos para insertar jugadores y equipos desde ventana en la BD
+ * Clase que utilizaremos para insertar jugadores, equipos, posiciones y estados desde ventana en la BD
  */
 public class insertar extends JFrame implements ActionListener {
 
@@ -17,7 +17,8 @@ public class insertar extends JFrame implements ActionListener {
     private GestorLN gln;
     private final String INSERTAR_JUGADOR = "jugador";
     private final String INSERTAR_EQUIPO = "equipo";
-    private final String INSERTAR_POSICION="posicion";
+    private final String INSERTAR_POSICION = "posicion";
+    private final String INSERTAR_ESTADO = "estado";
 
     /**
      * Create the frame.
@@ -25,12 +26,12 @@ public class insertar extends JFrame implements ActionListener {
     public insertar(GestorLN gln_) {
         gln = gln_;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 450, 300);
+        setBounds(100, 100, 700, 200);
 
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
-        JMenuItem mntmNewMenuItem = new JMenuItem("Ventana para insertar Equipos, jugadores y posiciones");
+        JMenuItem mntmNewMenuItem = new JMenuItem("Ventana para insertar equipos, jugadores, posiciones y estados");
         menuBar.add(mntmNewMenuItem);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -56,12 +57,17 @@ public class insertar extends JFrame implements ActionListener {
         btnPosicion.addActionListener(this);
         panel.add(btnPosicion);
 
+        JButton btnEstado = new JButton("Insertar estado");
+        btnEstado.setActionCommand(INSERTAR_ESTADO);
+        btnEstado.addActionListener(this);
+        panel.add(btnEstado);
 
 
     }
 
     /**
      * Metodo para realizar las acciones del evento
+     *
      * @param e e
      */
     @Override
@@ -76,8 +82,12 @@ public class insertar extends JFrame implements ActionListener {
                 eq.setVisible(true);
                 break;
             case INSERTAR_POSICION:
-                wdwPosicion p=new wdwPosicion(gln);
+                wdwPosicion p = new wdwPosicion(gln);
                 p.setVisible(true);
+                break;
+            case INSERTAR_ESTADO:
+                wdwEstado es = new wdwEstado(gln);
+                es.setVisible(true);
                 break;
         }
     }

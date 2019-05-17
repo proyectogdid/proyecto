@@ -18,4 +18,16 @@ public class EstadoBD extends  Conexion{
     public static ResultSet getAll(Connection con) throws Exception{
         return select(con, "SELECT "+TEMPLATE+" FROM estados estd");
     }
+
+    /**
+     * Metodo para insertar estado en la BD
+     * @param con con
+     * @param nombre nombre
+     * @return return
+     * @throws Exception excepcion
+     */
+    public static int insertarEstado(Connection con, String nombre)throws Exception{
+        Object[] parametros = {nombre};
+        return insert(con,"INSERT INTO estados (nombre) VALUES(?) ",parametros);
+    }
 }

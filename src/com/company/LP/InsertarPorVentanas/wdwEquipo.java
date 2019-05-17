@@ -11,7 +11,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import static com.company.comun.clsConstantes.CAMPO_ID;
-import static com.company.comun.clsConstantes.EQUIPO_ID;
 
 /**
  * Clase que utilizaremos para crear la ventana de insertar equipos en la BD
