@@ -1,5 +1,6 @@
 package com.company.LN;
 
+import com.company.Excepciones.PropiedadIncorrecta;
 import com.company.comun.itfProperty;
 
 import java.sql.ResultSet;
@@ -122,7 +123,7 @@ public class Equipo implements itfProperty {
             case EQUIPO_CAMPO:
                 return this.campo;
             default:
-                throw new RuntimeException();
+                throw new PropiedadIncorrecta(prop);
         }
     }
 

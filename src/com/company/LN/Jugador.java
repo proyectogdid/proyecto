@@ -1,5 +1,6 @@
 package com.company.LN;
 
+import com.company.Excepciones.PropiedadIncorrecta;
 import com.company.comun.itfProperty;
 
 import java.sql.ResultSet;
@@ -234,7 +235,7 @@ public class Jugador implements itfProperty {
             case JUGADOR_ESTADO:
                 return this.estado;
             default:
-                throw new RuntimeException();
+                throw new PropiedadIncorrecta(prop);
         }
     }
 }

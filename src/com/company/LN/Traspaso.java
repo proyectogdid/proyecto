@@ -1,5 +1,6 @@
 package com.company.LN;
 
+import com.company.Excepciones.PropiedadIncorrecta;
 import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
@@ -102,7 +103,7 @@ public class Traspaso implements itfProperty, itfPersistable {
             case TRASPASO_EQUIPO_POSTERIOR:
                 return this.equipoPosterior;
             default:
-                throw new RuntimeException();
+                throw new PropiedadIncorrecta(prop);
         }
     }
 

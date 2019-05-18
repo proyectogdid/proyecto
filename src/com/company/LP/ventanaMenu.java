@@ -19,7 +19,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
     private JPanel contentPane;
     private GestorLN gln;
     private JMenuBar barraMenu;
-    private JMenu menuAjustes, menuPerfil;
+    private JMenu menuAjustes, menuPerfil,menuInsertar;
     /**
      * Para ajustes
      */
@@ -101,6 +101,18 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
         itemDatosPesonales.setActionCommand(DATOS_PERSONALES);
         itemDatosPesonales.addActionListener(this);
         menuPerfil.add(itemDatosPesonales);
+
+        if(gln.isAdmin()){
+            menuInsertar = new JMenu("Insertar");
+            barraMenu.add(menuInsertar);
+
+            itemDatosPesonales = new JMenuItem("Datos personales");
+            itemDatosPesonales.setActionCommand(DATOS_PERSONALES);
+            itemDatosPesonales.addActionListener(this);
+            menuPerfil.add(itemDatosPesonales);
+        }
+
+
 
     }
 

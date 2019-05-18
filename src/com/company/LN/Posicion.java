@@ -1,5 +1,6 @@
 package com.company.LN;
 
+import com.company.Excepciones.PropiedadIncorrecta;
 import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
@@ -73,7 +74,7 @@ public class Posicion implements itfProperty, itfPersistable {
             case POSICION_NOMBRE:
                 return this.nombre;
             default:
-                throw new RuntimeException();
+                throw new PropiedadIncorrecta(prop);
         }
     }
 

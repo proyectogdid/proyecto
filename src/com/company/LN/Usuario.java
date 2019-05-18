@@ -1,5 +1,6 @@
 package com.company.LN;
 
+import com.company.Excepciones.PropiedadIncorrecta;
 import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
@@ -93,6 +94,10 @@ public class Usuario implements itfProperty, itfPersistable {
         return tipo;
     }
 
+    public boolean isAdmin(){
+        return this.tipo.equalsIgnoreCase(USUARIO_TIPO_ADMIN);
+    }
+
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
@@ -118,7 +123,7 @@ public class Usuario implements itfProperty, itfPersistable {
             case USUARIO_TIPO:
                 return this.tipo;
             default:
-                throw new RuntimeException();
+                throw new PropiedadIncorrecta(prop);
         }
     }
 

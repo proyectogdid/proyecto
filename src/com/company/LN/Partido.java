@@ -1,5 +1,6 @@
 package com.company.LN;
 
+import com.company.Excepciones.PropiedadIncorrecta;
 import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
@@ -223,7 +224,7 @@ public class Partido implements itfProperty, itfPersistable {
             case PARTIDO_JORNADA:
                 return this.jornada;
             default:
-                throw new RuntimeException();
+                throw new PropiedadIncorrecta(prop);
         }
     }
 

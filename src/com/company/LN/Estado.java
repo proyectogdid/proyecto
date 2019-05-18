@@ -1,5 +1,6 @@
 package com.company.LN;
 
+import com.company.Excepciones.PropiedadIncorrecta;
 import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
@@ -75,7 +76,7 @@ public class Estado implements itfProperty, itfPersistable {
             case ESTADO_NOMBRE:
                 return this.nombre;
             default:
-                throw new RuntimeException();
+                throw new PropiedadIncorrecta(prop);
         }
     }
 

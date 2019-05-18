@@ -1,5 +1,6 @@
 package com.company.LN;
 
+import com.company.Excepciones.PropiedadIncorrecta;
 import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
@@ -182,7 +183,7 @@ public class Campo implements itfProperty, Comparable<Campo>, itfPersistable {
             case CAMPO_AFORO:
                 return this.aforo;
             default:
-                throw new RuntimeException();
+                throw new PropiedadIncorrecta(prop);
         }
     }
 

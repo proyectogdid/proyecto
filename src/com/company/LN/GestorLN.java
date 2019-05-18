@@ -566,7 +566,7 @@ public class GestorLN {
      * @return boolean para saber si es admin el usuario logeado
      */
     public boolean isAdmin() {
-        return logeado.getTipo().equals(USUARIO_TIPO_ADMIN);
+        return logeado.isAdmin();
     }
 
     public boolean login(String username, String password) throws Exception {
