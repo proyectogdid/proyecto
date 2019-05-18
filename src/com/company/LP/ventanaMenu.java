@@ -18,11 +18,24 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
 
     private JPanel contentPane;
     private GestorLN gln;
+    private JMenuBar barraMenu;
+    private JMenu menuAjustes, menuPerfil;
+    /**
+     * Para ajustes
+     */
+    private JMenuItem itemCerrarSesion, itemCambiarEquipoFav;
+    /**
+     * Para perfil
+     */
+    private JMenuItem itemDatosPesonales;
+
     private final String ABRIR_NOTICIAS = "noticias";
     private final String INSERTAR = "insertar";
     private final String ABRIR_CLASIFICACION = "clasificacion";
     private final String ABRIR_JORNADA = "jornada";
-
+    private final String CERRAR_SESION = "cerrar sesión";
+    private final String CAMBIAR_EQUIPO_FAV = "cambiar equipo fav";
+    private final String DATOS_PERSONALES = "datos personales";
 
     /**
      * Create the frame.
@@ -32,17 +45,16 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
         gln = gln_;
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(this);
-        setBounds(100, 100, 450, 300);
+        setBounds(100, 100, 450, 150);
 
-        JMenuBar menuBar = new JMenuBar();
-        setJMenuBar(menuBar);
-
-        JMenuItem mntmNewMenuItem = new JMenuItem("Menú principal");
-        menuBar.add(mntmNewMenuItem);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(new BorderLayout(50, 50));
         setContentPane(contentPane);
+
+        barraMenu = new JMenuBar();
+        setJMenuBar(barraMenu);
+
 
         JPanel panel = new JPanel();
         contentPane.add(panel, BorderLayout.NORTH);
@@ -68,6 +80,28 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
         btnJornada.setActionCommand(ABRIR_JORNADA);
         btnJornada.addActionListener(this);
         panel.add(btnJornada);
+
+        menuAjustes = new JMenu("Ajustes");
+        barraMenu.add(menuAjustes);
+
+        itemCerrarSesion = new JMenuItem("Cerrar sesión");
+        itemCerrarSesion.setActionCommand(CERRAR_SESION);
+        itemCerrarSesion.addActionListener(this);
+        menuAjustes.add(itemCerrarSesion);
+
+        itemCambiarEquipoFav = new JMenuItem("Cambia de equipo");
+        itemCambiarEquipoFav.setActionCommand(CAMBIAR_EQUIPO_FAV);
+        itemCambiarEquipoFav.addActionListener(this);
+        menuAjustes.add(itemCambiarEquipoFav);
+
+        menuPerfil = new JMenu("Perfil");
+        barraMenu.add(menuPerfil);
+
+        itemDatosPesonales = new JMenuItem("Datos personales");
+        itemDatosPesonales.setActionCommand(DATOS_PERSONALES);
+        itemDatosPesonales.addActionListener(this);
+        menuPerfil.add(itemDatosPesonales);
+
     }
 
     /**
@@ -94,6 +128,17 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
                 insertar i = new insertar(gln);
                 i.setVisible(true);
                 break;
+            case CERRAR_SESION:
+                this.setVisible(false);
+                wdwRegistrarUsuario ru= new wdwRegistrarUsuario(gln);
+                ru.setVisible(true);
+                break;
+            case CAMBIAR_EQUIPO_FAV:
+                break;
+            case DATOS_PERSONALES:
+                break;
+
+
         }
     }
 

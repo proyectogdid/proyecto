@@ -1,6 +1,5 @@
 package com.company.LP;
 
-import com.company.LN.Equipo;
 import com.company.LN.GestorLN;
 import com.company.comun.itfProperty;
 
