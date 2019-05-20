@@ -26,7 +26,7 @@ public class wdwClasificacion extends JFrame implements ActionListener {
         contentPane.setLayout(new BorderLayout(0, 0));
         setContentPane(contentPane);
 
-        ClasificacionModel tcm = new ClasificacionModel(gln.leerCampos());
+        ClasificacionModel tcm = new ClasificacionModel(gln.leerClasificacion());
 
 
         tblClasificacion = new JTable(tcm);

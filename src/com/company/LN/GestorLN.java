@@ -4,16 +4,15 @@ import com.company.Excepciones.EquiposInsuficientesException;
 import com.company.LD.clsDatos;
 
 import com.company.comun.Clasificacion;
-import com.company.comun.Participantes;
 import com.company.comun.Utilidades;
 import com.company.comun.itfProperty;
+import com.mysql.cj.xdevapi.Collection;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 
-import static com.company.comun.clsConstantes.USUARIO_TIPO_ADMIN;
 import static com.company.comun.clsConstantes.USUARIO_TIPO_AFICIONADO;
 
 /**
@@ -363,6 +362,21 @@ public class GestorLN {
 
         ArrayList<itfProperty> retorno = new ArrayList<>();
         for (Posicion e : posiciones) {
+            retorno.add(e);
+        }
+
+        return retorno;
+    }
+
+    /**
+     * Este metodo lo vamos a emplear para leer la clasificacion de la liga
+     *
+     * @return return
+     */
+    public ArrayList<itfProperty> leerClasificacion() {
+
+        ArrayList<itfProperty> retorno = new ArrayList<>();
+        for (Participantes e : participantes) {
             retorno.add(e);
         }
 

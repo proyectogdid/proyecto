@@ -1,6 +1,8 @@
-package com.company.comun;
+package com.company.LN;
 
+import com.company.Excepciones.PropiedadIncorrecta;
 import com.company.LN.Equipo;
+import com.company.comun.itfProperty;
 
 import static com.company.comun.clsConstantes.*;
 
@@ -98,7 +100,7 @@ public class Participantes extends Equipo implements itfProperty {
             case PARTICIPANTES_PUNTOS_EN_CONTRA:
                 return this.puntosEnContra;
             default:
-                throw new RuntimeException();
+                throw new PropiedadIncorrecta(prop);
         }
     }
 
