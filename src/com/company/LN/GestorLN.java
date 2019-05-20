@@ -176,6 +176,18 @@ public class GestorLN {
     }
 
     /**
+     * Metodo para actualizar el usuario de la BD
+     * @param id
+     * @throws Exception
+     */
+    public void updateUsuario(int id) throws Exception{
+        objDatos.conectarBD();
+         id=objDatos.updateUsuario(id);
+         objDatos.desconectarBD();
+
+    }
+
+    /**
      * Este metodo se va a utilizar para añadir los campos en el Array de los campos
      *
      * @param nombre nombre

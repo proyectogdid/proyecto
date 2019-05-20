@@ -2,6 +2,7 @@ package com.company.LP;
 
 import com.company.LN.GestorLN;
 import com.company.LP.InsertarPorVentanas.insertar;
+import com.company.LP.Updates.updateEquipoFav;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -146,6 +147,8 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
                 ru.setVisible(true);
                 break;
             case CAMBIAR_EQUIPO_FAV:
+                updateEquipoFav ef=new updateEquipoFav(gln);
+                ef.setVisible(true);
                 break;
             case DATOS_PERSONALES:
                 break;

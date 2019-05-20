@@ -34,8 +34,22 @@ public class UsuarioBD extends Conexion {
      * @throws Exception exxcepcion producida por SQL
      */
     public static int registrarUsuario(Connection con, String usuario, String passw, int equipo, String tipo, String correo) throws Exception {
-        Object[] params = {usuario, passw, equipo, tipo, correo};
-        return insert(con, "INSERT INTO usuario (`usuario`,`contrasena`,`equipo_favorito`,`tipo`,`correo`) VALUES (?,?,?,?,?)", params);
+        Object[] parametros = {usuario, passw, equipo, tipo, correo};
+        return insert(con, "INSERT INTO usuario (`usuario`,`contrasena`,`equipo_favorito`,`tipo`,`correo`) VALUES (?,?,?,?,?)", parametros);
     }
+
+    /**
+     * Metodo para actualizar el usuario
+     * @param con con
+     * @param id id
+     * @return return
+     * @throws Exception Exception
+     */
+    public static int updateUsuario(Connection con, int id)throws Exception{
+        Object[] parametros={id};
+        return update(con,"UPDATE usuario SET equipo_favorito=? WHERE id=?",parametros);
+
+    }
+
 
 }

@@ -2,6 +2,7 @@ package com.company.LD;
 
 import com.company.LN.Estado;
 import com.company.LN.Posicion;
+import com.company.LN.Usuario;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -97,6 +98,16 @@ public class clsDatos {
      */
     public int insertarEquipo(String nombre, String patrocinador, int campo) throws Exception {
         return EquipoBD.insertarEquipo(con, nombre, patrocinador, campo);
+    }
+
+    /**
+     * Metodo para actualizar los usuarios
+     * @param id id
+     * @return return
+     * @throws Exception Exception
+     */
+    public int updateUsuario(int id)throws Exception{
+        return UsuarioBD.updateUsuario(con,id);
     }
 
     /**
