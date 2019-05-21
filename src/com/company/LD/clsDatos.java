@@ -106,8 +106,8 @@ public class clsDatos {
      * @return return
      * @throws Exception Exception
      */
-    public int updateUsuario(int id)throws Exception{
-        return UsuarioBD.updateUsuario(con,id);
+    public int updateUsuario(int id,int iduser)throws Exception{
+        return UsuarioBD.updateUsuario(con,id,iduser);
     }
 
     /**

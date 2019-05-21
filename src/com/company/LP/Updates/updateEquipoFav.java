@@ -90,8 +90,11 @@ public class updateEquipoFav extends JFrame implements ActionListener, WindowLis
                 System.out.println("entro aqui");
                 try {
                     gln.updateUsuario((int) ((itfProperty) cbEquipo.getSelectedItem()).getProperty(EQUIPO_ID));
+                    javax.swing.JOptionPane.showMessageDialog(this,"equipo actualizado con exito");
+                    this.dispose();
                 } catch (Exception ex) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Fallo en la actualización");
+                    ex.printStackTrace();
                 }
                 break;
             case BOTON_CANCELAR_REGISTRO:

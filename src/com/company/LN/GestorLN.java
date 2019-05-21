@@ -182,7 +182,8 @@ public class GestorLN {
      */
     public void updateUsuario(int id) throws Exception{
         objDatos.conectarBD();
-         id=objDatos.updateUsuario(id);
+         id=objDatos.updateUsuario(id,logeado.getId());
+
          objDatos.desconectarBD();
 
     }
