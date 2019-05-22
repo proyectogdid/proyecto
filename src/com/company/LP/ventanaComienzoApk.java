@@ -42,6 +42,7 @@ public class ventanaComienzoApk extends JFrame implements ActionListener, Window
         btnComenzar.addActionListener(this);
         panel.add(btnComenzar);
 
+
     }
 
     @Override

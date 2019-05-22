@@ -1,7 +1,7 @@
 package com.company.LP;
 
 import com.company.LN.GestorLN;
-import com.company.LP.InsertarPorVentanas.insertar;
+import com.company.LP.InsertarPorVentanas.*;
 import com.company.LP.Updates.updateEquipoFav;
 
 import javax.swing.*;
@@ -20,7 +20,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
     private JPanel contentPane;
     private GestorLN gln;
     private JMenuBar barraMenu;
-    private JMenu menuAjustes, menuPerfil,menuInsertar;
+    private JMenu menuAjustes, menuPerfil, menuInsertar;
     /**
      * Para ajustes
      */
@@ -30,6 +30,11 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
      */
     private JMenuItem itemDatosPesonales;
 
+    /**
+     * Para insertar
+     */
+    private JMenuItem itemInsertarJugador, itemInsertarEquipo, itemInsertarPosicion, itemInsertarEstado;
+
     private final String ABRIR_NOTICIAS = "noticias";
     private final String INSERTAR = "insertar";
     private final String ABRIR_CLASIFICACION = "clasificacion";
@@ -37,6 +42,10 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
     private final String CERRAR_SESION = "cerrar sesión";
     private final String CAMBIAR_EQUIPO_FAV = "cambiar equipo fav";
     private final String DATOS_PERSONALES = "datos personales";
+    private final String INSERTAR_JUGADOR = "insertar jugador";
+    private final String INSERTAR_EQUIPO = "insertar equipo";
+    private final String INSERTAR_POSICION = "insertar posicion";
+    private final String INSERTAR_ESTADO = "insertar estado";
 
     /**
      * Create the frame.
@@ -66,12 +75,6 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
         btnNoticias.addActionListener(this);
         panel.add(btnNoticias);
 
-        JButton btnInsertar = new JButton("Insertar");
-        btnInsertar.setActionCommand(INSERTAR);
-        btnInsertar.addActionListener(this);
-        panel.add(btnInsertar);
-
-
         JButton btnClasificacion = new JButton("Clasificacion");
         btnClasificacion.setActionCommand(ABRIR_CLASIFICACION);
         btnClasificacion.addActionListener(this);
@@ -98,21 +101,51 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
         menuPerfil = new JMenu("Perfil");
         barraMenu.add(menuPerfil);
 
+        itemCerrarSesion = new JMenuItem("Cerrar sesión");
+        itemCerrarSesion.setActionCommand(CERRAR_SESION);
+        itemCerrarSesion.addActionListener(this);
+        menuAjustes.add(itemCerrarSesion);
+
+        itemCambiarEquipoFav = new JMenuItem("Cambia de equipo");
+        itemCambiarEquipoFav.setActionCommand(CAMBIAR_EQUIPO_FAV);
+        itemCambiarEquipoFav.addActionListener(this);
+        menuAjustes.add(itemCambiarEquipoFav);
+
         itemDatosPesonales = new JMenuItem("Datos personales");
         itemDatosPesonales.setActionCommand(DATOS_PERSONALES);
         itemDatosPesonales.addActionListener(this);
         menuPerfil.add(itemDatosPesonales);
 
-        if(gln.isAdmin()){
+        if (gln.isAdmin()) {
             menuInsertar = new JMenu("Insertar");
+            menuInsertar.setActionCommand(INSERTAR);
+            menuInsertar.addActionListener(this);
             barraMenu.add(menuInsertar);
 
-            itemDatosPesonales = new JMenuItem("Datos personales");
-            itemDatosPesonales.setActionCommand(DATOS_PERSONALES);
-            itemDatosPesonales.addActionListener(this);
-            menuPerfil.add(itemDatosPesonales);
-        }
 
+            itemInsertarJugador = new JMenuItem("Insertar jugador");
+            itemInsertarJugador.setActionCommand(INSERTAR_JUGADOR);
+            itemInsertarJugador.addActionListener(this);
+            menuInsertar.add(itemInsertarJugador);
+
+            itemInsertarEquipo = new JMenuItem("Insertar equipo");
+            itemInsertarEquipo.setActionCommand(INSERTAR_EQUIPO);
+            itemInsertarEquipo.addActionListener(this);
+            menuInsertar.add(itemInsertarEquipo);
+
+
+            itemInsertarPosicion = new JMenuItem("Insertar posicion de jugador");
+            itemInsertarPosicion.setActionCommand(INSERTAR_POSICION);
+            itemInsertarPosicion.addActionListener(this);
+            menuInsertar.add(itemInsertarPosicion);
+
+            itemInsertarEstado = new JMenuItem("Insertar estado de jugador");
+            itemInsertarEstado.setActionCommand(INSERTAR_ESTADO);
+            itemInsertarEstado.addActionListener(this);
+            menuInsertar.add(itemInsertarEstado);
+
+
+        }
 
 
     }
@@ -137,17 +170,30 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
             case ABRIR_JORNADA:
                 break;
 
-            case INSERTAR:
-                insertar i = new insertar(gln);
-                i.setVisible(true);
+            case INSERTAR_JUGADOR:
+                wdwJugador j = new wdwJugador(gln);
+                j.setVisible(true);
                 break;
+            case INSERTAR_EQUIPO:
+                wdwEquipo eq = new wdwEquipo(gln);
+                eq.setVisible(true);
+                break;
+            case INSERTAR_POSICION:
+                wdwPosicion p = new wdwPosicion(gln);
+                p.setVisible(true);
+                break;
+            case INSERTAR_ESTADO:
+                wdwEstado es = new wdwEstado(gln);
+                es.setVisible(true);
+                break;
+
             case CERRAR_SESION:
                 this.setVisible(false);
-                wdwRegistrarUsuario ru= new wdwRegistrarUsuario(gln);
+                wdwRegistrarUsuario ru = new wdwRegistrarUsuario(gln);
                 ru.setVisible(true);
                 break;
             case CAMBIAR_EQUIPO_FAV:
-                updateEquipoFav ef=new updateEquipoFav(gln);
+                updateEquipoFav ef = new updateEquipoFav(gln);
                 ef.setVisible(true);
                 break;
             case DATOS_PERSONALES:
