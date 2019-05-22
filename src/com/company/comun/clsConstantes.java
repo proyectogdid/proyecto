@@ -5,6 +5,8 @@ package com.company.comun;
  */
 public class clsConstantes {
 
+    public static final int PTOS_VICTORIA=3;
+    public static final int PTOS_EMPATE=1;
     public static final String AFICIONADO_FAVORITO = "favorito";
 
     public static final String PARTICIPANTES_PARTIDOS_GANADOS = "partidosGanados";
@@ -12,6 +14,8 @@ public class clsConstantes {
     public static final String PARTICIPANTES_PARTIDOS_JUGADOS = "partidosJugados";
     public static final String PARTICIPANTES_PUNTOS_A_FAVOR = "puntosAFavor";
     public static final String PARTICIPANTES_PUNTOS_EN_CONTRA = "puntosEnContra";
+    public static final String PARTICIPANTES_PARTIDOS_EMPATADOS="partidosEmpatados";
+    public static final String PARTICIPANTES_PTOS="ptosClasificacion";
 
 
     public static final String CAMPO_ID = "id";

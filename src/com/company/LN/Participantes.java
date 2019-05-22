@@ -2,7 +2,10 @@ package com.company.LN;
 
 import com.company.Excepciones.PropiedadIncorrecta;
 import com.company.LN.Equipo;
+import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
+
+import java.sql.ResultSet;
 
 import static com.company.comun.clsConstantes.*;
 
@@ -10,13 +13,15 @@ import static com.company.comun.clsConstantes.*;
  * Clase para asignar participantes a la liga. Estos tienen el nombre de los equipos, ademas de nuevos atributos creados.
  */
 
-public class Participantes extends Equipo implements itfProperty {
+public class Participantes extends Equipo implements itfProperty , itfPersistable {
 
     private int partidosGanados;
     private int partidosJugados;
     private int partidosPerdidos;
+    private int partidosEmpatados;
     private int puntosAFavor;
     private int puntosEnContra;
+    private int ptosClasificacion;
 
     /**
      * Este metodo recogerá todos los datos necesarios para identificar los diferentes participantes.
@@ -37,6 +42,25 @@ public class Participantes extends Equipo implements itfProperty {
         this.partidosPerdidos = partidosPerdidos;
         this.puntosAFavor = puntosAFavor;
         this.puntosEnContra = puntosEnContra;
+    }
+
+    public Participantes() {
+    }
+
+    public int getPartidosEmpatados() {
+        return partidosEmpatados;
+    }
+
+    public void setPartidosEmpatados(int partidosEmpatados) {
+        this.partidosEmpatados = partidosEmpatados;
+    }
+
+    public int getPtosClasificacion() {
+        return ptosClasificacion;
+    }
+
+    public void setPtosClasificacion(int ptosClasificacion) {
+        this.ptosClasificacion = ptosClasificacion;
     }
 
     public int getPartidosGanados() {
@@ -99,8 +123,13 @@ public class Participantes extends Equipo implements itfProperty {
                 return this.puntosAFavor;
             case PARTICIPANTES_PUNTOS_EN_CONTRA:
                 return this.puntosEnContra;
+            case PARTICIPANTES_PARTIDOS_EMPATADOS:
+                return this.partidosEmpatados;
+            case PARTICIPANTES_PTOS:
+                return this.ptosClasificacion;
+
             default:
-                throw new PropiedadIncorrecta(prop);
+                return super.getProperty(prop);
         }
     }
 
@@ -115,4 +144,13 @@ public class Participantes extends Equipo implements itfProperty {
     }
 
 
+    @Override
+    public void resultsetLoad(ResultSet rs) throws Exception {
+        partidosGanados=rs.getInt("victorias");
+        partidosPerdidos=rs.getInt("derrotas");
+        partidosEmpatados=rs.getInt("empates");
+        this.setNombre(rs.getString("e.nombre"));
+        this.ptosClasificacion=partidosGanados*PTOS_VICTORIA+partidosEmpatados*PTOS_EMPATE;
+        this.partidosJugados=partidosGanados+partidosEmpatados+partidosPerdidos;
+    }
 }

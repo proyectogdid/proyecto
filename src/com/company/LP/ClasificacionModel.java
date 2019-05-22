@@ -14,24 +14,25 @@ import static com.company.comun.clsConstantes.*;
  * Clase que utilizaremos para crear  la tabla de la clasificacion de la liga
  */
 class ClasificacionModel extends AbstractTableModel {
-    private String[] columnNames = {"Nombre", "PJ", "PG", "PP", "PtosF", "PtosC"};
+    private String[] columnNames = {"Nombre", "PJ", "PG", "PP", "Ptos", "PE"};
     Object[][] data;
 
     public ClasificacionModel(ArrayList<itfProperty> clasificados) {
 
         super();
 
-        int filas = clasificados.size();
+        int filas= clasificados.size()+1;
         int cont;
         data = new Object[filas][];
-        cont = 0;
+        data[0]=columnNames;
+        cont = 1;
 
 
         //Nos recorremos el map para cargar la variable data[][]
         for (itfProperty b : clasificados) {
             Object[] a = {b.getProperty(EQUIPO_NOMBRE), b.getProperty(PARTICIPANTES_PARTIDOS_JUGADOS),
                     b.getProperty(PARTICIPANTES_PARTIDOS_GANADOS), b.getProperty(PARTICIPANTES_PARTIDOS_PERDIDOS),
-                    b.getProperty(PARTICIPANTES_PUNTOS_A_FAVOR), b.getProperty(PARTICIPANTES_PUNTOS_EN_CONTRA)};
+                    b.getProperty(PARTICIPANTES_PTOS), b.getProperty(PARTICIPANTES_PARTIDOS_EMPATADOS)};
             data[cont] = a;
             cont++;
         }
@@ -43,7 +44,8 @@ class ClasificacionModel extends AbstractTableModel {
         int filas = Departamentos.size();
         int cont;
         data = new Object[filas][];
-        cont = 0;
+        data[0]=columnNames;
+        cont = 1;
 
 
         for (itfProperty b : Departamentos) {

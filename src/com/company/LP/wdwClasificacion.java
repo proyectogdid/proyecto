@@ -22,15 +22,16 @@ public class wdwClasificacion extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 450, 300);
         contentPane = new JPanel();
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        contentPane.setLayout(new BorderLayout(0, 0));
+
+        contentPane.setLayout(null);
         setContentPane(contentPane);
 
         ClasificacionModel tcm = new ClasificacionModel(gln.leerClasificacion());
 
 
         tblClasificacion = new JTable(tcm);
-        tblClasificacion.setPreferredScrollableViewportSize(new Dimension(500, 70));
+        tblClasificacion.setBounds(15,45,400,200);
+        //tblClasificacion.setPreferredScrollableViewportSize(new Dimension(500, 70));
         tblClasificacion.setFillsViewportHeight(true);
         tblClasificacion.setEnabled(true);
         tblClasificacion.setRowSelectionAllowed(true);

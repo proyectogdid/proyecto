@@ -555,6 +555,20 @@ public class GestorLN {
             partidos.add(e);
         }
     }
+    /**
+     * para cargar los datos de los resultados de los partidos
+     *
+     * @throws Exception sql excption
+     */
+    public void cargarClasificacion() throws Exception {
+        ResultSet rs = objDatos.buscarEstadisticas();
+        while (rs.next()) {
+            Participantes e = new Participantes();
+            e.resultsetLoad(rs);
+            participantes.add(e);
+        }
+        ordenarClasificacion();
+    }
 
 
     /**
@@ -576,6 +590,7 @@ public class GestorLN {
         cargarDatosEventos();
         cargarDatosPartidos();
         cargarDatosPosiciones();
+        cargarClasificacion();
         objDatos.desconectarBD();
     }
 

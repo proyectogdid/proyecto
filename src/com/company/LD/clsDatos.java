@@ -254,6 +254,15 @@ public class clsDatos {
         return PartidoBD.getAll(con);
     }
 
+    /**
+     * Metodo para gestionar la carga de los eventos
+     *
+     * @return resultset victorias, empates y derrotas
+     * @throws Exception fallos en la query
+     */
+    public ResultSet buscarEstadisticas() throws Exception {
+        return ClasificacionBD.cargarClasificacion(con);
+    }
     public ResultSet login(String username, String passw) throws Exception {
         return UsuarioBD.getLogin(con, username, passw);
     }
