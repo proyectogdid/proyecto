@@ -40,6 +40,8 @@ public class wdwJugador extends JFrame implements ActionListener {
     private GestorLN gln;
     private JDateChooser fechaNcto;
     private DateFormat miFormato;
+    private final String BOTON_ACEPTAR = "aceptar";
+    private final String BOTON_CANCELAR = "cancelar";
 
 
     /**
@@ -140,14 +142,16 @@ public class wdwJugador extends JFrame implements ActionListener {
         Button aceptar = new Button("Aceptar");
         aceptar.setBounds(399, 462, 70, 22);
         aceptar.addActionListener(this);
-        aceptar.setActionCommand("1");
+        aceptar.setActionCommand(BOTON_ACEPTAR);
         contentPane.add(aceptar);
+        aceptar.setBackground(Color.GREEN);
 
         Button cancelar = new Button("Cancelar");
         cancelar.setBounds(480, 462, 70, 22);
         cancelar.addActionListener(this);
-        cancelar.setActionCommand("0");
+        cancelar.setActionCommand(BOTON_CANCELAR);
         contentPane.add(cancelar);
+        cancelar.setBackground(Color.ORANGE);
 
         lblNewLabel_8 = new JLabel("Estado");
         lblNewLabel_8.setBounds(72, 424, 46, 14);
@@ -172,7 +176,7 @@ public class wdwJugador extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case "1":
+            case BOTON_ACEPTAR:
                 try {
                     miFormato = DateFormat.getDateInstance(DateFormat.SHORT);
                     gln.anadirJugador(textoNombre.getText(), textoPrimerApellido.getText(), textoSegundoApellido.getText(),
@@ -182,7 +186,18 @@ public class wdwJugador extends JFrame implements ActionListener {
                     javax.swing.JOptionPane.showMessageDialog(this, "Fallo en la inserción del jugador");
                 }
                 break;
-            case "0":
+            case BOTON_CANCELAR:
+                cbEquipo.setSelectedIndex(0);
+                cbEstado.setSelectedIndex(0);
+                cbPosicion.setSelectedIndex(0);
+                textoNombre.setText("");
+                textoPrimerApellido.setText("");
+                textoSegundoApellido.setText("");
+                fechaNcto.setDate(null);
+                textoDorsal.setText("");
+                textoTextoCamiseta.setText("");
+
+                this.dispose();
                 break;
 
 
