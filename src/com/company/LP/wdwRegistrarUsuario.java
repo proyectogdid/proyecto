@@ -32,7 +32,7 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
     private JTextField txtRegistroEquipo;
     private JTextField txtLoginusername, txtLoginpassw;
     private GestorLN gln;
-    private  JButton blogin;
+    private JButton blogin;
     private JComboBox<itfProperty> cbEquipo;
     private final String BOTON_ACEPTAR_REGISTRO = "aceptarRegistro";
     private final String BOTON_CANCELAR_REGISTRO = "cancelarRegistro";
@@ -150,8 +150,8 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
         txtLoginpassw.setColumns(10);
         txtLoginpassw.setActionCommand(ENTER_LOGIN);
         txtLoginpassw.addActionListener(this);
-         blogin = new JButton("Iniciar Sesion");
-        blogin.setBounds(265, 380, 120, 22);
+        blogin = new JButton("Iniciar Sesion");
+        blogin.setBounds(245, 380, 120, 22);
         contentPane.add(blogin);
         blogin.setActionCommand(BOTON_ACEPTAR_LOGIN);
         blogin.addActionListener((ActionListener) this);

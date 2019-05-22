@@ -68,7 +68,7 @@ public class updateEquipoFav extends JFrame implements ActionListener, WindowLis
         aceptar.setBackground(Color.GREEN);
 
         Button cancelar = new Button("Cancelar");
-        cancelar.setBounds(306, 240, 70, 22);
+        cancelar.setBounds(290, 80, 70, 22);
         contentPane.add(cancelar);
         cancelar.setActionCommand(BOTON_CANCELAR_REGISTRO);
         cancelar.addActionListener(this);
@@ -99,6 +99,8 @@ public class updateEquipoFav extends JFrame implements ActionListener, WindowLis
                 break;
             case BOTON_CANCELAR_REGISTRO:
                 cbEquipo.setSelectedIndex(0);
+                ventanaMenu m=new ventanaMenu(gln);
+                m.setVisible(true);
                 break;
         }
     }
