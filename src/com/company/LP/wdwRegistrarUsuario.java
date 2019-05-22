@@ -193,6 +193,9 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
                 txtRegistroemail.setText("");
                 txtRegistropassw.setText("");
                 txtRegistrousername.setText("");
+                ventanaComienzoApk ca=new ventanaComienzoApk(gln);
+                ca.setVisible(true);
+                this.dispose();
                 break;
             case BOTON_ACEPTAR_LOGIN:
                 try {
