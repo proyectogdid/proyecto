@@ -32,10 +32,12 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
     private JTextField txtRegistroEquipo;
     private JTextField txtLoginusername, txtLoginpassw;
     private GestorLN gln;
+    private  JButton blogin;
     private JComboBox<itfProperty> cbEquipo;
     private final String BOTON_ACEPTAR_REGISTRO = "aceptarRegistro";
     private final String BOTON_CANCELAR_REGISTRO = "cancelarRegistro";
     private final String BOTON_ACEPTAR_LOGIN = "aceptarLogin";
+    private final String ENTER_LOGIN = "EnterLogin";
 
     /**
      * Create the frame.
@@ -134,18 +136,22 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
         txtLoginusername.setBounds(198, 310, 212, 20);
         contentPane.add(txtLoginusername);
         txtLoginusername.setColumns(10);
-
+        txtLoginusername.setActionCommand(ENTER_LOGIN);
+        txtLoginusername.addActionListener(this);
         PassLogin = new JLabel("Contraseña");
         PassLogin.setBounds(72, 350, 110, 14);
         contentPane.add(PassLogin);
+
+
 
         txtLoginpassw = new JTextField();
         txtLoginpassw.setBounds(198, 350, 212, 20);
         contentPane.add(txtLoginpassw);
         txtLoginpassw.setColumns(10);
-
-        Button blogin = new Button("Iniciar Sesion");
-        blogin.setBounds(265, 380, 80, 22);
+        txtLoginpassw.setActionCommand(ENTER_LOGIN);
+        txtLoginpassw.addActionListener(this);
+         blogin = new JButton("Iniciar Sesion");
+        blogin.setBounds(265, 380, 120, 22);
         contentPane.add(blogin);
         blogin.setActionCommand(BOTON_ACEPTAR_LOGIN);
         blogin.addActionListener((ActionListener) this);
@@ -199,6 +205,11 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
                     javax.swing.JOptionPane.showMessageDialog(this, "error con el login");
                     ex.printStackTrace();
                 }
+                break;
+            case ENTER_LOGIN:
+                blogin.doClick();
+                break;
+
         }
 
     }
