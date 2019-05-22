@@ -18,13 +18,15 @@ import static com.company.comun.clsConstantes.CAMPO_ID;
 public class wdwEquipo extends JFrame implements ActionListener {
 
     private JPanel contentPane;
-    private JLabel lblNewLabel;
+    private JLabel nombre;
     private JTextField textoNombre;
     private JTextField textoPatrocinador;
-    private JLabel lblNewLabel_1;
-    private JLabel lblNewLabel_2;
+    private JLabel patrocinador;
+    private JLabel campo;
     private JComboBox<itfProperty> cbCampo;
     private GestorLN gln;
+    private final String BOTON_ACEPTAR = "aceptar";
+    private final String BOTON_CANCELAR = "cancelar";
 
 
     public wdwEquipo(GestorLN gln_) {
@@ -32,33 +34,33 @@ public class wdwEquipo extends JFrame implements ActionListener {
         gln = gln_;
         this.setTitle("Inserte un equipo");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setBounds(100, 100, 628, 548);
+        setBounds(100, 100, 610, 300);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        lblNewLabel = new JLabel("Nombre");
-        lblNewLabel.setBounds(72, 50, 60, 14);
-        contentPane.add(lblNewLabel);
+        nombre = new JLabel("Nombre");
+        nombre.setBounds(72, 50, 60, 14);
+        contentPane.add(nombre);
 
         textoNombre = new JTextField();
         textoNombre.setBounds(198, 47, 212, 20);
         contentPane.add(textoNombre);
         textoNombre.setColumns(10);
 
-        lblNewLabel_1 = new JLabel("Patrocinador");
-        lblNewLabel_1.setBounds(72, 102, 100, 14);
-        contentPane.add(lblNewLabel_1);
+        patrocinador = new JLabel("Patrocinador");
+        patrocinador.setBounds(72, 102, 100, 14);
+        contentPane.add(patrocinador);
 
         textoPatrocinador = new JTextField();
         textoPatrocinador.setBounds(198, 99, 212, 20);
         contentPane.add(textoPatrocinador);
         textoPatrocinador.setColumns(10);
 
-        lblNewLabel_2 = new JLabel("Campo");
-        lblNewLabel_2.setBounds(72, 154, 55, 14);
-        contentPane.add(lblNewLabel_2);
+        campo = new JLabel("Campo");
+        campo.setBounds(72, 154, 55, 14);
+        contentPane.add(campo);
 
         JComboBox comboBox = new JComboBox();
         comboBox.setBounds(176, 329, -12, 14);
@@ -73,14 +75,16 @@ public class wdwEquipo extends JFrame implements ActionListener {
         Button aceptar = new Button("Aceptar");
         aceptar.setBounds(399, 214, 70, 22);
         aceptar.addActionListener(this);
-        aceptar.setActionCommand("1");
+        aceptar.setActionCommand(BOTON_ACEPTAR);
         contentPane.add(aceptar);
+        aceptar.setBackground(Color.GREEN);
 
         Button cancelar = new Button("Cancelar");
         cancelar.setBounds(480, 214, 70, 22);
         cancelar.addActionListener(this);
-        cancelar.setActionCommand("0");
+        cancelar.setActionCommand(BOTON_CANCELAR);
         contentPane.add(cancelar);
+        cancelar.setBackground(Color.ORANGE);
 
         //itfProperty[] a=campos.toArray();
         for (int i = 0; i < campos.size(); i++) {
@@ -98,14 +102,18 @@ public class wdwEquipo extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case "1":
+            case BOTON_ACEPTAR:
                 try {
                     gln.anadirEquipo(textoNombre.getText(), textoPatrocinador.getText(), (int) ((itfProperty) cbCampo.getSelectedItem()).getProperty(CAMPO_ID));
                 } catch (Exception ex) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Fallo en la inserción del equipo");
                 }
                 break;
-            case "0":
+            case BOTON_CANCELAR:
+                textoNombre.setText("");
+                textoPatrocinador.setText("");
+                cbCampo.setSelectedIndex(0);
+                this.dispose();
                 break;
         }
 

@@ -11,24 +11,26 @@ import java.awt.event.ActionListener;
 public class wdwEstado extends JFrame implements ActionListener {
 
     private JPanel contentPane;
-    private JLabel lblNewLabel;
+    private JLabel nombre;
     private JTextField textoNombre;
     private GestorLN gln;
+    private final String BOTON_ACEPTAR = "aceptar";
+    private final String BOTON_CANCELAR = "cancelar";
 
 
     public wdwEstado(GestorLN gln_) {
         gln = gln_;
         this.setTitle("Inserte estado");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setBounds(100, 100, 628, 548);
+        setBounds(100, 100, 628, 200);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        lblNewLabel = new JLabel("Nombre");
-        lblNewLabel.setBounds(72, 50, 60, 14);
-        contentPane.add(lblNewLabel);
+        nombre = new JLabel("Nombre");
+        nombre.setBounds(72, 50, 60, 14);
+        contentPane.add(nombre);
 
         textoNombre = new JTextField();
         textoNombre.setBounds(198, 47, 212, 20);
@@ -36,16 +38,18 @@ public class wdwEstado extends JFrame implements ActionListener {
         textoNombre.setColumns(10);
 
         Button aceptar = new Button("Aceptar");
-        aceptar.setBounds(399, 214, 70, 22);
+        aceptar.setBounds(399, 100, 70, 22);
         aceptar.addActionListener(this);
-        aceptar.setActionCommand("1");
+        aceptar.setActionCommand(BOTON_ACEPTAR);
         contentPane.add(aceptar);
+        aceptar.setBackground(Color.GREEN);
 
         Button cancelar = new Button("Cancelar");
-        cancelar.setBounds(480, 214, 70, 22);
+        cancelar.setBounds(480, 100, 70, 22);
         cancelar.addActionListener(this);
-        cancelar.setActionCommand("0");
+        cancelar.setActionCommand(BOTON_CANCELAR);
         contentPane.add(cancelar);
+        cancelar.setBackground(Color.ORANGE);
 
     }
 
@@ -57,14 +61,16 @@ public class wdwEstado extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case "1":
+            case BOTON_ACEPTAR:
                 try {
                     gln.anadirEstado(textoNombre.getText());
                 } catch (Exception ex) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Fallo en la inserción del estado");
                 }
                 break;
-            case "0":
+            case BOTON_CANCELAR:
+                textoNombre.setText("");
+                this.dispose();
                 break;
         }
 

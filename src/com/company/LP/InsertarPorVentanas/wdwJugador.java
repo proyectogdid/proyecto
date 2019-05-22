@@ -20,25 +20,25 @@ import static com.company.comun.clsConstantes.*;
 public class wdwJugador extends JFrame implements ActionListener {
 
     private JPanel contentPane;
-    private JLabel lblNewLabel;
+    private JLabel nombre;
     private JTextField textoNombre;
     private JTextField textoPrimerApellido;
     private JTextField textoSegundoApellido;
     private JTextField textoDorsal;
     private JTextField textoTextoCamiseta;
-    private JLabel lblNewLabel_1;
-    private JLabel lblNewLabel_2;
-    private JLabel lblNewLabel_3;
-    private JLabel lblNewLabel_4;
-    private JLabel lblNewLabel_5;
+    private JLabel primerApellido;
+    private JLabel segundoApellido;
+    private JLabel fechaNcto;
+    private JLabel dorsal;
+    private JLabel camiseta;
     private JComboBox<itfProperty> cbEquipo;
     private JComboBox<itfProperty> cbPosicion;
     private JComboBox<itfProperty> cbEstado;
-    private JLabel lblNewLabel_6;
-    private JLabel lblNewLabel_7;
-    private JLabel lblNewLabel_8;
+    private JLabel equipo;
+    private JLabel posicion;
+    private JLabel estado;
     private GestorLN gln;
-    private JDateChooser fechaNcto;
+    private JDateChooser fechaNcto_;
     private DateFormat miFormato;
     private final String BOTON_ACEPTAR = "aceptar";
     private final String BOTON_CANCELAR = "cancelar";
@@ -61,29 +61,29 @@ public class wdwJugador extends JFrame implements ActionListener {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        lblNewLabel = new JLabel("Nombre");
-        lblNewLabel.setBounds(72, 50, 60, 14);
-        contentPane.add(lblNewLabel);
+        nombre = new JLabel("Nombre");
+        nombre.setBounds(72, 50, 60, 14);
+        contentPane.add(nombre);
 
-        lblNewLabel_1 = new JLabel("Primer apellido");
-        lblNewLabel_1.setBounds(72, 102, 100, 14);
-        contentPane.add(lblNewLabel_1);
+        primerApellido = new JLabel("Primer apellido");
+        primerApellido.setBounds(72, 102, 100, 14);
+        contentPane.add(primerApellido);
 
-        lblNewLabel_2 = new JLabel("Segundo apellido");
-        lblNewLabel_2.setBounds(72, 150, 120, 14);
-        contentPane.add(lblNewLabel_2);
+        segundoApellido = new JLabel("Segundo apellido");
+        segundoApellido.setBounds(72, 150, 120, 14);
+        contentPane.add(segundoApellido);
 
-        lblNewLabel_3 = new JLabel("Fecha de nacimiento");
-        lblNewLabel_3.setBounds(72, 181, 130, 14);
-        contentPane.add(lblNewLabel_3);
+        fechaNcto = new JLabel("Fecha de nacimiento");
+        fechaNcto.setBounds(72, 181, 130, 14);
+        contentPane.add(fechaNcto);
 
-        lblNewLabel_4 = new JLabel("Dorsal");
-        lblNewLabel_4.setBounds(72, 222, 70, 14);
-        contentPane.add(lblNewLabel_4);
+        dorsal = new JLabel("Dorsal");
+        dorsal.setBounds(72, 222, 70, 14);
+        contentPane.add(dorsal);
 
-        lblNewLabel_5 = new JLabel("Texto camiseta");
-        lblNewLabel_5.setBounds(72, 271, 110, 14);
-        contentPane.add(lblNewLabel_5);
+        camiseta = new JLabel("Texto camiseta");
+        camiseta.setBounds(72, 271, 110, 14);
+        contentPane.add(camiseta);
 
         textoNombre = new JTextField();
         textoNombre.setBounds(198, 47, 212, 20);
@@ -100,10 +100,10 @@ public class wdwJugador extends JFrame implements ActionListener {
         contentPane.add(textoSegundoApellido);
         textoSegundoApellido.setColumns(10);
 
-        fechaNcto = new JDateChooser();
-        fechaNcto.setDateFormatString("dd-MM-yyyy");
-        fechaNcto.setBounds(198, 178, 86, 20);
-        contentPane.add(fechaNcto);
+        fechaNcto_ = new JDateChooser();
+        fechaNcto_.setDateFormatString("dd-MM-yyyy");
+        fechaNcto_.setBounds(198, 178, 86, 20);
+        contentPane.add(fechaNcto_);
 
         textoDorsal = new JTextField();
         textoDorsal.setBounds(198, 219, 212, 20);
@@ -131,13 +131,17 @@ public class wdwJugador extends JFrame implements ActionListener {
         cbEstado.setBounds(198, 421, 86, 20);
         contentPane.add(cbEstado);
 
-        lblNewLabel_6 = new JLabel("Equipo");
-        lblNewLabel_6.setBounds(72, 329, 55, 14);
-        contentPane.add(lblNewLabel_6);
+        equipo = new JLabel("Equipo");
+        equipo.setBounds(72, 329, 55, 14);
+        contentPane.add(equipo);
 
-        lblNewLabel_7 = new JLabel("Posición");
-        lblNewLabel_7.setBounds(72, 379, 50, 14);
-        contentPane.add(lblNewLabel_7);
+        posicion = new JLabel("Posición");
+        posicion.setBounds(72, 379, 50, 14);
+        contentPane.add(posicion);
+
+        estado = new JLabel("Estado");
+        estado.setBounds(72, 424, 46, 14);
+        contentPane.add(estado);
 
         Button aceptar = new Button("Aceptar");
         aceptar.setBounds(399, 462, 70, 22);
@@ -153,9 +157,6 @@ public class wdwJugador extends JFrame implements ActionListener {
         contentPane.add(cancelar);
         cancelar.setBackground(Color.ORANGE);
 
-        lblNewLabel_8 = new JLabel("Estado");
-        lblNewLabel_8.setBounds(72, 424, 46, 14);
-        contentPane.add(lblNewLabel_8);
 
         for (int i = 0; i < equipos.size(); i++) {
             cbEquipo.addItem(equipos.get(i));
@@ -180,7 +181,7 @@ public class wdwJugador extends JFrame implements ActionListener {
                 try {
                     miFormato = DateFormat.getDateInstance(DateFormat.SHORT);
                     gln.anadirJugador(textoNombre.getText(), textoPrimerApellido.getText(), textoSegundoApellido.getText(),
-                            fechaNcto.getDate(), textoDorsal.getText(), textoTextoCamiseta.getText(), (int) ((itfProperty) cbEquipo.getSelectedItem()).getProperty(EQUIPO_ID),
+                            fechaNcto_.getDate(), textoDorsal.getText(), textoTextoCamiseta.getText(), (int) ((itfProperty) cbEquipo.getSelectedItem()).getProperty(EQUIPO_ID),
                             (int) ((itfProperty) cbPosicion.getSelectedItem()).getProperty(POSICION_ID), (int) ((itfProperty) cbEstado.getSelectedItem()).getProperty(ESTADO_ID));
                 } catch (Exception ex) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Fallo en la inserción del jugador");
@@ -193,7 +194,7 @@ public class wdwJugador extends JFrame implements ActionListener {
                 textoNombre.setText("");
                 textoPrimerApellido.setText("");
                 textoSegundoApellido.setText("");
-                fechaNcto.setDate(null);
+                fechaNcto_.setDate(null);
                 textoDorsal.setText("");
                 textoTextoCamiseta.setText("");
 
