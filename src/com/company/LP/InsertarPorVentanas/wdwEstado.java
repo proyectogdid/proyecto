@@ -8,6 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase que utilizaremos para insertar Estados en la BD
+ */
 public class wdwEstado extends JFrame implements ActionListener {
 
     private JPanel contentPane;
@@ -17,7 +20,10 @@ public class wdwEstado extends JFrame implements ActionListener {
     private final String BOTON_ACEPTAR = "aceptar";
     private final String BOTON_CANCELAR = "cancelar";
 
-
+    /**
+     * Create the frame
+     * @param gln_ gln_
+     */
     public wdwEstado(GestorLN gln_) {
         gln = gln_;
         this.setTitle("Inserte estado");

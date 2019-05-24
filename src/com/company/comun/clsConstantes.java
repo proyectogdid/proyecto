@@ -14,7 +14,6 @@ public class clsConstantes {
     public static final String PARTICIPANTES_PARTIDOS_JUGADOS = "partidosJugados";
     public static final String PARTICIPANTES_PUNTOS_A_FAVOR = "puntosAFavor";
     public static final String PARTICIPANTES_PUNTOS_EN_CONTRA = "puntosEnContra";
-    public static final String PARTICIPANTES_PARTIDOS_EMPATADOS="partidosEmpatados";
     public static final String PARTICIPANTES_PTOS="ptosClasificacion";
 
 

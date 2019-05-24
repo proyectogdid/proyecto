@@ -18,7 +18,6 @@ public class Participantes extends Equipo implements itfProperty , itfPersistabl
     private int partidosGanados;
     private int partidosJugados;
     private int partidosPerdidos;
-    private int partidosEmpatados;
     private int puntosAFavor;
     private int puntosEnContra;
     private int ptosClasificacion;
@@ -45,14 +44,6 @@ public class Participantes extends Equipo implements itfProperty , itfPersistabl
     }
 
     public Participantes() {
-    }
-
-    public int getPartidosEmpatados() {
-        return partidosEmpatados;
-    }
-
-    public void setPartidosEmpatados(int partidosEmpatados) {
-        this.partidosEmpatados = partidosEmpatados;
     }
 
     public int getPtosClasificacion() {
@@ -123,8 +114,6 @@ public class Participantes extends Equipo implements itfProperty , itfPersistabl
                 return this.puntosAFavor;
             case PARTICIPANTES_PUNTOS_EN_CONTRA:
                 return this.puntosEnContra;
-            case PARTICIPANTES_PARTIDOS_EMPATADOS:
-                return this.partidosEmpatados;
             case PARTICIPANTES_PTOS:
                 return this.ptosClasificacion;
 
@@ -148,9 +137,8 @@ public class Participantes extends Equipo implements itfProperty , itfPersistabl
     public void resultsetLoad(ResultSet rs) throws Exception {
         partidosGanados=rs.getInt("victorias");
         partidosPerdidos=rs.getInt("derrotas");
-        partidosEmpatados=rs.getInt("empates");
         this.setNombre(rs.getString("e.nombre"));
-        this.ptosClasificacion=partidosGanados*PTOS_VICTORIA+partidosEmpatados*PTOS_EMPATE;
-        this.partidosJugados=partidosGanados+partidosEmpatados+partidosPerdidos;
+        this.ptosClasificacion=partidosGanados*PTOS_VICTORIA;
+        this.partidosJugados=partidosGanados+partidosPerdidos;
     }
 }

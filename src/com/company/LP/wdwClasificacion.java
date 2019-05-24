@@ -3,8 +3,6 @@ package com.company.LP;
 import com.company.LN.GestorLN;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -31,7 +29,7 @@ public class wdwClasificacion extends JFrame implements ActionListener {
 
         tblClasificacion = new JTable(tcm);
         tblClasificacion.setBounds(15,45,400,200);
-        //tblClasificacion.setPreferredScrollableViewportSize(new Dimension(500, 70));
+       // tblClasificacion.setPreferredScrollableViewportSize(new Dimension(500, 70));
         tblClasificacion.setFillsViewportHeight(true);
         tblClasificacion.setEnabled(true);
         tblClasificacion.setRowSelectionAllowed(true);

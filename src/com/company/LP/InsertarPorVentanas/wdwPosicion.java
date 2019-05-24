@@ -8,7 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+/**
+ * Clase que utilizaremos para insertar las posiciones en la BD
+ */
 public class wdwPosicion extends JFrame implements ActionListener {
 
     private JPanel contentPane;
@@ -18,7 +20,10 @@ public class wdwPosicion extends JFrame implements ActionListener {
     private final String BOTON_ACEPTAR = "aceptar";
     private final String BOTON_CANCELAR = "cancelar";
 
-
+    /**
+     * Create the frame
+     * @param gln_ gln_
+     */
     public wdwPosicion(GestorLN gln_) {
         gln = gln_;
         this.setTitle("Inserte una posición");

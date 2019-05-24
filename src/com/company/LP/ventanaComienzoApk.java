@@ -10,14 +10,21 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
+/**
+ * Clase que utilizaremos para diseñar la ventana de inicio de la apk
+ */
 public class ventanaComienzoApk extends JFrame implements ActionListener, WindowListener {
     private JPanel contentPane;
     private GestorLN gln;
     private final String COMENZAR = "comenzar";
 
-
+    /**
+     * Create the frame
+     * @param gln_ gln_
+     */
     public ventanaComienzoApk(GestorLN gln_) {
         this.setTitle("BASKET LIVE ⛹️");
+
         gln = gln_;
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(this);
@@ -45,6 +52,10 @@ public class ventanaComienzoApk extends JFrame implements ActionListener, Window
 
     }
 
+    /**
+     * Metodo que realiza las acciones del evento
+     * @param e e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {

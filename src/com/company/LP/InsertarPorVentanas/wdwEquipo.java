@@ -28,7 +28,10 @@ public class wdwEquipo extends JFrame implements ActionListener {
     private final String BOTON_ACEPTAR = "aceptar";
     private final String BOTON_CANCELAR = "cancelar";
 
-
+    /**
+     * Create the frame
+     * @param gln_ gln_
+     */
     public wdwEquipo(GestorLN gln_) {
         ArrayList<itfProperty> campos = gln_.leerCampos();
         gln = gln_;

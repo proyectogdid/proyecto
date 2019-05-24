@@ -14,7 +14,7 @@ import static com.company.comun.clsConstantes.*;
  * Clase que utilizaremos para crear  la tabla de la clasificacion de la liga
  */
 class ClasificacionModel extends AbstractTableModel {
-    private String[] columnNames = {"Nombre", "PJ", "PG", "PP", "Ptos", "PE"};
+    private String[] columnNames = {"Nombre", "PJ", "PG", "PP", "Ptos"};
     Object[][] data;
 
     public ClasificacionModel(ArrayList<itfProperty> clasificados) {
@@ -32,7 +32,7 @@ class ClasificacionModel extends AbstractTableModel {
         for (itfProperty b : clasificados) {
             Object[] a = {b.getProperty(EQUIPO_NOMBRE), b.getProperty(PARTICIPANTES_PARTIDOS_JUGADOS),
                     b.getProperty(PARTICIPANTES_PARTIDOS_GANADOS), b.getProperty(PARTICIPANTES_PARTIDOS_PERDIDOS),
-                    b.getProperty(PARTICIPANTES_PTOS), b.getProperty(PARTICIPANTES_PARTIDOS_EMPATADOS)};
+                    b.getProperty(PARTICIPANTES_PTOS)};
             data[cont] = a;
             cont++;
         }
