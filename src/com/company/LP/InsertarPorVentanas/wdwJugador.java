@@ -1,6 +1,7 @@
 package com.company.LP.InsertarPorVentanas;
 
 import com.company.LN.GestorLN;
+import com.company.LP.Updates.updateJugadores;
 import com.company.comun.itfProperty;
 import com.toedter.calendar.JDateChooser;
 
@@ -43,6 +44,7 @@ public class wdwJugador extends JFrame implements ActionListener {
     private DateFormat miFormato;
     private final String BOTON_ACEPTAR = "aceptar";
     private final String BOTON_CANCELAR = "cancelar";
+    private final String BOTON_VER = "ver";
 
 
     /**
@@ -145,18 +147,24 @@ public class wdwJugador extends JFrame implements ActionListener {
         contentPane.add(estado);
 
         Button aceptar = new Button("Aceptar");
-        aceptar.setBounds(399, 462, 70, 22);
+        aceptar.setBounds(399, 442, 70, 22);
         aceptar.addActionListener(this);
         aceptar.setActionCommand(BOTON_ACEPTAR);
         contentPane.add(aceptar);
         aceptar.setBackground(Color.GREEN);
 
         Button cancelar = new Button("Cancelar");
-        cancelar.setBounds(480, 462, 70, 22);
+        cancelar.setBounds(480, 442, 70, 22);
         cancelar.addActionListener(this);
         cancelar.setActionCommand(BOTON_CANCELAR);
         contentPane.add(cancelar);
         cancelar.setBackground(Color.ORANGE);
+
+        Button ver = new Button("Ver jugadores");
+        ver.setBounds(480, 472, 90, 22);
+        ver.addActionListener(this);
+        ver.setActionCommand(BOTON_VER);
+        contentPane.add(ver);
 
 
         for (int i = 0; i < equipos.size(); i++) {
@@ -200,6 +208,10 @@ public class wdwJugador extends JFrame implements ActionListener {
                 textoTextoCamiseta.setText("");
 
                 this.dispose();
+                break;
+            case BOTON_VER:
+                updateJugadores uj = new updateJugadores(gln);
+                uj.setVisible(true);
                 break;
 
 

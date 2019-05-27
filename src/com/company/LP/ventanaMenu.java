@@ -176,7 +176,6 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
                 wdwEstado es = new wdwEstado(gln);
                 es.setVisible(true);
                 break;
-
             case CERRAR_SESION:
                 this.setVisible(false);
                 wdwRegistrarUsuario ru = new wdwRegistrarUsuario(gln);
@@ -187,6 +186,8 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
                 ef.setVisible(true);
                 break;
             case DATOS_PERSONALES:
+                wdwDatosPersonales dp=new wdwDatosPersonales(gln);
+                dp.setVisible(true);
                 break;
 
 

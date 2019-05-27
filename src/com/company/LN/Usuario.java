@@ -37,6 +37,18 @@ public class Usuario implements itfProperty, itfPersistable {
     }
 
     /**
+     * Metodo que enseñaremos en los datos personales
+     * @param usuario usuario
+     * @param correo correo
+     * @param tipo tipo
+     */
+    public Usuario(String usuario, String correo,String tipo){
+        this.username=usuario;
+        this.correo=correo;
+        this.tipo=tipo;
+    }
+
+    /**
      * Este metodo va a recoger los datos de los usuarios de la aplicacion
      *
      * @param id         id

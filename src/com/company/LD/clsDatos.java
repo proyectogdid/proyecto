@@ -74,7 +74,9 @@ public class clsDatos {
 
     }
 
+
     /**
+     * MEtodo para insertar usuario en BD
      * @param usuario nombre de usuaario
      * @param passw   contrsensa
      * @param equipo  equipo favorito del usuario
