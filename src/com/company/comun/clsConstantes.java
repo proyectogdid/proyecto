@@ -63,6 +63,7 @@ public class clsConstantes {
     public static final String BD_EVENTO_ESTADO_PREVIO = "eve.estadoPrevio";
     public static final String BD_EVENTO_ESTADO_POSTERIOR = "eve.estadoPosterior";
     public static final String BD_EVENTO_JUGADOR = "eve.jugador";
+    public static final String BD_EVENTO_FECHA = "eve.fecha";
 
 
     public static final String JUGADOR_ID = "id";
@@ -121,11 +122,13 @@ public class clsConstantes {
     public static final String TRASPASO_EQUIPO_PREVIO = "equipoPrevio";
     public static final String TRASPASO_EQUIPO_POSTERIOR = "equipoPosterior";
 
+
     public static final String BD_TRASPASO_ID = "tra.id";
     public static final String BD_TRASPASO_PRECIO = "tra.precio";
     public static final String BD_TRASPASO_JUGADOR = "tra.jugador";
     public static final String BD_TRASPASO_EQUIPO_PREVIO = "tra.equipoPrevio";
     public static final String BD_TRASPASO_EQUIPO_POSTERIOR = "tra.equipoPosterior";
+    public static final String BD_TRASPASO_FECHA = "tra.fecha";
 
     public static final String USUARIO_ID = "id";
     public static final String USUARIO_USERNAME = "username";

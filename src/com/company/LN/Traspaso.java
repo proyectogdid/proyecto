@@ -12,7 +12,7 @@ import static com.company.comun.clsConstantes.*;
  * clase que gestionara los traspasos de los jugadores entre distintos equipos
  * teniendo como atributos el equipo anterior y posterior para poder guardar un historico de la trayectoria
  */
-public class Traspaso implements itfProperty, itfPersistable {
+public class Traspaso extends Noticia implements itfProperty, itfPersistable {
     /**
      * atributo id del traspaso
      */

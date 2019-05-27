@@ -14,7 +14,7 @@ import static com.company.comun.clsConstantes.*;
  * referidas a los jugadores. En concreto, en que estado se
  * encuentran tanto previamente como posteriormente.
  */
-public class Evento implements itfProperty, itfPersistable {
+public class Evento extends Noticia implements itfProperty, itfPersistable{
     /**
      * Atributo id del evento
      */
@@ -116,7 +116,7 @@ public class Evento implements itfProperty, itfPersistable {
         estadoPrevio = rs.getInt(BD_EVENTO_ESTADO_PREVIO);
         estadoPosterior = rs.getInt(BD_EVENTO_ESTADO_POSTERIOR);
         jugador = rs.getInt(BD_EVENTO_JUGADOR);
-
+        this.setFecha(rs.getDate(BD_EVENTO_FECHA));
 
     }
 }

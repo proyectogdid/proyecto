@@ -8,7 +8,7 @@ import java.sql.ResultSet;
  */
 public class EventoBD extends Conexion {
 
-    public static final String TEMPLATE = "eve.id,eve.estadoPrevio,eve.estadoPosterior,eve.jugador";
+    public static final String TEMPLATE = "eve.id,eve.estadoPrevio,eve.estadoPosterior,eve.jugador, eve.fecha";
 
     /**
      * metodo para recuperar los eventos

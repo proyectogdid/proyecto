@@ -74,6 +74,8 @@ public class GestorLN {
     /**
      * comunicacion con capa de datos en LN
      */
+
+    ArrayList<Noticia> noticias =new ArrayList<>();
     private clsDatos objDatos = new clsDatos();
 
 
@@ -510,6 +512,7 @@ public class GestorLN {
             Traspaso p = new Traspaso();
             p.resultsetLoad(rs);
             traspasos.add(p);
+            noticias.add(p);
         }
 
     }
@@ -539,6 +542,7 @@ public class GestorLN {
             Evento e = new Evento();
             e.resultsetLoad(rs);
             eventos.add(e);
+            noticias.add(e);
         }
     }
 
