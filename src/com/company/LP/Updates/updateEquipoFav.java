@@ -4,6 +4,7 @@ import com.company.LN.GestorLN;
 import com.company.comun.itfProperty;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -50,31 +51,36 @@ public class updateEquipoFav extends JFrame implements ActionListener, WindowLis
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
-        JMenuItem mntmNewMenuItem = new JMenuItem("Cambia de equipo");
+        JMenuItem mntmNewMenuItem = new JMenuItem("Cambia de equipo favorito");
         menuBar.add(mntmNewMenuItem);
         contentPane = new JPanel();
 
         contentPane.setLayout(null);
         setContentPane(contentPane);
 
+        JPanel jpCambiar = new JPanel();
+        jpCambiar.setBorder(new TitledBorder(null, "Cambiar de equipo", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        jpCambiar.setBounds(10, 11, 450, 120);
+        contentPane.add(jpCambiar);
+        jpCambiar.setLayout(null);
         Equipo = new JLabel("Equipo favorito");
         Equipo.setBounds(72, 50, 110, 14);
-        contentPane.add(Equipo);
+        jpCambiar.add(Equipo);
 
         cbEquipo = new JComboBox();
         cbEquipo.setBounds(198, 50, 212, 20);
-        contentPane.add(cbEquipo);
+        jpCambiar.add(cbEquipo);
 
         Button aceptar = new Button("Aceptar");
         aceptar.setBounds(198, 80, 70, 22);
-        contentPane.add(aceptar);
+        jpCambiar.add(aceptar);
         aceptar.setActionCommand(ACEPTAR);
         aceptar.addActionListener(this);
         aceptar.setBackground(Color.GREEN);
 
         Button cancelar = new Button("Cancelar");
         cancelar.setBounds(290, 80, 70, 22);
-        contentPane.add(cancelar);
+        jpCambiar.add(cancelar);
         cancelar.setActionCommand(CANCELAR);
         cancelar.addActionListener(this);
         cancelar.setBackground(Color.ORANGE);
