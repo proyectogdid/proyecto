@@ -5,6 +5,7 @@ import com.company.comun.itfProperty;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -73,49 +74,55 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
         contentPane.setLayout(new BorderLayout(50, 50));
         setContentPane(contentPane);
 
+        JPanel jpRegistrar = new JPanel();
+        jpRegistrar.setBorder(new TitledBorder(null, "Registrar usuario", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        jpRegistrar.setBounds(10, 11, 450, 300);
+        contentPane.add(jpRegistrar);
+        jpRegistrar.setLayout(null);
+
         UserRegistro = new JLabel("Nombre de usuario");
         UserRegistro.setBounds(72, 50, 110, 14);
-        contentPane.add(UserRegistro);
+        jpRegistrar.add(UserRegistro);
 
         txtRegistrousername = new JTextField();
         txtRegistrousername.setBounds(198, 50, 212, 20);
-        contentPane.add(txtRegistrousername);
+        jpRegistrar.add(txtRegistrousername);
         txtRegistrousername.setColumns(10);
 
         PassRegistro = new JLabel("Contraseña");
         PassRegistro.setBounds(72, 102, 100, 14);
-        contentPane.add(PassRegistro);
+        jpRegistrar.add(PassRegistro);
 
         txtRegistropassw = new JTextField();
         txtRegistropassw.setBounds(198, 99, 212, 20);
-        contentPane.add(txtRegistropassw);
+        jpRegistrar.add(txtRegistropassw);
         txtRegistropassw.setColumns(10);
 
         Correo = new JLabel("Correo electrónico");
         Correo.setBounds(72, 154, 110, 14);
-        contentPane.add(Correo);
+        jpRegistrar.add(Correo);
 
         txtRegistroemail = new JTextField();
         txtRegistroemail.setBounds(198, 151, 212, 20);
-        contentPane.add(txtRegistroemail);
+        jpRegistrar.add(txtRegistroemail);
         txtRegistroemail.setColumns(10);
 
         Equipo = new JLabel("Equipo favorito");
         Equipo.setBounds(72, 206, 110, 14);
-        contentPane.add(Equipo);
+        jpRegistrar.add(Equipo);
 
         cbEquipo = new JComboBox();
         cbEquipo.setBounds(198, 203, 212, 20);
-        contentPane.add(cbEquipo);
+        jpRegistrar.add(cbEquipo);
 
         txtRegistroEquipo = new JTextField();
         txtRegistroEquipo.setBounds(198, 203, 212, 20);
-        contentPane.add(txtRegistroEquipo);
+        jpRegistrar.add(txtRegistroEquipo);
         txtRegistroEquipo.setColumns(10);
 
         Button aceptar = new Button("Aceptar");
         aceptar.setBounds(225, 240, 70, 22);
-        contentPane.add(aceptar);
+        jpRegistrar.add(aceptar);
         aceptar.setActionCommand(BOTON_ACEPTAR_REGISTRO);
         aceptar.addActionListener(this);
         aceptar.setBackground(Color.GREEN);
@@ -123,39 +130,45 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
 
         Button cancelar = new Button("Cancelar");
         cancelar.setBounds(306, 240, 70, 22);
-        contentPane.add(cancelar);
+        jpRegistrar.add(cancelar);
         cancelar.setActionCommand(BOTON_CANCELAR_REGISTRO);
         cancelar.addActionListener(this);
         cancelar.setBackground(Color.ORANGE);
 
+        JPanel jpIniciarSesion = new JPanel();
+        jpIniciarSesion.setBorder(new TitledBorder(null, "Iniciar Sesion", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        jpIniciarSesion.setBounds(10, 320, 390, 164);
+        contentPane.add(jpIniciarSesion);
+        jpIniciarSesion.setLayout(null);
+
+
         UserLogin = new JLabel("Usuario");
-        UserLogin.setBounds(72, 310, 110, 14);
-        contentPane.add(UserLogin);
+        UserLogin.setBounds(10, 30, 46, 14);
+        jpIniciarSesion.add(UserLogin);
 
         txtLoginusername = new JTextField();
-        txtLoginusername.setBounds(198, 310, 212, 20);
-        contentPane.add(txtLoginusername);
+        txtLoginusername.setBounds(151, 27, 212, 20);
+        jpIniciarSesion.add(txtLoginusername);
         txtLoginusername.setColumns(10);
         txtLoginusername.setActionCommand(ENTER_LOGIN);
         txtLoginusername.addActionListener(this);
         PassLogin = new JLabel("Contraseña");
-        PassLogin.setBounds(72, 350, 110, 14);
-        contentPane.add(PassLogin);
-
+        PassLogin.setBounds(10, 61, 70, 14);
+        jpIniciarSesion.add(PassLogin);
 
 
         txtLoginpassw = new JTextField();
-        txtLoginpassw.setBounds(198, 350, 212, 20);
-        contentPane.add(txtLoginpassw);
+        txtLoginpassw.setBounds(151, 58, 212, 20);
+        jpIniciarSesion.add(txtLoginpassw);
         txtLoginpassw.setColumns(10);
         txtLoginpassw.setActionCommand(ENTER_LOGIN);
         txtLoginpassw.addActionListener(this);
+
         blogin = new JButton("Iniciar Sesion");
-        blogin.setBounds(245, 380, 120, 22);
-        contentPane.add(blogin);
+        blogin.setBounds(10, 117, 144, 23);
+        jpIniciarSesion.add(blogin);
         blogin.setActionCommand(BOTON_ACEPTAR_LOGIN);
         blogin.addActionListener((ActionListener) this);
-
         /*
          * Este boton se ha creado para que el boton iniciar sesion no de fallo y ocupe toda la pantalla
          */

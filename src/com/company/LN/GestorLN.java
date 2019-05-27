@@ -6,7 +6,6 @@ import com.company.LD.clsDatos;
 import com.company.comun.Clasificacion;
 import com.company.comun.Utilidades;
 import com.company.comun.itfProperty;
-import com.mysql.cj.xdevapi.Collection;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
