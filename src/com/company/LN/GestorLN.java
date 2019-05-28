@@ -13,7 +13,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 
-import static com.company.comun.clsConstantes.USUARIO_TIPO_AFICIONADO;
+import static com.company.comun.clsConstantes.*;
 
 /**
  * Clase que va a gestionar la comunicacion entre el paquete LN y el paquete LP
@@ -22,7 +22,7 @@ public class GestorLN {
     /**
      * objeto con los datos del usuario logeado
      */
-    Usuario logeado = new Usuario();
+    Usuario logeado;
     /**
      * Este va a ser el ArrayList que va a contener los campos de los diferentes equipos
      */
@@ -629,10 +629,26 @@ public class GestorLN {
         return logeado.isAdmin();
     }
 
+    /**
+     * metodo para saber cual es el equipo favorito del usuario logeado
+     * @return idequipo
+     */
+    public int getEquipoFav(){
+        if(!isAdmin()){
+            return ((Aficionado)logeado).getFavorito();
+        }else {
+            return 0;
+        }
+    }
     public boolean login(String username, String password) throws Exception {
         objDatos.conectarBD();
         ResultSet rs = objDatos.login(username, password);
         if (rs.next()) {
+            if(rs.getString(BD_USUARIO_TIPO)==USUARIO_TIPO_AFICIONADO){
+                logeado=new Aficionado();
+            }else{
+                logeado=new Usuario();
+            }
             logeado.resultsetLoad(rs);
             objDatos.desconectarBD();
 

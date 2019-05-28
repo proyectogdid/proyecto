@@ -33,7 +33,7 @@ public  class Noticia implements itfProperty,Comparable<Noticia> {
     @Override
     public int compareTo(Noticia o) {
 
-        return fecha.compareTo(o.getFecha());
+        return -fecha.compareTo(o.getFecha());
     }
 
     @Override

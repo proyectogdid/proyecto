@@ -8,6 +8,7 @@ public class clsConstantes {
     public static final int PTOS_VICTORIA=3;
     public static final int PTOS_EMPATE=1;
     public static final String AFICIONADO_FAVORITO = "favorito";
+    public static final String BD_AFICIONADO_FAVORITO = "usr.equipo_favorito";
 
     public static final String PARTICIPANTES_PARTIDOS_GANADOS = "partidosGanados";
     public static final String PARTICIPANTES_PARTIDOS_PERDIDOS = "partidosPerdidos";
