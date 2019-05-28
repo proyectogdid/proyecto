@@ -1,6 +1,7 @@
 package com.company.LP;
 
 import com.company.LN.GestorLN;
+import com.company.LP.imagenes.clsImagen;
 import com.company.comun.itfProperty;
 
 import javax.swing.*;
@@ -11,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.net.UnknownServiceException;
 import java.util.ArrayList;
 
 import static com.company.comun.clsConstantes.EQUIPO_ID;
@@ -20,7 +22,7 @@ import static com.company.comun.clsConstantes.EQUIPO_ID;
  */
 public class wdwRegistrarUsuario extends JFrame implements WindowListener, ActionListener {
 
-    private JPanel contentPane;
+
     private JLabel UserRegistro;
     private JLabel UserLogin;
     private JLabel Correo;
@@ -30,7 +32,6 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
     private JTextField txtRegistrousername;
     private JTextField txtRegistropassw;
     private JTextField txtRegistroemail;
-    private JTextField txtRegistroEquipo;
     private JTextField txtLoginusername, txtLoginpassw;
     private GestorLN gln;
     private JButton blogin;
@@ -39,6 +40,7 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
     private final String BOTON_CANCELAR_REGISTRO = "cancelarRegistro";
     private final String BOTON_ACEPTAR_LOGIN = "aceptarLogin";
     private final String ENTER_LOGIN = "EnterLogin";
+    private clsImagen contentPane;
 
     /**
      * Create the frame.
@@ -58,92 +60,103 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
 
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(this);
-        setBounds(100, 100, 628, 548);
-        contentPane = new JPanel();
+        setBounds(100, 100, 628,548);
+        contentPane = new clsImagen();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        contentPane.setBackgroundImage(contentPane.createImage("/com/company/LP/imagenes/sign&log.png").getImage());
         setContentPane(contentPane);
         contentPane.setLayout(null);
-        contentPane.add(cbEquipo);
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
         JMenuItem mntmNewMenuItem = new JMenuItem("Introduce tus datos y disfruta \uD83D\uDE0A");
         menuBar.add(mntmNewMenuItem);
-        contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(new BorderLayout(50, 50));
         setContentPane(contentPane);
 
         JPanel jpRegistrar = new JPanel();
-        jpRegistrar.setBorder(new TitledBorder(null, "Registrar usuario", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-        jpRegistrar.setBounds(10, 11, 450, 300);
+        jpRegistrar.setBorder(new TitledBorder(null, "Registrar usuario", TitledBorder.LEADING, TitledBorder.TOP, null, Color.WHITE));
+        jpRegistrar.setBounds(10, 11, 390, 300);
         contentPane.add(jpRegistrar);
+        jpRegistrar.setOpaque(false);
+
         jpRegistrar.setLayout(null);
 
         UserRegistro = new JLabel("Nombre de usuario");
-        UserRegistro.setBounds(72, 50, 110, 14);
+        UserRegistro.setBounds(10, 50, 110, 14);
         jpRegistrar.add(UserRegistro);
+        UserRegistro.setForeground(Color.WHITE);
+
+
 
         txtRegistrousername = new JTextField();
-        txtRegistrousername.setBounds(198, 50, 212, 20);
+        txtRegistrousername.setBounds(151, 50, 212, 20);
         jpRegistrar.add(txtRegistrousername);
         txtRegistrousername.setColumns(10);
 
         PassRegistro = new JLabel("Contraseña");
-        PassRegistro.setBounds(72, 102, 100, 14);
+        PassRegistro.setBounds(10, 102, 100, 14);
+        PassRegistro.setForeground(Color.WHITE);
         jpRegistrar.add(PassRegistro);
 
         txtRegistropassw = new JTextField();
-        txtRegistropassw.setBounds(198, 99, 212, 20);
+        txtRegistropassw.setBounds(151, 99, 212, 20);
         jpRegistrar.add(txtRegistropassw);
         txtRegistropassw.setColumns(10);
 
         Correo = new JLabel("Correo electrónico");
-        Correo.setBounds(72, 154, 110, 14);
+        Correo.setBounds(10, 154, 110, 14);
+        Correo.setForeground(Color.WHITE);
         jpRegistrar.add(Correo);
 
         txtRegistroemail = new JTextField();
-        txtRegistroemail.setBounds(198, 151, 212, 20);
+        txtRegistroemail.setBounds(151, 151, 212, 20);
         jpRegistrar.add(txtRegistroemail);
         txtRegistroemail.setColumns(10);
 
         Equipo = new JLabel("Equipo favorito");
-        Equipo.setBounds(72, 206, 110, 14);
+        Equipo.setBounds(10, 206, 110, 14);
+        Equipo.setForeground(Color.WHITE);
         jpRegistrar.add(Equipo);
 
         cbEquipo = new JComboBox();
-        cbEquipo.setBounds(198, 203, 212, 20);
+        cbEquipo.setBounds(151, 203, 212, 20);
         jpRegistrar.add(cbEquipo);
 
-        txtRegistroEquipo = new JTextField();
-        txtRegistroEquipo.setBounds(198, 203, 212, 20);
-        jpRegistrar.add(txtRegistroEquipo);
-        txtRegistroEquipo.setColumns(10);
 
-        Button aceptar = new Button("Aceptar");
-        aceptar.setBounds(225, 240, 70, 22);
+       JButton aceptar = new JButton("Aceptar");
+        aceptar.setBounds(200, 240, 85, 22);
         jpRegistrar.add(aceptar);
         aceptar.setActionCommand(BOTON_ACEPTAR_REGISTRO);
         aceptar.addActionListener(this);
-        aceptar.setBackground(Color.GREEN);
+        aceptar.setForeground(Color.WHITE);
+        aceptar.setOpaque(false);
+        aceptar.setContentAreaFilled(false);
+        aceptar.setBorderPainted(false);
 
 
-        Button cancelar = new Button("Cancelar");
-        cancelar.setBounds(306, 240, 70, 22);
+        JButton cancelar = new JButton("Cancelar");
+        cancelar.setBounds(281, 240, 85, 22);
         jpRegistrar.add(cancelar);
         cancelar.setActionCommand(BOTON_CANCELAR_REGISTRO);
         cancelar.addActionListener(this);
-        cancelar.setBackground(Color.ORANGE);
+        cancelar.setForeground(Color.WHITE);
+        cancelar.setOpaque(false);
+        cancelar.setContentAreaFilled(false);
+        cancelar.setBorderPainted(false);
 
         JPanel jpIniciarSesion = new JPanel();
-        jpIniciarSesion.setBorder(new TitledBorder(null, "Iniciar Sesion", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-        jpIniciarSesion.setBounds(10, 320, 390, 164);
+        jpIniciarSesion.setBorder(new TitledBorder(null, "Iniciar Sesion", TitledBorder.LEADING, TitledBorder.TOP, null, Color.WHITE));
+        jpIniciarSesion.setBounds(10, 320, 390, 150);
         contentPane.add(jpIniciarSesion);
         jpIniciarSesion.setLayout(null);
+        jpIniciarSesion.setOpaque(false);
 
 
         UserLogin = new JLabel("Usuario");
         UserLogin.setBounds(10, 30, 46, 14);
+        UserLogin.setForeground(Color.WHITE);
         jpIniciarSesion.add(UserLogin);
 
         txtLoginusername = new JTextField();
@@ -152,8 +165,10 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
         txtLoginusername.setColumns(10);
         txtLoginusername.setActionCommand(ENTER_LOGIN);
         txtLoginusername.addActionListener(this);
+
         PassLogin = new JLabel("Contraseña");
         PassLogin.setBounds(10, 61, 70, 14);
+        PassLogin.setForeground(Color.WHITE);
         jpIniciarSesion.add(PassLogin);
 
 
@@ -165,10 +180,15 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
         txtLoginpassw.addActionListener(this);
 
         blogin = new JButton("Iniciar Sesion");
-        blogin.setBounds(10, 117, 144, 23);
+        blogin.setBounds(180, 90, 144, 23);
         jpIniciarSesion.add(blogin);
         blogin.setActionCommand(BOTON_ACEPTAR_LOGIN);
-        blogin.addActionListener((ActionListener) this);
+        blogin.addActionListener(this);
+        blogin.setForeground(Color.WHITE);
+        blogin.setOpaque(false);
+        blogin.setContentAreaFilled(false);
+        blogin.setBorderPainted(false);
+
         /*
          * Este boton se ha creado para que el boton iniciar sesion no de fallo y ocupe toda la pantalla
          */

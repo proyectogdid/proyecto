@@ -53,8 +53,6 @@ public class wdwClasificacion extends JFrame implements ActionListener, WindowLi
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case VOLVER:
-                ventanaMenu vm = new ventanaMenu(gln);
-                vm.setVisible(true);
                 this.dispose();
                 break;
 
@@ -68,19 +66,9 @@ public class wdwClasificacion extends JFrame implements ActionListener, WindowLi
 
     @Override
     public void windowClosing(WindowEvent e) {
-        close();
+        this.dispose();
     }
 
-    private void close() {
-
-        int eleccion = JOptionPane.showConfirmDialog(this, "¿Estás seguro?", "Salir",
-                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
-        if (eleccion == JOptionPane.YES_OPTION) {
-            System.exit(0);
-
-
-        }
-    }
 
     @Override
     public void windowClosed(WindowEvent e) {

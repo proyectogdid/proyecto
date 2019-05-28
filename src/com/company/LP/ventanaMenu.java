@@ -3,6 +3,7 @@ package com.company.LP;
 import com.company.LN.GestorLN;
 import com.company.LP.InsertarPorVentanas.*;
 import com.company.LP.Updates.updateEquipoFav;
+import com.company.LP.imagenes.clsImagen;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -17,7 +18,6 @@ import java.awt.event.WindowListener;
  */
 public class ventanaMenu extends JFrame implements ActionListener, WindowListener {
 
-    private JPanel contentPane;
     private GestorLN gln;
     private JMenuBar barraMenu;
     private JMenu menuAjustes, menuPerfil, menuInsertar;
@@ -46,6 +46,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
     private final String INSERTAR_EQUIPO = "insertar equipo";
     private final String INSERTAR_POSICION = "insertar posicion";
     private final String INSERTAR_ESTADO = "insertar estado";
+    private clsImagen contentPane;
 
     /**
      * Create the frame.
@@ -55,9 +56,11 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
         gln = gln_;
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(this);
-        setBounds(100, 100, 450, 150);
+        setBounds(100, 100, 450, 348);
 
-        contentPane = new JPanel();
+        contentPane = new clsImagen();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        contentPane.setBackgroundImage(contentPane.createImage("/com/company/LP/imagenes/menu.png").getImage());
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(new BorderLayout(50, 50));
         setContentPane(contentPane);
@@ -65,25 +68,32 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
         barraMenu = new JMenuBar();
         setJMenuBar(barraMenu);
 
-
-        JPanel panel = new JPanel();
-        contentPane.add(panel, BorderLayout.NORTH);
-        panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-
         JButton btnNoticias = new JButton("Noticias");
+        getContentPane().add(btnNoticias, BorderLayout.EAST);
         btnNoticias.setActionCommand(ABRIR_NOTICIAS);
         btnNoticias.addActionListener(this);
-        panel.add(btnNoticias);
+        btnNoticias.setForeground(Color.WHITE);
+        btnNoticias.setOpaque(false);
+        btnNoticias.setContentAreaFilled(false);
+        btnNoticias.setBorderPainted(false);
 
         JButton btnClasificacion = new JButton("Clasificacion");
+        getContentPane().add(btnClasificacion, BorderLayout.WEST);
         btnClasificacion.setActionCommand(ABRIR_CLASIFICACION);
         btnClasificacion.addActionListener(this);
-        panel.add(btnClasificacion);
+        btnClasificacion.setForeground(Color.WHITE);
+        btnClasificacion.setOpaque(false);
+        btnClasificacion.setContentAreaFilled(false);
+        btnClasificacion.setBorderPainted(false);
 
         JButton btnJornada = new JButton("Jornada");
+        getContentPane().add(btnJornada, BorderLayout.NORTH);
         btnJornada.setActionCommand(ABRIR_JORNADA);
         btnJornada.addActionListener(this);
-        panel.add(btnJornada);
+        btnJornada.setForeground(Color.WHITE);
+        btnJornada.setOpaque(false);
+        btnJornada.setContentAreaFilled(false);
+        btnJornada.setBorderPainted(false);
 
         menuAjustes = new JMenu("Ajustes");
         barraMenu.add(menuAjustes);
@@ -153,7 +163,6 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case ABRIR_NOTICIAS:
-
                 wdwNoticias w=new wdwNoticias(gln);
                 w.setVisible(true);
                 break;

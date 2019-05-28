@@ -108,18 +108,7 @@ public class wdwDatosPersonales extends JFrame implements ActionListener, Window
 
     @Override
     public void windowClosing(WindowEvent e) {
-        close();
-    }
-
-    private void close() {
-
-        int eleccion = JOptionPane.showConfirmDialog(this, "¿Estás seguro?", "Salir",
-                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
-        if (eleccion == JOptionPane.YES_OPTION) {
-            System.exit(0);
-
-
-        }
+        this.dispose();
     }
 
 

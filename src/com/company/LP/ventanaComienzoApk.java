@@ -1,6 +1,7 @@
 package com.company.LP;
 
 import com.company.LN.GestorLN;
+import com.company.LP.imagenes.clsImagen;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -14,7 +15,8 @@ import java.awt.event.WindowListener;
  * Clase que utilizaremos para diseñar la ventana de inicio de la apk
  */
 public class ventanaComienzoApk extends JFrame implements ActionListener, WindowListener {
-    private JPanel contentPane;
+
+    private clsImagen contentPane;
     private GestorLN gln;
     private final String COMENZAR = "comenzar";
 
@@ -28,27 +30,27 @@ public class ventanaComienzoApk extends JFrame implements ActionListener, Window
         gln = gln_;
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(this);
-        setBounds(100, 100, 450, 120);
+        setBounds(100, 100, 500, 500);
 
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
         JMenuItem mntmNewMenuItem = new JMenuItem("BASKET LIVE \uD83C\uDFC0");
         menuBar.add(mntmNewMenuItem);
-        contentPane = new JPanel();
+        contentPane = new clsImagen();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        contentPane.setBackgroundImage(contentPane.createImage("/com/company/LP/imagenes/Inicio.png").getImage());
         contentPane.setLayout(new BorderLayout(50, 50));
         setContentPane(contentPane);
-
-        JPanel panel = new JPanel();
-        contentPane.add(panel, BorderLayout.NORTH);
-        panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
         JButton btnComenzar = new JButton("Comenzar");
         btnComenzar.setActionCommand(COMENZAR);
         btnComenzar.addActionListener(this);
-        panel.add(btnComenzar);
-
+        getContentPane().add(btnComenzar, BorderLayout.NORTH);
+        btnComenzar.setForeground(Color.WHITE);
+        btnComenzar.setOpaque(false);
+        btnComenzar.setContentAreaFilled(false);
+        btnComenzar.setBorderPainted(false);
 
     }
 

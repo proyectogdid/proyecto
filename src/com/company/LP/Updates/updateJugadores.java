@@ -1,11 +1,10 @@
 package com.company.LP.Updates;
 
 import com.company.LN.GestorLN;
-<<<<<<< HEAD
 import com.company.LP.InsertarPorVentanas.wdwJugador;
-=======
+
 import com.company.comun.itfProperty;
->>>>>>> master
+
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -14,6 +13,8 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
@@ -25,7 +26,7 @@ import com.toedter.calendar.JDateChooser;
 /**
  * Clase que utilizaremos los admin para actualizar los jugadores de la BD
  */
-public class updateJugadores extends JFrame implements ActionListener , ListSelectionListener {
+public class updateJugadores extends JFrame implements ActionListener , ListSelectionListener, WindowListener {
 
     private GestorLN gln;
     private JPanel contentPane;
@@ -33,6 +34,7 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
     private JList<itfProperty> list;
     private final String BORRAR="borrar";
     private final String SALIR ="salir";
+    private final String ACTUALIZAR="actualizar";
 
     private ListaJugadoresModel modelo;
     private JTextField txtApellido1;
@@ -46,7 +48,7 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
 
 
 
-        this.setTitle("Actualizar Jugadorrï¸�");
+        this.setTitle("Actualizar Jugador");
         gln = gln_;
         jugadores=gln.leerJugadores();
         equipos=gln.leerEquipos();
@@ -60,7 +62,8 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
         list=new JList<>(modelo);
         list.addListSelectionListener(this);
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        addWindowListener(this);
         setBounds(100, 100, 459, 542);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -73,18 +76,17 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
 
         scrollPane.setViewportView(list);
 
-<<<<<<< HEAD
-        textField = new JTextField();
+        JTextField textField = new JTextField();
         textField.setBounds(56, 47, 86, 20);
         contentPane.add(textField);
         textField.setColumns(10);
-=======
+
 
         txtNombre = new JTextField();
         txtNombre.setBounds(56, 47, 86, 20);
         contentPane.add(txtNombre);
         txtNombre.setColumns(10);
->>>>>>> master
+
 
         JButton borrar = new JButton("Borrar");
         borrar.setActionCommand(BORRAR);
@@ -96,8 +98,14 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
         JButton salir = new JButton("Salir");
         salir.setActionCommand(SALIR);
         salir.addActionListener(this);
-        salir.setBounds(53, 402, 89, 23);
+        salir.setBounds(53, 402, 86, 23);
         contentPane.add(salir);
+
+        JButton actualizar = new JButton("Actualizar");
+        actualizar.setActionCommand(ACTUALIZAR);
+        actualizar.addActionListener(this);
+        actualizar.setBounds(53, 436, 86, 23);
+        contentPane.add(actualizar);
         
         txtApellido1 = new JTextField();
         txtApellido1.setBounds(56, 81, 86, 20);
@@ -145,13 +153,16 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
             case BORRAR:
-                int posicion = list.getSelectedIndex();
-                modelo.remove(posicion);
+             /*   int posicion = list.getSelectedIndex();
+                modelo.remove(posicion);*/
                 break;
             case SALIR:
                 wdwJugador j=new wdwJugador(gln);
                 j.setVisible(true);
                 this.dispose();
+                break;
+            case ACTUALIZAR:
+
                 break;
         }
     }
@@ -188,6 +199,41 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
             }
         }
         return -1;
+    }
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+    this.dispose();
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
     }
 }
 
