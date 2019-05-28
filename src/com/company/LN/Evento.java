@@ -5,6 +5,7 @@ import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import static com.company.comun.clsConstantes.*;
 
@@ -34,7 +35,38 @@ public class Evento extends Noticia implements itfProperty, itfPersistable{
 
     public Evento() {
     }
+    /**
+     * metodo que generara el texto que se mostrará al mostrar la noticia
+     * @param jugadores array jugadores
+     * @param estados array equipos
+     */
 
+
+    public void generarTexto(ArrayList<Jugador> jugadores, ArrayList<Estado>estados) {
+        Jugador j=null;
+        for (int i = 0; i <jugadores.size() ; i++) {
+            if(jugadores.get(i).getId()==this.jugador){
+                j=jugadores.get(i);
+                break;
+            }
+        }
+        Estado previo=null,post = null;
+        int cont=0;
+        for (int i = 0; i <estados.size() && cont<2 ; i++) {
+            if(estados.get(i).getId()==this.estadoPrevio){
+                previo=estados.get(i);
+                cont++;
+
+            }
+            if(estados.get(i).getId()==this.estadoPosterior){
+                post=estados.get(i);
+                cont++;
+            }
+        }
+
+        this.setText(j.getNombre()+" "+j.getApellido1()+"  pasa de estar "+previo.getNombre()+" a "+post.getNombre());
+
+    }
     /**
      * Este metodo sirve para recoger todos los datos referentes a evento.
      *

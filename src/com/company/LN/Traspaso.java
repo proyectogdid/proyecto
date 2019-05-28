@@ -33,6 +33,11 @@ public class Traspaso extends Noticia implements itfProperty, itfPersistable {
      */
     private int equipoPosterior;
 
+    /**
+     * metodo que generara el texto que se mostrará al mostrar la noticia
+     * @param jugadores array jugadores
+     * @param equipos array equipos
+     */
     public void generarTexto(ArrayList<Jugador> jugadores, ArrayList<Equipo>equipos) {
         Jugador j=null;
         for (int i = 0; i <jugadores.size() ; i++) {

@@ -554,6 +554,7 @@ public class GestorLN {
         while (rs.next()) {
             Evento e = new Evento();
             e.resultsetLoad(rs);
+            e.generarTexto(jugadores,estados);
             eventos.add(e);
             noticias.add(e);
         }
