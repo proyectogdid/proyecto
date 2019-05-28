@@ -183,10 +183,14 @@ public class GestorLN {
      * @throws Exception
      */
     public void updateUsuario(int id) throws Exception{
-        objDatos.conectarBD();
-         id=objDatos.updateUsuario(id,logeado.getId());
+        if(!isAdmin()){
+            objDatos.conectarBD();
+            ((Aficionado)logeado).setFavorito(id);
+            id=objDatos.updateUsuario(id,logeado.getId());
 
-         objDatos.desconectarBD();
+            objDatos.desconectarBD();
+        }
+
 
     }
 
@@ -634,9 +638,11 @@ public class GestorLN {
      * @return idequipo
      */
     public int getEquipoFav(){
-        if(!isAdmin()){
+        if(logeado instanceof Aficionado){
+            System.out.println(((Aficionado)logeado).getFavorito());
             return ((Aficionado)logeado).getFavorito();
         }else {
+            System.out.println(0);
             return 0;
         }
     }
@@ -644,9 +650,12 @@ public class GestorLN {
         objDatos.conectarBD();
         ResultSet rs = objDatos.login(username, password);
         if (rs.next()) {
-            if(rs.getString(BD_USUARIO_TIPO)==USUARIO_TIPO_AFICIONADO){
+            System.out.println(rs.getString(BD_USUARIO_TIPO));
+            if(rs.getString(BD_USUARIO_TIPO).equals(USUARIO_TIPO_AFICIONADO)){
                 logeado=new Aficionado();
+                System.out.println("soy aficionado");
             }else{
+                System.out.println("soy admin");
                 logeado=new Usuario();
             }
             logeado.resultsetLoad(rs);

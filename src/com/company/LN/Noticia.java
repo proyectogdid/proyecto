@@ -5,12 +5,20 @@ import com.company.comun.itfProperty;
 
 import java.util.Date;
 
-import static com.company.comun.clsConstantes.NOTICIA_FECHA;
-import static com.company.comun.clsConstantes.NOTICIA_TEXTO;
+import static com.company.comun.clsConstantes.*;
 
 public  class Noticia implements itfProperty,Comparable<Noticia> {
     private Date fecha;
     private String text;
+    private int equipoRelativo;
+
+    public int getEquipoRelativo() {
+        return equipoRelativo;
+    }
+
+    public void setEquipoRelativo(int equipoRelativo) {
+        this.equipoRelativo = equipoRelativo;
+    }
 
     public String getText() {
         return text;
@@ -43,6 +51,8 @@ public  class Noticia implements itfProperty,Comparable<Noticia> {
                 return this.fecha;
             case NOTICIA_TEXTO:
                 return this.text;
+            case NOTICIA_EQUIPO_RELATIVO:
+                return this.equipoRelativo;
                 default:
                     throw new PropiedadIncorrecta(prop);
         }

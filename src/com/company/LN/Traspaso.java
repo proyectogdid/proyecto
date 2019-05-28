@@ -155,6 +155,7 @@ public class Traspaso extends Noticia implements itfProperty, itfPersistable {
         this.setFecha(rs.getDate(BD_TRASPASO_FECHA));
         equipoPrevio = rs.getInt(BD_TRASPASO_EQUIPO_PREVIO);
         equipoPosterior = rs.getInt(BD_TRASPASO_EQUIPO_POSTERIOR);
+        this.setEquipoRelativo(equipoPosterior);
 
     }
 }

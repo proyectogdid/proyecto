@@ -151,6 +151,7 @@ public class Evento extends Noticia implements itfProperty, itfPersistable{
         estadoPosterior = rs.getInt(BD_EVENTO_ESTADO_POSTERIOR);
         jugador = rs.getInt(BD_EVENTO_JUGADOR);
         this.setFecha(rs.getDate(BD_EVENTO_FECHA));
+        this.setEquipoRelativo(jugador);
 
     }
 }

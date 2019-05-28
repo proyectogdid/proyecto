@@ -9,9 +9,9 @@ import java.util.Date;
 import static com.company.comun.clsConstantes.*;
 
 public class NoticiaComponent extends Panel {
-    public NoticiaComponent(itfProperty noticia) {
+    public NoticiaComponent(itfProperty noticia,int idequipofav) {
         setEnabled(false);
-        setBackground(Color.LIGHT_GRAY);
+        setBackground((((int)noticia.getProperty(NOTICIA_EQUIPO_RELATIVO))==idequipofav)?SystemColor.activeCaption:Color.LIGHT_GRAY);
 
         setLayout(null);
         this.setPreferredSize(new Dimension(300, 80));

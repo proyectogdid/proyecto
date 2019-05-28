@@ -93,10 +93,13 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
         itemCerrarSesion.addActionListener(this);
         menuAjustes.add(itemCerrarSesion);
 
-        itemCambiarEquipoFav = new JMenuItem("Cambia de equipo");
-        itemCambiarEquipoFav.setActionCommand(CAMBIAR_EQUIPO_FAV);
-        itemCambiarEquipoFav.addActionListener(this);
-        menuAjustes.add(itemCambiarEquipoFav);
+        if(!gln.isAdmin()){
+            itemCambiarEquipoFav = new JMenuItem("Cambia de equipo");
+            itemCambiarEquipoFav.setActionCommand(CAMBIAR_EQUIPO_FAV);
+            itemCambiarEquipoFav.addActionListener(this);
+            menuAjustes.add(itemCambiarEquipoFav);
+        }
+
 
         menuPerfil = new JMenu("Perfil");
         barraMenu.add(menuPerfil);
