@@ -212,6 +212,7 @@ public class wdwJugador extends JFrame implements ActionListener {
             case BOTON_VER:
                 updateJugadores uj = new updateJugadores(gln);
                 uj.setVisible(true);
+                this.dispose();
                 break;
 
 

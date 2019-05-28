@@ -1,6 +1,7 @@
 package com.company.LP.Updates;
 
 import com.company.LN.GestorLN;
+import com.company.LP.InsertarPorVentanas.wdwJugador;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -39,7 +40,6 @@ public class updateJugadores extends JFrame implements ActionListener {
 
         scrollPane.setViewportView(list);
 
-
         textField = new JTextField();
         textField.setBounds(56, 47, 86, 20);
         contentPane.add(textField);
@@ -69,7 +69,9 @@ public class updateJugadores extends JFrame implements ActionListener {
                 modelo.remove(posicion);
                 break;
             case SALIR:
-                System.exit(0);
+                wdwJugador j=new wdwJugador(gln);
+                j.setVisible(true);
+                this.dispose();
                 break;
         }
     }
