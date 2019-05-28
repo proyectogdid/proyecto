@@ -1,6 +1,7 @@
 package com.company.LP.Updates;
 
-import com.company.LN.Jugador;
+
+import com.company.comun.itfProperty;
 
 import java.util.LinkedList;
 
@@ -8,16 +9,16 @@ import javax.swing.DefaultListModel;
 
 
 
-public class ListaJugadoresModel extends DefaultListModel<Jugador>{
+public class ListaJugadoresModel extends DefaultListModel<itfProperty>{
 
-    protected LinkedList <Jugador> lista;
+    protected LinkedList <itfProperty> lista;
 
-    public ListaJugadoresModel(LinkedList <Jugador> lista)
+    public ListaJugadoresModel(LinkedList <itfProperty> lista)
     {
         this.lista = lista;
     }
 
-    public Jugador getElementAt(int index)
+    public itfProperty getElementAt(int index)
     {
         return lista.get(index);
     }
@@ -28,7 +29,7 @@ public class ListaJugadoresModel extends DefaultListModel<Jugador>{
     }
 
     @Override
-    public void addElement(Jugador element)
+    public void addElement(itfProperty element)
     {
         lista.add(element);
         this.fireContentsChanged(this, lista.size(), lista.size());

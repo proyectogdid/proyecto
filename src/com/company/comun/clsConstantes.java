@@ -84,6 +84,9 @@ public class clsConstantes {
     public static final String BD_JUGADOR_FECHA_NACIMIENTO = "jug.fechaNac";
     public static final String BD_JUGADOR_DORSAL = "jug.dorsal";
     public static final String BD_JUGADOR_TEXTO_CAMISETA = "jug.textoCamiseta";
+    public static final String BD_JUGADOR_EQUIPO = "jug.equipo";
+    public static final String BD_JUGADOR_POSICION = "jug.posicion";
+    public static final String BD_JUGADOR_ESTADO = "jug.estado";
 
     public static final String PARTIDO_ID = "id";
     public static final String PARTIDO_FECHA = "fecha";
