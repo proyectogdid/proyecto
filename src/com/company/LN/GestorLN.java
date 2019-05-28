@@ -9,10 +9,11 @@ import com.company.comun.itfProperty;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 
-import static com.company.comun.clsConstantes.USUARIO_TIPO_AFICIONADO;
+import static com.company.comun.clsConstantes.*;
 
 /**
  * Clase que va a gestionar la comunicacion entre el paquete LN y el paquete LP
@@ -21,7 +22,7 @@ public class GestorLN {
     /**
      * objeto con los datos del usuario logeado
      */
-    Usuario logeado = new Usuario();
+    Usuario logeado;
     /**
      * Este va a ser el ArrayList que va a contener los campos de los diferentes equipos
      */
@@ -73,6 +74,8 @@ public class GestorLN {
     /**
      * comunicacion con capa de datos en LN
      */
+
+    ArrayList<Noticia> noticias =new ArrayList<>();
     private clsDatos objDatos = new clsDatos();
 
 
@@ -180,10 +183,14 @@ public class GestorLN {
      * @throws Exception
      */
     public void updateUsuario(int id) throws Exception{
-        objDatos.conectarBD();
-         id=objDatos.updateUsuario(id,logeado.getId());
+        if(!isAdmin()){
+            objDatos.conectarBD();
+            ((Aficionado)logeado).setFavorito(id);
+            id=objDatos.updateUsuario(id,logeado.getId());
 
-         objDatos.desconectarBD();
+            objDatos.desconectarBD();
+        }
+
 
     }
 
@@ -330,6 +337,19 @@ public class GestorLN {
 
     }
 
+    /**
+     * metodo para devolver las noticias a LP ordenadas por fecha
+     * @return array itfProperty
+     */
+    public ArrayList<itfProperty> leerNoticias(){
+        Collections.sort(noticias);
+        ArrayList<itfProperty> retorno=new ArrayList<>();
+        for (Noticia n:noticias) {
+            retorno.add(n);
+        }
+        return retorno;
+    }
+
 
     /**
      * Este metodo lo vamos a emplear para leer los campos de los equipos
@@ -339,14 +359,12 @@ public class GestorLN {
     public ArrayList<itfProperty> leerCampos() {
 
         ArrayList<itfProperty> retorno = new ArrayList<>();
-        try {
+
 
             for (Campo c : campos) {
                 retorno.add(c);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
 
         return retorno;
     }
@@ -509,7 +527,9 @@ public class GestorLN {
         while (rs.next()) {
             Traspaso p = new Traspaso();
             p.resultsetLoad(rs);
+            p.generarTexto(jugadores,equipos);
             traspasos.add(p);
+            noticias.add(p);
         }
 
     }
@@ -538,7 +558,9 @@ public class GestorLN {
         while (rs.next()) {
             Evento e = new Evento();
             e.resultsetLoad(rs);
+            e.generarTexto(jugadores,estados);
             eventos.add(e);
+            noticias.add(e);
         }
     }
 
@@ -611,10 +633,31 @@ public class GestorLN {
         return logeado.isAdmin();
     }
 
+    /**
+     * metodo para saber cual es el equipo favorito del usuario logeado
+     * @return idequipo
+     */
+    public int getEquipoFav(){
+        if(logeado instanceof Aficionado){
+            System.out.println(((Aficionado)logeado).getFavorito());
+            return ((Aficionado)logeado).getFavorito();
+        }else {
+            System.out.println(0);
+            return 0;
+        }
+    }
     public boolean login(String username, String password) throws Exception {
         objDatos.conectarBD();
         ResultSet rs = objDatos.login(username, password);
         if (rs.next()) {
+            System.out.println(rs.getString(BD_USUARIO_TIPO));
+            if(rs.getString(BD_USUARIO_TIPO).equals(USUARIO_TIPO_AFICIONADO)){
+                logeado=new Aficionado();
+                System.out.println("soy aficionado");
+            }else{
+                System.out.println("soy admin");
+                logeado=new Usuario();
+            }
             logeado.resultsetLoad(rs);
             objDatos.desconectarBD();
 

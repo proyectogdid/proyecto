@@ -122,6 +122,9 @@ public class Jugador implements itfProperty {
         fechaNac = rs.getDate(BD_JUGADOR_FECHA_NACIMIENTO);
         dorsal = rs.getString(BD_JUGADOR_DORSAL);
         textoCamiseta = rs.getString(BD_JUGADOR_TEXTO_CAMISETA);
+        equipo=rs.getInt(BD_JUGADOR_EQUIPO);
+        estado=rs.getInt(BD_JUGADOR_ESTADO);
+        posicion=rs.getInt(BD_JUGADOR_POSICION);
     }
 
 
@@ -237,5 +240,10 @@ public class Jugador implements itfProperty {
             default:
                 throw new PropiedadIncorrecta(prop);
         }
+    }
+
+    @Override
+    public String toString() {
+        return this.getNombre()+" "+this.getApellido1()+" "+this.getApellido2();
     }
 }

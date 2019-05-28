@@ -7,7 +7,7 @@ import java.sql.ResultSet;
  * Clase para obtener informacion sobre los traspasos de la BD
  */
 public class TraspasoBD extends Conexion {
-    public static final String TEMPLATE = "tra.id, tra.jugador, tra.equipoPrevio, tra.equipoPosterior";
+    public static final String TEMPLATE = "tra.id, tra.jugador, tra.equipoPrevio, tra.equipoPosterior, tra.fecha";
 
     /**
      * metodo para recuperar los ditintas traspasos de la temporada

@@ -2,7 +2,10 @@ package com.company.LN;
 
 import com.company.comun.itfProperty;
 
+import java.sql.ResultSet;
+
 import static com.company.comun.clsConstantes.AFICIONADO_FAVORITO;
+import static com.company.comun.clsConstantes.BD_AFICIONADO_FAVORITO;
 
 /**
  * clase para gestionar los usuarios no administradores
@@ -16,6 +19,12 @@ public class Aficionado extends Usuario implements itfProperty {
 
     public Aficionado() {
 
+    }
+
+    @Override
+    public void resultsetLoad(ResultSet rs) throws Exception {
+        favorito=rs.getInt(BD_AFICIONADO_FAVORITO);
+        super.resultsetLoad(rs);
     }
 
     /**

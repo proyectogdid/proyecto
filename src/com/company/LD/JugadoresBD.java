@@ -10,7 +10,7 @@ import java.sql.ResultSet;
  */
 public class JugadoresBD extends Conexion {
 
-    private static final String TEMPLATE = "jug.id,jug.nombre,jug.apellido1,jug.apellido2,jug.fechaNac,jug.dorsal,jug.textoCamiseta";
+    private static final String TEMPLATE = "jug.id,jug.nombre,jug.apellido1,jug.apellido2,jug.fechaNac,jug.dorsal,jug.textoCamiseta, jug.equipo, jug.posicion, jug.estado";
 
     /**
      * MEtodo para insertar jugadores a nuestra BD

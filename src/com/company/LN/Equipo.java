@@ -5,6 +5,7 @@ import com.company.comun.itfProperty;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Objects;
 
 import static com.company.comun.clsConstantes.*;
 
@@ -135,5 +136,19 @@ public class Equipo implements itfProperty {
     @Override
     public String toString() {
         return this.nombre;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Equipo equipo = (Equipo) o;
+        return id == equipo.id ;
+    }
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nombre, patrocinador, jugadores, campo);
     }
 }

@@ -34,6 +34,7 @@ public class updateEquipoFav extends JFrame implements ActionListener, WindowLis
 
         this.setTitle("BASKET LIVE ⛹️");
         gln = gln_;
+        int idequipofav=gln.getEquipoFav();
 
         ArrayList<itfProperty> equipos = gln.leerEquipos();
         cbEquipo = new JComboBox<>();
@@ -85,10 +86,14 @@ public class updateEquipoFav extends JFrame implements ActionListener, WindowLis
         cancelar.addActionListener(this);
         cancelar.setBackground(Color.ORANGE);
 
-
+        int selected=0;
         for (int i = 0; i < equipos.size(); i++) {
+            if((int)equipos.get(i).getProperty(EQUIPO_ID)==idequipofav){
+               selected=i;
+            }
             cbEquipo.addItem(equipos.get(i));
         }
+        cbEquipo.setSelectedIndex(selected);
 
     }
 

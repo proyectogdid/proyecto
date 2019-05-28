@@ -4,7 +4,9 @@ import com.company.Excepciones.PropiedadIncorrecta;
 import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
+import java.sql.Array;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import static com.company.comun.clsConstantes.*;
 
@@ -12,7 +14,7 @@ import static com.company.comun.clsConstantes.*;
  * clase que gestionara los traspasos de los jugadores entre distintos equipos
  * teniendo como atributos el equipo anterior y posterior para poder guardar un historico de la trayectoria
  */
-public class Traspaso implements itfProperty, itfPersistable {
+public class Traspaso extends Noticia implements itfProperty, itfPersistable {
     /**
      * atributo id del traspaso
      */
@@ -31,7 +33,35 @@ public class Traspaso implements itfProperty, itfPersistable {
      */
     private int equipoPosterior;
 
-    public Traspaso() {
+    /**
+     * metodo que generara el texto que se mostrará al mostrar la noticia
+     * @param jugadores array jugadores
+     * @param equipos array equipos
+     */
+    public void generarTexto(ArrayList<Jugador> jugadores, ArrayList<Equipo>equipos) {
+        Jugador j=null;
+        for (int i = 0; i <jugadores.size() ; i++) {
+            if(jugadores.get(i).getId()==this.jugador){
+                j=jugadores.get(i);
+                break;
+            }
+        }
+        Equipo previo=null,post = null;
+        int cont=0;
+        for (int i = 0; i <equipos.size() && cont<2 ; i++) {
+            if(equipos.get(i).getId()==this.equipoPrevio){
+                previo=equipos.get(i);
+                cont++;
+
+            }
+            if(equipos.get(i).getId()==this.equipoPosterior){
+                post=equipos.get(i);
+                cont++;
+            }
+        }
+
+        this.setText(j.getNombre()+" "+j.getApellido1()+"  ficha por el "+post.getNombre()+" desde el "+previo.getNombre());
+
     }
 
     /**
@@ -50,6 +80,8 @@ public class Traspaso implements itfProperty, itfPersistable {
         this.equipoPosterior = equipoPosterior;
     }
 
+    public Traspaso() {
+    }
 
     public int getId() {
         return id;
@@ -102,8 +134,11 @@ public class Traspaso implements itfProperty, itfPersistable {
                 return this.equipoPrevio;
             case TRASPASO_EQUIPO_POSTERIOR:
                 return this.equipoPosterior;
+            case NOTICIA_TIPO:
+                return NOTICIA_TIPO_TRASPASO;
             default:
-                throw new PropiedadIncorrecta(prop);
+
+                return super.getProperty(prop);
         }
     }
 
@@ -117,9 +152,10 @@ public class Traspaso implements itfProperty, itfPersistable {
     public void resultsetLoad(ResultSet rs) throws Exception {
         id = rs.getInt(BD_TRASPASO_ID);
         jugador = rs.getInt(BD_TRASPASO_JUGADOR);
-
+        this.setFecha(rs.getDate(BD_TRASPASO_FECHA));
         equipoPrevio = rs.getInt(BD_TRASPASO_EQUIPO_PREVIO);
         equipoPosterior = rs.getInt(BD_TRASPASO_EQUIPO_POSTERIOR);
+        this.setEquipoRelativo(equipoPosterior);
 
     }
 }

@@ -8,6 +8,7 @@ public class clsConstantes {
     public static final int PTOS_VICTORIA=3;
     public static final int PTOS_EMPATE=1;
     public static final String AFICIONADO_FAVORITO = "favorito";
+    public static final String BD_AFICIONADO_FAVORITO = "usr.equipo_favorito";
 
     public static final String PARTICIPANTES_PARTIDOS_GANADOS = "partidosGanados";
     public static final String PARTICIPANTES_PARTIDOS_PERDIDOS = "partidosPerdidos";
@@ -63,6 +64,7 @@ public class clsConstantes {
     public static final String BD_EVENTO_ESTADO_PREVIO = "eve.estadoPrevio";
     public static final String BD_EVENTO_ESTADO_POSTERIOR = "eve.estadoPosterior";
     public static final String BD_EVENTO_JUGADOR = "eve.jugador";
+    public static final String BD_EVENTO_FECHA = "eve.fecha";
 
 
     public static final String JUGADOR_ID = "id";
@@ -83,6 +85,9 @@ public class clsConstantes {
     public static final String BD_JUGADOR_FECHA_NACIMIENTO = "jug.fechaNac";
     public static final String BD_JUGADOR_DORSAL = "jug.dorsal";
     public static final String BD_JUGADOR_TEXTO_CAMISETA = "jug.textoCamiseta";
+    public static final String BD_JUGADOR_EQUIPO = "jug.equipo";
+    public static final String BD_JUGADOR_POSICION = "jug.posicion";
+    public static final String BD_JUGADOR_ESTADO = "jug.estado";
 
     public static final String PARTIDO_ID = "id";
     public static final String PARTIDO_FECHA = "fecha";
@@ -120,12 +125,19 @@ public class clsConstantes {
     public static final String TRASPASO_JUGADOR = "jugador";
     public static final String TRASPASO_EQUIPO_PREVIO = "equipoPrevio";
     public static final String TRASPASO_EQUIPO_POSTERIOR = "equipoPosterior";
+    public static final String NOTICIA_TIPO="tipo";
+    public static final String NOTICIA_FECHA="fecha";
+    public static final String NOTICIA_TIPO_TRASPASO="Traspaso";
+    public static final String NOTICIA_TIPO_EVENTO="evento";
+    public static final String NOTICIA_TEXTO="texto";
+    public static final String NOTICIA_EQUIPO_RELATIVO="equipo";
 
     public static final String BD_TRASPASO_ID = "tra.id";
     public static final String BD_TRASPASO_PRECIO = "tra.precio";
     public static final String BD_TRASPASO_JUGADOR = "tra.jugador";
     public static final String BD_TRASPASO_EQUIPO_PREVIO = "tra.equipoPrevio";
     public static final String BD_TRASPASO_EQUIPO_POSTERIOR = "tra.equipoPosterior";
+    public static final String BD_TRASPASO_FECHA = "tra.fecha";
 
     public static final String USUARIO_ID = "id";
     public static final String USUARIO_USERNAME = "username";
