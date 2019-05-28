@@ -9,6 +9,7 @@ import com.company.comun.itfProperty;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 
@@ -331,6 +332,19 @@ public class GestorLN {
 
     }
 
+    /**
+     * metodo para devolver las noticias a LP ordenadas por fecha
+     * @return array itfProperty
+     */
+    public ArrayList<itfProperty> leerNoticias(){
+        Collections.sort(noticias);
+        ArrayList<itfProperty> retorno=new ArrayList<>();
+        for (Noticia n:noticias) {
+            retorno.add(n);
+        }
+        return retorno;
+    }
+
 
     /**
      * Este metodo lo vamos a emplear para leer los campos de los equipos
@@ -340,14 +354,12 @@ public class GestorLN {
     public ArrayList<itfProperty> leerCampos() {
 
         ArrayList<itfProperty> retorno = new ArrayList<>();
-        try {
+
 
             for (Campo c : campos) {
                 retorno.add(c);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
 
         return retorno;
     }
@@ -510,6 +522,7 @@ public class GestorLN {
         while (rs.next()) {
             Traspaso p = new Traspaso();
             p.resultsetLoad(rs);
+            p.generarTexto(jugadores,equipos);
             traspasos.add(p);
             noticias.add(p);
         }

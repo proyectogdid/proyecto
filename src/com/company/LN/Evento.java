@@ -99,8 +99,10 @@ public class Evento extends Noticia implements itfProperty, itfPersistable{
                 return this.estadoPosterior;
             case EVENTO_JUGADOR:
                 return this.jugador;
+            case NOTICIA_TIPO:
+                return NOTICIA_TIPO_EVENTO;
             default:
-                throw new PropiedadIncorrecta(prop);
+              return  super.getProperty(prop);
         }
     }
 

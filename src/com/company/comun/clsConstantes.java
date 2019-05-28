@@ -121,7 +121,11 @@ public class clsConstantes {
     public static final String TRASPASO_JUGADOR = "jugador";
     public static final String TRASPASO_EQUIPO_PREVIO = "equipoPrevio";
     public static final String TRASPASO_EQUIPO_POSTERIOR = "equipoPosterior";
-
+    public static final String NOTICIA_TIPO="tipo";
+    public static final String NOTICIA_FECHA="fecha";
+    public static final String NOTICIA_TIPO_TRASPASO="Traspaso";
+    public static final String NOTICIA_TIPO_EVENTO="evento";
+    public static final String NOTICIA_TEXTO="texto";
 
     public static final String BD_TRASPASO_ID = "tra.id";
     public static final String BD_TRASPASO_PRECIO = "tra.precio";
