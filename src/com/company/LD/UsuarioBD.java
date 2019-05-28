@@ -40,17 +40,17 @@ public class UsuarioBD extends Conexion {
 
     /**
      * Metodo para actualizar el usuario
-     * @param con con
+     *
+     * @param con      con
      * @param idequipo id
-     * @param iduser id
+     * @param iduser   id
      * @return return
      * @throws Exception Exception
      */
-    public static int updateUsuario(Connection con, int idequipo,int iduser)throws Exception{
-        Object[] parametros={idequipo,iduser};
-        return update(con,"UPDATE usuario SET equipo_favorito=? WHERE id=?",parametros);
+    public static int updateUsuario(Connection con, int idequipo, int iduser) throws Exception {
+        Object[] parametros = {idequipo, iduser};
+        return update(con, "UPDATE usuario SET equipo_favorito=? WHERE id=?", parametros);
 
     }
-
 
 }
