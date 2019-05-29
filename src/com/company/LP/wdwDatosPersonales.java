@@ -36,6 +36,7 @@ public class wdwDatosPersonales extends JFrame implements ActionListener, Window
 
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(this);
+        this.setResizable(false);
         setBounds(100, 100, 450, 300);
         contentPane = new JPanel();
 

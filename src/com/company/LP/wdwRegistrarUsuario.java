@@ -60,6 +60,7 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
         }
 
         cbEquipo.setBounds(198, 190, 120, 34);
+        this.setResizable(false);
 
 
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
