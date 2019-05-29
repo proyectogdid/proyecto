@@ -61,6 +61,8 @@ public class GestorLN {
      * array que guardara los usuarios en memoria
      */
     ArrayList<Usuario> usuarios = new ArrayList<>();
+
+    ArrayList<ArrayList<Partido>> partidos=new ArrayList<>();
     /**
      * array que guardara los partidos en memoria
      */

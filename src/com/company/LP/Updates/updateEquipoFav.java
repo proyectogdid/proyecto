@@ -35,7 +35,7 @@ public class updateEquipoFav extends JFrame implements ActionListener, WindowLis
 
         this.setTitle("BASKET LIVE ⛹️");
         gln = gln_;
-        int idequipofav=(int)gln.getEquipoFav().getProperty(AFICIONADO_FAVORITO);
+        int idequipofav=(int)gln.getEquipoFav().getProperty(EQUIPO_ID);
 
         ArrayList<itfProperty> equipos = gln.leerEquipos();
         cbEquipo = new JComboBox<>();

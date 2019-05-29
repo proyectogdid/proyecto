@@ -12,8 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-import static com.company.comun.clsConstantes.USUARIO_CORREO;
-import static com.company.comun.clsConstantes.USUARIO_USERNAME;
+import static com.company.comun.clsConstantes.*;
 
 public class wdwDatosPersonales extends JFrame implements ActionListener, WindowListener {
 
@@ -98,7 +97,8 @@ public class wdwDatosPersonales extends JFrame implements ActionListener, Window
         txtRegistroEquipo.setBounds(198, 203, 212, 20);
         jpDatosPersonales.add(txtRegistroEquipo);
         txtRegistroEquipo.setColumns(10);
-
+        txtRegistroEquipo.setText((String) gln.getEquipoFav().getProperty(EQUIPO_NOMBRE));
+        txtRegistroEquipo.setEditable(false);
         txtRegistrousername.setText((String) logeado.getProperty(USUARIO_USERNAME));
         txtRegistrousername.setEditable(false);
 
