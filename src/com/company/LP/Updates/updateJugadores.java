@@ -31,6 +31,7 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
     private GestorLN gln;
     private JPanel contentPane;
     private JTextField txtNombre;
+    private  LinkedList<itfProperty> lista;
     private JList<itfProperty> list;
     private final String BORRAR="borrar";
     private final String SALIR ="salir";
@@ -44,6 +45,7 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
     private JDateChooser datechooser;
     private JComboBox <itfProperty>cbEquipo,cbEstado;
     private ArrayList<itfProperty>jugadores,estados,equipos;
+    private int listSelected=0;
     public updateJugadores(GestorLN gln_) {
 
 
@@ -56,7 +58,9 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
 
 
         
-        LinkedList<itfProperty> lista=new LinkedList<>(jugadores);
+        lista=new LinkedList<>(jugadores);
+        System.out.println("tamaño lista");
+        System.out.println(lista.size());
         modelo=new ListaJugadoresModel(lista);
 
         list=new JList<>(modelo);
@@ -153,8 +157,21 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
             case BORRAR:
-             /*   int posicion = list.getSelectedIndex();
-                modelo.remove(posicion);*/
+                try{
+
+
+                int posicion = list.getSelectedIndex();
+                //System.out.println(posicion);
+                //System.out.println("tamaño:"+modelo.size());
+                gln.borrarJugador(list.getSelectedValue());
+                lista.remove(posicion);
+                modelo.actualizar();
+
+                jugadores.remove(posicion);
+                }catch (Exception exc){
+                    javax.swing.JOptionPane.showMessageDialog(this,"error al borrar jugador");
+                    exc.printStackTrace();
+                }
                 break;
             case SALIR:
                 wdwJugador j=new wdwJugador(gln);
@@ -170,15 +187,18 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
     @Override
     public void valueChanged(ListSelectionEvent e) {
         int i=e.getLastIndex();
+        listSelected=i;
 
-        txtNombre.setText((String) jugadores.get(i).getProperty(JUGADOR_NOMBRE));
-        txtApellido1.setText((String)jugadores.get(i).getProperty(JUGADOR_APELLIDO1));
-        txtApellido2.setText((String)jugadores.get(i).getProperty(JUGADOR_APELLIDO2));
-        txtCamiseta.setText((String)jugadores.get(i).getProperty(JUGADOR_TEXTO_CAMISETA));
-        txtDorsal.setText((String)jugadores.get(i).getProperty(JUGADOR_DORSAL));
-        datechooser.setDate((Date)jugadores.get(i).getProperty(JUGADOR_FECHA_NACIMIENTO));
-        cbEquipo.setSelectedIndex(buscarEquipo((int)jugadores.get(i).getProperty(JUGADOR_EQUIPO)));
-        cbEstado.setSelectedIndex(buscarEstado((int)jugadores.get(i).getProperty(JUGADOR_ESTADO)));
+        System.out.println(lista.size());
+        //System.out.println(list.getSelectedIndex());
+        txtNombre.setText((String) list.getSelectedValue().getProperty(JUGADOR_NOMBRE));
+        txtApellido1.setText((String)list.getSelectedValue().getProperty(JUGADOR_APELLIDO1));
+        txtApellido2.setText((String)list.getSelectedValue().getProperty(JUGADOR_APELLIDO2));
+        txtCamiseta.setText((String)list.getSelectedValue().getProperty(JUGADOR_TEXTO_CAMISETA));
+        txtDorsal.setText((String)list.getSelectedValue().getProperty(JUGADOR_DORSAL));
+        datechooser.setDate((Date)list.getSelectedValue().getProperty(JUGADOR_FECHA_NACIMIENTO));
+        cbEquipo.setSelectedIndex(buscarEquipo((int)list.getSelectedValue().getProperty(JUGADOR_EQUIPO)));
+        cbEstado.setSelectedIndex(buscarEstado((int)list.getSelectedValue().getProperty(JUGADOR_ESTADO)));
 
     }
 

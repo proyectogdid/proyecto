@@ -8,10 +8,8 @@ import com.company.comun.Utilidades;
 import com.company.comun.itfProperty;
 
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Date;
+import java.sql.SQLException;
+import java.util.*;
 
 import static com.company.comun.clsConstantes.*;
 
@@ -297,6 +295,20 @@ public class GestorLN {
         objDatos.desconectarBD();
 
 
+    }
+
+    /**
+     * metodo para borrar jugador de memoria y bd
+     * @param jugador jugadoritfprop
+     * @throws Exception excepcion
+     */
+    public void borrarJugador(itfProperty jugador) throws Exception {
+        System.out.println(jugador.getProperty(JUGADOR_NOMBRE));
+        if( jugadores.remove(jugador)){
+            objDatos.conectarBD();
+            objDatos.borrarJugador((int)jugador.getProperty(JUGADOR_ID));
+            objDatos.desconectarBD();
+        }
     }
 
     /**

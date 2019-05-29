@@ -34,4 +34,7 @@ public class ListaJugadoresModel extends DefaultListModel<itfProperty>{
         lista.add(element);
         this.fireContentsChanged(this, lista.size(), lista.size());
     }
+    public void actualizar(){
+        this.fireContentsChanged(this,lista.size(),lista.size());
+    }
 }

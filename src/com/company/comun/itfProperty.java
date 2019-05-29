@@ -11,4 +11,5 @@ public interface itfProperty {
      */
     Object getProperty(String prop);
     String toString();
+
 }

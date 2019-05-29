@@ -5,6 +5,7 @@ import com.company.comun.itfProperty;
 
 import java.sql.ResultSet;
 import java.util.Date;
+import java.util.Objects;
 
 import static com.company.comun.clsConstantes.*;
 
@@ -240,6 +241,28 @@ public class Jugador implements itfProperty {
             default:
                 throw new PropiedadIncorrecta(prop);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Jugador)) return false;
+        Jugador jugador = (Jugador) o;
+        return id == jugador.id &&
+                equipo == jugador.equipo &&
+                posicion == jugador.posicion &&
+                estado == jugador.estado &&
+                Objects.equals(nombre, jugador.nombre) &&
+                Objects.equals(apellido1, jugador.apellido1) &&
+                Objects.equals(apellido2, jugador.apellido2) &&
+                Objects.equals(fechaNac, jugador.fechaNac) &&
+                Objects.equals(dorsal, jugador.dorsal) &&
+                Objects.equals(textoCamiseta, jugador.textoCamiseta);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta, equipo, posicion, estado);
     }
 
     @Override

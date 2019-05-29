@@ -197,6 +197,15 @@ public class clsDatos {
     }
 
     /**
+     * metodo para eliminar jugadores
+     * @param id idjugadore
+     * @return numfilas
+     * @throws Exception sql
+     */
+    public int borrarJugador(int id)throws Exception{
+        return JugadoresBD.borrarJugador(con,id);
+    }
+    /**
      * gestionar select de estados
      *
      * @return resultset estados

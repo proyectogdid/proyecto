@@ -46,4 +46,17 @@ public class JugadoresBD extends Conexion {
         ResultSet rs = select(con, query);
         return rs;
     }
+
+    /**
+     * metodo para borrar jugador de BD
+     * @param con conexion
+     * @param id id
+     * @return int
+     * @throws Exception excepcion sql
+     */
+    public static int borrarJugador(Connection con,int id)throws Exception{
+        String query= "delete from jugaores where id=?";
+        Object[] o={id};
+        return delete(con,query,o);
+    }
 }

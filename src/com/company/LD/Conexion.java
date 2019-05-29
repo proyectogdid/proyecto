@@ -45,6 +45,20 @@ public abstract class Conexion {
     }
 
     /**
+     * metodo generico para borrar
+     * @param con conexion
+     * @param query query
+     * @param parametros  params
+     * @return int
+     * @throws Exception sql
+     */
+    public static int delete(Connection con, String query, Object[] parametros) throws Exception {
+        PreparedStatement stt = con.prepareStatement(query);
+        cargarDatos(stt, parametros);
+        return stt.executeUpdate();
+    }
+
+    /**
      * metodo para hacer queries con parametros
      *
      * @param query      query
