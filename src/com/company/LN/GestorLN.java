@@ -7,6 +7,7 @@ import com.company.comun.Clasificacion;
 import com.company.comun.Utilidades;
 import com.company.comun.itfProperty;
 
+import java.sql.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
@@ -649,15 +650,29 @@ public class GestorLN {
      * metodo para saber cual es el equipo favorito del usuario logeado
      * @return idequipo
      */
-    public int getEquipoFav(){
-        if(logeado instanceof Aficionado){
-            System.out.println(((Aficionado)logeado).getFavorito());
-            return ((Aficionado)logeado).getFavorito();
-        }else {
-            System.out.println(0);
-            return 0;
+    public itfProperty getEquipoFav() {
+        if (logeado instanceof Aficionado) {
+
+            int favorito = ((Aficionado) logeado).getFavorito();
+            for (Equipo e : equipos) {
+                if (e.getId() == favorito) {
+                    return e;
+                }
+            }
+
+
         }
+        return null;
+
     }
+
+    /**
+     * metodo para logearse
+     * @param username usuario
+     * @param password contrasena
+     * @return se ha encontrado usuario o no
+     * @throws Exception excepcion
+     */
     public boolean login(String username, String password) throws Exception {
         objDatos.conectarBD();
         ResultSet rs = objDatos.login(username, password);
@@ -678,6 +693,14 @@ public class GestorLN {
             objDatos.desconectarBD();
             return false;
         }
+    }
+
+    /**
+     * devuelve los datos del usuario logeado
+     * @return usuario logeado
+     */
+    public itfProperty getLogeado(){
+        return logeado;
     }
 }
 

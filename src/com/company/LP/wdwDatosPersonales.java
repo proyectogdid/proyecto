@@ -1,6 +1,8 @@
 package com.company.LP;
 
 import com.company.LN.GestorLN;
+import com.company.comun.clsConstantes;
+import com.company.comun.itfProperty;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -9,6 +11,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+
+import static com.company.comun.clsConstantes.USUARIO_CORREO;
+import static com.company.comun.clsConstantes.USUARIO_USERNAME;
 
 public class wdwDatosPersonales extends JFrame implements ActionListener, WindowListener {
 
@@ -32,6 +37,7 @@ public class wdwDatosPersonales extends JFrame implements ActionListener, Window
 
         this.setTitle("BASKET LIVE ⛹️");
         gln = gln_;
+        itfProperty logeado=gln.getLogeado();
 
 
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -56,6 +62,8 @@ public class wdwDatosPersonales extends JFrame implements ActionListener, Window
         txtRegistrousername.setBounds(198, 50, 212, 20);
         jpDatosPersonales.add(txtRegistrousername);
         txtRegistrousername.setColumns(10);
+        txtRegistrousername.setText((String) logeado.getProperty(USUARIO_USERNAME));
+        txtRegistrousername.setEditable(false);
 
         PassRegistro = new JLabel("Contraseña");
         PassRegistro.setBounds(72, 102, 100, 14);
@@ -65,16 +73,19 @@ public class wdwDatosPersonales extends JFrame implements ActionListener, Window
         txtRegistropassw.setBounds(198, 99, 212, 20);
         jpDatosPersonales.add(txtRegistropassw);
         txtRegistropassw.setColumns(10);
-
+        txtRegistropassw.setText("********");
+        txtRegistropassw.setEditable(false);
         Correo = new JLabel("Correo electrónico");
         Correo.setBounds(72, 154, 110, 14);
         jpDatosPersonales.add(Correo);
+
 
         txtRegistroemail = new JTextField();
         txtRegistroemail.setBounds(198, 151, 212, 20);
         jpDatosPersonales.add(txtRegistroemail);
         txtRegistroemail.setColumns(10);
-
+        txtRegistroemail.setText((String) logeado.getProperty(USUARIO_CORREO));
+        txtRegistroemail.setEditable(false);
         Equipo = new JLabel("Equipo favorito");
         Equipo.setBounds(72, 206, 110, 14);
         jpDatosPersonales.add(Equipo);
@@ -88,6 +99,8 @@ public class wdwDatosPersonales extends JFrame implements ActionListener, Window
         jpDatosPersonales.add(txtRegistroEquipo);
         txtRegistroEquipo.setColumns(10);
 
+        txtRegistrousername.setText((String) logeado.getProperty(USUARIO_USERNAME));
+        txtRegistrousername.setEditable(false);
 
         Button volver = new Button("Volver");
         volver.addActionListener(this);

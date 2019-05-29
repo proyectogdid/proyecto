@@ -12,6 +12,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
 
+import static com.company.comun.clsConstantes.AFICIONADO_FAVORITO;
 import static com.company.comun.clsConstantes.EQUIPO_ID;
 
 /**
@@ -34,7 +35,7 @@ public class updateEquipoFav extends JFrame implements ActionListener, WindowLis
 
         this.setTitle("BASKET LIVE ⛹️");
         gln = gln_;
-        int idequipofav=gln.getEquipoFav();
+        int idequipofav=(int)gln.getEquipoFav().getProperty(AFICIONADO_FAVORITO);
 
         ArrayList<itfProperty> equipos = gln.leerEquipos();
         cbEquipo = new JComboBox<>();

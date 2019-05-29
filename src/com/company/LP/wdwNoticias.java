@@ -13,6 +13,9 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
 
+import static com.company.comun.clsConstantes.AFICIONADO_FAVORITO;
+import static com.company.comun.clsConstantes.EQUIPO_ID;
+
 public class wdwNoticias extends JFrame implements ActionListener, WindowListener {
     private JPanel contentPane;
     private GestorLN gln;
@@ -22,7 +25,11 @@ public class wdwNoticias extends JFrame implements ActionListener, WindowListene
 
     public wdwNoticias(GestorLN gln_) {
         gln=gln_;
-        int idequipofav=gln.getEquipoFav();
+        int idequipofav=0;
+        if(!gln.isAdmin()){
+            idequipofav=(int)gln.getEquipoFav().getProperty(EQUIPO_ID);
+        }
+
         noticias=gln.leerNoticias();
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(this);

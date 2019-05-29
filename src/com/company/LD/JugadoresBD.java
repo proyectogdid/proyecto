@@ -55,7 +55,7 @@ public class JugadoresBD extends Conexion {
      * @throws Exception excepcion sql
      */
     public static int borrarJugador(Connection con,int id)throws Exception{
-        String query= "delete from jugaores where id=?";
+        String query= "delete from jugadores where id=?";
         Object[] o={id};
         return delete(con,query,o);
     }
