@@ -238,7 +238,7 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
                         this.dispose();
                     }
                 } catch (Exception ex) {
-                    javax.swing.JOptionPane.showMessageDialog(this, "error con el login");
+                    javax.swing.JOptionPane.showMessageDialog(this, "Error con el login");
                     ex.printStackTrace();
                 }
                 break;

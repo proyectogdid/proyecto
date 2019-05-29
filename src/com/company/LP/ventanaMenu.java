@@ -103,22 +103,23 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
         itemCerrarSesion.addActionListener(this);
         menuAjustes.add(itemCerrarSesion);
 
-        if(!gln.isAdmin()){
+        if (!gln.isAdmin()) {
             itemCambiarEquipoFav = new JMenuItem("Cambia de equipo");
             itemCambiarEquipoFav.setActionCommand(CAMBIAR_EQUIPO_FAV);
             itemCambiarEquipoFav.addActionListener(this);
             menuAjustes.add(itemCambiarEquipoFav);
         }
 
+        if (!gln.isAdmin()) {
+            menuPerfil = new JMenu("Perfil");
+            barraMenu.add(menuPerfil);
 
-        menuPerfil = new JMenu("Perfil");
-        barraMenu.add(menuPerfil);
 
-        itemDatosPesonales = new JMenuItem("Datos personales");
-        itemDatosPesonales.setActionCommand(DATOS_PERSONALES);
-        itemDatosPesonales.addActionListener(this);
-        menuPerfil.add(itemDatosPesonales);
-
+            itemDatosPesonales = new JMenuItem("Datos personales");
+            itemDatosPesonales.setActionCommand(DATOS_PERSONALES);
+            itemDatosPesonales.addActionListener(this);
+            menuPerfil.add(itemDatosPesonales);
+        }
         if (gln.isAdmin()) {
             menuInsertar = new JMenu("Insertar");
             menuInsertar.setActionCommand(INSERTAR);
@@ -163,7 +164,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case ABRIR_NOTICIAS:
-                wdwNoticias w=new wdwNoticias(gln);
+                wdwNoticias w = new wdwNoticias(gln);
                 w.setVisible(true);
                 break;
             case ABRIR_CLASIFICACION:
@@ -199,7 +200,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
                 ef.setVisible(true);
                 break;
             case DATOS_PERSONALES:
-                wdwDatosPersonales dp=new wdwDatosPersonales(gln);
+                wdwDatosPersonales dp = new wdwDatosPersonales(gln);
                 dp.setVisible(true);
                 break;
 
