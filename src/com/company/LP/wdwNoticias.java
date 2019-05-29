@@ -33,6 +33,7 @@ public class wdwNoticias extends JFrame implements ActionListener, WindowListene
         noticias=gln.leerNoticias();
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(this);
+        this.setResizable(false);
         setBounds(100, 100, 450, 618);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

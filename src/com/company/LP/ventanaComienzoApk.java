@@ -30,6 +30,7 @@ public class ventanaComienzoApk extends JFrame implements ActionListener, Window
         gln = gln_;
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(this);
+        this.setResizable(false);
         setBounds(100, 100, 500, 500);
 
         JMenuBar menuBar = new JMenuBar();

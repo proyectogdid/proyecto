@@ -56,6 +56,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
         gln = gln_;
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(this);
+        this.setResizable(false);
         setBounds(100, 100, 450, 348);
 
         contentPane = new clsImagen();
