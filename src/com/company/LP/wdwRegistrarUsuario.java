@@ -29,6 +29,7 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
     private JLabel Equipo;
     private JLabel PassLogin;
     private JLabel PassRegistro;
+    private JLabel Requerido, Requerido1;
     private JTextField txtRegistrousername;
     private JTextField txtRegistropassw;
     private JTextField txtRegistroemail;
@@ -60,7 +61,7 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
 
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(this);
-        setBounds(100, 100, 628,548);
+        setBounds(100, 100, 628, 548);
         contentPane = new clsImagen();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setBackgroundImage(contentPane.createImage("/com/company/LP/imagenes/sign&log.png").getImage());
@@ -87,7 +88,6 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
         UserRegistro.setBounds(10, 50, 110, 14);
         jpRegistrar.add(UserRegistro);
         UserRegistro.setForeground(Color.WHITE);
-
 
 
         txtRegistrousername = new JTextField();
@@ -125,7 +125,7 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
         jpRegistrar.add(cbEquipo);
 
 
-       JButton aceptar = new JButton("Aceptar");
+        JButton aceptar = new JButton("Aceptar");
         aceptar.setBounds(200, 240, 85, 22);
         jpRegistrar.add(aceptar);
         aceptar.setActionCommand(BOTON_ACEPTAR_REGISTRO);
@@ -160,7 +160,7 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
         jpIniciarSesion.add(UserLogin);
 
         txtLoginusername = new JTextField();
-        txtLoginusername.setBounds(151, 27, 212, 20);
+        txtLoginusername.setBounds(90, 27, 150, 20);
         jpIniciarSesion.add(txtLoginusername);
         txtLoginusername.setColumns(10);
         txtLoginusername.setActionCommand(ENTER_LOGIN);
@@ -173,7 +173,7 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
 
 
         txtLoginpassw = new JTextField();
-        txtLoginpassw.setBounds(151, 58, 212, 20);
+        txtLoginpassw.setBounds(90, 58, 150, 20);
         jpIniciarSesion.add(txtLoginpassw);
         txtLoginpassw.setColumns(10);
         txtLoginpassw.setActionCommand(ENTER_LOGIN);
@@ -188,6 +188,19 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
         blogin.setOpaque(false);
         blogin.setContentAreaFilled(false);
         blogin.setBorderPainted(false);
+
+        Requerido = new JLabel("Requerido");
+        Requerido.setBounds(250, 30, 110, 14);
+        Requerido.setForeground(Color.RED);
+        Requerido.setVisible(false);
+        jpIniciarSesion.add(Requerido);
+
+        Requerido1 = new JLabel("Requerido");
+        Requerido1.setBounds(250, 61, 110, 14);
+        Requerido1.setForeground(Color.RED);
+        Requerido1.setVisible(false);
+        jpIniciarSesion.add(Requerido1);
+
 
         /*
          * Este boton se ha creado para que el boton iniciar sesion no de fallo y ocupe toda la pantalla
@@ -226,20 +239,47 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
                 txtRegistroemail.setText("");
                 txtRegistropassw.setText("");
                 txtRegistrousername.setText("");
-                ventanaComienzoApk ca=new ventanaComienzoApk(gln);
+                ventanaComienzoApk ca = new ventanaComienzoApk(gln);
                 ca.setVisible(true);
                 this.dispose();
                 break;
             case BOTON_ACEPTAR_LOGIN:
-                try {
-                    if (gln.login(txtLoginusername.getText(), txtLoginpassw.getText())) {
-                        ventanaMenu v = new ventanaMenu(gln);
-                        v.setVisible(true);
-                        this.dispose();
+
+                if (txtLoginusername.getText().equals("")) {
+                    Requerido.setVisible(true);
+                    txtLoginusername.setBackground(Color.RED);
+                    txtLoginusername.setForeground(Color.WHITE);
+                    try {
+                        Thread.sleep(50);
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
                     }
-                } catch (Exception ex) {
-                    javax.swing.JOptionPane.showMessageDialog(this, "Error con el login");
-                    ex.printStackTrace();
+
+
+                }
+                if (txtLoginpassw.getText().equals("")) {
+                    Requerido1.setVisible(true);
+                    txtLoginpassw.setBackground(Color.RED);
+                    txtLoginpassw.setForeground(Color.WHITE);
+                    try {
+                        Thread.sleep(50);
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+
+                } else {
+
+                    try {
+                        if (gln.login(txtLoginusername.getText(), txtLoginpassw.getText())) {
+                            ventanaMenu v = new ventanaMenu(gln);
+                            v.setVisible(true);
+                            this.dispose();
+
+                        }
+                    } catch (Exception ex) {
+                        javax.swing.JOptionPane.showMessageDialog(this, "Error con el login");
+                        ex.printStackTrace();
+                    }
                 }
                 break;
             case ENTER_LOGIN:
