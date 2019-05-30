@@ -59,7 +59,7 @@ public class wdwJornadas extends JFrame implements ActionListener {
 		getContentPane().add(volver, BorderLayout.SOUTH);
 
 		list = new JList(modelo);
-		list.setBounds(10, 11, 130, 150);
+		list.setBounds(10, 11, 178, 200);
 		contentPane.add(list);
 		/*
 		 * Este boton se ha creado para que el boton iniciar sesion no de fallo y ocupe toda la pantalla
