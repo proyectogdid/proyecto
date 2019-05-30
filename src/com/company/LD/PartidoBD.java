@@ -34,5 +34,10 @@ public class PartidoBD extends Conexion {
     public static ArrayList<Integer> insertarPartidos(Connection con, Object[][] datos) throws Exception {
         return multiInsert(con, "INSERT INTO partidos  (local,visitante,fecha,temporada,campo,jornada) VALUES ", datos);
     }
+    
+    public static int actualizarPartido(Connection con, Object[]datos) throws Exception{
+    	String sql="UPDATE partidos set ptosLocal=?, ptosVisitante=? where id =?";
+    	return update(con, sql, datos);
+    }
 }
 

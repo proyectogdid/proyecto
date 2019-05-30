@@ -59,4 +59,10 @@ public class JugadorBD extends Conexion {
         Object[] o={id};
         return delete(con,query,o);
     }
+    public static int actualizar(Connection con, String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta, int equipo, int estado,int id) throws Exception {
+
+        Object[] parametros = {nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta, equipo, estado,id};
+        return update(con, "update jugadores set nombre=?,apellido1=?,apellido2=?,fechaNac=?,dorsal=?, textoCamiseta=?,equipo=?,estado=? where id =?", parametros);
+    }
+
 }

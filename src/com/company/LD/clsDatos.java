@@ -55,6 +55,11 @@ public class clsDatos {
     public int insertarCampo(String nombre, String ciudad, String calle, String numero, String cp, int aforo) throws Exception {
         return CampoBD.insertar(con, nombre, ciudad, calle, numero, cp, aforo);
     }
+    
+    public int actualizarPartido(int idPartido,int ptosLocal, int ptosVisitante) throws Exception {
+    	Object[] datos= {ptosLocal,ptosVisitante,idPartido};
+    	return PartidoBD.actualizarPartido(con,datos);
+    }
 
     /**
      * Metedo para buscar campos
@@ -136,6 +141,26 @@ public class clsDatos {
     public int insertarJugador(String nombre, String apellido1, String apellido2, java.util.Date fechaNac, String dorsal, String textoCamiseta, int equipo, int posicion, int estado) throws Exception {
         return JugadorBD.insertar(con, nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta, equipo, estado, posicion);
     }
+
+    /**
+     * Metodo para actualizar jugadores a la BD
+     *
+     * @param nombre        nombre
+     * @param apellido1     apellido1
+     * @param apellido2     apellido2
+     * @param fechaNac      fechaNac
+     * @param dorsal        dorsal
+     * @param textoCamiseta textoCamiseta
+     * @param equipo        equipo
+
+     * @param estado        estado
+     * @return return
+     * @throws Exception fallos en la query
+     */
+    public int actualizarJugador(String nombre, String apellido1, String apellido2, java.util.Date fechaNac, String dorsal, String textoCamiseta, int equipo, int estado,int id) throws Exception {
+        return JugadorBD.actualizar(con, nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta, equipo, estado,id);
+    }
+
 
     /**
      * Metodo para insertar nueva temporada

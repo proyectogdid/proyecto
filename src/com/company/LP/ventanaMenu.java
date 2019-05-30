@@ -39,7 +39,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
     private final String INSERTAR = "insertar";
     private final String ABRIR_CLASIFICACION = "clasificacion";
     private final String ABRIR_JORNADA = "jornada";
-    private final String CERRAR_SESION = "cerrar sesión";
+    private final String CERRAR_SESION = "cerrar sesiÃ³n";
     private final String CAMBIAR_EQUIPO_FAV = "cambiar equipo fav";
     private final String DATOS_PERSONALES = "datos personales";
     private final String INSERTAR_JUGADOR = "insertar jugador";
@@ -53,7 +53,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
      * Create the frame.
      */
     public ventanaMenu(GestorLN gln_) {
-        this.setTitle("BASKET LIVE ⛹️");
+        this.setTitle("BASKET LIVE â›¹ï¸�");
         gln = gln_;
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(this);
@@ -100,7 +100,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
         menuAjustes = new JMenu("Ajustes");
         barraMenu.add(menuAjustes);
 
-        itemCerrarSesion = new JMenuItem("Cerrar sesión");
+        itemCerrarSesion = new JMenuItem("Cerrar sesiÃ³n");
         itemCerrarSesion.setActionCommand(CERRAR_SESION);
         itemCerrarSesion.addActionListener(this);
         menuAjustes.add(itemCerrarSesion);
@@ -180,6 +180,8 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
                 c.setVisible(true);
                 break;
             case ABRIR_JORNADA:
+            	wdwJornadas wj=new wdwJornadas(gln);
+            	wj.setVisible(true);
                 break;
 
             case INSERTAR_JUGADOR:
@@ -227,7 +229,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
 
     @Override
     public void windowClosing(WindowEvent e) {
-        int eleccion = JOptionPane.showConfirmDialog(this, "¿Estás seguro?", "Salir",
+        int eleccion = JOptionPane.showConfirmDialog(this, "Â¿EstÃ¡s seguro?", "Salir",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
         if (eleccion == JOptionPane.YES_OPTION) {
             System.exit(0);

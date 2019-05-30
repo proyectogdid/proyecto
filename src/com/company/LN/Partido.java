@@ -5,6 +5,7 @@ import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Date;
 
 import static com.company.comun.clsConstantes.*;
@@ -52,6 +53,10 @@ public class Partido implements itfProperty, itfPersistable {
      * Numero de la jornada
      */
     private int jornada;
+    /**
+     * atributo auxiliar para metodo toString
+     */
+    private String texto;
 
     public Partido() {
     }
@@ -243,5 +248,32 @@ public class Partido implements itfProperty, itfPersistable {
         local = rs.getInt(BD_PARTIDO_LOCAL);
         visitante = rs.getInt(BD_PARTIDO_VISITANTE);
         jornada=rs.getInt(BD_PARTIDO_JORNADA);
+        
     }
+    
+    public void generarTexto(ArrayList<Equipo>equipos) {
+        
+        Equipo loc=null,vis = null;
+        int cont=0;
+        for (int i = 0; i <equipos.size() && cont<2 ; i++) {
+            if(equipos.get(i).getId()==this.local){
+            	loc=equipos.get(i);
+                cont++;
+
+            }
+            if(equipos.get(i).getId()==this.visitante){
+            	vis=equipos.get(i);
+                cont++;
+            }
+        }
+
+        this.texto=loc.getNombre()+" "+this.ptosLocal+ "-"+this.ptosVisitante+" "+vis.getNombre();
+
+    }
+    
+   @Override
+public String toString() {
+	// TODO Auto-generated method stub
+	return texto;
+}
 }

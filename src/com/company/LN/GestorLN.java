@@ -190,6 +190,24 @@ public class GestorLN {
 
     }
 
+    /**
+     * Metodo para actualizar el partido de la BD
+     *
+     *
+     * @throws Exception
+     */
+    public void updatePartido(itfProperty partido, int local,int visitante) throws Exception {
+    		if(partido instanceof Partido) {
+    			Partido p=(Partido) partido;
+    			objDatos.conectarBD();
+    			p.setPtosLocal(local);
+    			p.setVisitante(visitante);
+    			objDatos.actualizarPartido(p.getId(), local, visitante);
+    			objDatos.desconectarBD();
+    		}
+
+
+    }
 
     /**
      * Este metodo se va a utilizar para añadir los campos en el Array de los campos
@@ -233,7 +251,7 @@ public class GestorLN {
     /**
      * Metodo para anadir la temporada a la BD
      *
-     * @throws Exceptio Exception
+     * @throws Exception Exception
      * @throws EquiposInsuficientesException si no hay equipos suficientes no se generara el calendario de la temporada
      */
     public void anadirTemporada() throws Exception, EquiposInsuficientesException {
@@ -294,6 +312,42 @@ public class GestorLN {
 
 
     }
+    /**
+     * Metodo para añadir jugador al array de jugadores
+     *
+     * @param nombre        nombre
+     * @param apellido1     apellido1
+     * @param apellido2     apellido2
+     * @param fechaNac      fechaNac
+     * @param dorsal        dorsal
+     * @param textoCamiseta textoCamiseta
+     * @param equipo        equipo
+
+     * @param estado        estado
+     */
+    public void actualizarJugador(itfProperty jugador,String nombre, String apellido1, String apellido2, Date fechaNac, String dorsal, String textoCamiseta, int equipo, int estado) throws Exception {
+
+    if(jugador instanceof  Jugador) {
+        objDatos.conectarBD();
+        Jugador j = (Jugador) jugador;
+        j.setApellido1(apellido1);
+        j.setApellido2(apellido2);
+        j.setNombre(nombre);
+        j.setDorsal(dorsal);
+        j.setFechaNac(fechaNac);
+        j.setTextoCamiseta(textoCamiseta);
+        j.setEquipo(equipo);
+
+        j.setEstado(estado);
+       objDatos.actualizarJugador(nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta, equipo, estado,j.getId());
+
+
+        objDatos.desconectarBD();
+    }
+
+    }
+
+
 
     /**
      * metodo para borrar jugador de memoria y bd
@@ -363,15 +417,15 @@ public class GestorLN {
 
     /**
      * metodo para devolver los partidos especificos de una jornada
-     * @param jornada numero de jornada
+
      * @return array itfProperty
      */
-    public ArrayList<itfProperty> leerJornadas(int jornada){
+    public ArrayList<itfProperty> leerJornadas(){
         ArrayList<itfProperty> retorno=new ArrayList<>();
         for (Partido p:partidos) {
-            if(p.getJornada()==jornada){
+
                 retorno.add(p);
-            }
+
 
         }
         return retorno;
@@ -600,6 +654,7 @@ public class GestorLN {
         while (rs.next()) {
             Partido e = new Partido();
             e.resultsetLoad(rs);
+            e.generarTexto(equipos);
             partidos.add(e);
         }
     }

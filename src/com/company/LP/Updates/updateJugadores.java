@@ -180,7 +180,11 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
                 this.dispose();
                 break;
             case ACTUALIZAR:
-
+                try {
+                    gln.actualizarJugador(list.getSelectedValue(),txtNombre.getText(),txtApellido1.getText(),txtApellido2.getText(),datechooser.getDate(),txtDorsal.getText(),txtCamiseta.getText(),(int)((itfProperty)cbEquipo.getSelectedItem()).getProperty(EQUIPO_ID),(int)((itfProperty)cbEstado.getSelectedItem()).getProperty(ESTADO_ID));
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
                 break;
         }
     }
