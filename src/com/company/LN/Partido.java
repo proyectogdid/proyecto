@@ -49,7 +49,7 @@ public class Partido implements itfProperty, itfPersistable {
     private int campo;
 
     /**
-     * numero de la jornada
+     * Numero de la jornada
      */
     private int jornada;
 
@@ -197,7 +197,7 @@ public class Partido implements itfProperty, itfPersistable {
     }
 
     /**
-     * metodo get property de la interfaz itfProperty
+     * Metodo get property de la interfaz itfProperty
      *
      * @param prop prop
      * @return return

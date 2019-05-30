@@ -1,6 +1,5 @@
 package com.company.LN;
 
-import com.company.Excepciones.PropiedadIncorrecta;
 import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 

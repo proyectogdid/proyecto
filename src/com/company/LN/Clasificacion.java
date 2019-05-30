@@ -1,8 +1,6 @@
 
 package com.company.LN;
 
-import com.company.LN.Participantes;
-
 import java.util.Comparator;
 
 /**

@@ -75,12 +75,12 @@ public class GestorLN {
      * comunicacion con capa de datos en LN
      */
 
-    ArrayList<Noticia> noticias =new ArrayList<>();
+    ArrayList<Noticia> noticias = new ArrayList<>();
     private clsDatos objDatos = new clsDatos();
 
 
     /**
-     * metodo que se usará para generar los distintos partidos que tendrá una temporada
+     * Metodo que se usará para generar los distintos partidos que tendrá una temporada
      * basado en algoritmo Round Robin
      * https://en.wikipedia.org/wiki/Round-robin_scheduling
      */
@@ -100,7 +100,6 @@ public class GestorLN {
          n!/(n-2)!*2
          es la formula para saber cuantos partidos habra en una liga
          */
-        // System.out.println(npartidos);
         Object[][] datos = new Object[npartidos * 2][6];//6 es el numero de columnas necesarias que tiene partido
 
         for (int i = 0; i < equipos.size(); i++) {
@@ -124,10 +123,6 @@ public class GestorLN {
 
 
             for (int k = 0; k < jornadas * 2; k++) {
-                //              System.out.println("----JORNADA " + (k + 1) + "---------- ");
-
-//                System.out.println(fijo.getNombre() + "-" + visitantes.get(0).getNombre());
-
                 datos[r][LOCAL] = fijo.getId();
                 datos[r][VISITANTE] = visitantes.get(0).getId();
                 datos[r][FECHA] = new Date();
@@ -136,7 +131,6 @@ public class GestorLN {
                 datos[r][JORNADA] = k;
                 r++;
                 for (int x = 0; x < locales.size(); x++) {
-                    //                System.out.println(locales.get(x).getNombre() + "-" + visitantes.get(x + 1).getNombre());
 
                     datos[r][LOCAL] = locales.get(x).getId();
                     datos[r][VISITANTE] = visitantes.get(x).getId();
@@ -151,7 +145,7 @@ public class GestorLN {
                 visitantes.add(locales.get(locales.size() - 1));
                 locales.remove(locales.size() - 1);
             }
-            //      System.out.println(r);//si contador es igual a n!/(n-2)!*2 es que todo va bien
+            //si contador es igual a n!/(n-2)!*2 es que todo va bien
             ArrayList<Integer> claves = objDatos.insertPartidos(datos);
             for (int i = 0; i < claves.size(); i++) {
                 Partido p = new Partido(claves.get(i), (Date) datos[i][FECHA], (int) datos[i][LOCAL], (int) datos[i][VISITANTE], (int) datos[i][TEMPORADA], (int) datos[i][CAMPO], (int) datos[i][JORNADA]);
@@ -162,6 +156,7 @@ public class GestorLN {
     }
 
     /**
+     * Metodo para registrar un nuevo usuario
      * @param usuario nombre de usuaario
      * @param passw   contrsensa
      * @param equipo  equipo favorito del usuario
@@ -179,14 +174,15 @@ public class GestorLN {
 
     /**
      * Metodo para actualizar el usuario de la BD
+     *
      * @param id
      * @throws Exception
      */
-    public void updateUsuario(int id) throws Exception{
-        if(!isAdmin()){
+    public void updateUsuario(int id) throws Exception {
+        if (!isAdmin()) {
             objDatos.conectarBD();
-            ((Aficionado)logeado).setFavorito(id);
-            id=objDatos.updateUsuario(id,logeado.getId());
+            ((Aficionado) logeado).setFavorito(id);
+            id = objDatos.updateUsuario(id, logeado.getId());
 
             objDatos.desconectarBD();
         }
@@ -237,7 +233,7 @@ public class GestorLN {
     /**
      * Metodo para anadir la temporada a la BD
      *
-     * @throws Exception                     Exception
+     * @throws Exceptio Exception
      * @throws EquiposInsuficientesException si no hay equipos suficientes no se generara el calendario de la temporada
      */
     public void anadirTemporada() throws Exception, EquiposInsuficientesException {
@@ -352,13 +348,14 @@ public class GestorLN {
     }
 
     /**
-     * metodo para devolver las noticias a LP ordenadas por fecha
+     * Metodo para devolver las noticias a LP ordenadas por fecha
+     *
      * @return array itfProperty
      */
-    public ArrayList<itfProperty> leerNoticias(){
+    public ArrayList<itfProperty> leerNoticias() {
         Collections.sort(noticias);
-        ArrayList<itfProperty> retorno=new ArrayList<>();
-        for (Noticia n:noticias) {
+        ArrayList<itfProperty> retorno = new ArrayList<>();
+        for (Noticia n : noticias) {
             retorno.add(n);
         }
         return retorno;
@@ -390,9 +387,9 @@ public class GestorLN {
         ArrayList<itfProperty> retorno = new ArrayList<>();
 
 
-            for (Campo c : campos) {
-                retorno.add(c);
-            }
+        for (Campo c : campos) {
+            retorno.add(c);
+        }
 
 
         return retorno;
@@ -497,7 +494,7 @@ public class GestorLN {
 
 
     /**
-     * para cargar los datos de los jugadores
+     * Metodo para cargar los datos de los jugadores
      *
      * @throws Exception fallos en la query
      */
@@ -515,7 +512,7 @@ public class GestorLN {
     }
 
     /**
-     * para cargar los datos de los estados
+     * Metodo para cargar los datos de los estados
      *
      * @throws Exception fallos en la query
      */
@@ -530,7 +527,7 @@ public class GestorLN {
     }
 
     /**
-     * para cargar los datos de las posiciones
+     * Metodo para cargar los datos de las posiciones
      *
      * @throws Exception fallos en la query
      */
@@ -547,7 +544,7 @@ public class GestorLN {
     }
 
     /**
-     * para cargar los datos de los traspasos
+     * Metodo para cargar los datos de los traspasos
      *
      * @throws Exception fallos en la query
      */
@@ -556,7 +553,7 @@ public class GestorLN {
         while (rs.next()) {
             Traspaso p = new Traspaso();
             p.resultsetLoad(rs);
-            p.generarTexto(jugadores,equipos);
+            p.generarTexto(jugadores, equipos);
             traspasos.add(p);
             noticias.add(p);
         }
@@ -564,7 +561,7 @@ public class GestorLN {
     }
 
     /**
-     * para cargar los datos de las temporadas
+     * Metodo para cargar los datos de las temporadas
      *
      * @throws Exception fallos en la query
      */
@@ -578,7 +575,7 @@ public class GestorLN {
     }
 
     /**
-     * para cargar los datos de los eventos
+     * Metodo para cargar los datos de los eventos
      *
      * @throws Exception fallos en la query
      */
@@ -587,14 +584,14 @@ public class GestorLN {
         while (rs.next()) {
             Evento e = new Evento();
             e.resultsetLoad(rs);
-            e.generarTexto(jugadores,estados);
+            e.generarTexto(jugadores, estados);
             eventos.add(e);
             noticias.add(e);
         }
     }
 
     /**
-     * para cargar los datos de los partidos
+     * Metodo para cargar los datos de los partidos
      *
      * @throws Exception sql excption
      */
@@ -606,8 +603,9 @@ public class GestorLN {
             partidos.add(e);
         }
     }
+
     /**
-     * para cargar los datos de los resultados de los partidos
+     * Metodo para cargar los datos de los resultados de los partidos
      *
      * @throws Exception sql excption
      */
@@ -663,7 +661,8 @@ public class GestorLN {
     }
 
     /**
-     * metodo para saber cual es el equipo favorito del usuario logeado
+     * Metodo para saber cual es el equipo favorito del usuario logeado
+     *
      * @return idequipo
      */
     public itfProperty getEquipoFav() {
@@ -693,13 +692,10 @@ public class GestorLN {
         objDatos.conectarBD();
         ResultSet rs = objDatos.login(username, password);
         if (rs.next()) {
-            System.out.println(rs.getString(BD_USUARIO_TIPO));
-            if(rs.getString(BD_USUARIO_TIPO).equals(USUARIO_TIPO_AFICIONADO)){
-                logeado=new Aficionado();
-                System.out.println("soy aficionado");
-            }else{
-                System.out.println("soy admin");
-                logeado=new Usuario();
+            if (rs.getString(BD_USUARIO_TIPO).equals(USUARIO_TIPO_AFICIONADO)) {
+                logeado = new Aficionado();
+            } else {
+                logeado = new Usuario();
             }
             logeado.resultsetLoad(rs);
             objDatos.desconectarBD();

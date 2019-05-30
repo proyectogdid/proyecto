@@ -63,7 +63,7 @@ public class Estado implements itfProperty, itfPersistable {
     }
 
     /**
-     * metodo get property de la interfaz itfProperty
+     * Metodo get property de la interfaz itfProperty
      *
      * @param prop prop
      * @return return
