@@ -371,70 +371,70 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
         }
     }
 
-        @Override
-        public void windowOpened (WindowEvent e){
+    @Override
+    public void windowOpened(WindowEvent e) {
 
-        }
+    }
 
-        @Override
-        public void windowClosing (WindowEvent e){
-            close();
-        }
+    @Override
+    public void windowClosing(WindowEvent e) {
+        close();
+    }
 
-        private void close () {
+    private void close() {
 
-            int eleccion = JOptionPane.showConfirmDialog(this, "¿Estás seguro?", "Salir",
-                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
-            if (eleccion == JOptionPane.YES_OPTION) {
-                System.exit(0);
+        int eleccion = JOptionPane.showConfirmDialog(this, "¿Estás seguro?", "Salir",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
+        if (eleccion == JOptionPane.YES_OPTION) {
+            System.exit(0);
 
-
-            }
-        }
-
-        @Override
-        public void windowClosed (WindowEvent e){
-
-        }
-
-        @Override
-        public void windowIconified (WindowEvent e){
-
-        }
-
-        @Override
-        public void windowDeiconified (WindowEvent e){
-
-        }
-
-        @Override
-        public void windowActivated (WindowEvent e){
-
-        }
-
-        @Override
-        public void windowDeactivated (WindowEvent e){
-
-        }
-
-        @Override
-        public void focusGained (FocusEvent e){
-            e.getComponent().setBackground(Color.WHITE);
-
-            if (e.getComponent() == txtLoginusername) {
-                txtLoginusername.setForeground(Color.BLACK);
-                Requerido.setVisible(false);
-            }
-            if (e.getComponent() == txtLoginpassOculto) {
-                txtLoginpassOculto.setForeground(Color.BLACK);
-                Requerido1.setVisible(false);
-            }
-
-
-        }
-
-        @Override
-        public void focusLost (FocusEvent e){
 
         }
     }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void focusGained(FocusEvent e) {
+        e.getComponent().setBackground(Color.WHITE);
+
+        if (e.getComponent() == txtLoginusername) {
+            txtLoginusername.setForeground(Color.BLACK);
+            Requerido.setVisible(false);
+        }
+        if (e.getComponent() == txtLoginpassOculto) {
+            txtLoginpassOculto.setForeground(Color.BLACK);
+            Requerido1.setVisible(false);
+        }
+
+
+    }
+
+    @Override
+    public void focusLost(FocusEvent e) {
+
+    }
+}

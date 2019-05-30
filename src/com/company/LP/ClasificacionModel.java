@@ -21,10 +21,10 @@ class ClasificacionModel extends AbstractTableModel {
 
         super();
 
-        int filas= clasificados.size()+1;
+        int filas = clasificados.size() + 1;
         int cont;
         data = new Object[filas][];
-        data[0]=columnNames;
+        data[0] = columnNames;
         cont = 1;
 
 
@@ -44,7 +44,7 @@ class ClasificacionModel extends AbstractTableModel {
         int filas = Departamentos.size();
         int cont;
         data = new Object[filas][];
-        data[0]=columnNames;
+        data[0] = columnNames;
         cont = 1;
 
 

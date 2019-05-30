@@ -13,8 +13,12 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
 
-import static com.company.comun.clsConstantes.AFICIONADO_FAVORITO;
+
 import static com.company.comun.clsConstantes.EQUIPO_ID;
+
+/**
+ * Clase encargada de diseñar la ventana en la que visualizaran las noticias de la aplicación
+ */
 
 public class wdwNoticias extends JFrame implements ActionListener, WindowListener {
     private JPanel contentPane;

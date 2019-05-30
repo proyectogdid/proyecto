@@ -8,10 +8,14 @@ import java.util.Date;
 
 import static com.company.comun.clsConstantes.*;
 
+/**
+ * Clase encargada de mostrar las noticias de la aplicacion
+ */
 public class NoticiaComponent extends Panel {
-    public NoticiaComponent(itfProperty noticia,int idequipofav) {
+
+    public NoticiaComponent(itfProperty noticia, int idequipofav) {
         setEnabled(false);
-        setBackground((((int)noticia.getProperty(NOTICIA_EQUIPO_RELATIVO))==idequipofav)?SystemColor.activeCaption:Color.LIGHT_GRAY);
+        setBackground((((int) noticia.getProperty(NOTICIA_EQUIPO_RELATIVO)) == idequipofav) ? SystemColor.activeCaption : Color.LIGHT_GRAY);
 
         setLayout(null);
         this.setPreferredSize(new Dimension(300, 80));
@@ -42,7 +46,7 @@ public class NoticiaComponent extends Panel {
         lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
         lblNewLabel_1.setBounds(109, 11, 295, 71);
         add(lblNewLabel_1);
-        
+
         JLabel lblNewLabel_2 = new JLabel(((Date) noticia.getProperty(NOTICIA_FECHA)).toString());
         lblNewLabel_2.setHorizontalAlignment(SwingConstants.TRAILING);
         lblNewLabel_2.setFont(new Font("Tahoma", Font.ITALIC, 10));

@@ -46,7 +46,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
     private final String INSERTAR_EQUIPO = "insertar equipo";
     private final String INSERTAR_POSICION = "insertar posicion";
     private final String INSERTAR_ESTADO = "insertar estado";
-    private final String INSERTAR_CAMPO="insertar campo";
+    private final String INSERTAR_CAMPO = "insertar campo";
     private clsImagen contentPane;
 
     /**
@@ -155,8 +155,6 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
             menuInsertar.add(itemInsertarEstado);
 
 
-
-
         }
 
 
@@ -201,7 +199,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
                 es.setVisible(true);
                 break;
             case INSERTAR_CAMPO:
-                wdwCampo ca=new wdwCampo(gln);
+                wdwCampo ca = new wdwCampo(gln);
                 ca.setVisible(true);
                 break;
             case CERRAR_SESION:
