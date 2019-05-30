@@ -242,5 +242,6 @@ public class Partido implements itfProperty, itfPersistable {
         ptosVisitante = rs.getInt(BD_PARTIDO_PTOS_VISITANTE);
         local = rs.getInt(BD_PARTIDO_LOCAL);
         visitante = rs.getInt(BD_PARTIDO_VISITANTE);
+        jornada=rs.getInt(BD_PARTIDO_JORNADA);
     }
 }

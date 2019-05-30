@@ -173,6 +173,13 @@ public abstract class Conexion {
         //    System.out.println(n);
     }
 
+    /**
+     * funcion para preparar los atributos del prepared statement
+     * @param stt statment
+     * @param obj parametro
+     * @param index indice de parametro en query
+     * @throws SQLException sql exception
+     */
     private static void setData(PreparedStatement stt, Object obj, int index) throws SQLException {
         if (obj instanceof String) {
             stt.setString(index, (String) obj);

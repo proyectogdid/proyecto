@@ -238,6 +238,7 @@ public class Jugador implements itfProperty {
                 return this.posicion;
             case JUGADOR_ESTADO:
                 return this.estado;
+
             default:
                 throw new PropiedadIncorrecta(prop);
         }

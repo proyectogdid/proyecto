@@ -62,7 +62,7 @@ public class GestorLN {
      */
     ArrayList<Usuario> usuarios = new ArrayList<>();
 
-    ArrayList<ArrayList<Partido>> partidos=new ArrayList<>();
+    //ArrayList<ArrayList<Partido>> partidos=new ArrayList<>();
     /**
      * array que guardara los partidos en memoria
      */
@@ -365,6 +365,10 @@ public class GestorLN {
         return retorno;
     }
 
+    public ArrayList<ArrayList<itfProperty>> leerJornadas(){
+        ArrayList<ArrayList<itfProperty>> retorno=new ArrayList<>();
+        return retorno;
+    }
 
     /**
      * Este metodo lo vamos a emplear para leer los campos de los equipos
