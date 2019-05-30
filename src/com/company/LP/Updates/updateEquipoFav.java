@@ -12,7 +12,6 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
 
-import static com.company.comun.clsConstantes.AFICIONADO_FAVORITO;
 import static com.company.comun.clsConstantes.EQUIPO_ID;
 
 /**

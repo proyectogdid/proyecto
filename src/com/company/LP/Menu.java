@@ -3,7 +3,7 @@ package com.company.LP;
 import com.company.LN.GestorLN;
 
 /**
- * Clase que gestionara la interaccion con el usuario
+ * Clase intermediaria entre el main y el resto del programa.
  */
 public class Menu {
     private static GestorLN gln;

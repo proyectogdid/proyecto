@@ -7,7 +7,9 @@ import java.util.LinkedList;
 
 import javax.swing.DefaultListModel;
 
-
+/**
+ * Clase que se utilizara para rellenar la JList de la ventana updateJugadores
+ */
 
 public class ListaJugadoresModel extends DefaultListModel<itfProperty>{
 

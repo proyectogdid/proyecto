@@ -1,7 +1,6 @@
 package com.company.LP;
 
 import com.company.LN.GestorLN;
-import com.company.comun.clsConstantes;
 import com.company.comun.itfProperty;
 
 import javax.swing.*;
@@ -14,6 +13,9 @@ import java.awt.event.WindowListener;
 
 import static com.company.comun.clsConstantes.*;
 
+/**
+ * Clase encargada de diseñar la ventana para que aparezcan los datos personales del usuario
+ */
 public class wdwDatosPersonales extends JFrame implements ActionListener, WindowListener {
 
 
