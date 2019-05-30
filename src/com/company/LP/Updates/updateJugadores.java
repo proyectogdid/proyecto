@@ -53,6 +53,7 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
         jugadores=gln.leerJugadores();
         equipos=gln.leerEquipos();
         estados=gln.leerEstados();
+        this.setResizable(false);
 
 
         

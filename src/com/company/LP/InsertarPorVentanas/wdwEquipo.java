@@ -42,6 +42,7 @@ public class wdwEquipo extends JFrame implements ActionListener {
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
+        this.setResizable(false);
 
         nombre = new JLabel("Nombre");
         nombre.setBounds(72, 50, 60, 14);

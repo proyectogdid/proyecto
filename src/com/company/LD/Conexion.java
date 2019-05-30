@@ -13,7 +13,7 @@ public abstract class Conexion {
 
 
     /**
-     * metodo generico para ejecutar queries evitando el codigo repetido
+     * Metodo generico para ejecutar queries evitando el codigo repetido
      *
      * @param con, query
      * @return return
@@ -29,7 +29,7 @@ public abstract class Conexion {
     }
 
     /**
-     * metodo generico para actualizar registros en BD
+     * Metodo generico para actualizar registros en BD
      *
      * @param con        con
      * @param query      query
@@ -45,7 +45,7 @@ public abstract class Conexion {
     }
 
     /**
-     * metodo para hacer queries con parametros
+     * Metodo para hacer queries con parametros
      *
      * @param query      query
      * @param parametros parametros
@@ -54,7 +54,7 @@ public abstract class Conexion {
      */
     public static ResultSet query(Connection con, String query, Object[] parametros) throws Exception {
         PreparedStatement stt = con.prepareStatement(query);
-        System.out.println(query);
+        //System.out.println(query);
         cargarDatos(stt, parametros);
         ResultSet rs = stt.executeQuery();
 
@@ -80,7 +80,7 @@ public abstract class Conexion {
     }
 
     /**
-     * metodo para hacer una insert de multiples filas
+     * Metodo para hacer una insert de multiples filas
      *
      * @param con    connexion de BD
      * @param query  insert "insert {template} into values"
@@ -106,7 +106,7 @@ public abstract class Conexion {
         }
 
 
-        System.out.println(query);
+        // System.out.println(query);
 
 
         PreparedStatement stt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
@@ -124,7 +124,7 @@ public abstract class Conexion {
     }
 
     /**
-     * metodo para cargar datos dentro de un prepared statement multifilas
+     * Metodo para cargar datos dentro de un prepared statement multifilas
      * usando una matriz de clase object y un prepared statement para poder cargar los datos en el Prepared statement
      *
      * @param stt        stt
@@ -140,7 +140,7 @@ public abstract class Conexion {
 
 
     /**
-     * metodo para cargar datos dentro de un prepared statement
+     * Metodo para cargar datos dentro de un prepared statement
      * usando un array de clase object y un prepared statement para poder cargar los datos en el Prepared statement
      *
      * @param stt        stt

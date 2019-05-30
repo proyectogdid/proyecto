@@ -1,5 +1,5 @@
 
-package com.company.comun;
+package com.company.LN;
 
 import com.company.LN.Participantes;
 

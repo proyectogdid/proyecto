@@ -7,7 +7,7 @@ public class PropiedadIncorrecta extends RuntimeException {
         this.prop = prop;
     }
 
-    public String getMessage(){
+    public String getMessage() {
         return this.prop;
     }
 }

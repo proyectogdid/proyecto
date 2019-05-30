@@ -3,12 +3,15 @@ package com.company.LD;
 import java.sql.Connection;
 import java.sql.ResultSet;
 
+/**
+ * Clase que utulizaremos para registrar y actualizar un usuarios, además de recuperar los datos del usuario logeado.
+ */
 public class UsuarioBD extends Conexion {
 
     public static final String TEMPLATE = "usr.id,usr.usuario,usr.contrasena,usr.correo,usr.tipo,usr.equipo_favorito";
 
     /**
-     * metodo para recuperar el usuario logeado
+     * Metodo para recuperar el usuario logeado
      *
      * @param con conexion de BD
      * @return result set de datos

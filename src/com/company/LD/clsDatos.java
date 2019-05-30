@@ -1,9 +1,5 @@
 package com.company.LD;
 
-import com.company.LN.Estado;
-import com.company.LN.Posicion;
-import com.company.LN.Usuario;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -14,11 +10,11 @@ import java.util.Date;
 import static com.company.LD.constantesBD.*;
 
 /**
- * clase encargada de gestionar comunicacion entre LD y LN
+ * Clase encargada de gestionar comunicacion entre LD y LN
  */
 public class clsDatos {
     /**
-     * atributo de conexion con la BBDD
+     * Atributo de conexion con la BBDD
      */
     private Connection con;
 
@@ -26,21 +22,18 @@ public class clsDatos {
     /**
      * Metodo empleado para conectarnos con la BD
      *
-     * @return return
      * @throws SQLException throws Exception
      */
     public void conectarBD() throws SQLException {
         //Ruta de la base de datos (jdbc:mysql://localhost:3306/alumnoBD?useTimezone=true&serverTimezone=GMT&useSSL=false)
         String url = "jdbc:mysql://" + DIRECCION + ":" + PUERTO + "/" + NAME + "?useTimezone=true&serverTimezone=GMT&useSSL=false&allowPublicKeyRetrieval=true";
-        //Connection co = null;
         con = DriverManager.getConnection(url, USUARIO, PASS);
-        //return objConn;
+
     }
 
     /**
      * Metodo para desconectarnos de la BD
      *
-     * @param
      * @throws SQLException throws SQLException
      */
     public void desconectarBD() throws SQLException {
@@ -48,7 +41,7 @@ public class clsDatos {
     }
 
     /**
-     * metodo para insertar un nuevo campo
+     * Metodo para insertar un nuevo campo
      *
      * @param nombre nombre
      * @param ciudad ciudad
@@ -76,7 +69,8 @@ public class clsDatos {
 
 
     /**
-     * MEtodo para insertar usuario en BD
+     * Metodo para insertar usuario en BD
+     *
      * @param usuario nombre de usuaario
      * @param passw   contrsensa
      * @param equipo  equipo favorito del usuario
@@ -104,12 +98,13 @@ public class clsDatos {
 
     /**
      * Metodo para actualizar los usuarios
+     *
      * @param id id
      * @return return
      * @throws Exception Exception
      */
-    public int updateUsuario(int id,int iduser)throws Exception{
-        return UsuarioBD.updateUsuario(con,id,iduser);
+    public int updateUsuario(int id, int iduser) throws Exception {
+        return UsuarioBD.updateUsuario(con, id, iduser);
     }
 
     /**
@@ -123,7 +118,7 @@ public class clsDatos {
     }
 
     /**
-     * MEtodo para insertar jugadores a la BD
+     * Metodo para insertar jugadores a la BD
      *
      * @param nombre        nombre
      * @param apellido1     apellido1
@@ -139,11 +134,11 @@ public class clsDatos {
      */
 
     public int insertarJugador(String nombre, String apellido1, String apellido2, java.util.Date fechaNac, String dorsal, String textoCamiseta, int equipo, int posicion, int estado) throws Exception {
-        return JugadoresBD.insertar(con, nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta, equipo, estado, posicion);
+        return JugadorBD.insertar(con, nombre, apellido1, apellido2, fechaNac, dorsal, textoCamiseta, equipo, estado, posicion);
     }
 
     /**
-     * metodo para insertar nueva temporada
+     * Metodo para insertar nueva temporada
      *
      * @param ano date de la temporada
      * @return id
@@ -154,7 +149,7 @@ public class clsDatos {
     }
 
     /**
-     * metodo para insertar partidos de la temporada
+     * Metodo para insertar partidos de la temporada
      *
      * @param datos matriz de datos
      * @return ids
@@ -187,17 +182,17 @@ public class clsDatos {
     }
 
     /**
-     * gestionar select de jugadores
+     * Metodo para gestionar el select de jugadores
      *
      * @return resultset jugadores
      * @throws Exception fallos en la query
      */
     public ResultSet buscarJugador() throws Exception {
-        return JugadoresBD.getAll(con);
+        return JugadorBD.getAll(con);
     }
 
     /**
-     * gestionar select de estados
+     * Metodo para gestionar el select de estados
      *
      * @return resultset estados
      * @throws Exception fallos en la query
@@ -207,7 +202,7 @@ public class clsDatos {
     }
 
     /**
-     * metodo para gestionar la carga de posiciones
+     * Metodo para gestionar la carga de posiciones
      *
      * @return resultset posiciones
      * @throws Exception fallos de la query
@@ -265,6 +260,15 @@ public class clsDatos {
     public ResultSet buscarEstadisticas() throws Exception {
         return ClasificacionBD.cargarClasificacion(con);
     }
+
+    /**
+     * Metodo para recuperar el usuario logeado
+     *
+     * @param username username
+     * @param passw    passw
+     * @return return
+     * @throws Exception Exception
+     */
     public ResultSet login(String username, String passw) throws Exception {
         return UsuarioBD.getLogin(con, username, passw);
     }

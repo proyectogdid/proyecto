@@ -4,13 +4,13 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 
 /**
- * clase que gestionara los distintos estados en los que pueda encontrarse un jugador en BD
+ * Clase que gestionara los distintos estados en los que pueda encontrarse un jugador en BD
  */
 public class EstadoBD extends Conexion {
     private static final String TEMPLATE = "estd.id, estd.nombre";
 
     /**
-     * seleccionar estados de bd
+     * Metodo para seleccionar estados de la BD
      *
      * @param con con
      * @return resultset estados

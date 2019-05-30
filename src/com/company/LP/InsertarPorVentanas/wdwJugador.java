@@ -7,7 +7,6 @@ import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -63,6 +62,7 @@ public class wdwJugador extends JFrame implements ActionListener {
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
+        this.setResizable(false);
 
         nombre = new JLabel("Nombre");
         nombre.setBounds(72, 50, 60, 14);

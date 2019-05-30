@@ -5,8 +5,8 @@ package com.company.comun;
  */
 public class clsConstantes {
 
-    public static final int PTOS_VICTORIA=3;
-    public static final int PTOS_EMPATE=1;
+    public static final int PTOS_VICTORIA = 3;
+
     public static final String AFICIONADO_FAVORITO = "favorito";
     public static final String BD_AFICIONADO_FAVORITO = "usr.equipo_favorito";
 
@@ -15,7 +15,7 @@ public class clsConstantes {
     public static final String PARTICIPANTES_PARTIDOS_JUGADOS = "partidosJugados";
     public static final String PARTICIPANTES_PUNTOS_A_FAVOR = "puntosAFavor";
     public static final String PARTICIPANTES_PUNTOS_EN_CONTRA = "puntosEnContra";
-    public static final String PARTICIPANTES_PTOS="ptosClasificacion";
+    public static final String PARTICIPANTES_PTOS = "ptosClasificacion";
 
 
     public static final String CAMPO_ID = "id";
@@ -125,12 +125,12 @@ public class clsConstantes {
     public static final String TRASPASO_JUGADOR = "jugador";
     public static final String TRASPASO_EQUIPO_PREVIO = "equipoPrevio";
     public static final String TRASPASO_EQUIPO_POSTERIOR = "equipoPosterior";
-    public static final String NOTICIA_TIPO="tipo";
-    public static final String NOTICIA_FECHA="fecha";
-    public static final String NOTICIA_TIPO_TRASPASO="Traspaso";
-    public static final String NOTICIA_TIPO_EVENTO="evento";
-    public static final String NOTICIA_TEXTO="texto";
-    public static final String NOTICIA_EQUIPO_RELATIVO="equipo";
+    public static final String NOTICIA_TIPO = "tipo";
+    public static final String NOTICIA_FECHA = "fecha";
+    public static final String NOTICIA_TIPO_TRASPASO = "Traspaso";
+    public static final String NOTICIA_TIPO_EVENTO = "evento";
+    public static final String NOTICIA_TEXTO = "texto";
+    public static final String NOTICIA_EQUIPO_RELATIVO = "equipo";
 
     public static final String BD_TRASPASO_ID = "tra.id";
     public static final String BD_TRASPASO_PRECIO = "tra.precio";

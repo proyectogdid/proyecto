@@ -3,13 +3,11 @@ package com.company.LN;
 import com.company.Excepciones.EquiposInsuficientesException;
 import com.company.LD.clsDatos;
 
-import com.company.comun.Clasificacion;
 import com.company.comun.Utilidades;
 import com.company.comun.itfProperty;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 

@@ -8,12 +8,12 @@ import static com.company.comun.clsConstantes.AFICIONADO_FAVORITO;
 import static com.company.comun.clsConstantes.BD_AFICIONADO_FAVORITO;
 
 /**
- * clase para gestionar los usuarios no administradores
+ * Clase para gestionar los usuarios no administradores
  * es decir un usuario cualquiera que podra elegir su equipo favorito
  */
 public class Aficionado extends Usuario implements itfProperty {
     /**
-     * atributo equipo favorito del usuario
+     * Atributo equipo favorito del usuario
      */
     private int favorito;
 
@@ -51,7 +51,7 @@ public class Aficionado extends Usuario implements itfProperty {
     }
 
     /**
-     * metodo get property de la interfaz itfProperty
+     * Metodo get property de la interfaz itfProperty
      *
      * @param prop prop
      * @return return

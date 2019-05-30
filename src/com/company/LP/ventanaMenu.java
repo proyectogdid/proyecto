@@ -33,7 +33,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
     /**
      * Para insertar
      */
-    private JMenuItem itemInsertarJugador, itemInsertarEquipo, itemInsertarPosicion, itemInsertarEstado;
+    private JMenuItem itemInsertarJugador, itemInsertarEquipo, itemInsertarPosicion, itemInsertarEstado, itemInsertarCampo;
 
     private final String ABRIR_NOTICIAS = "noticias";
     private final String INSERTAR = "insertar";
@@ -46,6 +46,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
     private final String INSERTAR_EQUIPO = "insertar equipo";
     private final String INSERTAR_POSICION = "insertar posicion";
     private final String INSERTAR_ESTADO = "insertar estado";
+    private final String INSERTAR_CAMPO="insertar campo";
     private clsImagen contentPane;
 
     /**
@@ -138,6 +139,10 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
             itemInsertarEquipo.addActionListener(this);
             menuInsertar.add(itemInsertarEquipo);
 
+            itemInsertarCampo = new JMenuItem("Insertar campo");
+            itemInsertarCampo.setActionCommand(INSERTAR_CAMPO);
+            itemInsertarCampo.addActionListener(this);
+            menuInsertar.add(itemInsertarCampo);
 
             itemInsertarPosicion = new JMenuItem("Insertar posicion de jugador");
             itemInsertarPosicion.setActionCommand(INSERTAR_POSICION);
@@ -148,6 +153,8 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
             itemInsertarEstado.setActionCommand(INSERTAR_ESTADO);
             itemInsertarEstado.addActionListener(this);
             menuInsertar.add(itemInsertarEstado);
+
+
 
 
         }
@@ -190,6 +197,10 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
             case INSERTAR_ESTADO:
                 wdwEstado es = new wdwEstado(gln);
                 es.setVisible(true);
+                break;
+            case INSERTAR_CAMPO:
+                wdwCampo ca=new wdwCampo(gln);
+                ca.setVisible(true);
                 break;
             case CERRAR_SESION:
                 this.setVisible(false);

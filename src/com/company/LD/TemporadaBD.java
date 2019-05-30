@@ -11,7 +11,7 @@ public class TemporadaBD extends Conexion {
     public static final String TEMPLATE = "tem.id,tem.ano";
 
     /**
-     * metodo para recuperar la temporada
+     * Metodo para recuperar la temporada
      *
      * @param con conexion de BD
      * @return result set de datos
@@ -22,7 +22,7 @@ public class TemporadaBD extends Conexion {
     }
 
     /**
-     * metodo de BD para insertar temporda
+     * Metodo de BD para insertar temporda
      *
      * @param con  objcon
      * @param anio fecha de la temporada

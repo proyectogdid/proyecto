@@ -10,7 +10,7 @@ public class TraspasoBD extends Conexion {
     public static final String TEMPLATE = "tra.id, tra.jugador, tra.equipoPrevio, tra.equipoPosterior, tra.fecha";
 
     /**
-     * metodo para recuperar los ditintas traspasos de la temporada
+     * Metodo para recuperar los ditintas traspasos de la temporada
      *
      * @param con conexion de BD
      * @return resultset traspasos
