@@ -1,6 +1,8 @@
 package com.company.LP.InsertarPorVentanas;
 
 import com.company.LN.GestorLN;
+import com.company.LP.ventanaMenu;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -135,6 +137,8 @@ public class wdwCampo extends JFrame implements ActionListener {
                 textoCalle.setText("");
                 textoNumero.setText("");
                 textoCP.setText("");
+                ventanaMenu vm=new ventanaMenu(gln);
+                vm.setVisible(true);
                 this.dispose();
                 break;
 

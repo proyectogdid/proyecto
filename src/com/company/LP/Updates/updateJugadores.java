@@ -10,6 +10,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -32,7 +33,7 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
     private  LinkedList<itfProperty> lista;
     private JList<itfProperty> list;
     private final String BORRAR="borrar";
-    private final String SALIR ="salir";
+    private final String VOLVER ="volver";
     private final String ACTUALIZAR="actualizar";
 
     private ListaJugadoresModel modelo;
@@ -44,6 +45,7 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
     private JComboBox <itfProperty>cbEquipo,cbEstado;
     private ArrayList<itfProperty>jugadores,estados,equipos;
     private int listSelected=0;
+
     public updateJugadores(GestorLN gln_) {
 
 
@@ -71,7 +73,7 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
-        contentPane.setLayout(null);
+        contentPane.setLayout(new BorderLayout());
 
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBounds(238, 48, 161, 389);
@@ -94,20 +96,20 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
         JButton borrar = new JButton("Borrar");
         borrar.setActionCommand(BORRAR);
         borrar.addActionListener(this);
-        borrar.setBounds(56, 368, 86, 23);
+        borrar.setBounds(56, 440, 86, 23);
         contentPane.add(borrar);
 
 
-        JButton salir = new JButton("Salir");
-        salir.setActionCommand(SALIR);
-        salir.addActionListener(this);
-        salir.setBounds(53, 402, 86, 23);
-        contentPane.add(salir);
+        Button volver = new Button("Volver");
+        volver.addActionListener(this);
+        volver.setActionCommand(VOLVER);
+        contentPane.add(volver, BorderLayout.SOUTH);
+
 
         JButton actualizar = new JButton("Actualizar");
         actualizar.setActionCommand(ACTUALIZAR);
         actualizar.addActionListener(this);
-        actualizar.setBounds(53, 436, 86, 23);
+        actualizar.setBounds(298, 440, 100, 23);
         contentPane.add(actualizar);
         
         txtApellido1 = new JTextField();
@@ -141,11 +143,21 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
          cbEstado = new JComboBox();
         cbEstado.setBounds(56, 337, 86, 20);
         contentPane.add(cbEstado);
+
+
+        /*
+         * Este boton se ha creado para que el boton iniciar sesion no de fallo y ocupe toda la pantalla
+         */
+        Button bfixed = new Button("Arreglo de iniciar sesion");
+        contentPane.add(bfixed);
+        bfixed.setVisible(false);
+
         for (itfProperty item:equipos) {
             cbEquipo.addItem(item);
         }for (itfProperty item:estados) {
             cbEstado.addItem(item);
         }
+
 
 
 
@@ -172,7 +184,7 @@ public class updateJugadores extends JFrame implements ActionListener , ListSele
                     exc.printStackTrace();
                 }
                 break;
-            case SALIR:
+            case VOLVER:
                 wdwJugador j=new wdwJugador(gln);
                 j.setVisible(true);
                 this.dispose();

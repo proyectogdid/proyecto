@@ -72,6 +72,8 @@ public class wdwNoticias extends JFrame implements ActionListener, WindowListene
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
             case BTN_VOLVER:
+                ventanaMenu vm=new ventanaMenu(gln);
+                vm.setVisible(true);
                 this.dispose();
                 break;
         }

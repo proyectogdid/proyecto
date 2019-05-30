@@ -39,7 +39,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
     private final String INSERTAR = "insertar";
     private final String ABRIR_CLASIFICACION = "clasificacion";
     private final String ABRIR_JORNADA = "jornada";
-    private final String CERRAR_SESION = "cerrar sesiÃ³n";
+    private final String CERRAR_SESION = "cerrar sesion";
     private final String CAMBIAR_EQUIPO_FAV = "cambiar equipo fav";
     private final String DATOS_PERSONALES = "datos personales";
     private final String INSERTAR_JUGADOR = "insertar jugador";
@@ -53,7 +53,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
      * Create the frame.
      */
     public ventanaMenu(GestorLN gln_) {
-        this.setTitle("BASKET LIVE â›¹ï¸�");
+        this.setTitle("BASKET LIVE ⛹");
         gln = gln_;
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(this);
@@ -63,7 +63,6 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
         contentPane = new clsImagen();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setBackgroundImage(contentPane.createImage("/com/company/LP/imagenes/menu.png").getImage());
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(new BorderLayout(50, 50));
         setContentPane(contentPane);
 
@@ -100,7 +99,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
         menuAjustes = new JMenu("Ajustes");
         barraMenu.add(menuAjustes);
 
-        itemCerrarSesion = new JMenuItem("Cerrar sesiÃ³n");
+        itemCerrarSesion = new JMenuItem("Cerrar sesión");
         itemCerrarSesion.setActionCommand(CERRAR_SESION);
         itemCerrarSesion.addActionListener(this);
         menuAjustes.add(itemCerrarSesion);
@@ -172,48 +171,58 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
             case ABRIR_NOTICIAS:
                 wdwNoticias w = new wdwNoticias(gln);
                 w.setVisible(true);
+                this.dispose();
                 break;
             case ABRIR_CLASIFICACION:
                 wdwClasificacion c = new wdwClasificacion(gln);
                 c.setVisible(true);
+                this.dispose();
                 break;
             case ABRIR_JORNADA:
             	wdwJornadas wj=new wdwJornadas(gln);
             	wj.setVisible(true);
+            	this.dispose();
                 break;
 
             case INSERTAR_JUGADOR:
                 wdwJugador j = new wdwJugador(gln);
                 j.setVisible(true);
+                this.dispose();
                 break;
             case INSERTAR_EQUIPO:
                 wdwEquipo eq = new wdwEquipo(gln);
                 eq.setVisible(true);
+                this.dispose();
                 break;
             case INSERTAR_POSICION:
                 wdwPosicion p = new wdwPosicion(gln);
                 p.setVisible(true);
+                this.dispose();
                 break;
             case INSERTAR_ESTADO:
                 wdwEstado es = new wdwEstado(gln);
                 es.setVisible(true);
+                this.dispose();
                 break;
             case INSERTAR_CAMPO:
                 wdwCampo ca = new wdwCampo(gln);
                 ca.setVisible(true);
+                this.dispose();
                 break;
             case CERRAR_SESION:
-                this.setVisible(false);
                 wdwRegistrarUsuario ru = new wdwRegistrarUsuario(gln);
                 ru.setVisible(true);
+                this.dispose();
                 break;
             case CAMBIAR_EQUIPO_FAV:
                 updateEquipoFav ef = new updateEquipoFav(gln);
                 ef.setVisible(true);
+                this.dispose();
                 break;
             case DATOS_PERSONALES:
                 wdwDatosPersonales dp = new wdwDatosPersonales(gln);
                 dp.setVisible(true);
+                this.dispose();
                 break;
 
 

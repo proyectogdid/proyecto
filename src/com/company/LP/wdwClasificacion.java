@@ -54,6 +54,8 @@ public class wdwClasificacion extends JFrame implements ActionListener, WindowLi
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case VOLVER:
+                ventanaMenu vm=new ventanaMenu(gln);
+                vm.setVisible(true);
                 this.dispose();
                 break;
 

@@ -1,6 +1,7 @@
 package com.company.LP.Updates;
 
 import com.company.LN.GestorLN;
+import com.company.LP.ventanaMenu;
 import com.company.comun.itfProperty;
 
 import javax.swing.*;
@@ -119,6 +120,8 @@ public class updateEquipoFav extends JFrame implements ActionListener, WindowLis
                 break;
             case CANCELAR:
                 cbEquipo.setSelectedIndex(0);
+                ventanaMenu vm=new ventanaMenu(gln);
+                vm.setVisible(true);
                 this.dispose();
                 break;
         }

@@ -1,14 +1,14 @@
 package com.company.LP;
 
 import com.company.LN.GestorLN;
+import com.company.LP.imagenes.clsImagen;
 import com.company.comun.itfProperty;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-import static com.company.comun.clsConstantes.EQUIPO_ID;
-import static com.company.comun.clsConstantes.ESTADO_ID;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,14 +16,15 @@ import java.awt.event.ActionListener;
  * Clase que utilizaremos para visualizar el marcador de un partido
  */
 public class wdwMarcador extends JFrame implements ActionListener {
-	private JPanel contentPane;
-	private JLabel lblNewLabel;
+	private JLabel local;
 	private JTextField ptosEquipo1;
 	private JTextField ptosEquipo2;
-	private JLabel lblNewLabel_1;
+	private JLabel visitante;
 	private GestorLN gln;
-	private JButton btnGuardar;
 	private itfProperty partido;
+	private final String VOLVER="volver";
+	private final String GUARDAR="guardar";
+	private clsImagen contentPane;
 	/**
 	 * Create the frame.
 	 */
@@ -32,41 +33,58 @@ public class wdwMarcador extends JFrame implements ActionListener {
 		partido=partido_;
 		this.setTitle("MARCADOR");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 628, 232);
-		contentPane = new JPanel();
+		setBounds(100, 100, 500, 232);
+		contentPane = new clsImagen();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBackgroundImage(contentPane.createImage("/com/company/LP/imagenes/marcador.png").getImage());
+		contentPane.setLayout(new BorderLayout());
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		this.setResizable(false);
 
-		lblNewLabel = new JLabel("Ptos.'Equipo1'");
-		lblNewLabel.setBounds(72, 50, 100, 14);
-		contentPane.add(lblNewLabel);
+		local = new JLabel("LOCAL");
+		local.setBounds(32, 50, 100, 14);
+		local.setForeground(Color.WHITE);
+		contentPane.add(local);
 
-		lblNewLabel_1 = new JLabel("Ptos.'Equipo2'");
-		lblNewLabel_1.setBounds(339, 50, 100, 14);
-		contentPane.add(lblNewLabel_1);
+		visitante = new JLabel("VISITANTE");
+		visitante.setBounds(405, 50, 100, 14);
+		visitante.setForeground(Color.WHITE);
+		contentPane.add(visitante);
 
 		ptosEquipo1 = new JTextField();
-		ptosEquipo1.setBounds(72, 70, 86, 20);
+		ptosEquipo1.setBounds(10, 70, 86, 20);
 		contentPane.add(ptosEquipo1);
 		ptosEquipo1.setColumns(10);
 
 		ptosEquipo2 = new JTextField();
-		ptosEquipo2.setBounds(353, 70, 86, 20);
+		ptosEquipo2.setBounds(393, 70, 86, 20);
 		contentPane.add(ptosEquipo2);
 		ptosEquipo2.setColumns(10);
 
-		btnGuardar = new JButton("guardar");
-		btnGuardar.setBounds(350, 145, 89, 23);
+
+		Button btnGuardar = new Button("Guardar");
+		btnGuardar.setBounds(10, 120, 100, 23);
 		btnGuardar.addActionListener(this);
-		btnGuardar.setActionCommand("guardarPartido");
+		btnGuardar.setActionCommand(GUARDAR);
 		contentPane.add(btnGuardar);
+
+		Button volver = new Button("Volver");
+		volver.addActionListener(this);
+		volver.setActionCommand(VOLVER);
+		getContentPane().add(volver, BorderLayout.SOUTH);
+
+		/*
+		 * Este boton se ha creado para que el boton iniciar sesion no de fallo y ocupe toda la pantalla
+		 */
+		Button bfixed = new Button("Arreglo de iniciar sesion");
+		contentPane.add(bfixed);
+		bfixed.setVisible(false);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		switch (e.getActionCommand()) {
-		case "guardarPartido":
+		case GUARDAR:
 			try {
 				gln.updatePartido(partido, Integer.parseInt(ptosEquipo1.getText()), Integer.parseInt(ptosEquipo2.getText()));
 				dispose();
@@ -75,6 +93,11 @@ public class wdwMarcador extends JFrame implements ActionListener {
 				e1.printStackTrace();
 			}
 			break;
+			case VOLVER:
+				wdwJornadas j=new wdwJornadas(gln);
+				j.setVisible(true);
+				this.dispose();
+				break;
 		}
 	}
 

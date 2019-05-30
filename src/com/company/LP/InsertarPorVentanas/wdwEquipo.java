@@ -1,6 +1,7 @@
 package com.company.LP.InsertarPorVentanas;
 
 import com.company.LN.GestorLN;
+import com.company.LP.ventanaMenu;
 import com.company.comun.itfProperty;
 
 import javax.swing.*;
@@ -117,6 +118,8 @@ public class wdwEquipo extends JFrame implements ActionListener {
                 textoNombre.setText("");
                 textoPatrocinador.setText("");
                 cbCampo.setSelectedIndex(0);
+                ventanaMenu vm=new ventanaMenu(gln);
+                vm.setVisible(true);
                 this.dispose();
                 break;
         }

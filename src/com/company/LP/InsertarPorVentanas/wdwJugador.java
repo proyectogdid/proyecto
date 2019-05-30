@@ -2,6 +2,8 @@ package com.company.LP.InsertarPorVentanas;
 
 import com.company.LN.GestorLN;
 import com.company.LP.Updates.updateJugadores;
+import com.company.LP.ventanaMenu;
+import com.company.LP.wdwJornadas;
 import com.company.comun.itfProperty;
 import com.toedter.calendar.JDateChooser;
 
@@ -206,7 +208,8 @@ public class wdwJugador extends JFrame implements ActionListener {
                 fechaNcto_.setDate(null);
                 textoDorsal.setText("");
                 textoTextoCamiseta.setText("");
-
+                ventanaMenu vm=new ventanaMenu(gln);
+                vm.setVisible(true);
                 this.dispose();
                 break;
             case BOTON_VER:

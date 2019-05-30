@@ -52,7 +52,7 @@ public class wdwDatosPersonales extends JFrame implements ActionListener, Window
 
         JPanel jpDatosPersonales = new JPanel();
         jpDatosPersonales.setBorder(new TitledBorder(null, "Mis datos", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-        jpDatosPersonales.setBounds(10, 11, 450, 300);
+        jpDatosPersonales.setBounds(10, 11, 550, 300);
         contentPane.add(jpDatosPersonales);
         jpDatosPersonales.setLayout(null);
 
@@ -88,13 +88,11 @@ public class wdwDatosPersonales extends JFrame implements ActionListener, Window
         txtRegistroemail.setColumns(10);
         txtRegistroemail.setText((String) logeado.getProperty(USUARIO_CORREO));
         txtRegistroemail.setEditable(false);
+
         Equipo = new JLabel("Equipo favorito");
         Equipo.setBounds(72, 206, 110, 14);
         jpDatosPersonales.add(Equipo);
 
-       /* cbEquipo = new JComboBox();
-        cbEquipo.setBounds(198, 203, 212, 20);
-        jpDatosPersonales.add(cbEquipo);*/
 
         txtRegistroEquipo = new JTextField();
         txtRegistroEquipo.setBounds(198, 203, 212, 20);
@@ -108,13 +106,19 @@ public class wdwDatosPersonales extends JFrame implements ActionListener, Window
         Button volver = new Button("Volver");
         volver.addActionListener(this);
         volver.setActionCommand(VOLVER);
-        jpDatosPersonales.add(volver, BorderLayout.SOUTH);
+        contentPane.add(volver, BorderLayout.SOUTH);
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        switch (e.getActionCommand()) {
+            case VOLVER:
+                ventanaMenu vm=new ventanaMenu(gln);
+                vm.setVisible(true);
+                this.dispose();
+                break;
+        }
     }
 
     @Override

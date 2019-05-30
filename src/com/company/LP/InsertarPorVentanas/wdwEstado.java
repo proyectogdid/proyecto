@@ -1,6 +1,7 @@
 package com.company.LP.InsertarPorVentanas;
 
 import com.company.LN.GestorLN;
+import com.company.LP.ventanaMenu;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -77,6 +78,8 @@ public class wdwEstado extends JFrame implements ActionListener {
                 break;
             case BOTON_CANCELAR:
                 textoNombre.setText("");
+                ventanaMenu vm=new ventanaMenu(gln);
+                vm.setVisible(true);
                 this.dispose();
                 break;
         }
