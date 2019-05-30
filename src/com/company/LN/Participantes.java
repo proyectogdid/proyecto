@@ -1,7 +1,5 @@
 package com.company.LN;
 
-import com.company.Excepciones.PropiedadIncorrecta;
-import com.company.LN.Equipo;
 import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
@@ -13,7 +11,7 @@ import static com.company.comun.clsConstantes.*;
  * Clase para asignar participantes a la liga. Estos tienen el nombre de los equipos, ademas de nuevos atributos creados.
  */
 
-public class Participantes extends Equipo implements itfProperty , itfPersistable {
+public class Participantes extends Equipo implements itfProperty, itfPersistable {
 
     private int partidosGanados;
     private int partidosJugados;
@@ -135,10 +133,10 @@ public class Participantes extends Equipo implements itfProperty , itfPersistabl
 
     @Override
     public void resultsetLoad(ResultSet rs) throws Exception {
-        partidosGanados=rs.getInt("victorias");
-        partidosPerdidos=rs.getInt("derrotas");
+        partidosGanados = rs.getInt("victorias");
+        partidosPerdidos = rs.getInt("derrotas");
         this.setNombre(rs.getString("e.nombre"));
-        this.ptosClasificacion=partidosGanados*PTOS_VICTORIA;
-        this.partidosJugados=partidosGanados+partidosPerdidos;
+        this.ptosClasificacion = partidosGanados * PTOS_VICTORIA;
+        this.partidosJugados = partidosGanados + partidosPerdidos;
     }
 }

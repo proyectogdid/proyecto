@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import static com.company.comun.clsConstantes.*;
 
 /**
- * clase para gestionar las cuentas de usuario
+ * Clase para gestionar las cuentas de usuario
  */
 public class Usuario implements itfProperty, itfPersistable {
     /**
@@ -116,7 +116,7 @@ public class Usuario implements itfProperty, itfPersistable {
     }
 
     /**
-     * metodo get property de la interfaz itfProperty
+     * Metodo get property de la interfaz itfProperty
      *
      * @param prop prop
      * @return return

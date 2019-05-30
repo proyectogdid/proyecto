@@ -11,8 +11,8 @@ import static com.company.comun.clsConstantes.*;
 
 
 /**
- * Clase para gestionar los equipos de nuestra liga ademas del
- * y el patrocinador vamos a añadir un atributo jugadores para
+ * Clase para gestionar los equipos de nuestra liga y ademas del nombre
+ * y del patrocinador vamos a añadir un atributo jugadores para
  * gestionar la plantilla de cada equipo.
  */
 public class Equipo implements itfProperty {
@@ -33,7 +33,7 @@ public class Equipo implements itfProperty {
      */
     private ArrayList<Integer> jugadores;
     /**
-     * atributo campo de equipo
+     * Atributo campo de equipo
      */
     private Object campo;
 
@@ -105,7 +105,7 @@ public class Equipo implements itfProperty {
     }
 
     /**
-     * metodo get property de la interfaz itfProperty
+     * Metodo get property de la interfaz itfProperty
      *
      * @param prop prop
      * @return return

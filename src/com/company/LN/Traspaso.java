@@ -1,40 +1,40 @@
 package com.company.LN;
 
-import com.company.Excepciones.PropiedadIncorrecta;
+
 import com.company.comun.itfPersistable;
 import com.company.comun.itfProperty;
 
-import java.sql.Array;
+
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import static com.company.comun.clsConstantes.*;
 
 /**
- * clase que gestionara los traspasos de los jugadores entre distintos equipos
+ * Clase que gestionara los traspasos de los jugadores entre distintos equipos
  * teniendo como atributos el equipo anterior y posterior para poder guardar un historico de la trayectoria
  */
 public class Traspaso extends Noticia implements itfProperty, itfPersistable {
     /**
-     * atributo id del traspaso
+     * Atributo id del traspaso
      */
     private int id;
 
     /**
-     * atributo que especifica el jugador objeto del traspaso
+     * Atributo que especifica el jugador objeto del traspaso
      */
     private int jugador;
     /**
-     * equipo que traspasa al jugador
+     * Equipo que traspasa al jugador
      */
     private int equipoPrevio;
     /**
-     * equipo que ficha al jugador
+     * Equipo que ficha al jugador
      */
     private int equipoPosterior;
 
     /**
-     * metodo que generara el texto que se mostrará al mostrar la noticia
+     * Metodo que generara el texto que se mostrará al mostrar la noticia
      * @param jugadores array jugadores
      * @param equipos array equipos
      */
@@ -117,7 +117,7 @@ public class Traspaso extends Noticia implements itfProperty, itfPersistable {
     }
 
     /**
-     * metodo get property de la interfaz itfProperty
+     * Metodo get property de la interfaz itfProperty
      *
      * @param prop prop
      * @return return
@@ -143,7 +143,7 @@ public class Traspaso extends Noticia implements itfProperty, itfPersistable {
     }
 
     /**
-     * MEtodo para cargar los traspasos en el resultset
+     * Metodo para cargar los traspasos en el resultset
      *
      * @param rs rs
      * @throws Exception throws Exception

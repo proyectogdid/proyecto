@@ -16,15 +16,15 @@ import static com.company.comun.clsConstantes.*;
  */
 public class Temporada implements itfProperty, itfPersistable {
     /**
-     * atributo id de la temporada
+     * Atributo id de la temporada
      */
     private int id;
     /**
-     * atributo año de la temporada
+     * Atributo año de la temporada
      */
     private Date ano;
     /**
-     * partidos que se jugaran en la temporada
+     * Partidos que se jugaran en la temporada
      */
     private ArrayList<Integer> partidos;
 
@@ -67,7 +67,7 @@ public class Temporada implements itfProperty, itfPersistable {
     }
 
     /**
-     * metodo get property de la interfaz itfProperty
+     * Metodo get property de la interfaz itfProperty
      *
      * @param prop prop
      * @return return

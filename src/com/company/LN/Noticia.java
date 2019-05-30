@@ -7,6 +7,9 @@ import java.util.Date;
 
 import static com.company.comun.clsConstantes.*;
 
+/**
+ * Clase que se encargará de guardar los datos referentes a las noticicas de la aplicacion
+ */
 public  class Noticia implements itfProperty,Comparable<Noticia> {
     private Date fecha;
     private String text;

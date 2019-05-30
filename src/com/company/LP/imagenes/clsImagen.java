@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
 
+/**
+ * Clase para darle un formato a las imagenes que utilicemos
+ */
 public class clsImagen extends JPanel {
     private Image bgImage;
 
