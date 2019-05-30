@@ -198,7 +198,7 @@ public class clsDatos {
      * @throws Exception sql
      */
     public int borrarJugador(int id)throws Exception{
-        return JugadoresBD.borrarJugador(con,id);
+        return JugadorBD.borrarJugador(con,id);
     }
     /**
      * gestionar select de estados

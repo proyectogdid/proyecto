@@ -364,8 +364,19 @@ public class GestorLN {
         return retorno;
     }
 
-    public ArrayList<ArrayList<itfProperty>> leerJornadas(){
-        ArrayList<ArrayList<itfProperty>> retorno=new ArrayList<>();
+    /**
+     * metodo para devolver los partidos especificos de una jornada
+     * @param jornada numero de jornada
+     * @return array itfProperty
+     */
+    public ArrayList<itfProperty> leerJornadas(int jornada){
+        ArrayList<itfProperty> retorno=new ArrayList<>();
+        for (Partido p:partidos) {
+            if(p.getJornada()==jornada){
+                retorno.add(p);
+            }
+
+        }
         return retorno;
     }
 
