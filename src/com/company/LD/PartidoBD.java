@@ -13,7 +13,7 @@ public class PartidoBD extends Conexion {
     public static final String TEMPLATE = "par.id,par.fecha,par.ptosLocal,par.ptosVisitante,par.local,par.visitante,par.jornada ";
 
     /**
-     * metodo para recuperar los distintos partidos de la temporada
+     * Metodo para recuperar los distintos partidos de la temporada
      *
      * @param con conexion de BD
      * @return result set de datos

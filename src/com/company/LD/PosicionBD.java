@@ -2,16 +2,16 @@ package com.company.LD;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.util.ArrayList;
+
 
 /**
- * Clase que se usara para obtener informacion sobre las posiciones de los jugadores de la BD
+ * Clase que se usara para insertar y obtener informacion sobre las posiciones de los jugadores de la BD
  */
 public class PosicionBD extends Conexion {
     public static final String TEMPLATE = "pscn.id, pscn.nombre";
 
     /**
-     * metodo para recuperar las ditintas posiciones que puede tener un jugador
+     * Metodo para recuperar las ditintas posiciones que puede tener un jugador
      *
      * @param con conexion de BD
      * @return result set de datos

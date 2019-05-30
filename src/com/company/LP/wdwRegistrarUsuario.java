@@ -214,7 +214,7 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
         txtLoginpassVisible.addFocusListener(this);
         txtLoginpassVisible.setVisible(false);
 
-        img = new ImageIcon(wdwRegistrarUsuario.class.getResource("/com/company/LP/imagenes/visibilidad.png"));
+        img = new ImageIcon(wdwRegistrarUsuario.class.getResource("/com/company/LP/imagenes/visibilidad1.png"));
         visible = new JButton();
         visible.setIcon(img);
         visible.setBounds(100, 110, 110, 22);
@@ -227,7 +227,7 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
         jpIniciarSesion.add(visible);
         visible.setVisible(true);
 
-        img1 = new ImageIcon(wdwRegistrarUsuario.class.getResource("/com/company/LP/imagenes/visibilidad1.png"));
+        img1 = new ImageIcon(wdwRegistrarUsuario.class.getResource("/com/company/LP/imagenes/visibilidad.png"));
         visible1 = new JButton();
         visible1.setIcon(img1);
         visible1.setBounds(100, 110, 110, 22);
@@ -239,7 +239,6 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
         visible1.setBorderPainted(false);
         jpIniciarSesion.add(visible1);
         visible.setVisible(false);
-
 
 
         blogin = new JButton("Iniciar Sesion");
@@ -349,12 +348,12 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
                 break;
             case BOTON_VISIBLE:
                 if (mostrar) {
-                    txtLoginpassVisible.setVisible(true);
                     txtLoginpassOculto.setVisible(false);
+                    txtLoginpassVisible.setVisible(true);
                     txtLoginpassVisible.setText(txtLoginpassOculto.getText());
+                    mostrar = false;
                     visible.setVisible(false);
                     visible1.setVisible(true);
-                    mostrar = false;
                 }
                 break;
             case BOTON_VISIBLE1:

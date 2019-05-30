@@ -8,12 +8,12 @@ import java.sql.ResultSet;
 /**
  * Esta clase la utilizaremos para insertar y obtener informacion de los partidos de la BD
  */
-public class JugadoresBD extends Conexion {
+public class JugadorBD extends Conexion {
 
     private static final String TEMPLATE = "jug.id,jug.nombre,jug.apellido1,jug.apellido2,jug.fechaNac,jug.dorsal,jug.textoCamiseta, jug.equipo, jug.posicion, jug.estado";
 
     /**
-     * MEtodo para insertar jugadores a nuestra BD
+     * Metodo para insertar jugadores a nuestra BD
      *
      * @param con           con
      * @param nombre        nombre

@@ -4,14 +4,14 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 
 /**
- * clase que va a gestionar la situacion de cada jugador de la BD
+ * Clase que va a gestionar la situacion de cada jugador de la BD
  */
 public class EventoBD extends Conexion {
 
     public static final String TEMPLATE = "eve.id,eve.estadoPrevio,eve.estadoPosterior,eve.jugador, eve.fecha";
 
     /**
-     * metodo para recuperar los eventos
+     * Metodo para recuperar los eventos
      *
      * @param con conexion de BD
      * @return result set de datos
