@@ -1,5 +1,6 @@
 package com.company.LP;
 
+import com.company.Excepciones.EquiposInsuficientesException;
 import com.company.LN.GestorLN;
 import com.company.LP.InsertarPorVentanas.*;
 import com.company.LP.Updates.updateEquipoFav;
@@ -33,7 +34,8 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
     /**
      * Para insertar
      */
-    private JMenuItem itemInsertarJugador, itemInsertarEquipo, itemInsertarPosicion, itemInsertarEstado, itemInsertarCampo;
+    private JMenuItem itemInsertarJugador, itemInsertarEquipo, itemInsertarPosicion, itemInsertarEstado, itemInsertarCampo
+            ,itemInsertarTemporada;
 
     private final String ABRIR_NOTICIAS = "noticias";
     private final String INSERTAR = "insertar";
@@ -47,6 +49,7 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
     private final String INSERTAR_POSICION = "insertar posicion";
     private final String INSERTAR_ESTADO = "insertar estado";
     private final String INSERTAR_CAMPO = "insertar campo";
+    private final String INSERTAR_TEMPORADA="insertar temporada";
     private clsImagen contentPane;
 
     /**
@@ -127,7 +130,6 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
             menuInsertar.addActionListener(this);
             barraMenu.add(menuInsertar);
 
-
             itemInsertarJugador = new JMenuItem("Insertar jugador");
             itemInsertarJugador.setActionCommand(INSERTAR_JUGADOR);
             itemInsertarJugador.addActionListener(this);
@@ -152,6 +154,11 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
             itemInsertarEstado.setActionCommand(INSERTAR_ESTADO);
             itemInsertarEstado.addActionListener(this);
             menuInsertar.add(itemInsertarEstado);
+
+            itemInsertarTemporada=new JMenuItem("Insertar temporada");
+            itemInsertarTemporada.setActionCommand(INSERTAR_TEMPORADA);
+            itemInsertarTemporada.addActionListener(this);
+            menuInsertar.add(itemInsertarTemporada);
 
 
         }
@@ -208,6 +215,15 @@ public class ventanaMenu extends JFrame implements ActionListener, WindowListene
                 wdwCampo ca = new wdwCampo(gln);
                 ca.setVisible(true);
                 this.dispose();
+                break;
+            case INSERTAR_TEMPORADA:
+                try {
+                    gln.anadirTemporada();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                } catch (EquiposInsuficientesException ex) {
+                    JOptionPane.showMessageDialog(this,ex.getMessage());
+                }
                 break;
             case CERRAR_SESION:
                 wdwRegistrarUsuario ru = new wdwRegistrarUsuario(gln);
