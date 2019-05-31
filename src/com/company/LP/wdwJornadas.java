@@ -47,7 +47,7 @@ public class wdwJornadas extends JFrame implements ActionListener {
 		this.setResizable(false);
 		
 		JButton btnActualizar = new JButton("Actualizar");
-		btnActualizar.setBounds(10, 170, 100, 23);
+		btnActualizar.setBounds(150, 170, 100, 23);
 		btnActualizar.setEnabled(gln.isAdmin());
 		contentPane.add(btnActualizar);
 		btnActualizar.addActionListener(this);
