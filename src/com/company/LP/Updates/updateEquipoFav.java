@@ -33,7 +33,7 @@ public class updateEquipoFav extends JFrame implements ActionListener, WindowLis
      */
     public updateEquipoFav(GestorLN gln_) {
 
-        this.setTitle("BASKET LIVE ⛹️");
+        this.setTitle("BASKET LIVE");
         gln = gln_;
         int idequipofav=(int)gln.getEquipoFav().getProperty(EQUIPO_ID);
 

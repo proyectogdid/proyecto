@@ -25,7 +25,7 @@ public class ventanaComienzoApk extends JFrame implements ActionListener, Window
      * @param gln_ gln_
      */
     public ventanaComienzoApk(GestorLN gln_) {
-        this.setTitle("BASKET LIVE ⛹️");
+        this.setTitle("BASKET LIVE");
 
         gln = gln_;
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);

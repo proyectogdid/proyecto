@@ -50,7 +50,7 @@ public class wdwRegistrarUsuario extends JFrame implements WindowListener, Actio
      * Create the frame.
      */
     public wdwRegistrarUsuario(GestorLN gln_) {
-        this.setTitle("BASKET LIVE ⛹️");
+        this.setTitle("BASKET LIVE");
         gln = gln_;
 
         ArrayList<itfProperty> equipos = gln.leerEquipos();

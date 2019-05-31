@@ -36,7 +36,7 @@ public class wdwDatosPersonales extends JFrame implements ActionListener, Window
 
     public wdwDatosPersonales(GestorLN gln_) {
 
-        this.setTitle("BASKET LIVE ⛹️");
+        this.setTitle("BASKET LIVE");
         gln = gln_;
         itfProperty logeado=gln.getLogeado();
 
